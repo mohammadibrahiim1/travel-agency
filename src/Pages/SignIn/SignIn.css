@@ -1,31 +1,108 @@
-.img-fluid{
-    width: 486px;
-    height: 816px;
+.card-body {
+  width: 620px;
+  height: auto;
+}
+.button{
+   background-color: #8DD3BB;
+   color: #131313;
+   text-transform: capitalize;
+   font-weight: bold;
+   border: 1px solid #8DD3BB;
+  
+}
+.button:hover{
+   background-color: #FFFFFF;
+   color: #131313;
+   border: 1px solid #8DD3BB;
+   color: salmon;
+}
+.login-text{
+    color: salmon;
+    font-weight: bold;
+    
+}
+.login-text:hover{
+    color: rgb(240, 109, 95);
+    font-weight: bold;
+    cursor: pointer;
+
+}
+.signUp-text{
+    text-align: center;
+    position: absolute;
+    left: 70%;
+    top: 84%;
+    background: white;
+    padding: .5rem;
+  
+
+}
+.signUp-btn{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 12px;
+   
 }
 
-.card-registration .select-input.form-control[readonly]:not([disabled]) {
-    font-size: 1rem;
-    line-height: 2.15;
-    padding-left: .75em;
-    padding-right: .75em;
-    }
-    .card-registration .select-arrow {
-    top: 13px;
-    }
+.signUp-btn button {
+    border: 1px solid #8DD3BB;
+    
+}
+.signUp-btn button:hover {
+    border: 1px solid #8DD3BB;
+    background-color: #8DD3BB;
 
-    .signUp-btn .btn{
-        color: #112211;
-        background-color: #8DD3BB;
-        border: 1px solid #8DD3BB;
-    }
+}
 
-    .login-text{
-        color: salmon;
-        font-size: 14px;
-        font-weight:600;
-        line-height: 17px;
-    }
-    .text-muted{
-        font-size: 14px;
-        color: #112211;
-    }
+.img-fluid {
+  height: 620px;
+  width: auto;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+}
+
+.password {
+  width: 100% !important;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid grey;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  color: #131313;
+  cursor: text;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+}
+
+.input:focus {
+  border: 2px solid salmon;
+}
+.label {
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  /* color: white; */
+  cursor: text;
+  transition: all 0.3s;
+  background-color: white;
+}
+
+.input:focus ~ .label,
+.input:not(:placeholder-shown).input:not(:focus) ~ .label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
