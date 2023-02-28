@@ -1,0 +1,31 @@
+.img-fluid{
+    width: 486px;
+    height: 816px;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+
+    .signUp-btn .btn{
+        color: #112211;
+        background-color: #8DD3BB;
+        border: 1px solid #8DD3BB;
+    }
+
+    .login-text{
+        color: salmon;
+        font-size: 14px;
+        font-weight:600;
+        line-height: 17px;
+    }
+    .text-muted{
+        font-size: 14px;
+        color: #112211;
+    }
