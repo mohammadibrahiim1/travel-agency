@@ -128,8 +128,8 @@ const SignIn = () => {
                         <label className="label">Confirm Password</label>
                       </div>
 
-                      <div className="signUp-btn">
-                        <button type="button" className="btn button btn-light w-100">
+                      <div className="signUp">
+                        <button type="button" className="btn create-account-button btn-light w-100">
                           create account
                         </button>
                       </div>
@@ -139,12 +139,12 @@ const SignIn = () => {
                         </span>{" "}
                         <span className="login-text">Log in</span>
                       </div>
-                      <div className="">
+                      <div className="mb-5">
                         <hr className="mt-5" />
-                        <p className="signUp-text"> Or Sign up with</p>
+                        <p className="text-center "> Or Sign up with</p>
                       </div>
 
-                      <div className="signUp-btn mt-5">
+                      <div className="social-signUP mt-5">
                         <button className="btn btn-light ps-5 pe-5 w-100 text-primary p-2">< FaFacebook  style={{width:"22px",height: "22px"}} /></button>
                         <button className="btn btn-light ps-5 pe-5 w-100  p-2">< FcGoogle  style={{width:"22px",height: "22px"}} /></button>
                         <button className="btn btn-light ps-5 pe-5 w-100  p-2">< FaApple  style={{width:"22px",height: "22px"}} /></button>
