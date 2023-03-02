@@ -117,6 +117,11 @@ const SignIn = () => {
                         <label className="label">Confirm Password</label>
                       </div>
 
+                      <div className="text-start">
+                       <input type="checkbox"  />
+                        <label className="ms-1  agree ">I agree to all the Terms and Privacy Policies</label>
+                       </div>
+
                       <div className="signUp">
                         <button type="button" className="btn create-account-button btn-light w-100">
                           create account

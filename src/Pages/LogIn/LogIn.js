@@ -90,7 +90,7 @@ const LogIn = () => {
                       <div className="mb-4 d-flex justify-content-between">
                        <div>
                        <input type="checkbox" />
-                        <label className="ms-1">Remember me</label>
+                        <label className="ms-1 remember">Remember me</label>
                        </div>
                        <div>
                         <Link to='/forgotpassword' className="text-danger text-decoration-none">Forgot Password?</Link>

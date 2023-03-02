@@ -105,6 +105,8 @@
   background-color: white;
 }
 
+
+
 .input:focus ~ .label,
 .input:not(:placeholder-shown).input:not(:focus) ~ .label {
   top: -0.5rem;

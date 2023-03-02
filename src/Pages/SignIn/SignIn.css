@@ -3,6 +3,10 @@
   height: 753px;
   margin-top: 15%;
 }
+
+.agree {
+  font-size: 13px;
+}
 .create-account-button {
   background-color: #8dd3bb;
   color: #112211;
@@ -106,7 +110,7 @@
 }
 
 @media screen and (max-width: 576px) {
-  .social-signUP{
+  .social-signUP {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
@@ -143,5 +147,3 @@
     align-items: center;
   }
 }
-
-
