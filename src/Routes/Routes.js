@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layout/Root";
+import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import Home from "../Pages/Home/Home";
 import LogIn from "../Pages/LogIn/LogIn";
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
             {
                 path:'/setpassword',
                 element:<SetPassword></SetPassword>
+            },
+            {
+                path:'/addpaymentmethod',
+                element:<AddPaymentMethod></AddPaymentMethod>
             },
 
         ]
