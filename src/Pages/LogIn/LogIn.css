@@ -1,8 +1,9 @@
-.signup-body {
-  width: 640px;
-  height: 753px;
+.login-body {
+  width: 512px;
+  height: auto;
   margin-top: 15%;
 }
+
 .create-account-button {
   background-color: #8dd3bb;
   color: #112211;
@@ -16,45 +17,51 @@
   border: 1px solid #8dd3bb;
   color: salmon;
 }
-.signin-text {
+.login-title {
+  font-size: 32px;
+  color: #131313;
+  line-height: 21px;
+}
+
+.login-text {
   color: salmon;
   font-weight: bold;
-  text-decoration: none;
 }
-.signin-text:hover {
+.login-text:hover {
   color: rgb(240, 109, 95);
   font-weight: bold;
   cursor: pointer;
-  text-decoration: underline;
 }
 
-.social-signUP {
+.social-login {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-.social-signUP button {
+.social-login button {
   border: 1px solid #8dd3bb;
 }
-.social-signUP button:hover {
+.social-login button:hover {
   border: 1px solid #8dd3bb;
   background-color: #8dd3bb;
 }
 
-.signUp button {
+.login button {
   border: 1px solid #8dd3bb;
   margin-top: 15px;
 }
-.signUp button:hover {
+.login button:hover {
   border: 1px solid #8dd3bb;
   background-color: #8dd3bb;
   color: white;
   transition: 0.3s;
 }
 
-.img-fluid {
-  width: 488px;
+.img_fluid{
   height: 816px;
+  width: 618px;
+  /* position: relative;
+  left: 25%; */
 }
 
 .input-container {
@@ -106,14 +113,14 @@
 }
 
 @media screen and (max-width: 576px) {
-  .social-signUP{
+  .social-login {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
     align-items: center;
   }
 
-  .signup-body {
+  .login-body {
     width: 100%;
     margin: auto;
     border: 1px solid #8dd3bb;
@@ -125,7 +132,8 @@
 }
 
 @media screen and (min-width: 577px) and (max-width: 991px) {
-  .signup-body {
+  .login-body {
+  
     width: 75%;
     text-align: center;
     margin: auto;
@@ -136,12 +144,10 @@
     height: auto;
   }
 
-  .social-signUP {
+  .social-login {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
     align-items: center;
   }
 }
-
-
