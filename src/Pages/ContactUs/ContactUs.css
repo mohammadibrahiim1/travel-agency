@@ -1,16 +1,24 @@
-.contact-us-header {
-  width: 100%;
-  position: relative;
-  left: 32px;
+.contact-title {
+  color: #6fcaaa;
+  font-size: 42px;
+  position: absolute;
+  top: 65%;
+  left: 44%;
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 7px;
 }
 
-
+.contact-info-container {
+  margin-top: 255px;
+}
 
 .contact-form-body {
   width: 90%;
   margin: 0 auto;
   height: 753px;
-  margin-top: 15%;
+  margin-top: 30%;
 }
 
 .send-message button {
@@ -24,10 +32,10 @@
   transition: 0.3s;
 }
 
-.img-fluid {
+/* .img-fluid {
   width: 488px;
   height: 816px;
-}
+} */
 
 .input-container {
   position: relative;
@@ -77,8 +85,6 @@
 }
 
 @media screen and (max-width: 576px) {
- 
-
   .contact-form-body {
     width: 100%;
     margin: auto;
@@ -101,5 +107,4 @@
     padding: 20px;
     height: auto;
   }
-
 }
