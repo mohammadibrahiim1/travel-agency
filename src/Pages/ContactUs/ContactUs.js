@@ -31,7 +31,7 @@ const ContactUs = () => {
               <div className="col">
                 <div className="">
                   <div className="row g-0 flex-row-reverse">
-                    <div className=" col-xl-6 contact-info-container order-2 ">
+                    <div className=" col-xl-6 contact-info-container order-1">
                       <div className="mt-5">
                         <span className="ms-5">
                           <FaHome style={{ width: "32px", height: "32px" }} />{" "}
