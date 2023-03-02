@@ -1,16 +1,15 @@
-import React from "react";
-// import { FcGoogle } from "react-icons/fc";
+import React from 'react';
 import {
-  //  FaFacebook, FaApple,
-  FaChevronLeft,
-} from "react-icons/fa";
-import "./VerifyAccount.css";
-import { Link } from "react-router-dom";
+    //  FaFacebook, FaApple,
+    FaChevronLeft,
+  } from "react-icons/fa";
+  import './SetPassword.css'
+// import { Link } from 'react-router-dom';
 
-const VerifyAccount = () => {
-  return (
-    <div>
-      <section className="forget-section">
+const SetPassword = () => {
+    return (
+        <div>
+              <section className="forget-section">
         <div className="container  py-5 ">
           <div className="row ">
             <div className="col">
@@ -24,15 +23,15 @@ const VerifyAccount = () => {
                     />
                   </div>
                   <div className="col-xl-6 ">
-                    <div className="verify-body">
-                      <Link className=" reverse" to="/login">
+                    <div className="set-password-body">
+                      {/* <Link className=" reverse" to="/login">
                         <FaChevronLeft className="mb-1" /> Back To Login
-                      </Link>
-                      <h3 className="mb-4 mt-4 fw-bold verify-title">
-                        Verify code
+                      </Link> */}
+                      <h3 className="mb-4 mt-4 fw-bold set-password-title">
+                        Set A New Password
                       </h3>
                       <p className="fw-normal text-muted">
-                        An authentication code has been sent to your email.
+                      Your previous password has been reseted. Please set a new password for your account.
                       </p>
 
                       {/* <div className="row ">
@@ -60,31 +59,8 @@ const VerifyAccount = () => {
                         </div>
                       </div> */}
 
-                      <div className="row">
-                        <div className="mb-4 mt-3">
-                          <div className="input-container">
-                            <input
-                              type="text"
-                              id="form3Example1m"
-                              className="input"
-                              placeholder=" "
-                            />
-                            <label className="label">Enter Code</label>
-                          </div>
-                        </div>
-                        {/* <div className="col-md-6 mb-4">
-                          <div className="input-container">
-                            <input
-                              type="text"
-                              id="form3Example1m"
-                              className="input"
-                              placeholder=" "
-                            />
-                            <label className="label">Phone</label>
-                          </div>
-                        </div> */}
-                      </div>
-                      {/* 
+                   
+                      
                       <div className="input-container password mb-4">
                         <input
                           type="password"
@@ -92,8 +68,17 @@ const VerifyAccount = () => {
                           className="input"
                           placeholder=" "
                         />
-                        <label className="label">Password</label>
-                      </div> */}
+                        <label className="label">Create Password</label>
+                      </div>
+                      <div className="input-container password mb-4">
+                        <input
+                          type="password"
+                          id="form3Example1m"
+                          className="input"
+                          placeholder=" "
+                        />
+                        <label className="label">Re-enter Password</label>
+                      </div>
 
                       {/* <div className="mb-4 d-flex justify-content-between">
                        <div>
@@ -104,19 +89,19 @@ const VerifyAccount = () => {
                         <Link to='' className="text-danger text-decoration-none">Forgot Password?</Link>
                        </div>
                       </div> */}
-                      <div className="text-start">
+                      {/* <div className="text-start">
                         <span className="text-muted ">
                           Didn’t receive a code?
                         </span>{" "}
                         <span className="resend-text">Resend</span>
-                      </div>
+                      </div> */}
 
-                      <div className="login">
+                      <div className="set-password">
                         <button
                           type="button"
-                          className="btn create-account-button btn-light w-100"
+                          className="btn set-password-button btn-light w-100"
                         >
-                          Verify
+                          Set Password
                         </button>
                       </div>
                       {/* <div className="text-center mt-3">
@@ -155,8 +140,8 @@ const VerifyAccount = () => {
           </div>
         </div>
       </section>
-    </div>
-  );
+        </div>
+    );
 };
 
-export default VerifyAccount;
+export default SetPassword;
