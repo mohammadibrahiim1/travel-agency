@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
         <div>
 
-<nav class="navbar navbar-expand-lg pt-3 ">
+<nav class="navbar d-lg-block d-none  navbar-expand-lg pt-3 ">
   <div class="container">
  
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,6 +45,66 @@ const Navbar = () => {
     </div>
   </div>
 </nav>
+
+
+{/* offcanvas navbar */}
+
+
+
+<nav class="navbar d-lg-none d-xl-none  fixed-top">
+  <div class="container">
+    <Link  class="navbar-brand" href="#"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" /></Link>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" /></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <Link class="nav-link" aria-current="page" href="#">< FaPlane className='me-1'/>Find Flights</Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link" href="#"> < FaBed/> Find Stay  </Link>
+        </li>
+        <li class="nav-item">
+          <Link class="nav-link">Login</Link>
+        </li>
+        <li class="nav-item ">
+          <Link class="nav-link sign-up-button ">Sign up</Link>
+        </li>
+          {/* <li class="nav-item dropdown">
+            <Link  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </Link>
+        
+          </li>
+          <li class="nav-item dropdown">
+            <Link  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </Link>
+        
+          </li>
+          <li class="nav-item dropdown">
+            <Link  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </Link>
+        
+          </li> */}
+        </ul>
+        {/* <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> */}
+      </div>
+    </div>
+  </div>
+</nav>
+
+
 
         </div>
     );
