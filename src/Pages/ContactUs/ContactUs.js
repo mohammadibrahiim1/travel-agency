@@ -22,7 +22,7 @@ const ContactUs = () => {
           <div className="container  py-5 ">
             <div>
               <h2 className="mb-4 fw-bold contact-title">Contact Us</h2>
-              <p className="text-center w-50 m-auto">
+              <p className="text-center w-100">
                 Far far away, behind the word mountains, far from the countries
                 Vokalia and Consonantia, there live the blind texts.
               </p>
@@ -31,13 +31,12 @@ const ContactUs = () => {
               <div className="col">
                 <div className="">
                   <div className="row g-0 flex-row-reverse">
-                    <div className=" col-xl-6 d-none d-xl-block contact-info-container ">
+                    <div className=" col-xl-6 contact-info-container order-2 ">
                       <div className="mt-5">
                         <span className="ms-5">
                           <FaHome style={{ width: "32px", height: "32px" }} />{" "}
                           <span className="ms-3">
-                            155 Market St #101, Motejheel, NJ 07505, Dhaka,
-                            Bangladesh
+                            street-1001, MoteJhel, Dhaka, Bangladesh
                           </span>
                         </span>
                       </div>

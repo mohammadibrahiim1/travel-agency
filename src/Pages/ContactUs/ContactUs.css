@@ -93,6 +93,22 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 12px;
     height: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+  .contact-info-container {
+    margin-top: 5px;
+  }
+  .contact-title {
+    color: #6fcaaa;
+    font-size: 32px;
+    position: absolute;
+    top: 13%;
+    left: 27%;
+    background-color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 7px;
   }
 }
 
@@ -101,10 +117,29 @@
     width: 75%;
     text-align: center;
     margin: auto;
+    margin-top: 55px;
     border: 1px solid #8dd3bb;
     border-radius: 7px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 20px;
     height: auto;
+  }
+  .contact-title {
+    color: #6fcaaa;
+    font-size: 32px;
+    position: absolute;
+    top: 20%;
+    left: 39%;
+    background-color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 7px;
+  }
+
+  .contact-info-container {
+    margin-top: 5px;
+    width: 70%;
+    margin: auto;
+    /* padding-left: 25px; */
   }
 }
