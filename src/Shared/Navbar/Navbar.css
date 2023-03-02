@@ -1,0 +1,17 @@
+.sign-up-button  {
+ border: 1px solid white;
+ border-radius: 7px;
+ /* margin-left: 15px; */
+ color: #112211;
+ background-color: white;
+}
+.nav-link{
+    margin-left: 9px;
+    color: #112211;
+    font-weight: 600;
+    font-size: 14px;
+    padding-top: 5px;
+    
+    
+
+}
