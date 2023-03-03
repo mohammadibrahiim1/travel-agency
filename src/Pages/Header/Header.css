@@ -1,5 +1,19 @@
 .header-section {
-  background-image: url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
+  /* linear-gradient (45deg,
+  rgba(245,70,66, 0.75),
+  rgba(8,83,156, 0.75)), url('https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png');
+width: 100%;
+height: 280px;
+text-align: center;
+  color: #fff; */
+
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
+  /* transform: rotate(180deg); */
   width: 98%;
   height: 599px;
   margin: auto;
@@ -10,20 +24,15 @@
   border-radius: 7px;
 }
 
-
-
-
-@media screen and (max-width:576px) {
-
-    .header-section {
-        background-image: url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
-        width: 98%;
-        height:400px;
-        margin: auto;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-color: #fafbfc;
-        border-radius: 7px;
-      }
-    
+@media screen and (max-width: 576px) {
+  .header-section {
+    background-image: url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
+    width: 98%;
+    height: 400px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #fafbfc;
+    border-radius: 7px;
+  }
 }
