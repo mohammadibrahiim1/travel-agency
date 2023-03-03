@@ -4,6 +4,11 @@
   color: #112211 !important;
   background-color: #ffffff;
 }
+.sign-up-button:hover {
+
+  color: #8dd3bb !important;
+ ;
+}
 .nav-link {
   margin-left: 9px;
   color: #ffffff;
