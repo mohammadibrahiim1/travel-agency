@@ -1,7 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layout/Root";
 import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
+import AllFlights from "../Pages/AllFlights/AllFlights";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import FindFlights from "../Pages/FindFlights/FindFlights";
+import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import Home from "../Pages/Home/Home";
 import LogIn from "../Pages/LogIn/LogIn";
@@ -18,6 +21,11 @@ export const router = createBrowserRouter([
                 path:'/',
                 element:<Home></Home>
             },
+            {
+                path:'/findFlights',
+                element:<FindFlights></FindFlights>
+            },
+           
             {
                 path:'/signin',
                 element:<SignIn></SignIn>
@@ -48,5 +56,20 @@ export const router = createBrowserRouter([
             },
 
         ]
-    }
+    },
+    {
+        path:'/flightListing',
+        element:<FlightListing></FlightListing>,
+        children: [
+            {
+                path:'/flightListing',
+                element:<AllFlights></AllFlights>
+            },
+            {
+                path:'/flightListing/allFlights',
+                element:<AllFlights></AllFlights>
+            },
+          
+        ]
+    },
 ])

@@ -1,0 +1,78 @@
+{
+  "code": "SUCCESS",
+  "message": "Everything is working",
+  "response": [
+    {
+      "name": "Biman Bangladesh Airlines Limited",
+      "businessName": "Biman Bangladesh Airlines",
+      "slug": "Biman-Bangladesh-Airlines",
+      "code": "BG",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/BG.png"
+    },
+    {
+      "name": "US-Bangla Airlines Limited",
+      "businessName": "US-Bangla Airlines",
+      "slug": "US-Bangla-Airlines",
+      "code": "BS",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/BS.png"
+    },
+    {
+      "name": "Emirates",
+      "businessName": "Emirates",
+      "slug": "Emirates",
+      "code": "EK",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/EK.png"
+    },
+    {
+      "name": "Himalaya Airlines Pvt. Ltd",
+      "businessName": "Himalaya Airlines",
+      "slug": "Himalaya-Airlines",
+      "code": "H9",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/H9.png"
+    },
+    {
+      "name": "Malaysia Airlines Berhad / Malaysia Airline",
+      "businessName": "Malaysia Airlines",
+      "slug": "Malaysia-Airlines",
+      "code": "MH",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/MH.png"
+    },
+    {
+      "name": "Singapore Airlines Limited",
+      "businessName": "Singapore Airlines",
+      "slug": "Singapore-Airlines",
+      "code": "SQ",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/SQ.png"
+    },
+    {
+      "name": "Turkish Airlines Inc.",
+      "businessName": "Turkish Airlines",
+      "slug": "Turkish-Airlines",
+      "code": "TK",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/TK.png"
+    },
+    {
+      "name": "Tata Sia Airline Ltda / Vistara",
+      "businessName": "Vistara",
+      "slug": "Vistara",
+      "code": "UK",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/UK.png"
+    },
+    {
+      "name": "Novoair Limited",
+      "businessName": "NOVOAIR",
+      "slug": "NOVOAIR",
+      "code": "VQ",
+      "description": "",
+      "logo": "https://tbbd-flight.s3.ap-southeast-1.amazonaws.com/airlines-logo/VQ.png"
+    }
+  ]
+}

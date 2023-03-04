@@ -16,24 +16,24 @@ const Navbar = () => {
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <Link class="nav-link" aria-current="page" href="#">< FaPlane className='me-1'/>Find Flights</Link>
+          <Link class="nav-link" aria-current="page" to="/findFlights">< FaPlane className='me-1'/>Find Flights</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" href="#"> < FaBed/> Find Stay  </Link>
+          <Link class="nav-link" to="#"> < FaBed/> Find Stay  </Link>
         </li>
 
         </ul>
  
- {/* <a href="https://ibb.co/LCS62m5"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="Logo" border="0"></a> */}
+ {/* <a to="https://ibb.co/LCS62m5"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="Logo" border="0"></a> */}
 
- <div className='navbar-nav m-auto mb-2 mb-lg-0'>  <Link class="navbar-brand" href="#"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" /></Link></div>
+ <div className='navbar-nav m-auto mb-2 mb-lg-0'>  <Link class="navbar-brand" to="#"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" /></Link></div>
 
         <ul className='navbar-nav ms-auto mb-2 mb-lg-0'>
         <li class="nav-item">
           <Link class="nav-link">Login</Link>
         </li>
         <li class="nav-item ">
-          <Link class="nav-link sign-up-button ">Sign up</Link>
+          <Link class="nav-link">Sign up</Link>
         </li>
       </ul>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
 
 <nav class="navbar d-lg-none d-xl-none  fixed-top">
   <div class="container">
-    <Link  class="navbar-brand" href="#"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" /></Link>
+    <Link  class="navbar-brand" to="#"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" /></Link>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -65,10 +65,10 @@ const Navbar = () => {
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
         <li class="nav-item">
-          <Link class="nav-link" aria-current="page" href="#">< FaPlane className='me-1'/>Find Flights</Link>
+          <Link class="nav-link" aria-current="page" to="#">< FaPlane className='me-1'/>Find Flights</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" href="#"> < FaBed/> Find Stay  </Link>
+          <Link class="nav-link" to="#"> < FaBed/> Find Stay  </Link>
         </li>
         <li class="nav-item">
           <Link class="nav-link">Login</Link>
@@ -77,19 +77,19 @@ const Navbar = () => {
           <Link class="nav-link sign-up-button ">Sign up</Link>
         </li>
           {/* <li class="nav-item dropdown">
-            <Link  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <Link  class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </Link>
         
           </li>
           <li class="nav-item dropdown">
-            <Link  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <Link  class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </Link>
         
           </li>
           <li class="nav-item dropdown">
-            <Link  class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <Link  class="nav-link dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
             </Link>
         
