@@ -19,7 +19,7 @@ const Navbar = () => {
           <Link class="nav-link" aria-current="page" to="/findFlights">< FaPlane className='me-1'/>Find Flights</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="#"> < FaBed/> Find Stay  </Link>
+          <Link class="nav-link" to="/findStays"> < FaBed/> Find Stay  </Link>
         </li>
 
         </ul>

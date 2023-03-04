@@ -3,44 +3,31 @@ import { Link } from "react-router-dom";
 
 const AllFlights = () => {
   return (
-    <div>
-      <div class="col-4">
-        <img src="" class="img-fluid rounded-start" alt="..." />
-      </div>
-      <div class="col-8">
-        <div class="card-body hotel-list">
-          <div>
-            <div className="starting d-flex align-items-center justify-content-end">
-              <h5 class="card-title title">ratings</h5>
-              <h6>
-                starting from <br />
-                $price/night <br />
-               
-              </h6>
-            </div>
-          </div>
+            <div>
 
-          <p class="card-text text">departure time-</p>
-          <p class="card-text text">arraival  time-</p>
-          <div className="d-flex justify-content-between mt-4">
-            <p>return time </p>
-            <h6>arrival time</h6>
-          </div>
-          <h5>Very Good 371 reviews</h5>
-          <hr />
-          <div className="d-flex justify-content-between">
-            <p>love icon</p>
-            <Link to=''
-
-            // /hotelDetails/${_id}
-
-            >
-              <button className="btn btn-info">View deals</button>
-            </Link>
-          </div>
+           <section>
+           <div class="card mb-3" style={{" ": "540px"}}>
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="img   " class="img-fluid rounded-start" alt="..."/>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">ratings and reviews</h5> <span>price</span>
+        <h5 class="card-title">departure time  <span>arrival time</span> </h5> <span>non stop</span> <span>approach time</span>
+        <div>
+          <h5>return time</h5>
         </div>
+        {/* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
+        <p class="card-text"><small class="text-muted"> <span>favourite <span className="btn btn-in
+        ">view deals</span> </span> </small></p>
       </div>
     </div>
+  </div>
+</div>
+           </section>
+
+            </div>
   );
 };
 

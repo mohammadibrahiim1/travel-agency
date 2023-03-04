@@ -4,6 +4,7 @@ import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import FindFlights from "../Pages/FindFlights/FindFlights";
+import FindStays from "../Pages/FindStays/FindStays";
 import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import Home from "../Pages/Home/Home";
@@ -24,6 +25,10 @@ export const router = createBrowserRouter([
             {
                 path:'/findFlights',
                 element:<FindFlights></FindFlights>
+            },
+            {
+                path:'/findStays',
+                element:<FindStays></FindStays>
             },
            
             {

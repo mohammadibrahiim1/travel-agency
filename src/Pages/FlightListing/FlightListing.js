@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { FaSearch } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
 import { Outlet } from "react-router-dom";
 import Filters from "../../Components/Filters/Filters";
 import Footer from "../../Shared/Footer/Footer";
@@ -36,10 +36,10 @@ const FlightListing = () => {
           <Col lg="12">
             <FindFlights></FindFlights>
           </Col>
-          <Col lg="2">
+          <Col lg="4">
             <Filters></Filters>
           </Col>
-          <Col lg="10">
+          <Col lg="8">
             <Outlet></Outlet>
           </Col>
         </Row>
