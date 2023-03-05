@@ -74,6 +74,10 @@ export const router = createBrowserRouter([
                 path:'/flightListing/allFlights',
                 element:<AllFlights></AllFlights>
             },
+            {
+                path:'/flightListing/signin',
+                element:<SignIn></SignIn>
+            },
           
         ]
     },

@@ -30,12 +30,11 @@ const FlightListing = () => {
   return (
     <div>
       <Navbar></Navbar>
+      <Col lg="12">
+        <FindFlights></FindFlights>
+      </Col>
       <Container>
         <Row>
-          {" "}
-          <Col lg="12">
-            <FindFlights></FindFlights>
-          </Col>
           <Col lg="4">
             <Filters></Filters>
           </Col>
@@ -44,45 +43,6 @@ const FlightListing = () => {
           </Col>
         </Row>
       </Container>
-
-      {/* <section className="container flying__input">
-        <div className="col-12 d-flex align-items-center justify-content-evenly">
-          <div className="input-container">
-            <input
-              type="text"
-              id="form3Example1m"
-              className="enter__destination"
-              placeholder=" "
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              id="form3Example1m"
-              className="input__box"
-              placeholder=" "
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              id="form3Example1m"
-              className="input__box"
-              placeholder=" "
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              id="form3Example1m"
-              className="input__box"
-              placeholder=" "
-            />
-          </div>
-          <FaSearch className="search"></FaSearch>
-        </div>
-      </section> */}
-      {/* <Outlet></Outlet> */}
 
       <Footer></Footer>
     </div>

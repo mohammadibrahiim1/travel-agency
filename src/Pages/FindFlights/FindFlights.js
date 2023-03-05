@@ -14,68 +14,50 @@ const FindFlights = () => {
 
   return (
     <div>
-      <section className="flight-search-section">
-        <div className="">
-          {/* <label for="exampleDataList" class="form-label">
-            Datalist example
-          </label> */}
-          <input
-            class="form-control"
-            list="datalistOptions"
-            id="exampleDataList"
-            placeholder="From"
-          />
-
-          <datalist id="datalistOptions">
-            <option value="San Francisco" />
-            <option value="New York" />
-            <option value="Seattle" />
-            <option value="Los Angeles" />
-            <option value="Chicago" />
-          </datalist>
+      <section className="flight-search-section ">
+        <div>
+          {/* <label htmlFor="destination">From</label> */}
+          <select name="" id="destination" className="select-option">
+            <option value=" From">From</option>
+            <option value="Cumilla">Cumilla</option>
+            <option value="Chittagong">Chittagong</option>
+            <option value="Cox's Bazar">Cox's Bazar</option>
+          </select>
+          {/* <input type="submit" value="submit" /> */}
+        </div>
+        <div>
+          {/* <label htmlFor="destination">From</label> */}
+          <select name="" id="destination" className="select-option">
+            <option value=" To">To</option>
+            <option value="Cumilla">Cumilla</option>
+            <option value="Chittagong">Chittagong</option>
+            <option value="Cox's Bazar">Cox's Bazar</option>
+          </select>
+          {/* <input type="submit" value="submit" /> */}
+        </div>
+        <div>
+          {/* <label htmlFor="destination">From</label> */}
+          <select name="" id="Trip" placeholder="Trip" className="select-option">
+            {/* <option value=" Trip">Trip</option> */}
+            <option value="One Way">One Way</option>
+            <option value="Return">Return</option>
+            {/* <option value="Cox's Bazar">Cox's Bazar</option> */}
+          </select>
+          {/* <input type="submit" value="submit" /> */}
         </div>
         <div className="">
-          {/* <label for="exampleDataList" class="form-label">
-            Datalist example
-          </label> */}
-          <input
-            class="form-control"
-            list="datalistOptions"
-            id="exampleDataList"
-            placeholder="To"
-          />
-
-          <datalist id="datalistOptions">
-            <option value="San Francisco"  />
-            <option value="New York" />
-            <option value="Seattle" />
-            <option value="Los Angeles" />
-            <option value="Chicago" />
-            
-          </datalist>
-        </div>
-
-        <div className="">
-          {/* <label for="TripDataList" class="form-label">
-            Trip
-          </label> */}
-          <input
-            class="form-control"
-            list="TriplistOptions"
-            id="TripDataList"
-            placeholder="Trip"
-          />
-          <datalist id="TriplistOptions">
-            <option value="One Way" />
-            <option value="Return" />
-            
-          </datalist>
-        </div>
-        <div className="">
-          <label for="TripDataList" class="form-label">
-            departure Time
-          </label>
           <DatePicker
+            className="datepicker "
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            dateFormat="dd/MM/yyyy"
+            minDate={new Date()}
+            placeholderText="departure time"
+          />
+        </div>
+        <div>
+          <DatePicker
+            className="datepicker"
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             dateFormat="dd/MM/yyyy"
@@ -83,17 +65,21 @@ const FindFlights = () => {
           />
         </div>
         <div>
-          <label for="TripDataList" class="form-label">
-          Return
-          </label>
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => setStartDate(date)}
-            dateFormat="dd/MM/yyyy"
-            minDate={new Date()}
-          />
+          {/* <label htmlFor="destination">From</label> */}
+          <select name="" id="bookingclass" className="select-option">
+            <option value="BookingClass">Booking Class</option>
+            <option value="First Class">First Class</option>
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+          </select>
+          {/* <input type="submit" value="submit" /> */}
         </div>
-        <Link  to="/flightListing" >search</Link>
+
+        <div>
+          <Link className="btn btn-primary-emphasis" to="/flightListing/allFlights">
+            search
+          </Link>
+        </div>
       </section>
     </div>
   );

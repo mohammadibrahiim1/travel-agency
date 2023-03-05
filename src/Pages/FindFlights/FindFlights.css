@@ -1,6 +1,35 @@
-.flight-search-section{
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    justify-content: space-evenly;
-    align-items: center;
+.flight-search-section {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 24px;
+  height: 120px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+  border-radius: 16px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.select-option {
+  width: 100%;
+  border: 1px solid grey;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.datepicker {
+  font-size: 14.5px;
+  padding: 2px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+#Trip {
+  font-size: 14.5px;
+}
+
+#bookingclass {
+  font-size: 14.5px;
 }
