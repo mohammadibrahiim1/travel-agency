@@ -4,7 +4,7 @@
   position: absolute;
   top: 65%;
   left: 44%;
-  background-color: white;
+  background-color: #F8FCFB;
   padding-right: 10px;
   padding-left: 10px;
   border-radius: 7px;
@@ -74,7 +74,7 @@
   padding: 0 0.5rem;
   cursor: text;
   transition: all 0.3s;
-  background-color: white;
+  background-color: #F8FCFB;
 }
 
 .input:focus ~ .label,
@@ -105,7 +105,7 @@
     position: absolute;
     top: 13%;
     left: 27%;
-    background-color: white;
+    background-color: #F8FCFB;
     padding-right: 10px;
     padding-left: 10px;
     border-radius: 7px;
@@ -130,7 +130,7 @@
     position: absolute;
     top: 20%;
     left: 39%;
-    background-color: white;
+    background-color: #F8FCFB;
     padding-right: 10px;
     padding-left: 10px;
     border-radius: 7px;

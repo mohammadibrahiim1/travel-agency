@@ -1,0 +1,17 @@
+.trip-card-body {
+  margin-top: 34px;
+}
+.trip-card-body .card-title {
+  font-size: 16px;
+  color: #112211;
+  opacity: 0.7;
+  font-weight: 500;
+  line-height: 17px;
+}
+.trip-card-body .card-text {
+  font-size: 14px;
+  color: #112211;
+  opacity: 0.8;
+  font-weight: 600;
+  line-height: 17px;
+}

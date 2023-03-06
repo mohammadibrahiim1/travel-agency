@@ -1,73 +1,65 @@
-.set-password-body {
-    width: 512px;
-    height: auto;
+.add-review-body {
+    width: 640px;
+    height: 753px;
     margin-top: 15%;
   }
   
-  /* .forget-section{
-      background-image: url(https://i.ibb.co/xmbWzPk/Group-5.png);
-      background-repeat: no-repeat;
-      background-size: cover;
-    } */
-  
-  .set-password-button {
+  .agree {
+    font-size: 13px;
+  }
+  .review-submit-button {
     background-color: #8dd3bb;
     color: #112211;
     text-transform: capitalize;
     font-weight: bold;
     border: 1px solid #8dd3bb;
+    margin-top: 20%;
   }
-  .set-password-button:hover {
+  .review-submit-button:hover {
     background-color: #ffffff;
     color: #131313;
     border: 1px solid #8dd3bb;
     color: salmon;
   }
-  .set-password-title {
-    font-size: 32px;
-    color: #131313;
-    line-height: 21px;
-  }
-  
-  /* .resend-text {
+  /* .signin-text {
     color: salmon;
     font-weight: bold;
+    text-decoration: none;
   }
-  .resend-text:hover {
+  .signin-text:hover {
     color: rgb(240, 109, 95);
     font-weight: bold;
     cursor: pointer;
+    text-decoration: underline;
   } */
   
-  /* .social-login {
+  .social-signUP {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-  } */
-  /* .social-login button {
+  }
+  .social-signUP button {
     border: 1px solid #8dd3bb;
   }
-  .social-login button:hover {
+  .social-signUP button:hover {
     border: 1px solid #8dd3bb;
     background-color: #8dd3bb;
-  } */
+  }
   
-  .set-password button {
+  .signUp button {
     border: 1px solid #8dd3bb;
     margin-top: 15px;
   }
-  .set-password button:hover {
+  .signUp button:hover {
     border: 1px solid #8dd3bb;
     background-color: #8dd3bb;
     color: white;
     transition: 0.3s;
   }
   
-  .img_fluid {
+  .img-fluid {
+    width: 488px;
     height: 816px;
-    width: 618px;
-    /* position: relative;
-      left: 25%; */
   }
   
   .input-container {
@@ -119,19 +111,14 @@
   }
   
   @media screen and (max-width: 576px) {
-    /* .social-login {
+    .social-signUP {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       justify-content: space-evenly;
       align-items: center;
-    } */
-    .verify-title {
-      font-size: 25px;
-      color: #131313;
-      line-height: 21px;
     }
   
-    .set-password-body {
+    .signup-body {
       width: 100%;
       margin: auto;
       border: 1px solid #8dd3bb;
@@ -139,22 +126,11 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       padding: 12px;
       height: auto;
-      padding-top: 10%;
-      padding-bottom: 15%;
     }
   }
   
-  .reverse {
-    color: #fa8072;
-    text-decoration: none;
-  }
-  .reverse:hover {
-      color: #e05343;
-    text-decoration: underline;
-  }
-  
   @media screen and (min-width: 577px) and (max-width: 991px) {
-    .set-password-body {
+    .signup-body {
       width: 75%;
       text-align: center;
       margin: auto;
@@ -163,12 +139,9 @@
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       padding: 20px;
       height: auto;
-      margin-top: 15%;
-      padding-top: 10%;
-      padding-bottom: 10%;
     }
   
-    .social-login {
+    .social-signUP {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       justify-content: space-evenly;
