@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { FaPlane, FaBed } from "react-icons/fa";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Context/UseContext";
+import { AuthContext } from "../../Context/UserContext";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);

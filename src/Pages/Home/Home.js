@@ -1,8 +1,8 @@
 import React from "react";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import Header from "../Header/Header";
-import Places from "./Palces/Places";
-import UserReviews from "./UserRevies/UserReviews";
+import Places from "./Places/Places";
+import UserReviews from "./UserReviews/UserReviews";
 
 const Home = () => {
   return (

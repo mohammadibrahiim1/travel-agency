@@ -6,8 +6,58 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div>
+      {/* <a href="https://ibb.co/Y3LQnGT"><img src="https://i.ibb.co/hym9Qv1/emojione-v1-open-mailbox-with-lowered-flag.png" alt="emojione-v1-open-mailbox-with-lowered-flag" border="0"></a> */}
       <section>
         <footer class="footer-areLink footer-one mt-5 ">
+          <div className="review-section d-flex justify-content-between align-items-center p-3">
+            <div>
+              <h2 className="review-title">Add a reviews</h2>
+              <h6 className="review-subtitle">The Travel</h6>
+              <p className="review-text">
+                Get inspired! Receive travel discounts, tips and behind the
+                scenes stories.
+              </p>
+
+              <form
+                action=""
+                className="d-flex justify-content-start align-content-center"
+              >
+                <div className="input-container">
+                  <input
+                    type="text"
+                    id="firstName"
+                    className="input"
+                    placeholder=" "
+                    name="firstName"
+                    required
+                  />
+                  <label className="label">First Name</label>
+                </div>
+                {/* <textarea
+                  name="message"
+                  id=""
+                  cols="50"
+                  // rows="2"
+                  className="w-30 border rounded"
+                  placeholder="write a review about my service"
+                ></textarea> */}
+
+                <div>
+                  <input
+                    className="btn btn-danger m-2"
+                    type="submit"
+                    value="add a review"
+                  />
+                </div>
+              </form>
+            </div>
+            <div>
+              <img
+                src="https://i.ibb.co/hym9Qv1/emojione-v1-open-mailbox-with-lowered-flag.png"
+                alt=""
+              />
+            </div>
+          </div>
           <div class="footer-widget">
             <div class="">
               <div class="row ">
@@ -116,7 +166,7 @@ const Footer = () => {
                   <div class="footer-destination">
                     <h6 class="footer-title">Travel Blogs</h6>
                     <ul className="list-unstyled travel-blog text-decoration-none">
-                    <li>
+                      <li>
                         <Link className="link-styled" to="/">
                           Rangamati
                         </Link>
@@ -128,12 +178,12 @@ const Footer = () => {
                       </li>
                       <li>
                         <Link className="link-styled" to="/">
-                          Bandarban 
+                          Bandarban
                         </Link>
                       </li>
                       <li>
                         <Link className="link-styled" to="/">
-                         Sundorbar 
+                          Sundorbar
                         </Link>
                       </li>
                     </ul>
@@ -145,7 +195,7 @@ const Footer = () => {
                   <div class="footer-destination">
                     <h6 class="footer-title">Travel Blogs</h6>
                     <ul className="list-unstyled travel-blog text-decoration-none">
-                    <li>
+                      <li>
                         <Link className="link-styled" to="/">
                           Rangamati
                         </Link>
@@ -157,12 +207,12 @@ const Footer = () => {
                       </li>
                       <li>
                         <Link className="link-styled" to="/">
-                          Bandarban 
+                          Bandarban
                         </Link>
                       </li>
                       <li>
                         <Link className="link-styled" to="/">
-                         Sundorbar 
+                          Sundorbar
                         </Link>
                       </li>
                     </ul>

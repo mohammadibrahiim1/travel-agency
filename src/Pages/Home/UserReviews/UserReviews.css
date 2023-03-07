@@ -1,0 +1,16 @@
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 22px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.review-header {
+  padding-top: 80px ;
+  padding-bottom: 20px;
+  width: 72%;
+  margin:  auto;
+}

@@ -1,121 +1,82 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './AddReviews.css'
-// import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { FcGoogle } from "react-icons/fc";
-import { FaFacebook,FaApple } from "react-icons/fa";
+import React, { useContext } from "react";
+import { AuthContext } from "../../Context/UserContext";
 
 const AddReviews = () => {
-    return (
-        <div>
-            <section className='add-reviews-section'>
-            <div className="col-xl-6 ">
-                
-                <div className="add-review-body">
-                  <h3 className="mb-4 fw-bold">Add your review</h3>
+  const { user } = useContext(AuthContext);
 
-                  <div className="row ">
-                    <div className="col-md-6 mb-4">
-                      <div className="input-container">
-                        <input
-                          type="text"
-                          id="form3Example1m"
-                          className="input"
-                          placeholder=" "
-                        />
-                        <label className="label">Your Name</label>
-                      </div>
-                    </div>
-                    <div className="col-md-6 mb-4">
-                      <div className="input-container">
-                        <input
-                          type="text"
-                          id="form3Example1m"
-                          className="input"
-                          placeholder=" "
-                        />
-                        <label className="label">Comment</label>
-                      </div>
-                    </div>
-                  </div>
+  const handleAddReview = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = user?.displayName || "unregisterd";
+    const email = user?.email || "unregister";
+    const photoURL = user?.photoURL;
+    const text = form.message.value;
+    console.log(name, photoURL, text,email);
 
-                  <div className="row">
-                    <div className="col-md-6 mb-4">
-                      <div className="input-container">
-                        <input
-                          type="email"
-                          id="form3Example1m"
-                          className="input"
-                          placeholder=" "
-                        />
-                        <label className="label">Email</label>
-                      </div>
-                    </div>
-                    <div className="col-md-6 mb-4">
-                      <div className="input-container">
-                        <input
-                          type="photURL"
-                          id="form3Example1m"
-                          className="input"
-                          placeholder=" "
-                        />
-                        <label className="label">Photo URL</label>
-                      </div>
-                    </div>
-                  </div>
+    const addreview = {
+      name,
+      photoURL,
+      text,
+      email,
+    };
 
-                  <div className="input-container password mb-4">
-                    <textarea
-                      type="text"
-                      id="form3Example1m"
-                      className="input"
-                      placeholder=" "
-                    />
-                    <label className="label">write about your journey</label>
-                  </div>
-                  {/* <div className="input-container password mb-4">
-                    <input
-                      type="password"
-                      id="form3Example1m"
-                      className="input"
-                      placeholder=" "
-                    />
-                    <label className="label">Confirm Password</label>
-                  </div> */}
+    fetch("http://localhost:5000/reviews", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addreview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("added review successfully");
+          form.reset();
+        }
+      })
+      .catch((error) => console.error(error));
+  };
+  return (
+    <div>
+      <div className="w-50 m-auto shadow mt-5">
+        <p className="text-danger">add a review</p>
+        <form onSubmit={handleAddReview}>
+          {/* <div>
+            <input
+              type="text"
+              name="name"
+              placeholder="your name"
+              className="m-2 "
+            />
 
-                  {/* <div className="text-start">
-                   <input type="checkbox"  />
-                    <label className="ms-1  agree ">I agree to all the Terms and Privacy Policies</label>
-                   </div> */}
+            <input
+              type="photoURL"
+              name="photoURL"
+              placeholder="enter your tour photo url"
+            />
+          </div> */}
 
-                  <div className="signUp">
-                    <button type="button" className="btn review-submit-button btn-light w-100">
-                     submit
-                    </button>
-                  </div>
-                  <div className="text-center mt-3">
-                    <span className="text-muted fw-bold">
-                      please, login or signup to add a review!
-                    </span>{" "}
-                    <Link to='/login' className="login-text text-decoration-none">Log in</Link>
-                  </div>
-                  <div className="mb-5">
-                    <hr className="mt-5" />
-                    <p className="text-center "> Or Sign up with</p>
-                  </div>
+          <textarea
+            name="message"
+            id=""
+            cols="50"
+             rows="2"
+            className="w-30"
+            placeholder="write a review about our service"
+          ></textarea>
 
-                  <div className="social-signUP mt-5">
-                    <button className="btn btn-light  w-100 text-primary p-2">< FaFacebook  style={{width:"22px",height: "22px"}} /></button>
-                    <button className="btn btn-light   w-100  p-2">< FcGoogle  style={{width:"22px",height: "22px"}} /></button>
-                    <button className="btn btn-light   w-100  p-2">< FaApple  style={{width:"22px",height: "22px"}} /></button>
-                    {/* <button className="btn btn-light ps-5 pe-5 w-100">< FaFacebook/></button> */}
-                    {/* <button className="btn btn-light ps-5 pe-5 w-100">< FaFacebook/></button> */}
-                  </div>
-                </div>
-              </div>
-            </section>
-        </div>
-    );
+          <div>
+            <input
+              className="btn btn-danger m-2"
+              type="submit"
+              value="add a review"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  );
 };
 
 export default AddReviews;

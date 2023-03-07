@@ -4,12 +4,14 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import "./SignIn.css";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Context/UseContext";
+import { AuthContext } from "../../Context/UserContext";
+// import { AuthContext } from "../../Context/UserContext";
 // import UseContext, { AuthContext } from "../../Context/UseContext";
 
 const SignIn = () => {
   // const { signUp } = UseContext(AuthContext);
-  const { createUser, signInWithGoogle } = useContext(AuthContext);
+  const { createUser, signInWithGoogle, signInWithFacebook } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
 
   // <a href="https://ibb.co/NWDb9Rv"><img src="https://i.ibb.co/vLyR39F/Group-4.png" alt="Group-4" border="0"></a>
@@ -20,7 +22,6 @@ const SignIn = () => {
   }
 
   const handleGoogleSignIn = () => {
-    // setEmail(e.target.value);
     signInWithGoogle()
       .then((result) => {
         const user = result.user;
@@ -32,8 +33,24 @@ const SignIn = () => {
     setError(error.message);
   };
 
-  const handleGithubSignIN = (e) => {
-    // setPassword(e.target.value);
+  // const handleFacebookSignIn = () => {
+  //   signInWithFacebook()
+  //     .then((result) => {
+  //       const user = result.user;
+  //       console.log(user);
+  //     })
+  //     .catch((error) => console.error(error));
+  //   setError(error.message);
+  // };
+
+  const handleFacebookSignIn = () => {
+    signInWithFacebook()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+      setError(error.message);
   };
 
   const handleSubmit = (event) => {
@@ -53,18 +70,6 @@ const SignIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-
-        // const role = 'user'
-        // const userInfo = {
-        //     displayName: name
-        // }
-
-        // updateUser(userInfo)
-        //     .then(() => {
-        //         setAnimation(true)
-        //         saveUser(email, name, role);
-        //     })
-        //     .catch(err => console.log(err));
       })
       .catch((err) => {
         console.log(err);
@@ -195,6 +200,7 @@ const SignIn = () => {
 
             <div className="social-signUP mt-5">
               <button
+                onClick={handleFacebookSignIn}
                 className="btn btn-light  w-100 
               
               text-primary p-2"

@@ -1,21 +1,26 @@
 import React, { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+  FacebookAuthProvider,
+} from "firebase/auth";
 
 export const AuthContext = createContext();
-const auth = getAuth(app)
+const auth = getAuth(app);
 
-const UseContext = ({ children }) => {
-  const [places, setPlaces] = useState([]);
+const UserContext = ({ children }) => {
   const [user, setUser] = useState({});
 
-
-
   const googleProvider = new GoogleAuthProvider();
+  const facebookProvider = new FacebookAuthProvider();
 
-
-
-  const createUser = (email, password)=> {
+  const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
@@ -25,44 +30,34 @@ const UseContext = ({ children }) => {
   const signInWithGoogle = () => {
     return signInWithPopup(auth, googleProvider);
   };
-  
+
+  const signInWithFacebook = () =>{
+   return signInWithPopup(auth, facebookProvider);
+  }
+
   const logOut = () => {
     return signOut(auth);
   };
 
-
-  useEffect(() => {
-    fetch("http://localhost:5000/places")
-      .then((res) => res.json())
-      .then((data) => {
-        setPlaces(data);
-        console.log(data)});
-  }, []);
-
-
   // for log in  log out user changed
 
-  useEffect( ()=> {
-    const unsubscribe = onAuthStateChanged(auth,(currentUser)=> {
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       console.log(currentUser);
     });
-    return()=> {
+    return () => {
       unsubscribe();
-    }
-  },[])
-
-
-
+    };
+  }, []);
 
   const info = {
-    places,
     createUser,
     user,
     login,
     signInWithGoogle,
     logOut,
-
+    signInWithFacebook,
   };
 
   return (
@@ -72,4 +67,4 @@ const UseContext = ({ children }) => {
   );
 };
 
-export default UseContext;
+export default UserContext;

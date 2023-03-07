@@ -1,6 +1,6 @@
 .places-section {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 180px;
+  margin-bottom: 180px;
 }
 
 .card-container {
@@ -8,7 +8,8 @@
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
   align-items: center;
-  gap: 40px;
+  column-gap: 112px;
+  row-gap: 40px;
   /* column-gap: 62px;
   row-gap: 32px; */
   width: 50%;
@@ -29,6 +30,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 74%;
+  margin:  auto;
+}
+
+.show-flights-hotels-container {
+  width: 73%;
+  margin: auto;
+  /* padding-top: 100px; */
+  margin-bottom: 100px;
 }
 
 .show-flights-button {

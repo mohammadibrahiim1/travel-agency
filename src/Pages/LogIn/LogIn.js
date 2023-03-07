@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import "./LogIn.css";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../../Context/UseContext";
+import { AuthContext } from "../../Context/UserContext";
 import { Container } from "react-bootstrap";
 
 const LogIn = () => {
