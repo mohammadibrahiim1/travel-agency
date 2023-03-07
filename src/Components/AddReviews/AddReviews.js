@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/UserContext";
-import './AddReviews.css'
+import "./AddReviews.css";
 
 const AddReviews = () => {
   const { user } = useContext(AuthContext);
@@ -64,10 +64,10 @@ const AddReviews = () => {
         </div>
       </section>
 
-      <div className="review-section d-flex justify-content-between align-items-center p-3">
+      <div className="newsletter-section d-flex justify-content-between align-items-center p-3">
         <div>
-          <h2 className="review-title">Add a reviews</h2>
-          <h6 className="review-subtitle">The Travel</h6>
+          <h2 className="newsletter-title">Subscribe NewsLetter</h2>
+          <h6 className="newsletter-subtitle">The Travel</h6>
           <p className="review-text">
             Get inspired! Receive travel discounts, tips and behind the scenes
             stories.
@@ -79,14 +79,14 @@ const AddReviews = () => {
           >
             <div className="input-container">
               <input
-                type="text"
-                id="firstName"
-                className="input"
+                type="email"
+                id="email"
+                className="input form-control"
                 placeholder=" "
-                name="firstName"
+                name="email"
                 required
               />
-              <label className="label">First Name</label>
+              <label className="label">Your email address</label>
             </div>
             {/* <textarea
                   name="message"
@@ -99,9 +99,9 @@ const AddReviews = () => {
 
             <div>
               <input
-                className="btn btn-danger m-2"
+                className="btn btn-dark m-2"
                 type="submit"
-                value="add a review"
+                value="Subscribe"
               />
             </div>
           </form>
