@@ -34,11 +34,11 @@ const Places = () => {
       <section>
         {/* <a href="https://ibb.co/7JPmJmQ"><img src="https://i.ibb.co/xSWTSTY/hotels-img.png" alt="hotels-img" border="0"></a>
 <a href="https://ibb.co/0nvtS64"><img src="https://i.ibb.co/p15y8MV/flights-img.png" alt="flights-img" border="0"></a> */}
-        <div className="d-flex justify-content-between show-flights-hotels-container  align-content-center gap-5">
+        <div className="show-flights-hotels-container">
           <div>
             <div
               className="flight-hotel-card "
-              style={{ width: "604px", height: "559px" }}
+              // style={{ width: "604px", height: "559px" }}
             >
               <div className="text-center">
                 <h1 className="fw-semibold text-white">Flights</h1>
@@ -58,7 +58,7 @@ const Places = () => {
           <div>
             <div
               className=" hotel-flight-card "
-              style={{ width: "604px", height: "559px" }}
+              // style={{ width: "604px", height: "559px" }}
             >
               <div className="text-center">
                 <h1 className="fw-semibold text-white">Hotels</h1>
