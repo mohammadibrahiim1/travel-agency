@@ -49,7 +49,7 @@ const AddReviews = () => {
               id=""
               cols="50"
               rows="2"
-              className=" text-area"
+              className="text-area"
               placeholder="write a review about our service"
             ></textarea>
 
