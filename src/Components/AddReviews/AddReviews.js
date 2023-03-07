@@ -55,7 +55,7 @@ const AddReviews = () => {
 
             <div>
               <input
-                className="btn review-submit-button m-2"
+                className="review-submit-button m-2 ps-3 pe-3 pt-2 pb-2"
                 type="submit"
                 value="add a review"
               />
@@ -99,7 +99,7 @@ const AddReviews = () => {
 
             <div>
               <input
-                className="btn btn-dark m-2"
+                className="subscribe-button m-2 ps-3 pe-3 pt-1 pb-1 "
                 type="submit"
                 value="Subscribe"
               />
