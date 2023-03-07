@@ -43,8 +43,8 @@ const LogIn = () => {
               />
             </div>
            
-            <h2 className="ms-2 mb-4 fw-bold">Login Here!</h2>
-            <form onSubmit={handleSubmit} className=" col-xl-6 m-auto p-2">
+            <h2 className="text-center mb-4 fw-bold">Login Here!</h2>
+            <form onSubmit={handleSubmit} className=" col-xl-6 col-md-8 m-auto p-2">
               <div className="mb-3 text-start ">
                 {/* <div className="row ">
               <div className="col-md-6 mb-4">
