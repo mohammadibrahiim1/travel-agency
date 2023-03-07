@@ -88,7 +88,7 @@ const SignIn = () => {
           />
         </div>
       
-     <form onSubmit={handleSubmit} className=" col-xl-6 col-sm-12 col-md-12  m-auto p-2">
+     <form onSubmit={handleSubmit} className=" col-xl-6 col-sm-12 col-md-8  m-auto p-2">
      <h2 className="mb-5 fw-bold">Sign Up Here!</h2>
           <div className="mb-3 text-start ">
             <div className="row ">

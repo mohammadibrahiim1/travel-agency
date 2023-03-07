@@ -42,9 +42,12 @@ const LogIn = () => {
                 className="img-fluid"
               />
             </div>
-           
-            <h2 className="text-center mb-4 fw-bold">Login Here!</h2>
-            <form onSubmit={handleSubmit} className=" col-xl-6 col-md-8 m-auto p-2">
+
+            <form
+              onSubmit={handleSubmit}
+              className=" col-xl-6 col-md-8 m-auto p-2"
+            >
+              <h2 className=" mb-5 fw-bold">Login Here!</h2>
               <div className="mb-3 text-start ">
                 {/* <div className="row ">
               <div className="col-md-6 mb-4">
@@ -145,7 +148,10 @@ const LogIn = () => {
                   <span className="text-muted fw-bold">
                     Don't Have an Account?
                   </span>{" "}
-                  <Link to="/signin" className="login-text text-decoration-none">
+                  <Link
+                    to="/signin"
+                    className="login-text text-decoration-none"
+                  >
                     Sign up
                   </Link>
                 </div>
