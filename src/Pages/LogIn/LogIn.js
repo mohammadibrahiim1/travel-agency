@@ -32,7 +32,7 @@ const LogIn = () => {
 
   return (
     <div>
-      <section className="">
+      <section className="login-container">
         <Container className="mt-5">
           <div className="row row-reverse g-0">
             <div className="  col-xl-6 d-none d-xl-block">
@@ -42,8 +42,9 @@ const LogIn = () => {
                 className="img-fluid"
               />
             </div>
-
-            <form onSubmit={handleSubmit} className="w-50 col-xl-6 m-auto p-2">
+           
+            <h2 className="ms-2 mb-4 fw-bold">Login Here!</h2>
+            <form onSubmit={handleSubmit} className=" col-xl-6 m-auto p-2">
               <div className="mb-3 text-start ">
                 {/* <div className="row ">
               <div className="col-md-6 mb-4">
@@ -75,7 +76,7 @@ const LogIn = () => {
             </div> */}
 
                 <div className="row">
-                  <div className="col-md-6 col-lg-12 mb-4">
+                  <div className="col-xl-6 col-lg-12 col-md-12 mb-4">
                     <div className="input-container">
                       <input
                         type="email"
@@ -104,7 +105,7 @@ const LogIn = () => {
                 </div>
 
                 {/* password input field */}
-                <div className="input-container password mb-4">
+                <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                   <input
                     type="password"
                     id="password"

@@ -50,7 +50,7 @@ const SignIn = () => {
         console.log(user);
       })
       .catch((error) => console.error(error));
-      setError(error.message);
+    setError(error.message);
   };
 
   const handleSubmit = (event) => {
@@ -78,17 +78,18 @@ const SignIn = () => {
   };
 
   return (
-    <Container className="mt-5">
+    <Container className="signIn-container">
       <div className="row g-0">
-        <div className="  col-xl-6 d-none d-xl-block">
+        <div className="col-xl-6 d-none d-xl-block">
           <img
             src="https://i.ibb.co/xmbWzPk/Group-5.png"
             alt="SamplePhoto"
             className="img-fluid"
           />
         </div>
-
-        <form onSubmit={handleSubmit} className="w-50 col-xl-6 m-auto p-2">
+      
+     <form onSubmit={handleSubmit} className=" col-xl-6 col-sm-12 col-md-12  m-auto p-2">
+     <h2 className="mb-5 fw-bold">Sign Up Here!</h2>
           <div className="mb-3 text-start ">
             <div className="row ">
               <div className="col-md-6 mb-4">
@@ -291,7 +292,8 @@ const SignIn = () => {
           </div>
         </div> */}
         </form>
-      </div>
+     </div>
+   
     </Container>
   );
 };

@@ -130,12 +130,23 @@ const Navbar = () => {
                     <FaBed /> Find Stay{" "}
                   </Link>
                 </li>
-                <li class="nav-item">
-                  <Link class="nav-link">Login</Link>
-                </li>
-                <li class="nav-item ">
-                  <Link class="nav-link sign-up-button ">Sign up</Link>
-                </li>
+
+                {user?.email ? (
+                  <div>
+                    <li class="nav-item">
+                      <Link onClick={handleLogOut} to="/login"  class="nav-link">Log out</Link>
+                    </li>
+                  </div>
+                ) : (
+                  <div>
+                    <li class="nav-item ">
+                      <Link to="/login" class="nav-link sign-up-button ">Login</Link>
+                    </li>
+                    <li class="nav-item ">
+                      <Link to="/signin" class="nav-link sign-up-button ">Sign up</Link>
+                    </li>
+                  </div>
+                )}
               </ul>
             </div>
           </div>

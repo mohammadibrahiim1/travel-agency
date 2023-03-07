@@ -16,6 +16,7 @@ const auth = getAuth(app);
 
 const UserContext = ({ children }) => {
   const [user, setUser] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
@@ -44,6 +45,7 @@ const UserContext = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
       console.log(currentUser);
     });
     return () => {
@@ -58,6 +60,7 @@ const UserContext = ({ children }) => {
     signInWithGoogle,
     logOut,
     signInWithFacebook,
+    loading,
   };
 
   return (
