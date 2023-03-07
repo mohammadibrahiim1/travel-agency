@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Context/UserContext";
+import './AddReviews.css'
 
 const AddReviews = () => {
   const { user } = useContext(AuthContext);
@@ -39,42 +40,30 @@ const AddReviews = () => {
   };
   return (
     <div>
-      <div className="w-50 m-auto shadow mt-5">
-        <p className="text-danger">add a review</p>
-        <form onSubmit={handleAddReview}>
-          {/* <div>
-            <input
-              type="text"
-              name="name"
-              placeholder="your name"
-              className="m-2 "
-            />
+      <section>
+        <div className="w-75 m-auto  ">
+          <p className="add-reviews">add a review</p>
+          <form className="text-center" onSubmit={handleAddReview}>
+            <textarea
+              name="message"
+              id=""
+              cols="50"
+              rows="2"
+              className="w-30 text-area ms-3"
+              placeholder="write a review about our service"
+            ></textarea>
 
-            <input
-              type="photoURL"
-              name="photoURL"
-              placeholder="enter your tour photo url"
-            />
-          </div> */}
+            <div>
+              <input
+                className="btn review-submit-button m-2"
+                type="submit"
+                value="add a review"
+              />
+            </div>
+          </form>
+        </div>
+      </section>
 
-          <textarea
-            name="message"
-            id=""
-            cols="50"
-            rows="2"
-            className="w-30"
-            placeholder="write a review about our service"
-          ></textarea>
-
-          <div>
-            <input
-              className="btn btn-danger m-2"
-              type="submit"
-              value="add a review"
-            />
-          </div>
-        </form>
-      </div>
       <div className="review-section d-flex justify-content-between align-items-center p-3">
         <div>
           <h2 className="review-title">Add a reviews</h2>
