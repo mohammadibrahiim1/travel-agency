@@ -15,16 +15,23 @@
   width: 72%;
   margin: auto;
 }
-.user-name{
+.user-name {
   font-size: 15px;
   font-weight: 600;
   text-transform: capitalize;
-  color: #6F1DF4;
+  color: #6f1df4;
 }
-.user-text{
+.user-text {
   font-size: 13px;
   font-weight: 600;
   text-transform: capitalize;
   color: #112211;
+}
 
+@media screen and (max-width: 576px) {
+  .reviews-container {
+    gap: 22px;
+    width: 90%;
+    margin: 0 auto;
+  }
 }

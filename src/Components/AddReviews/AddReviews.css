@@ -8,6 +8,12 @@
   font-size: 13px;
 }
 
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
 /* .form-control:focus {
   background-color: #f8fcfb !important;
 } */
@@ -27,7 +33,7 @@
   transition: 0.3s;
 }
 
-.subscribe-button{
+.subscribe-button {
   background-color: #8dd3bb;
   color: #112211;
   text-transform: capitalize;
@@ -50,10 +56,13 @@
   text-transform: uppercase;
   text-align: center;
 }
-
+.add-reviews-container {
+  width: 75%;
+  margin: auto;
+}
 .text-area {
-  border: 1px solid #112211;
-  border-radius: 5px;
+  width: 30%;
+  margin: auto;
 }
 
 .newsletter-title {
@@ -75,6 +84,10 @@
 .newsletter-section {
   width: 72%;
   height: 305px;
+  display: flex;
+  /* grid-template-columns: repeat(2,1fr); */
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   top: 200px;
   left: 250px;
@@ -138,8 +151,6 @@
   padding: 1.25rem;
   /* background-color: #f8fcfb; */
 }
-.subscribe-button {
-}
 
 /* .input:focus {
   border: 1.5px solid salmon;
@@ -168,6 +179,42 @@
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
     align-items: center;
+  }
+.text-area {
+  width: 90%;
+  margin: auto;
+}
+  .add-reviews-container {
+    width: 100%;
+    margin: auto;
+  }
+
+  .subscribe-button {
+    background-color: #8dd3bb;
+    color: #112211;
+    text-transform: capitalize;
+    font-weight: bold;
+    border: 1px solid #8dd3bb;
+    border-radius: 7px;
+    text-align: center;
+    /* margin-bottom: 12px; */
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .newsletter-section {
+    width: 72%;
+    height: 350px;
+    position: relative;
+    top: 150px;
+    left: 55px;
+    background-color: #f8fcfb;
+    border-radius: 7px;
   }
 
   .signup-body {

@@ -1,253 +1,158 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaGoogle, FaYoutube } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import "./Footer.css";
 
 const Footer = () => {
   return (
     <div>
-      {/* <a href="https://ibb.co/Y3LQnGT"><img src="https://i.ibb.co/hym9Qv1/emojione-v1-open-mailbox-with-lowered-flag.png" alt="emojione-v1-open-mailbox-with-lowered-flag" border="0"></a> */}
+      {/* <a href="https://ibb.co/Y3LQnGT"><img src="https://i.ibb.co/hym9Qv1/emojione-v1-open-mailbox-with-lowered-flag.png" alt="emojione-v1-open-mailbox-with-lowered-flag" border="0"></a> 
+      
+      <a href="https://ibb.co/LCS62m5"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="Logo" border="0"></a>
+      */}
       <section>
-        <footer class="footer-areLink footer-one mt-5 ">
-          <div class="footer-widget">
-            <div class="">
-              <div class="row ">
-                <div class="col-xl-2 col-lg-4 col-sm-12 col-md-4  text-center text-lg-start  text-md-center text-sm-center">
-                  <div class="f-about">
-                    <div class="footer-logo">
-                      <Link to="/">
-                        <img
-                          src="https://i.ibb.co/0fqZdTt/Logo.png"
-                          alt="Logo"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                  <div class="">
-                    <h5 class="text-lg-center text-md-center text-sm-center col-lg-8">
-                      find us!
-                    </h5>
-                    <div className="col-lg-8 ">
-                      <Link to="/">
-                        <FaFacebook
-                          className="text-secondary-emphasis me-3"
-                          style={{ height: "22px", width: "22px" }}
-                        />
-                      </Link>
+        <footer class="mt-5">
+          <div>
+            <section className="footer-container">
+              <div>
+                <div className="ms-3">
+                  <img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" />
+                </div>
+                <div className="social-icon-container">
+                  <Link to="/">
+                    <FaFacebook
+                      className="social-icon mt-3 "
+                      style={{ width: "28px", height: "28px" }}
+                    />
+                  </Link>
+                  <Link to="/">
+                    <FaInstagram
+                      className="social-icon mt-3"
+                      style={{ width: "28px", height: "28px" }}
+                    />
+                  </Link>
+                  <Link to="/">
+                    <FaTwitter
+                      className="social-icon mt-3"
+                      style={{ width: "28px", height: "28px" }}
+                    />
+                  </Link>
+                  <Link to="/">
+                    <FaYoutube
+                      className="social-icon mt-3"
+                      style={{ width: "28px", height: "28px" }}
+                    />
+                  </Link>
+                </div>
+              </div>
 
-                      <Link to="/">
-                        <FaInstagram
-                          className="text-secondary-emphasis me-3"
-                          style={{ height: "22px", width: "22px" }}
-                        />
-                      </Link>
-                      <Link to="/">
-                        <FaGoogle
-                          className="text-secondary-emphasis me-3"
-                          style={{ height: "22px", width: "22px" }}
-                        />
-                      </Link>
-                      <Link to="/">
-                        <FaYoutube
-                          className="text-secondary-emphasis me-3"
-                          style={{ height: "22px", width: "22px" }}
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-2 col-lg-2 col-sm-12 col-md-4 text-center text-lg-start text-md-center text-sm-center ">
-                  <div class="footer-destination">
-                    <h6 class="footer-title">Our Destinations</h6>
-                    <ul className="list-unstyled destination-list text-decoration-none">
-                      <li>
-                        <Link className="link-styled" to="/">
-                          About
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Contact
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Marketing
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Awards
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* <!-- footer link --> */}
-                </div>
-                <div class="col-xl-2 col-lg-3 col-sm-12 col-md-4 text-center text-lg-start text-md-center text-sm-center ">
-                  <div class="footer-destination">
-                    <h6 class="footer-title">Our Activities</h6>
-                    <ul className="list-unstyled activity text-decoration-none">
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Northern Lights
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Cruising & sailing
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Multi-activities
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          kayaing
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* <!-- footer link --> */}
-                </div>
-                <div class="col-xl-2 col-lg-4 col-sm-12 col-md-12 text-center text-sm-center text-md-center text-lg-start">
-                  {/* <!-- Start Footer Contact --> */}
-                  <div class="footer-destination">
-                    <h6 class="footer-title">Travel Blogs</h6>
-                    <ul className="list-unstyled travel-blog text-decoration-none">
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Rangamati
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Cox's Bazar
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Bandarban
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Sundorbar
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* <!-- End Footer Contact --> */}
-                </div>
-                <div class="col-xl-2 col-lg-4 col-sm-12 col-md-12 text-center text-sm-center text-md-center text-lg-start">
-                  {/* <!-- Start Footer Contact --> */}
-                  <div class="footer-destination">
-                    <h6 class="footer-title">Travel Blogs</h6>
-                    <ul className="list-unstyled travel-blog text-decoration-none">
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Rangamati
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Cox's Bazar
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Bandarban
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Sundorbar
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* <!-- End Footer Contact --> */}
-                </div>
-                {/* <div class="col-xl-2 col-lg-4 col-sm-12 col-md-12 text-center text-sm-center text-md-center text-lg-start">
-            
-                  <div class="footer-destination">
-                    <h6 class="footer-title">Travel Blogs</h6>
-                    <ul className="list-unstyled travel-blog text-decoration-none">
-                    <li>
-                        <Link className="link-styled" to="/">
-                          Rangamati
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Cox's Bazar
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                          Bandarban 
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="link-styled" to="/">
-                         Sundorbar 
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-             
-                </div> */}
+              <div>
+                <p className="footer-list-title">Our Destination</p>
+                <ul className="footer-list">
+                  <Link>
+                    {" "}
+                    <li>Canada</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Alaska</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>France</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Iceland</li>
+                  </Link>
+                </ul>
               </div>
-              {/* <!-- row --> */}
-            </div>
-            {/* <!-- container --> */}
-          </div>
-          {/* <!-- footer widget --> */}
-          <div class="footer-copyright">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 text-center text-md-center text-lg-center text-sm-center">
-                  <div
-                    class="
-                
-                  "
-                  >
-                    <p class="text-center copyright-text">
-                      Copyright © 2024 AyroUI. All Rights Reserved
-                    </p>
-                    <ul class="social">
-                      <li>
-                        <Link to="/">
-                          <i class="lni lni-facebook-filled"></i>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/">
-                          <i class="lni lni-twitter-original"></i>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/">
-                          <i class="lni lni-instagram-filled"></i>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/">
-                          <i class="lni lni-linkedin-original"></i>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* <!-- copyright --> */}
-                </div>
+              <div>
+                <p className="footer-list-title">Our Activities</p>
+                <ul className="footer-list">
+                  <Link>
+                    {" "}
+                    <li>Northern Lights</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Cruising & sailing</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Multi-activities</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Kayaing</li>
+                  </Link>
+                </ul>
               </div>
-              {/* <!-- row --> */}
-            </div>
-            {/* <!-- container --> */}
+              <div>
+                <p className="footer-list-title">Travel Blogs</p>
+                <ul className="footer-list">
+                  <Link>
+                    {" "}
+                    <li>Bali Travel Guide</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Turkey Travel Guide</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li> France Travel Guide</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>New York Travel Guide</li>
+                  </Link>
+                </ul>
+              </div>
+              <div>
+                <p className="footer-list-title">About Us</p>
+                <ul className="footer-list">
+                  <Link>
+                    {" "}
+                    <li>Our Story</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Packages</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Gallery</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Facilities</li>
+                  </Link>
+                </ul>
+              </div>
+              <div>
+                <p className="footer-list-title">Contact Us</p>
+                <ul className="footer-list">
+                  <Link>
+                    {" "}
+                    <li>See Our Blogs</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Send us message</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Work With Us</li>
+                  </Link>
+                  <Link>
+                    {" "}
+                    <li>Subscribe Newsletter</li>
+                  </Link>
+                </ul>
+              </div>
+            </section>
           </div>
-          {/* <!-- footer copyright --> */}
         </footer>
       </section>
     </div>

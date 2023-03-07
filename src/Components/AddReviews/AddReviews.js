@@ -41,7 +41,7 @@ const AddReviews = () => {
   return (
     <div>
       <section>
-        <div className="w-75 m-auto  ">
+        <div className=" add-reviews-container ">
           <p className="add-reviews">add a review</p>
           <form className="text-center" onSubmit={handleAddReview}>
             <textarea
@@ -49,7 +49,7 @@ const AddReviews = () => {
               id=""
               cols="50"
               rows="2"
-              className="w-30 text-area ms-3"
+              className=" text-area"
               placeholder="write a review about our service"
             ></textarea>
 
@@ -64,7 +64,7 @@ const AddReviews = () => {
         </div>
       </section>
 
-      <div className="newsletter-section d-flex justify-content-between align-items-center p-3">
+      <div className="newsletter-section  p-3">
         <div>
           <h2 className="newsletter-title">Subscribe NewsLetter</h2>
           <h6 className="newsletter-subtitle">The Travel</h6>
@@ -75,7 +75,7 @@ const AddReviews = () => {
 
           <form
             action=""
-            className="d-flex justify-content-start align-content-center"
+            className="form-container"
           >
             <div className="input-container">
               <input
@@ -99,14 +99,14 @@ const AddReviews = () => {
 
             <div>
               <input
-                className="subscribe-button m-2 ps-3 pe-3 pt-1 pb-1 "
+                className="subscribe-button m-2 ps-3 pe-3 pt-1 pb-1  "
                 type="submit"
                 value="Subscribe"
               />
             </div>
           </form>
         </div>
-        <div>
+        <div className="d-none d-lg-block d-md-block">
           <img
             src="https://i.ibb.co/hym9Qv1/emojione-v1-open-mailbox-with-lowered-flag.png"
             alt=""
