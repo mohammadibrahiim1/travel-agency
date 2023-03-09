@@ -132,7 +132,7 @@ const Facilities = () => {
         </div>
       </section>
       <section className="accordion-section row">
-        <div className="col-6">
+        <div className="col-lg-6 col-sm-12 col-md-6">
           <h6>What they say</h6>
           <h2>Frequently Asked Question</h2>
           <p>
@@ -141,7 +141,7 @@ const Facilities = () => {
             inventore at dolore vitae.
           </p>
         </div>
-        <div className="col-6">
+        <div className=" col-sm-12 col-lg-6 col-md-6">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
@@ -229,10 +229,10 @@ const Facilities = () => {
           </div>
         </div>
       </section>
-      <section className="accordion-section explore">
+      <section className="explore">
 
         <div>
-          <h2 className="">Let's go places together</h2>
+          <h2 >Let's go places together</h2>
           <p>Discover the latest offers and news and start planning your next trip with us.</p>
         </div>
        
