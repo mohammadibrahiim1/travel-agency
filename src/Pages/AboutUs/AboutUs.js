@@ -11,14 +11,14 @@ const AboutUs = () => {
       <section className="mt-5 pt-5">
         <div>
           <div className="about-us-title">
-            <h4 className="title">Why Choose Us?</h4>
+            <h2 className="title">Why Choose Us?</h2>
             <p className="sub-title text-center">
               These popular destinations have a lot to offer
             </p>
           </div>
 
-          <div className="service-container container mt-5">
-            <div className="service">
+          <div className="service-container mt-5">
+            <div className="service shadow">
               <div>
                 <RiCustomerService2Fill className="service-icon" />
               </div>
@@ -29,7 +29,7 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div className="service">
+            <div className="service shadow">
               <div>
                 <RiCustomerService2Fill className="service-icon" />
               </div>
@@ -40,7 +40,7 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
-            <div className="service">
+            <div className="service shadow">
               <div>
                 <RiCustomerService2Fill className="service-icon" />
               </div>
@@ -56,8 +56,9 @@ const AboutUs = () => {
       </section>
       <section>
         <div className="about-container">
-          <div className="text-center mt-5 pt-5">
-            <h4>About Us</h4>
+          <div className="text-center">
+            <h2 className="heading">About Us</h2>
+            <p className="sub-heading">read more about out travel agency</p>
           </div>
           <div className="about-info container">
             <p className="about">
@@ -94,9 +95,10 @@ const AboutUs = () => {
           <Row>
             <Col lg="12">
               {/* <Subtitle subtitle={'Gallery'}></Subtitle> */}
-              <h2 className="gallery__title text-center mt-5 mb-4">Gallery</h2>
+              <h2 className="gallery__title text-center mt-5">Gallery</h2>
+              <p className="text-center">see our gallery </p>
             </Col>
-            <Col lg="12">
+            <Col lg="12 mt-4">
               <MasonaryImageGallery></MasonaryImageGallery>
             </Col>
           </Row>
