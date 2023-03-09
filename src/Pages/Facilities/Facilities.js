@@ -9,7 +9,7 @@ const Facilities = () => {
   return (
     <div>
       <section className="tour-guide-section ">
-        <div className="heading container">
+        <div className="heading">
           <h2>Meet Our Tour Guide</h2>
           <p>
             Find a Local tour guide. so, you can know more about the tourist
@@ -17,10 +17,11 @@ const Facilities = () => {
           </p>
         </div>
 
-        <div className="tour-guide-card-container container">
-          {tourGuide.map((guide) => (
+        <div className="tour-guide-card-container">
+        {tourGuide.slice(0,5).map((guide) => (
             <GuideCard guide={guide} key={guide._id}></GuideCard>
           ))}
+       
         </div>
       </section>
     </div>
