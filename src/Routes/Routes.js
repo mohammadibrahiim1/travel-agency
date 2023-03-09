@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "../Layout/Root";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
 import ContactUs from "../Pages/ContactUs/ContactUs";
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
             {
                 path:"/tourGuide/:id",
                 element:<GuideDetails></GuideDetails>
+            },
+            {
+                path:"/aboutus",
+                element:<AboutUs></AboutUs>
             },
 
         ]

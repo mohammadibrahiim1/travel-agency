@@ -1,27 +1,109 @@
 .tour-guide-section .heading h2 {
+  text-align: center;
   font-size: 32px;
   font-weight: 600;
   color: #112211;
 }
 .tour-guide-section .heading p {
+  text-align: center;
   font-size: 13px;
   font-weight: 400;
   color: #000000;
 }
-.tour-guide-section .heading  {
- width: 60%;
- margin: auto;
- margin-top: 100px;
- margin-bottom: 20px;
+.tour-guide-section .heading {
+  width: 60%;
+  margin: auto;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .tour-guide-card-container {
   width: 60%;
-  margin:  auto;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
   align-items: center;
   gap: 14px;
   /* gap: 21px; */
+}
+
+/* benefits section styles  */
+
+.benefits-icon {
+  color: #8dd3bb;
+}
+.benefits-info h4 {
+  color: #112211;
+  font-weight: 600;
+  line-height: 24px;
+}
+.benefits-info p {
+  color: #112211;
+  font-size: 13px;
+  opacity: 0.7;
+  font-weight: 500;
+}
+.benefits-container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  width: 60%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.service-section-heading h2 {
+  text-align: center;
+  padding-top: 150px;
+  font-size: 32px;
+  color: #112211;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* accordion section styles */
+
+.accordion-section {
+  padding-top: 100px;
+  padding-bottom: 70px;
+  width: 60%;
+  margin: auto;
+}
+.accordion-section h2 {
+  color: #112211;
+  font-size: 32px;
+  font-weight: 700;
+}
+.accordion-section h6 {
+  color: #8dd3bb;
+  font-size: 13px;
+  font-weight: 700;
+}
+.accordion-section p {
+  color: #112211;
+  opacity: 0.7;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.explore{
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ),
+  url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
+/* transform: rotate(180deg); */
+width: 100%;
+height: 599px;
+margin: auto;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-color: #fafbfc;
+border-radius: 7px;
 }

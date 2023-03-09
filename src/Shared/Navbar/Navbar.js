@@ -48,6 +48,13 @@ const Navbar = () => {
                   <FaServicestack /> Facilities{" "}
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/aboutus">
+                  {" "}
+                  <FaServicestack /> About Us{" "}
+                </Link>
+              </li>
+           
             </ul>
 
             <div className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -58,6 +65,7 @@ const Navbar = () => {
             </div>
 
             <div className="d-sm-none d-lg-block d-md-block d-none">
+      
               {user?.email ? (
                 <div className="">
                   <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
