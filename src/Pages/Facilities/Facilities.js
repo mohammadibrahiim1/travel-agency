@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
+import AddReviews from "../../Components/AddReviews/AddReviews";
 import GuideCard from "../../Components/GuideCard/GuideCard";
 import { ApiContext } from "../../DataContext.js/DataContext";
+import UserReviews from "../Home/UserReviews/UserReviews";
 import "./Facilities.css";
 
 const Facilities = () => {
   const { tourGuide } = useContext(ApiContext);
-//   console.log(tourGuide);
+  //   console.log(tourGuide);
   return (
     <div>
       <section className="tour-guide-section ">
@@ -18,11 +20,17 @@ const Facilities = () => {
         </div>
 
         <div className="tour-guide-card-container">
-        {tourGuide.slice(0,5).map((guide) => (
+          {tourGuide.slice(0, 5).map((guide) => (
             <GuideCard guide={guide} key={guide._id}></GuideCard>
           ))}
-       
         </div>
+      </section>
+      <hr />
+      <section>
+        <UserReviews></UserReviews>
+      </section>
+      <section>
+        <AddReviews></AddReviews>
       </section>
     </div>
   );

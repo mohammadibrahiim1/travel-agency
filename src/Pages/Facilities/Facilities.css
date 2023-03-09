@@ -11,6 +11,8 @@
 .tour-guide-section .heading  {
  width: 60%;
  margin: auto;
+ margin-top: 100px;
+ margin-bottom: 20px;
 }
 
 .tour-guide-card-container {

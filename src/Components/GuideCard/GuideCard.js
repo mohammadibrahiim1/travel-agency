@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./GuideCard.css";
 
 const GuideCard = ({ guide }) => {
   console.log(guide);
-  const { name, image, location, quote, rate, ratings } = guide;
+  const { name, image, location, quote, rate, ratings,_id } = guide;
   return (
     <div>
       <div class="card  guide-card  mb-3" style={{ "max-width": "580px" }}>
@@ -28,7 +29,7 @@ const GuideCard = ({ guide }) => {
               <p class="quote">{quote.slice(0,48)}</p>
               <p class="card-text d-flex justify-content-between align-items-center">
                 <small class="text-warning">{ratings}</small>
-                <small className="btn btn-outline-info border-1">see details</small>
+                <Link to={`/tourGuide/${_id}`} className="btn btn-outline-info border-1">see details</Link>
               </p>
             </div>
           </div>

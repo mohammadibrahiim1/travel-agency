@@ -8,6 +8,7 @@ import FindFlights from "../Pages/FindFlights/FindFlights";
 import FindStays from "../Pages/FindStays/FindStays";
 import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
+import GuideDetails from "../Pages/GuideDetails/GuideDetails";
 import Home from "../Pages/Home/Home";
 import LogIn from "../Pages/LogIn/LogIn";
 import Packages from "../Pages/Packages/Packages";
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path:'/facilities',
                 element:<Facilities></Facilities>
+            },
+            {
+                path:"/tourGuide/:id",
+                element:<GuideDetails></GuideDetails>
             },
 
         ]

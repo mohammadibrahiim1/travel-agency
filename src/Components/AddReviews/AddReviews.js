@@ -12,6 +12,7 @@ const AddReviews = () => {
     const email = user?.email || "unregister";
     const photoURL = user?.photoURL;
     const text = form.message.value;
+    // const category = form.category.value;
     console.log(name, photoURL, text, email);
 
     const addreview = {
@@ -19,6 +20,7 @@ const AddReviews = () => {
       photoURL,
       text,
       email,
+      // category
     };
 
     fetch("http://localhost:5000/reviews", {
@@ -43,15 +45,23 @@ const AddReviews = () => {
       <section>
         <div className=" add-reviews-container ">
           <p className="add-reviews">add a review</p>
-          <form className="text-center" onSubmit={handleAddReview}>
+          <form className="text-center " onSubmit={handleAddReview}>
             <textarea
               name="message"
               id=""
               cols="50"
               rows="2"
               className="text-area"
-              placeholder="write a review about our service"
-            ></textarea>
+              placeholder="review for guide, service or packages"
+            ></textarea> 
+            {/* <textarea
+              name="category"
+              id=""
+              cols="50"
+              rows="2"
+              className="text-area"
+              placeholder="review category"
+            ></textarea> */}
 
             <div>
               <input
@@ -73,10 +83,7 @@ const AddReviews = () => {
             stories.
           </p>
 
-          <form
-            action=""
-            className="form-container"
-          >
+          <form action="" className="form-container">
             <div className="input-container">
               <input
                 type="email"
