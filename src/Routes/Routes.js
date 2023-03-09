@@ -3,12 +3,14 @@ import Root from "../Layout/Root";
 import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import Facilities from "../Pages/Facilities/Facilities";
 import FindFlights from "../Pages/FindFlights/FindFlights";
 import FindStays from "../Pages/FindStays/FindStays";
 import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import Home from "../Pages/Home/Home";
 import LogIn from "../Pages/LogIn/LogIn";
+import Packages from "../Pages/Packages/Packages";
 import SetPassword from "../Pages/SetPassword/SetPassword";
 import SignIn from "../Pages/SignIn/SignIn";
 import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
@@ -58,6 +60,10 @@ export const router = createBrowserRouter([
             {
                 path:'/contactus',
                 element:<ContactUs></ContactUs>
+            },
+            {
+                path:'/facilities',
+                element:<Facilities></Facilities>
             },
 
         ]

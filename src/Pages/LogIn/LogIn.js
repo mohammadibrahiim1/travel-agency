@@ -16,12 +16,12 @@ const LogIn = () => {
     //  const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     login(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         form.reset();
       })
       .catch((error) => {
@@ -45,7 +45,7 @@ const LogIn = () => {
 
             <form
               onSubmit={handleSubmit}
-              className=" col-xl-6 col-md-8 m-auto p-2"
+              className=" col-xl-6 col-md-8  m-auto p-2"
             >
               <h2 className=" mb-5 fw-bold">Login Here!</h2>
               <div className="mb-3 text-start ">
@@ -108,7 +108,8 @@ const LogIn = () => {
                 </div>
 
                 {/* password input field */}
-                <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+              <div className="row">
+              <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                   <input
                     type="password"
                     id="password"
@@ -119,6 +120,7 @@ const LogIn = () => {
                   />
                   <label className="label">Password</label>
                 </div>
+              </div>
                 {/* <div className="input-container password mb-4">
               <input
                 type="password"

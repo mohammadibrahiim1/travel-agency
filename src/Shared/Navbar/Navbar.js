@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import { FaPlane, FaBed } from "react-icons/fa";
+import { FaPlane, FaBed,FaServicestack } from "react-icons/fa";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -40,6 +40,12 @@ const Navbar = () => {
                 <Link class="nav-link" to="/findStays">
                   {" "}
                   <FaBed /> Find Stay{" "}
+                </Link>
+              </li>
+              <li class="nav-item">
+                <Link class="nav-link" to="/facilities">
+                  {" "}
+                  <FaServicestack /> Facilities{" "}
                 </Link>
               </li>
             </ul>

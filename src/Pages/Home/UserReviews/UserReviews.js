@@ -6,7 +6,7 @@ import "./UserReviews.css";
 const UserReviews = () => {
   const { reviews } = useContext(ApiContext);
 
-  console.log(reviews);
+  // console.log(reviews);
   return (
     <div>
       <hr />

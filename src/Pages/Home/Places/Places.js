@@ -7,7 +7,7 @@ import { ApiContext } from "../../../DataContext.js/DataContext";
 
 const Places = () => {
   const { places } = useContext(ApiContext);
-  console.log(places);
+  // console.log(places);
   return (
     <div>
       <section className="places-section">
