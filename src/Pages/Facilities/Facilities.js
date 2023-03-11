@@ -25,7 +25,7 @@ const Facilities = () => {
     <div>
       <section className="facilities-header-section">
       <div>
-          <h2>Let's go places together</h2>
+          <h2>Travel World To Gain Knowledge</h2>
           <p>
             Discover the latest offers and news and start planning your next
             trip with us.

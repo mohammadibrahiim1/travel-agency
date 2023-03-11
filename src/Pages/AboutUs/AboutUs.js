@@ -1,6 +1,10 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { RiCustomerService2Fill,RiCarFill,RiBookReadFill } from "react-icons/ri";
+import {
+  RiCustomerService2Fill,
+  RiCarFill,
+  RiBookReadFill,
+} from "react-icons/ri";
 import MasonaryImageGallery from "../../Components/MasonaryImageGallery/MasonaryImageGallery";
 // import MasonaryImagesGallery from "../MasonaryImagesGallery/MasonaryImagesGallery";
 import "./AboutUs.css";
@@ -9,7 +13,13 @@ const AboutUs = () => {
   return (
     <div>
       <section className="about-us-header-section">
-
+        <div>
+          <h2>Travel World To Gain Knowledge</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
+        </div>
       </section>
       <section className="mt-5 pt-5">
         <div>
