@@ -4,6 +4,35 @@
   font-weight: 600;
   color: #112211;
 }
+
+.facilities-header-section {
+  /* linear-gradient (45deg,
+  rgba(245,70,66, 0.75),
+  rgba(8,83,156, 0.75)), url('https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png');
+width: 100%;
+height: 280px;
+text-align: center;
+  color: #fff; */
+
+  background-image: 
+  /* linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ), */
+    /* <a href="https://ibb.co/9bw1Qp4"><img src="https://i.ibb.co/k43wNGD/maldives.jpg" alt="maldives" border="0"></a> */
+    url(https://i.ibb.co/k43wNGD/maldives.jpg);
+  /* transform: rotate(180deg); */
+  width: 100%;
+  height: 599px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #fafbfc;
+  margin-bottom:15px;
+  /* border-radius: 7px; */
+}
 .tour-guide-section .heading p {
   text-align: center;
   font-size: 13px;
@@ -124,6 +153,34 @@
 }
 
 @media screen and (max-width: 576px) {
+  .facilities-header-section {
+    /* linear-gradient (45deg,
+    rgba(245,70,66, 0.75),
+    rgba(8,83,156, 0.75)), url('https://media.geeksforgeeks.org/wp-content/cdn-uploads/20190710102234/download3.png');
+  width: 100%;
+  height: 280px;
+  text-align: center;
+    color: #fff; */
+  
+    background-image: 
+    /* linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 100%
+      ), */
+      /* <a href="https://ibb.co/9bw1Qp4"><img src="https://i.ibb.co/k43wNGD/maldives.jpg" alt="maldives" border="0"></a> */
+      url(https://i.ibb.co/k43wNGD/maldives.jpg);
+    /* transform: rotate(180deg); */
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #fafbfc;
+    margin-bottom:15px;
+    /* border-radius: 7px; */
+  }
   .tour-guide-card-container {
     width: 90%;
     margin: auto;

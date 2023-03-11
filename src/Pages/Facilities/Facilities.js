@@ -18,6 +18,9 @@ const Facilities = () => {
   //   console.log(tourGuide);
   return (
     <div>
+      <section className="facilities-header-section"> 
+
+      </section>
       <section className="tour-guide-section ">
         <div className="heading">
           <h2>Meet Our Tour Guide</h2>
