@@ -18,9 +18,7 @@ const Facilities = () => {
   //   console.log(tourGuide);
   return (
     <div>
-      <section className="facilities-header-section"> 
-
-      </section>
+      <section className="facilities-header-section"></section>
       <section className="tour-guide-section ">
         <div className="heading">
           <h2>Meet Our Tour Guide</h2>
@@ -209,7 +207,7 @@ const Facilities = () => {
                   aria-expanded="false"
                   aria-controls="flush-collapseThree"
                 >
-                 How to cancel a trip?
+                  How to cancel a trip?
                 </button>
               </h2>
               <div
@@ -233,12 +231,13 @@ const Facilities = () => {
         </div>
       </section>
       <section className="explore">
-
         <div>
-          <h2 >Let's go places together</h2>
-          <p>Discover the latest offers and news and start planning your next trip with us.</p>
+          <h2>Let's go places together</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
         </div>
-       
 
         {/* <div className="col-6">
           <h6>What they say</h6>

@@ -69,7 +69,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:"/tourGuide/:id",
-                element:<GuideDetails></GuideDetails>
+                element:<GuideDetails></GuideDetails>,
+                loader: async ({params}) => fetch(`http://localhost:5000/tourGuide/${params.id}`)
             },
             {
                 path:"/aboutus",

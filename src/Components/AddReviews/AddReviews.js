@@ -8,8 +8,8 @@ const AddReviews = () => {
   const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = user?.displayName || "unregisterd";
-    const email = user?.email || "unregister";
+    const name = user?.displayName || "unregistered";
+    const email = user?.email || "unregistered";
     const photoURL = user?.photoURL;
     const text = form.message.value;
     // const category = form.category.value;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { RiCustomerService2Fill } from "react-icons/ri";
+import { RiCustomerService2Fill,RiCarFill,RiBookReadFill } from "react-icons/ri";
 import MasonaryImageGallery from "../../Components/MasonaryImageGallery/MasonaryImageGallery";
 // import MasonaryImagesGallery from "../MasonaryImagesGallery/MasonaryImagesGallery";
 import "./AboutUs.css";
@@ -8,6 +8,9 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return (
     <div>
+      <section className="about-us-header-section">
+
+      </section>
       <section className="mt-5 pt-5">
         <div>
           <div className="about-us-title">
@@ -31,10 +34,10 @@ const AboutUs = () => {
             </div>
             <div className="service shadow">
               <div>
-                <RiCustomerService2Fill className="service-icon" />
+                <RiCarFill className="service-icon" />
               </div>
               <div>
-                <h4 className="service-title">customer service 24h</h4>
+                <h4 className="service-title">Transport</h4>
                 <p className="sub-title">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
                 </p>
@@ -42,10 +45,10 @@ const AboutUs = () => {
             </div>
             <div className="service shadow">
               <div>
-                <RiCustomerService2Fill className="service-icon" />
+                <RiBookReadFill className="service-icon" />
               </div>
               <div>
-                <h4 className="service-title">customer service 24h</h4>
+                <h4 className="service-title">Fullguide</h4>
                 <p className="sub-title">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
                 </p>
@@ -58,7 +61,7 @@ const AboutUs = () => {
         <div className="about-container">
           <div className="text-center">
             <h2 className="heading">About Us</h2>
-            <p className="sub-heading">read more about out travel agency</p>
+            <p className="sub-heading">read more about our travel agency</p>
           </div>
           <div className="about-info container">
             <p className="about">
