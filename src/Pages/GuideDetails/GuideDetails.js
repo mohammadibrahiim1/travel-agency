@@ -28,6 +28,16 @@ const GuideDetails = () => {
 
   return (
     <div>
+      <section className="guide-details-header-section">
+      <div>
+          <h2>Let's go places together</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
+        </div>
+      </section>
+
       <section className="guide-details-section">
         <h2 className="text-center fw-bold text-dark mb-5 pb-5 mt-5 ">
           See our tour guide details & activity
@@ -46,18 +56,18 @@ const GuideDetails = () => {
               <p className="fw-bold guide-location ">{location}</p>
               <p>{quote}</p>
 
-              <div className="guide-social-link" >
+              <div className="guide-social-link">
                 <Link className="link" to="/">
                   {" "}
                   <FaFacebook style={{ width: "22px", height: "22px" }} />
                 </Link>
                 <Link to="/" className="link">
                   {" "}
-                  <FaInstagram  style={{ width: "22px", height: "22px" }} />
+                  <FaInstagram style={{ width: "22px", height: "22px" }} />
                 </Link>
                 <Link to="/" className="link">
                   {" "}
-                  <FaWhatsappSquare  style={{ width: "22px", height: "22px" }} />
+                  <FaWhatsappSquare style={{ width: "22px", height: "22px" }} />
                 </Link>
               </div>
             </div>

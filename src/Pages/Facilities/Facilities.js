@@ -23,7 +23,15 @@ const Facilities = () => {
 
   return (
     <div>
-      <section className="facilities-header-section"></section>
+      <section className="facilities-header-section">
+      <div>
+          <h2>Let's go places together</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
+        </div>
+      </section>
       <section className="tour-guide-section ">
         <div className="heading">
           <h2>Meet Our Tour Guide</h2>
