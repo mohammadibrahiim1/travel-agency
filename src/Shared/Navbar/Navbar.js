@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { FaPlane, FaBed,FaServicestack } from "react-icons/fa";
+import { FaPlane, FaBed, FaServicestack } from "react-icons/fa";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
@@ -54,7 +54,6 @@ const Navbar = () => {
                   <FaServicestack /> About Us{" "}
                 </Link>
               </li>
-           
             </ul>
 
             <div className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -65,7 +64,6 @@ const Navbar = () => {
             </div>
 
             <div className="d-sm-none d-lg-block d-md-block d-none">
-      
               {user?.email ? (
                 <div className="">
                   <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -144,20 +142,38 @@ const Navbar = () => {
                     <FaBed /> Find Stay{" "}
                   </Link>
                 </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/facilities">
+                    {" "}
+                    <FaServicestack /> Facilities{" "}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/aboutus">
+                    {" "}
+                    <FaServicestack /> About Us{" "}
+                  </Link>
+                </li>
 
                 {user?.email ? (
                   <div>
                     <li class="nav-item">
-                      <Link onClick={handleLogOut} to="/login"  class="nav-link">Log out</Link>
+                      <Link onClick={handleLogOut} to="/login" class="nav-link">
+                        Log out
+                      </Link>
                     </li>
                   </div>
                 ) : (
                   <div>
                     <li class="nav-item ">
-                      <Link to="/login" class="nav-link sign-up-button ">Login</Link>
+                      <Link to="/login" class="nav-link sign-up-button ">
+                        Login
+                      </Link>
                     </li>
                     <li class="nav-item ">
-                      <Link to="/signin" class="nav-link sign-up-button ">Sign up</Link>
+                      <Link to="/signin" class="nav-link sign-up-button ">
+                        Sign up
+                      </Link>
                     </li>
                   </div>
                 )}

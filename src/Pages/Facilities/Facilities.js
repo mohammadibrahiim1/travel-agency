@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import GuideCard from "../../Components/GuideCard/GuideCard";
 import { ApiContext } from "../../DataContext.js/DataContext";
@@ -15,7 +15,12 @@ import "./Facilities.css";
 
 const Facilities = () => {
   const { tourGuide } = useContext(ApiContext);
-  //   console.log(tourGuide);
+  const [visible, setVisible] = useState(6);
+
+  const showMore = () => {
+    setVisible((preValue) => preValue + 3);
+  };
+
   return (
     <div>
       <section className="facilities-header-section"></section>
@@ -29,9 +34,12 @@ const Facilities = () => {
         </div>
 
         <div className="tour-guide-card-container">
-          {tourGuide.slice(0, 6).map((guide) => (
+          {tourGuide.slice(0, visible).map((guide) => (
             <GuideCard guide={guide} key={guide._id}></GuideCard>
           ))}
+        </div>
+        <div className=" d-flex justify-content-center mt-4" onClick={showMore}>
+          <button className="btn btn-light ">show more</button>
         </div>
       </section>
       <section className="services-section">

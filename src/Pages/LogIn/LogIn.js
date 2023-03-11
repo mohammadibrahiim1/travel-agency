@@ -8,7 +8,7 @@ import { Container } from "react-bootstrap";
 
 const LogIn = () => {
   const [error, setError] = useState();
-  const { login } = useContext(AuthContext);
+  const { login,signInWithGoogle,signInWithFacebook } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,18 +16,40 @@ const LogIn = () => {
     //  const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(email, password);
+    console.log(email, password);
 
     login(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        console.log(user);
         form.reset();
       })
       .catch((error) => {
         console.error(error);
         setError(error.message);
       });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        // navigate('/courses')
+        console.log(user);
+        setError("");
+      })
+      .catch((error) => console.error(error));
+    setError(error.message);
+  };
+
+  const handleFacebookSignIn = () => {
+    signInWithFacebook()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.error(error));
+    setError(error.message);
   };
 
   return (
@@ -49,37 +71,8 @@ const LogIn = () => {
             >
               <h2 className=" mb-5 fw-bold">Login Here!</h2>
               <div className="mb-3 text-start ">
-                {/* <div className="row ">
-              <div className="col-md-6 mb-4">
-                <div className="input-container">
-                  <input
-                    type="text"
-                    id="firstName"
-                    className="input"
-                    placeholder=" "
-                    name="firstName"
-                    required
-                  />
-                  <label className="label">First Name</label>
-                </div>
-              </div>
-              <div className="col-md-6 mb-4">
-                <div className="input-container">
-                  <input
-                    type="text"
-                    id="lastName"
-                    className="input"
-                    placeholder=" "
-                    name="lastName"
-                    required
-                  />
-                  <label className="label">Last Name</label>
-                </div>
-              </div>
-            </div> */}
-
                 <div className="row">
-                  <div className="col-xl-6 col-lg-12 col-md-12 mb-4">
+                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                     <div className="input-container">
                       <input
                         type="email"
@@ -92,51 +85,40 @@ const LogIn = () => {
                       <label className="label">Email</label>
                     </div>
                   </div>
-                  {/* <div className="col-md-6 mb-4">
-                <div className="input-container">
-                  <input
-                    type="text"
-                    id="phone"
-                    className="input"
-                    placeholder=" "
-                    name="phone"
-                    required
-                  />
-                  <label className="label">Phone</label>
                 </div>
-              </div> */}
+                <div className="row">
+                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                    <div className="input-container">
+                      <input
+                        type="password"
+                        id="password"
+                        className="input"
+                        placeholder=" "
+                        name="password"
+                        required
+                      />
+                      <label className="label">password</label>
+                    </div>
+                  </div>
                 </div>
 
                 {/* password input field */}
-              <div className="row">
-              <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                {/* <div className="row">
+                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                  <div className="input-container">
                   <input
-                    type="password"
-                    id="password"
-                    className="input"
-                    placeholder=" "
-                    name="password"
-                    required
-                  />
-                  <label className="label">Password</label>
-                </div>
-              </div>
-                {/* <div className="input-container password mb-4">
-              <input
-                type="password"
-                id="confirmPassword"
-                className="input"
-                placeholder=" "
-                name="confirmPassword"
-              />
-              <label className="label">Confirm Password</label>
-            </div> */}
-                {/* <div className="text-start">
-              <input type="checkbox" required />
-              <label className="ms-1  agree ">
-                I agree to all the Terms and Privacy Policies
-              </label>
-            </div> */}
+                      type="password"
+                      id="password"
+                      className="input"
+                      placeholder=" "
+                      name="password"
+                      required
+                    />
+                  </div>
+                    <label className="label">Password</label>
+                  </div>
+                </div> */}
+
                 <div className="signUp">
                   <button
                     // type="button"
@@ -162,11 +144,11 @@ const LogIn = () => {
                   <p className="text-center "> Or Login with</p>
                 </div>
 
-                <div className="social-signUP mt-5">
-                  <button className="btn btn-light  w-100 text-primary p-2">
+                <div className="social-login mt-5">
+                  <button onClick={handleFacebookSignIn} className="btn btn-light   text-primary p-2">
                     <FaFacebook style={{ width: "22px", height: "22px" }} />
                   </button>
-                  <button className="btn btn-light   w-100  p-2">
+                  <button onClick={handleGoogleSignIn} className="btn btn-light     p-2">
                     <FcGoogle style={{ width: "22px", height: "22px" }} />
                   </button>
                   <button className="btn btn-light   w-100  p-2">
