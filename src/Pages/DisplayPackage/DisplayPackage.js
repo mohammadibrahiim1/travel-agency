@@ -68,6 +68,7 @@ const DisplayPackage = ({ pk }) => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

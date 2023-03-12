@@ -14,6 +14,9 @@ const Packages = () => {
             <DisplayPackage pk={pk} key={pk._id}></DisplayPackage>
           ))}
         </div>
+        <div className="text-center">
+            <button className="btn btn-outline-dark">see more</button>
+        </div>
       </section>
     </div>
   );
