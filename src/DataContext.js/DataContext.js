@@ -6,7 +6,7 @@ const DataContext = ({ children }) => {
   const [places, setPlaces] = useState([]);
   const [reviews, setReviews] = useState([]);
   const [tourGuide, setTourGuide] = useState([]);
-  // const [guideDetails, setGuideDetails] = useState([]);
+  const [packages, setPackages] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/places")
@@ -31,14 +31,25 @@ const DataContext = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         setTourGuide(data);
+        // console.log(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/packages")
+      .then((res) => res.json())
+      .then((data) => {
+        setPackages(data);
         console.log(data);
       });
   }, []);
+
 
   const apiData = {
     places,
     reviews,
     tourGuide,
+    packages,
   };
 
   return (

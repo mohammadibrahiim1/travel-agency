@@ -1,18 +1,22 @@
-import React, { useContext } from 'react';
-import './Packages.css'
+import React, { useContext } from "react";
+import { ApiContext } from "../../DataContext.js/DataContext";
+import DisplayPackage from "../DisplayPackage/DisplayPackage";
+import "./Packages.css";
 
 const Packages = () => {
-
-
-    
-   
-
- 
-    return (
+  const { packages } = useContext(ApiContext);
+  console.log(packages);
+  return (
+    <div>
+      <section>
         <div>
-            show our packages 
+          {packages.map((pk) => (
+            <DisplayPackage pk={pk} key={pk._id}></DisplayPackage>
+          ))}
         </div>
-    );
+      </section>
+    </div>
+  );
 };
 
 export default Packages;

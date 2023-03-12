@@ -7,13 +7,13 @@ const GuideCard = ({ guide }) => {
   const { name, image, location, quote, rate, ratings,_id } = guide;
   return (
     <div>
-      <div class="card  guide-card  mb-3" style={{ "max-width": "580px" }}>
+      <div class="card  guide-card  mb-3" style={{ "max-width": "580px", "height":"200px" }}>
         <div class="row g-0">
           <div class="col-md-4">
             <img
               src={image}
-              class="img-fluid rounded-start"
-              style={{ width: "210px", height: "210px" }}
+              class="img-fluid  rounded   p-2"
+              style={{ width: "200px", height: "200px" }}
               alt="..."
             />
           </div>
@@ -26,7 +26,7 @@ const GuideCard = ({ guide }) => {
         </div>
           
               <hr className="w-100" />
-              <p class="quote">{quote.slice(0,48)}</p>
+              <p class="quote">{quote.slice(0,51)}</p>
               <p class="card-text d-flex justify-content-between align-items-center">
                 <small class="text-warning">{ratings}</small>
                 <Link to={`/tourGuide/${_id}`} className="btn btn-outline-info border-1">see details</Link>

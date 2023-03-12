@@ -68,6 +68,10 @@ export const router = createBrowserRouter([
                 element:<Facilities></Facilities>
             },
             {
+                path:'/packages',
+                element:<Packages></Packages>
+            },
+            {
                 path:"/tourGuide/:id",
                 element:<GuideDetails></GuideDetails>,
                 loader: async ({params}) => fetch(`http://localhost:5000/tourGuide/${params.id}`)
