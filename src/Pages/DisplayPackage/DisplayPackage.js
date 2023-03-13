@@ -25,6 +25,7 @@ const DisplayPackage = ({ pk }) => {
                 <h5 class="card-title package-name">{pk.name}</h5>
                 <h5 class="card-title package-price">{pk.price}</h5>
               </div>
+
               <p class="card-text stay">{pk.stay}</p>
               <div className="d-flex justify-content-start align-items-center ">
                 <div>
@@ -48,8 +49,9 @@ const DisplayPackage = ({ pk }) => {
                   {pk.ratings} start reviews
                 </p>
               </div>
-              <div>
+              <div className="d-flex align-content-center justify-content-between">
                 <p className="mt-3">{pk.journey}</p>
+                <h5 class="package-price">{pk.tourCategory}</h5>
               </div>
               <p class="mt-4 d-flex justify-content-start align-items-center gap-3">
                 <Link to="/" className="border rounded-2 p-2">

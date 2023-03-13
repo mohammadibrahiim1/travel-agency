@@ -1,5 +1,7 @@
 import React, {  useEffect, useState } from "react";
+import AddReviews from "../../Components/AddReviews/AddReviews";
 import DisplayPackage from "../DisplayPackage/DisplayPackage";
+import UserReviews from "../Home/UserReviews/UserReviews";
 // import { ApiContext } from "../../DataContext.js/DataContext";
 import "./Packages.css";
 
@@ -18,7 +20,7 @@ const Packages = () => {
   useEffect(() => {
     // let query = { IntFilter,dmsFilter};
     let Inter, domes;
-    
+
     if (IntFilter) {
       Inter = "true";
     } else if (!IntFilter) {
@@ -114,6 +116,11 @@ const Packages = () => {
           <button className="btn btn-light ">show more</button>
         </div>
       </section>
+      <section>
+        <UserReviews></UserReviews>
+        <AddReviews></AddReviews>
+      </section>
+
    
     </div>
   );

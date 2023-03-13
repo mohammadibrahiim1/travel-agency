@@ -71,9 +71,10 @@ const PackagesDetails = () => {
             </div>
             {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/nw29CM1/biman-bangladesh-img.jpg" alt="biman-bangladesh-img" border="0"></a> */}
 
-            <div>
+            <div className="" >
               <img
-                src="https://i.ibb.co/nw29CM1/biman-bangladesh-img.jpg"
+                src={img}
+                style={{ width: "800px", height: "500px" }}
                 alt=""
               />
             </div>
@@ -82,14 +83,28 @@ const PackagesDetails = () => {
               <h6 className="mt-4 fw-bold">packages overview :</h6>
               <p>{overview}</p>
             </div>
-            <div>
-              <h5>Itinerary</h5>
-              {facilities.map((facility) => (
-                <>
-                {facility}
+            <hr />
+            <h5>Itinerary</h5>
+            <div className="itinerary-container">
+              <div>
+                {itinerary?.[0]}
                 <br />
-                </>
-              ))}
+                {itinerary?.[1]}
+                <br />
+                {itinerary?.[2]}
+                <br />
+                {itinerary?.[3]}
+                <br />
+              </div>
+              <div>
+                {itinerary?.[4]}
+                <br />
+                {itinerary?.[5]}
+                <br />
+                {itinerary?.[6]}
+                <br />
+                {itinerary?.[7]}
+              </div>
             </div>
           </div>
         </section>

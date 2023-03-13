@@ -89,7 +89,7 @@ export const router = createBrowserRouter([
         path: "/packages/:id",
         element: <PackagesDetails></PackagesDetails>,
         loader: async ({ params }) =>
-        fetch(`http://localhost:5000/packages/${params._id}`),
+        fetch(`http://localhost:5000/packages/${params.id}`),
       },
     ],
   },

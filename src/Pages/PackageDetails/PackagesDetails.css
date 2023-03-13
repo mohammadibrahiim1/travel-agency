@@ -37,3 +37,7 @@
     color: #112211;
     opacity: 0.75;
   }
+  .itinerary-container{
+    display:  grid;
+    grid-template-columns: repeat( 3, 1fr);
+  }
