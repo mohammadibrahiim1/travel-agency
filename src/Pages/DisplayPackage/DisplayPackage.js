@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./DisplayPackage.css";
 
 const DisplayPackage = ({ pk }) => {
-  console.log(pk);
   return (
     <div>
       <div
@@ -57,7 +56,7 @@ const DisplayPackage = ({ pk }) => {
                   <FaHeart />
                 </Link>{" "}
                 <Link
-                  to="/"
+                  to={`/packages/${pk._id}`}
                   class=" btn btn-info package-details-button"
                   style={{ width: "428px", height: "38px" }}
                 >
@@ -68,7 +67,10 @@ const DisplayPackage = ({ pk }) => {
           </div>
         </div>
       </div>
-      
+
+      {/* <div className="text-center">
+        <button className="btn btn-outline-dark">see more</button>
+      </div> */}
     </div>
   );
 };

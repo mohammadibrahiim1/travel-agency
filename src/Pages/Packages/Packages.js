@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { ApiContext } from "../../DataContext.js/DataContext";
 import DisplayPackage from "../DisplayPackage/DisplayPackage";
+import { ApiContext } from "../../DataContext.js/DataContext";
 import "./Packages.css";
 
 const Packages = () => {
@@ -11,11 +11,8 @@ const Packages = () => {
       <section>
         <div>
           {packages.map((pk) => (
-            <DisplayPackage pk={pk} key={pk._id}></DisplayPackage>
+            <DisplayPackage pk={pk}></DisplayPackage>
           ))}
-        </div>
-        <div className="text-center">
-            <button className="btn btn-outline-dark">see more</button>
         </div>
       </section>
     </div>
