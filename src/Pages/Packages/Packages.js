@@ -9,24 +9,29 @@ const Packages = () => {
   const [packages, setPackages] = useState([]);
   const [IntFilter, setIntFilter] = useState(false);
   const [dmsFilter, setdmsFilter] = useState(false);
+  const [visible, setVisible] = useState(6);
+
+  const showMore = () => {
+    setVisible((preValue) => preValue + 3);
+  };
 
   useEffect(() => {
     // let query = { IntFilter,dmsFilter};
-    let Inter, domes
-     if( IntFilter ){
-  Inter = "true"
-     }
-     else if(!IntFilter){
-        Inter = "false"
-     }
-     if( dmsFilter ){
-  domes = "true"
-     }
-     else if(!dmsFilter){
-        domes = "false"
-     }
+    let Inter, domes;
+    if (IntFilter) {
+      Inter = "true";
+    } else if (!IntFilter) {
+      Inter = "false";
+    }
+    if (dmsFilter) {
+      domes = "true";
+    } else if (!dmsFilter) {
+      domes = "false";
+    }
 
-    fetch(`http://localhost:5000/packages?IntFilter=${Inter}&dmsFilter=${domes}`)
+    fetch(
+      `http://localhost:5000/packages?IntFilter=${Inter}&dmsFilter=${domes}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
@@ -34,49 +39,37 @@ const Packages = () => {
       });
   }, [IntFilter, dmsFilter]);
 
-  // const tourCategory = [
-  //   {
-  //     id: 1,
-  //     name: "International",
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Domestic",
-  //   },
-  // ];
+  // const filter = (event) => {
+  //   // event.preventDefault();
+  //   // console.log(object);
+  //   if (event.target.name === "international") {
+  //     setIntFilter(event.target.checked);
+  //   }
 
-  const filter = (event) => {
-    // event.preventDefault();
-    // console.log(object);
-    if (event.target.name === "international") {
-      setIntFilter(event.target.checked);
-    }
+  //   if (event.target.name === "domestic") {
+  //     setdmsFilter(event.target.checked);
+  //   }
 
-    if (event.target.name === "domestic") {
-      setdmsFilter(event.target.checked);
-    }
-
-    // console.log(event.target.checked);
-  };
+  //   // console.log(event.target.checked);
+  // };
 
   console.log(IntFilter, dmsFilter);
 
   return (
     <div>
-      <section>
-        <div className="text-center mb-5 mt-5">
-          {/* {tourCategory.map((tg) => (
-            <>
-              <input
-                type="checkbox"
-                name="typeCheck"
-                id=""
-                value={tg.name}
-                onClick={filter}
-              />
-              <span>{tg.name}</span> <br />
-            </>
-          ))} */}
+      <section className="package-section">
+        <div>
+          <h2>Let's go places together</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
+        </div>
+      </section>
+      <section className="row container m-auto mt-5 mb-5">
+        <div className="checkbox-container mt-5 mb-5 col-2">
+          <p className="text-primary-emphasis">Filters</p>
+          <hr className="text-dark" />
           <div>
             <input
               type="checkbox"
@@ -86,7 +79,7 @@ const Packages = () => {
               // value="International"
               onClick={() => setIntFilter(!IntFilter)}
             />
-            <span>International</span> <br />
+            <span className="input-filter-text">International</span> <br />
           </div>
           <div>
             <input
@@ -101,12 +94,28 @@ const Packages = () => {
           </div>
         </div>
 
-        <div>
-          {packages.map((pk) => (
-            <DisplayPackage pk={pk}></DisplayPackage>
-          ))}
+        <div className="col-10">
+          <div className=" mt-5">
+            <span className="text-dark-emphasis">
+              See Your Favorite Packages Here
+            </span>{" "}
+            <span className="ms-3 text-warning fs-6 ">
+              {packages.length} packages here{" "}
+            </span>
+          </div>
+          <hr />
+
+          <div>
+            {packages.slice(0, visible).map((pk) => (
+              <DisplayPackage pk={pk}></DisplayPackage>
+            ))}
+          </div>
+        </div>
+        <div className="text-center mt-4" onClick={showMore}>
+          <button className="btn btn-light ">show more</button>
         </div>
       </section>
+   
     </div>
   );
 };
