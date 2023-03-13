@@ -18,6 +18,9 @@
   text-align: center;
   font-size: 15px;
 }
+.packages-length {
+  font-size: 13px;
+}
 
 .package-section {
   background-image: linear-gradient(

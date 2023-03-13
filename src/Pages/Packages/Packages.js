@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import DisplayPackage from "../DisplayPackage/DisplayPackage";
 // import { ApiContext } from "../../DataContext.js/DataContext";
 import "./Packages.css";
@@ -18,6 +18,7 @@ const Packages = () => {
   useEffect(() => {
     // let query = { IntFilter,dmsFilter};
     let Inter, domes;
+    
     if (IntFilter) {
       Inter = "true";
     } else if (!IntFilter) {
@@ -67,7 +68,7 @@ const Packages = () => {
         </div>
       </section>
       <section className="row container m-auto mt-5 mb-5">
-        <div className="checkbox-container mt-5 mb-5 col-2">
+        <div className="checkbox-container mt-5 mb-5 pt-3 col-2">
           <p className="text-primary-emphasis">Filters</p>
           <hr className="text-dark" />
           <div>
@@ -76,7 +77,6 @@ const Packages = () => {
               name="international"
               id=""
               checked={IntFilter}
-              // value="International"
               onClick={() => setIntFilter(!IntFilter)}
             />
             <span className="input-filter-text">International</span> <br />
@@ -87,19 +87,18 @@ const Packages = () => {
               name="domestic"
               id=""
               checked={dmsFilter}
-              // value="International"
               onClick={() => setdmsFilter(!dmsFilter)}
             />
-            <span>Domestic</span> <br />
+            <span className="input-filter-text" >Domestic</span> <br />
           </div>
         </div>
 
         <div className="col-10">
           <div className=" mt-5">
-            <span className="text-dark-emphasis">
+            <span className="text-dark-emphasis fs-3">
               See Your Favorite Packages Here
             </span>{" "}
-            <span className="ms-3 text-warning fs-6 ">
+            <span className="ms-3 text-warning packages-length ">
               {packages.length} packages here{" "}
             </span>
           </div>
