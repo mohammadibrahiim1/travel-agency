@@ -1,7 +1,7 @@
 import React from "react";
 import "./PackagesDetails.css";
 import { FaStar, FaHeart } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import UserReviews from "../Home/UserReviews/UserReviews";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 const PackagesDetails = () => {
@@ -72,7 +72,7 @@ const PackagesDetails = () => {
                   <button className="btn btn-light  ">
                     <FaHeart />
                   </button>
-                  <button className="btn btn-info ms-2">Book Now</button>
+                  <Link to='/bookingdetails' className="btn btn-info ms-2">Book Now</Link>
                 </div>
               </div>
             </div>
