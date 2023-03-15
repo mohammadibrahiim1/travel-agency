@@ -9,6 +9,7 @@ const PackagesDetails = () => {
   console.log(details);
   const {
     name,
+    _id,
     includes,
     excludes,
     tourCategory,
@@ -72,7 +73,7 @@ const PackagesDetails = () => {
                   <button className="btn btn-light  ">
                     <FaHeart />
                   </button>
-                  <Link to='/bookingdetails' className="btn btn-info ms-2">Book Now</Link>
+                  <Link to={`/bookingdetails/${_id}`} className="btn btn-info ms-2">Book Now</Link>
                 </div>
               </div>
             </div>

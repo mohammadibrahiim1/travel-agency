@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import PaymentCard from "../Components/PaymentCard/PaymentCard";
 import Root from "../Layout/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
@@ -19,6 +20,7 @@ import Packages from "../Pages/Packages/Packages";
 import SetPassword from "../Pages/SetPassword/SetPassword";
 import SignIn from "../Pages/SignIn/SignIn";
 import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
+import PrivateRoutes from './PrivateRoutes'
 
 export const router = createBrowserRouter([
   {
@@ -93,8 +95,14 @@ export const router = createBrowserRouter([
         fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
-        path: "/bookingdetails",
+        path: "/bookingdetails/:id",
         element: <BookingDetails></BookingDetails>,
+        loader: async ({ params }) =>
+        fetch(`http://localhost:5000/packages/${params.id}`),
+      },
+      {
+        path: "/paymentcard/:id",
+        element: <PrivateRoutes><PaymentCard></PaymentCard></PrivateRoutes>
         // loader: async ({ params }) =>
         // fetch(`http://localhost:5000/packages/${params.id}`),
       },

@@ -1,7 +1,12 @@
 import React from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import './BookingDetails.css'
 
 const BookingDetails = () => {
+  const details = useLoaderData();
+  console.log(details);
+
+  const {_id,name,price}= details
     return (
         <div>
           <section>
@@ -9,9 +14,9 @@ const BookingDetails = () => {
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
+      <th scope="col">{name}</th>
       <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">{price}</th>
     </tr>
   </thead>
   <tbody>
@@ -34,6 +39,7 @@ const BookingDetails = () => {
     </tr>
   </tbody>
 </table>
+<Link className='btn btn-light' to={`/paymentcard/${_id}`} > make a payment</Link>
           </section>
         </div>
     );
