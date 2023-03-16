@@ -4,7 +4,7 @@ import './BookingDetails.css'
 
 const BookingDetails = () => {
   const details = useLoaderData();
-  console.log(details);
+  // console.log(details);
 
   const {_id,name,price}= details
     return (
@@ -39,7 +39,8 @@ const BookingDetails = () => {
     </tr>
   </tbody>
 </table>
-<Link className='btn btn-light' to={`/paymentcard/${_id}`} > make a payment</Link>
+{ price && !details.paid && <Link className='btn btn-light' to={`/paymentcard/${_id}`} > make a payment</Link>}
+{ price && details.paid && <span className='btn btn-light' > payment complete</span>}
           </section>
         </div>
     );

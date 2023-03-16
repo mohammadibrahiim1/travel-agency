@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import DisplayPackage from "../DisplayPackage/DisplayPackage";
 import UserReviews from "../Home/UserReviews/UserReviews";
@@ -91,7 +91,7 @@ const Packages = () => {
               checked={dmsFilter}
               onClick={() => setdmsFilter(!dmsFilter)}
             />
-            <span className="input-filter-text" >Domestic</span> <br />
+            <span className="input-filter-text">Domestic</span> <br />
           </div>
         </div>
 
@@ -101,7 +101,7 @@ const Packages = () => {
               See Your Favorite Packages Here
             </span>{" "}
             <span className="ms-3 text-warning packages-length ">
-              {packages.length}  packages here{" "}
+              {packages.length} packages here{" "}
             </span>
           </div>
           <hr />
@@ -120,8 +120,6 @@ const Packages = () => {
         <UserReviews></UserReviews>
         <AddReviews></AddReviews>
       </section>
-
-   
     </div>
   );
 };

@@ -102,9 +102,9 @@ export const router = createBrowserRouter([
       },
       {
         path: "/paymentcard/:id",
-        element: <PrivateRoutes><PaymentCard></PaymentCard></PrivateRoutes>
-        // loader: async ({ params }) =>
-        // fetch(`http://localhost:5000/packages/${params.id}`),
+        element: <PaymentCard></PaymentCard>,
+        loader: async ({ params }) =>
+        fetch(`http://localhost:5000/packages/${params.id}`),
       },
     ],
   },
