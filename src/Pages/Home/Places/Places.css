@@ -3,15 +3,12 @@
   margin-bottom: 180px;
 }
 
-.card-container {
+.home-card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
   align-items: center;
-  column-gap: 112px;
-  row-gap: 40px;
-  /* column-gap: 62px;
-  row-gap: 32px; */
+  gap: 14px;
   width: 50%;
   margin: auto;
 }
@@ -30,18 +27,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 74%;
+  width: 90%;
   margin: auto;
 }
 
 .show-flights-hotels-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 73%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  width: 85%;
   margin: auto;
-  /* padding-top: 100px; */
+  align-items: center;
   margin-bottom: 100px;
+  gap: 14px;
 }
 
 .show-flights-button {
@@ -111,10 +109,20 @@
   }
 
   .trip-container .fw-bold {
-    text-align: left;
+    text-align: center;
   }
   .trip-container .text-dark-emphasis {
-    text-align: left;
+    text-align: center;
+  }
+  .flight-hotel-card .subtitle {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 7px;
+  }
+  .hotel-flight-card .subtitle {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 7px;
   }
 
   .flight-hotel-card {
@@ -142,17 +150,11 @@
     border-radius: 0px 24px 24px 24px;
   }
 
-  .card-container {
+  .home-card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
     align-items: center;
-    /* column-gap: 112px; */
-    /* row-gap: 40px; */
-    /* column-gap: 62px;
-    row-gap: 32px; */
-    /* width: 50%; */
-    /* margin: auto; */
   }
 
   .trip-container {
@@ -167,17 +169,11 @@
 }
 
 @media screen and (min-width: 577px) and (max-width: 991px) {
-  .card-container {
+  .home-card-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
     align-items: center;
-    /* column-gap: 112px; */
-    /* row-gap: 40px; */
-    /* column-gap: 62px;
-    row-gap: 32px; */
-    /* width: 25%;
-    margin: auto; */
   }
 
   .show-flights-hotels-container {
@@ -185,7 +181,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 73%;
+    width: 72%;
     margin: auto;
     margin-bottom: 100px;
   }
@@ -198,7 +194,7 @@
       ),
       url(https://i.ibb.co/p15y8MV/flights-img.png);
     border-radius: 0px 24px 24px 24px;
-    margin-bottom:15px ;
+    margin-bottom: 15px;
   }
 
   .trip-container {
@@ -215,5 +211,27 @@
   }
   .trip-container .text-dark-emphasis {
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+  .home-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 14px;
+    width: 50%;
+    margin: auto;
+  }
+  .show-flights-hotels-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-evenly;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 100px;
+    gap: 14px;
   }
 }

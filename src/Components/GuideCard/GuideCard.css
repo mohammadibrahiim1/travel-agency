@@ -1,16 +1,12 @@
 .guide-card .card-title {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   color: #000000;
 }
-.guide-card .cardSub-title {
+.guide-card .card-text {
   font-size: 12.7px;
   font-weight: 600;
-  color: #8dd3bb;
-}
-.guide-card {
-  border: 1px solid #ccf5ec;
-  background-color: #f8fcfb;
+  color: #112211;
 }
 
 .guide-card .guide-rate {
@@ -24,3 +20,8 @@
   opacity: 0.5;
   font-weight: 600;
 }
+
+/* .tour-guide-button{
+  font-size: 10px;
+
+} */

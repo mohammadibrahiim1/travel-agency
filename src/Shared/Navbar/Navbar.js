@@ -54,12 +54,12 @@ const Navbar = () => {
                   <FaServicestack /> Packages{" "}
                 </Link>
               </li>
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <Link class="nav-link" to="/aboutus">
                   {" "}
                   <FaServicestack /> About Us{" "}
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             <div className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -70,7 +70,70 @@ const Navbar = () => {
             </div>
 
             <div className="d-sm-none d-lg-block d-md-block d-none">
-              {user?.email ? (
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {/* <li class="nav-item">
+                  <Link class="nav-link" aria-current="page" to="/findFlights">
+                    <FaPlane className="me-1" />
+                    Find Flights
+                  </Link>
+                </li> */}
+                {/* <li class="nav-item">
+                  <Link class="nav-link" to="/findStays">
+                    {" "}
+                    <FaBed /> Find Stay{" "}
+                  </Link>
+                </li> */}
+                <li class="nav-item">
+                  <Link class="nav-link" to="/favourites">
+                    {" "}
+                    <FaServicestack /> Favourites{" "}
+                  </Link>
+                </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/aboutus">
+                    {" "}
+                    <FaServicestack /> About Us{" "}
+                  </Link>
+                </li>
+
+                <li class="nav-item">
+                  <Link class="nav-link" to="/dashboard">
+                    {" "}
+                    <FaServicestack /> Dashboard{" "}
+                  </Link>
+                </li>
+                {user?.email ? (
+                  <>
+                    <li class="nav-item">
+                      <Link class="nav-link" to="/profile">
+                        {" "}
+                        <FaServicestack /> Profile{" "}
+                      </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link class="nav-link" to="/login" onClick={handleLogOut}>
+                        {" "}
+                        <FaServicestack /> Logout{" "}
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li class="nav-item">
+                    <Link class="nav-link" to="/signin">
+                      {" "}
+                      <FaServicestack /> Sign in{" "}
+                    </Link>
+                  </li>
+                )}
+              </ul>
+              {/* <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <Link onClick={handleLogOut} to="/login" class="nav-link">
+                        Logout
+                      </Link>
+                    </li>
+                  </ul> */}
+              {/* {user?.email ? (
                 <div className="">
                   <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -95,7 +158,7 @@ const Navbar = () => {
                     </li>
                   </ul>
                 </div>
-              )}
+              )} */}
             </div>
           </div>
         </div>

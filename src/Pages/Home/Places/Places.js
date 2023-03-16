@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Place from "../Place/Place";
 import { MdFlight, MdHotel } from "react-icons/md";
-
 import "./Places.css";
 import { ApiContext } from "../../../DataContext.js/DataContext";
 
@@ -22,7 +21,7 @@ const Places = () => {
             <button className="see-more-button">See more places</button>
           </div>
         </div>
-        <div className="card-container">
+        <div className="home-card-container">
           {places?.map((place) => (
             <Place key={place._id} place={place}>
               {" "}
@@ -43,8 +42,7 @@ const Places = () => {
               <div className="text-center">
                 <h1 className="fw-semibold text-white">Flights</h1>
                 <p className="subtitle pt-2">
-                  Search Flights & Places Hire to our most popular <br />{" "}
-                  destinations
+                  Search Flights & Places Hire to our most popular destinations
                 </p>
 
                 <button className="show-flights-button">
@@ -63,8 +61,7 @@ const Places = () => {
               <div className="text-center">
                 <h1 className="fw-semibold text-white">Hotels</h1>
                 <p className="subtitle pt-2">
-                  Search Flights & Places Hire to our most popular <br />{" "}
-                  destinations
+                  Search Flights & Places Hire to our most popular destinations
                 </p>
 
                 <button className="show-flights-button">

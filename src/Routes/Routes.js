@@ -8,6 +8,7 @@ import BookingDetails from "../Pages/BookingDetails/BookingDetails";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 // import DisplayPackage from "../Pages/DisplayPackage/DisplayPackage";
 import Facilities from "../Pages/Facilities/Facilities";
+import Favourites from "../Pages/Favourites/Favourites";
 import FindFlights from "../Pages/FindFlights/FindFlights";
 import FindStays from "../Pages/FindStays/FindStays";
 import FlightListing from "../Pages/FlightListing/FlightListing";
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         path: "/signin",
         element: <SignIn></SignIn>,
+      },
+      {
+        path: "/favourites",
+        element: <Favourites></Favourites>,
       },
       {
         path: "/login",

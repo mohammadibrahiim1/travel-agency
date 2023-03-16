@@ -1,31 +1,27 @@
 .reviews-container {
-  /* display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: space-evenly;
-  align-items: center; */
   gap: 22px;
-  width: 72%;
+  width: 90%;
   margin: 0 auto;
-  /* border: 1px solid grey; */
 }
 
 .review-header {
   /* padding-top: 80px; */
   padding-bottom: 20px;
-  width: 72%;
+  width: 90%;
   margin: auto;
 }
 .user-name {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
-  color: #6f1df4;
+  color: #112211;
 }
 .user-text {
   font-size: 13px;
   font-weight: 600;
   text-transform: capitalize;
   color: #112211;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 576px) {

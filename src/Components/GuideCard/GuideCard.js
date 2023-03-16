@@ -4,10 +4,34 @@ import "./GuideCard.css";
 
 const GuideCard = ({ guide }) => {
   console.log(guide);
-  const { name, image, location, quote, rate, ratings,_id } = guide;
+  const { name, image, location, quote, rate, ratings, _id } = guide;
   return (
     <div>
-      <div class="card  guide-card  mb-3" style={{ "max-width": "580px", "height":"200px" }}>
+      <div class=" card mb-3" style={{ "max-width": "700px" }}>
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src={image}
+              class="img-fluid rounded-start rounded p-3"
+              alt="..."
+              style={{ height: "auto" }}
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body guide-card">
+              <h5 class="card-title">{name}</h5>
+              <p class="card-text">{quote}</p>
+              <p class="card-text d-flex justify-content-evenly align-items-center" >
+                <small class="text-muted">{location}</small>
+                <Link to={`/tourGuide/${_id}`} className="btn btn-light tour-guide-button">
+                  see details
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <div class="card  guide-card  mb-3" style={{ "max-width": "580px", "height":"200px" }}>
         <div class="row g-0">
           <div class="col-md-4">
             <img
@@ -20,9 +44,9 @@ const GuideCard = ({ guide }) => {
           <div class="col-md-8">
             <div class="card-body">
          
-        <div className="d-flex justify-content-between align-items-center" >
+        <div className="d-flex justify-content-between align-items-center " >
         <div>  <h5 class="card-title">{name}</h5>
-              <h5 class="cardSub-title">{location}</h5></div> <div><h5 className="guide-rate">{rate}</h5></div>
+              <h5 class="card-text">{location}</h5></div> <div><h5 className="guide-rate">{rate}</h5></div>
         </div>
           
               <hr className="w-100" />
@@ -34,7 +58,7 @@ const GuideCard = ({ guide }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

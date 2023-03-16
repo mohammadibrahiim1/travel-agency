@@ -6,7 +6,6 @@ import "./UserReviews.css";
 const UserReviews = () => {
   const { reviews } = useContext(ApiContext);
 
-  // console.log(reviews);
   return (
     <div>
       <hr />
@@ -17,19 +16,22 @@ const UserReviews = () => {
       <section className="reviews-container">
         {reviews.map((review) => (
           <>
-            <div class="border rounded p-2 mb-4">
+            <div class="  p-2 mb-4">
               <div class="d-flex justify-content-start align-items-start gap-2 ">
                 <div class="">
                   <img
                     src={review?.photoURL}
-                    style={{ width: "50px", height: "50px" }}
+                    style={{ width: "40px", height: "40px" }}
                     class="rounded rounded-circle mx-auto"
                     alt="..."
                   />
                 </div>
                 <div class="">
                   <div class="">
-                    <h6 class="user-name">{review.name}</h6>
+                    <h6 class="user-name">
+                      <span>5.0 amaizing | </span>
+                      {review.name}
+                    </h6>
                     <p class="user-text">{review.text}</p>
                   </div>
                 </div>
@@ -38,8 +40,6 @@ const UserReviews = () => {
           </>
         ))}
       </section>
-
-     
     </div>
   );
 };
