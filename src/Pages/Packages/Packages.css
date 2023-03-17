@@ -1,10 +1,43 @@
 .input-filter-text {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 15px;
+  line-height: 24px;
   color: #112211;
 }
+.vr{
+  background-color: rgb(51,45,45) ;
+  opacity: .25;
+  width: 1px;
+}
+.package-container span{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: salmon;
+}
+.filter-title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #112211;
+}
+
+.checkbox {
+  width: 12px;
+  height: 12px;
+}
+
+.package-filter {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #112211;
+}
+
 .package-section h2 {
   color: white;
   text-align: center;

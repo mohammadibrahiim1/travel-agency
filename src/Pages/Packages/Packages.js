@@ -70,39 +70,50 @@ const Packages = () => {
         </div>
       </section>
       <section className="row container m-auto mt-5 mb-5">
-        <div className="checkbox-container mt-5 mb-5 pt-3 col-2">
-          <p className="text-primary-emphasis">Filters</p>
+        <div className="checkbox-container mt-5 mb-5  col-md-12 col-sm-12 col-lg-2">
+          <p className="package-filter">Filters</p>
           <hr className="text-dark" />
+
+          <div>
+            <p className="filter-title"> package category</p>
+          </div>
+
           <div>
             <input
               type="checkbox"
               name="international"
               id=""
+              className="checkbox"
               checked={IntFilter}
               onClick={() => setIntFilter(!IntFilter)}
             />
-            <span className="input-filter-text">International</span> <br />
+            <span className="input-filter-text ms-2">International</span> <br />
           </div>
           <div>
             <input
               type="checkbox"
               name="domestic"
+              className="checkbox"
               id=""
               checked={dmsFilter}
               onClick={() => setdmsFilter(!dmsFilter)}
             />
-            <span className="input-filter-text">Domestic</span> <br />
+            <span className="input-filter-text ms-2">Domestic</span> <br />
           </div>
         </div>
 
-        <div className="col-10">
+        <div
+          class=" d-lg-flex justify-content-evenly align-items-center mt-5  d-md-none d-lg-block d-sm-none d-block col-lg-1"
+          style={{ height: "auto" }}
+        >
+          <div class="vr mt-5"></div>
+        </div>
+
+        <div className="col-lg-9 col-md-12 col-sm-12 col-12">
           <div className=" mt-5">
-            <span className="text-dark-emphasis fs-3">
-              See Your Favorite Packages Here
+            <span className="package-container">
+              <span>{packages.length}</span> Packages Here
             </span>{" "}
-            <span className="ms-3 text-warning packages-length ">
-              {packages.length} packages here{" "}
-            </span>
           </div>
           <hr />
 
@@ -112,6 +123,7 @@ const Packages = () => {
             ))}
           </div>
         </div>
+
         <div className="text-center mt-4" onClick={showMore}>
           <button className="btn btn-light ">show more</button>
         </div>

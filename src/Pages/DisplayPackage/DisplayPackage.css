@@ -5,6 +5,10 @@
   line-height: 25px;
   color: #112211;
 }
+.img-fluid {
+  border: none;
+  border-radius: 9px;
+}
 .package-price {
   font-style: normal;
   font-weight: 700;
