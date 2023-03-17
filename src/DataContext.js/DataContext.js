@@ -43,7 +43,7 @@ const DataContext = ({ children }) => {
         console.log(data);
       });
   }, []);
-
+  
 
   const apiData = {
     places,

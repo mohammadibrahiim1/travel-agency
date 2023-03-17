@@ -8,7 +8,8 @@ import { Container } from "react-bootstrap";
 
 const LogIn = () => {
   const [error, setError] = useState();
-  const { login,signInWithGoogle,signInWithFacebook } = useContext(AuthContext);
+  const { login, signInWithGoogle, signInWithFacebook } =
+    useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -145,10 +146,16 @@ const LogIn = () => {
                 </div>
 
                 <div className="social-login mt-5">
-                  <button onClick={handleFacebookSignIn} className="btn btn-light   text-primary p-2">
+                  <button
+                    onClick={handleFacebookSignIn}
+                    className="btn btn-light   text-primary p-2"
+                  >
                     <FaFacebook style={{ width: "22px", height: "22px" }} />
                   </button>
-                  <button onClick={handleGoogleSignIn} className="btn btn-light     p-2">
+                  <button
+                    onClick={handleGoogleSignIn}
+                    className="btn btn-light     p-2"
+                  >
                     <FcGoogle style={{ width: "22px", height: "22px" }} />
                   </button>
                   <button className="btn btn-light   w-100  p-2">
