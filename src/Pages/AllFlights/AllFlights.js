@@ -1,18 +1,62 @@
-import React, { useState } from "react";
-// import ReactDatePicker from "react-datepicker";
-import DatePicker from "react-datepicker";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { FaStar, FaSearch, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import DatePicker from "react-datepicker";
 import AddReviews from "../../Components/AddReviews/AddReviews";
+// import { ApiContext } from "../../DataContext.js/DataContext";
 import UserReviews from "../Home/UserReviews/UserReviews";
 import './AllFlights.css'
+// import { linkClasses } from "@mui/material";
 
 const AllFlights = () => {
+
+  // const { flights } = useContext(ApiContext);
+
   const [startDate, setStartDate] = useState(new Date());
   const [visible, setVisible] = useState(6);
+  const [filter, setFilter] = useState();
+  // const [flights, setFlights] = useState([]);
+  console.log(filter)
+
+
 
   const showMore = () => {
     setVisible((preValue) => preValue + 3);
   };
+
+  const locationRef = useRef("");
+
+  // const roomRef = useRef(0);
+
+  const searchHandler = async () => {
+    const location = locationRef.current.value;
+    console.log(location);
+    // if (location === "") {
+    //   return alert('All fields are required!')
+    // }
+    const res = await fetch(
+      `http://localhost:5000/api/flights?location=${location}`
+    );
+
+    if (!res.ok) alert("Something went wrong");
+
+    const result = await res.json();
+    console.log(result);
+    setFilter(result.data);
+  }
+
+
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/flights?pageConfig={"content":40,"page":1}`)
+      .then(res => res.json())
+      .then(data => {
+        setFilter(data.data);
+      }
+      )
+  }, []);
+
+
   return (
     <div>
       <section className="allFlights-header-section ">
@@ -25,38 +69,18 @@ const AllFlights = () => {
         </div>
       </section>
 
-        <section className="flight-search-section-container container" >
-        <form className="flight-search-section container m-auto ">
-          <div>
-            {/* <label htmlFor="destination">From</label> */}
-            <select name="" id="destination" className="select-option">
-              <option value=" From">From</option>
-              <option value="Cumilla">Cumilla</option>
-              <option value="Chittagong">Chittagong</option>
-              <option value="Cox's Bazar">Cox's Bazar</option>
-            </select>
-            {/* <input type="submit" value="submit" /> */}
-          </div>
-          <div>
-            {/* <label htmlFor="destination">From</label> */}
-            <select name="" id="destination" className="select-option">
-              <option value=" To">To</option>
-              <option value="Cumilla">Cumilla</option>
-              <option value="Chittagong">Chittagong</option>
-              <option value="Cox's Bazar">Cox's Bazar</option>
-            </select>
-            {/* <input type="submit" value="submit" /> */}
-          </div>
-          <div>
-            {/* <label htmlFor="destination">From</label> */}
-            <select name="" id="Trip" placeholder="Trip" className="select-option">
-              {/* <option value=" Trip">Trip</option> */}
-              <option value="One Way">One Way</option>
-              <option value="Return">Return</option>
-              {/* <option value="Cox's Bazar">Cox's Bazar</option> */}
-            </select>
-            {/* <input type="submit" value="submit" /> */}
-          </div>
+      <section className="flight-search-section-container container" >
+        <form className="flight-search-section container m-auto "  >
+          <input
+            type="text"
+            id="form3Example1m"
+            className="enter__destination"
+            placeholder="Enter Destination"
+            ref={locationRef}
+          />
+
+
+
           <div >
             <DatePicker
               className="datepicker "
@@ -76,21 +100,16 @@ const AllFlights = () => {
               minDate={new Date()}
             />
           </div>
-          <div>
-            {/* <label htmlFor="destination">From</label> */}
-            <select name="" id="bookingclass" className="select-option">
-              <option value="BookingClass">Booking Class</option>
-              <option value="First Class">First Class</option>
-              <option value="Economy">Economy</option>
-              <option value="Business">Business</option>
-            </select>
-            {/* <input type="submit" value="submit" /> */}
-          </div>
-          <div>
-            <Link className="btn btn-light " to="/flightListing/allFlights">
-              search
-            </Link>
-          </div>
+          <FaSearch
+            className="search"
+            type="submit"
+            onClick={searchHandler}
+          ></FaSearch>
+
+          {/* <button className="btn btn-light" type="submit" onClick={searchHandler} >
+            search
+          </button> */}
+
         </form>
       </section>
 
@@ -137,16 +156,81 @@ const AllFlights = () => {
         <div className="col-lg-9 col-md-12 col-sm-12 col-12">
           <div className=" mt-5">
             <span className="package-container">
-              <span></span> Packages Here
+              { filter &&  filter?.length} Packages Here
             </span>{" "}
           </div>
           <hr />
 
-          {/* <div>
-          {packages.slice(0, visible).map((pk) => (
-            <DisplayPackage pk={pk}></DisplayPackage>
-          ))}
-        </div> */}
+          <div>
+            {filter && filter?.slice(0, visible)?.map((filt) => (
+              <div className="flight-card" >
+                <div class="card mb-3" style={{ "max-width": "840px" }}>
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img
+                        src={filt.airlines_logo_URL}
+                        class="p-2"
+                        alt="..."
+                        style={{ "height": "110px", "width": "160px" }}
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <div className="d-flex justify-content-between align-items-center">
+                          {" "}
+                          <h5 class="card-title">{filt.airlines_name}</h5>
+                          <h5 class="card-title">${filt.price}</h5>
+                        </div>
+                        <p class="card-text">{filt.location}</p>
+                        <div className="d-flex justify-content-start align-items-center ">
+                          <div>
+                            <span>
+                              <FaStar />
+                            </span>
+                            <span>
+                              <FaStar />
+                            </span>
+                            <span>
+                              <FaStar />
+                            </span>
+                            <span>
+                              <FaStar />
+                            </span>
+                            <span>
+                              <FaStar />
+                            </span>
+                          </div>
+                          <p class="card-text stay mt-2 ms-1">
+                            {filt.ratings} start reviews
+                          </p>
+                        </div>
+                        <div className="d-flex align-content-center justify-content-between">
+                          <p className="mt-3">{filt.journey}</p>
+                          {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
+                        </div>
+                        {/* <p class="card-text">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </p> */}
+                        <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
+                          <Link to="/" className="border rounded-2 ps-2 pe-2">
+                            <FaHeart />
+                          </Link>{" "}
+                          <Link
+                            to={`/packages/${filt._id}`}
+                            class=" btn btn-info package-details-button"
+                            style={{ width: "428px", height: "38px" }}
+                          >
+                            View Details
+                          </Link>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-4" onClick={showMore}>

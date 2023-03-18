@@ -13,20 +13,12 @@ import "./FindFlights.css";
 
 const FindFlights = () => {
   const { flights } = useContext(ApiContext);
-  const flightsData = flights.data;
-  console.log(flightsData)
+  // const flightsData = flights.data;
+  // console.log(flightsData)
 
   const [startDate, setStartDate] = useState(new Date());
 
-  // <a href="https://imgbb.com/"><img src="https://i.ibb.co/VBthY6H/Rectangle-3-3.png" alt="Rectangle-3-3" border="0"></a>
-  {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/4dKN9dN/Rectangle-3-2.png" alt="Rectangle-3-2" border="0"></a> */ }
-  {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/wK1kzX6/Rectangle-3-1.png" alt="Rectangle-3-1" border="0"></a> */ }
-  {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/wh24VB5/Rectangle-3.png" alt="Rectangle-3" border="0"></a> */ }
 
-  // /<a href="https://imgbb.com/"><img src="https://i.ibb.co/k0JjmGY/Rectangle-6.png" alt="Rectangle-6" border="0"></a>
-  // <a href="https://imgbb.com/"><img src="https://i.ibb.co/F0Lnt7y/Rectangle-5.png" alt="Rectangle-5" border="0"></a>
-  // <a href="https://imgbb.com/"><img src="https://i.ibb.co/19XNPzC/Rectangle-4.png" alt="Rectangle-4" border="0"></a>
-  // <a href="https://imgbb.com/"><img src="https://i.ibb.co/Gpk0TC2/Rectangle-3-4.png" alt="Rectangle-3-4" border="0"></a>
 
   return (
     <div>
@@ -108,7 +100,7 @@ const FindFlights = () => {
             {/* <input type="submit" value="submit" /> */}
           </div>
           <div>
-            <Link className="btn btn-light " to="/flightListing/allFlights">
+            <Link className="btn btn-light " to="/flightListing/api/flights">
               search
             </Link>
           </div>
@@ -116,7 +108,7 @@ const FindFlights = () => {
       </section>
 
 
-      
+
       <section>
         <div className="container mt-5 pt-5 mb-4 fall-into-travel-header" >
           <h3 className="fw-bold text-dark ">Fall into travel
@@ -128,35 +120,35 @@ const FindFlights = () => {
         <div className="fall-into-travel container">
 
           <div class="card" >
-            <img src="https://i.ibb.co/k0JjmGY/Rectangle-6.png" class="card-img" alt="..." style={{"height":"350px"}} />
+            <img src="https://i.ibb.co/k0JjmGY/Rectangle-6.png" class="card-img" alt="..." style={{ "height": "350px" }} />
             <div class="card-body card-img-overlay">
               <h5 class="card-title">Columbia</h5>
               <p class="card-text">Amazing streets</p>
-              <Link to="/allFlights" class="btn btn-primary">Book Flights</Link>
+              <Link to="/api/flights" class="btn btn-primary">Book Flights</Link>
             </div>
           </div>
           <div class="card" >
-            <img src="https://i.ibb.co/F0Lnt7y/Rectangle-5.png" class="card-img" alt="..." style={{"height":"350px"}} />
+            <img src="https://i.ibb.co/F0Lnt7y/Rectangle-5.png" class="card-img" alt="..." style={{ "height": "350px" }} />
             <div class="card-body card-img-overlay">
               <h5 class="card-title">London</h5>
               <p class="card-text">London eye adventure</p>
-              <Link to="/allFlights" class="btn btn-primary">Book Flights</Link>
+              <Link to="/api/flights" class="btn btn-primary">Book Flights</Link>
             </div>
           </div>
           <div class="card" >
-            <img src="https://i.ibb.co/19XNPzC/Rectangle-4.png" class="card-img" alt="..."  style={{"height":"350px"}} />
+            <img src="https://i.ibb.co/19XNPzC/Rectangle-4.png" class="card-img" alt="..." style={{ "height": "350px" }} />
             <div class="card-body card-img-overlay">
               <h5 class="card-title">Paris</h5>
               <p class="card-text">An amazing journey</p>
-              <Link to="/allFlights" class="btn btn-primary">Book Flights</Link>
+              <Link to="/api/flights" class="btn btn-primary">Book Flights</Link>
             </div>
           </div>
           <div class="card" >
-            <img src="https://i.ibb.co/Gpk0TC2/Rectangle-3-4.png" class="card-img" alt="..." style={{"height":"350px"}} />
+            <img src="https://i.ibb.co/Gpk0TC2/Rectangle-3-4.png" class="card-img" alt="..." style={{ "height": "350px" }} />
             <div class="card-body card-img-overlay">
               <h5 class="card-title">Malbourne</h5>
               <p class="card-text"> An amazing journey journey</p>
-              <Link to="/allFlights" class="btn btn-primary">Book Flight</Link>
+              <Link to="/api/flights" class="btn btn-primary">Book Flight</Link>
             </div>
           </div>
         </div>
@@ -180,7 +172,7 @@ const FindFlights = () => {
                   <h5 class="card-title">Backpacking Sri Lanka</h5><h3 className="text-white text-end" >$275</h3>
                 </div>
                 <p class="card-text">Traveling is a unique experience as it's the best way to unplug from the pushes and pulls of daily life. It helps us to forget about our problems, frustrations, and fears at home. During our journey, we experience life in different ways. We explore new places, cultures, cuisines, traditions, and ways of living.</p>
-                <Link to="/" class="btn btn-light">Book Flight</Link>
+                <Link to="/allFlights" class="btn btn-light">Book Flight</Link>
               </div>
             </div>
           </div>
