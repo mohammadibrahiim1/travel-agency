@@ -5,6 +5,8 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
+import AddReviews from "../../Components/AddReviews/AddReviews";
+import UserReviews from "../Home/UserReviews/UserReviews";
 // import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import "./FindFlights.css";
 
@@ -30,8 +32,9 @@ const FindFlights = () => {
 
 
 
-      <section className="flight-search-section ">
-        <div>
+      <section className="flight-search-section-container container" >
+  <form className="flight-search-section container m-auto ">
+  <div>
           {/* <label htmlFor="destination">From</label> */}
           <select name="" id="destination" className="select-option">
             <option value=" From">From</option>
@@ -61,7 +64,7 @@ const FindFlights = () => {
           </select>
           {/* <input type="submit" value="submit" /> */}
         </div>
-        <div className="">
+        <div >
           <DatePicker
             className="datepicker "
             selected={startDate}
@@ -90,12 +93,19 @@ const FindFlights = () => {
           </select>
           {/* <input type="submit" value="submit" /> */}
         </div>
-
         <div>
-          <Link className="btn btn-primary-emphasis" to="/flightListing/allFlights">
+          <Link className="btn btn-light " to="/flightListing/allFlights">
             search
           </Link>
         </div>
+  </form>
+      </section>
+
+      <section>
+        <UserReviews></UserReviews>
+      </section>
+      <section>
+        <AddReviews></AddReviews>
       </section>
     </div>
   );
