@@ -9,7 +9,8 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import FindFlights from "../FindFlights/FindFlights";
 // import { useLocation } from 'react-router-dom';
 
-const FlightListing = () => {
+  const FlightListing = () => {
+  //  const const [mongodb, setmongodb] = useState(second)
   // const location = useLocation();
   // const [hotelNames, setHotelNames] = useState([]);
   // const [category, setCategory] = useState(null);
@@ -31,7 +32,7 @@ const FlightListing = () => {
     <div>
       <Navbar></Navbar>
       <Col lg="12">
-        <FindFlights></FindFlights>
+        <      FindFlights></FindFlights>
       </Col>
       <Container>
         <Row>

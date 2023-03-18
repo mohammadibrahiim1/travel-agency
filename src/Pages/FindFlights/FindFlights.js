@@ -14,6 +14,14 @@ const FindFlights = () => {
 
   return (
     <div>
+
+
+      <section className="flight-header-section">
+
+      </section>
+
+
+
       <section className="flight-search-section ">
         <div>
           {/* <label htmlFor="destination">From</label> */}
