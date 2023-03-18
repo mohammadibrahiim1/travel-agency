@@ -13,7 +13,7 @@ const AddReviews = () => {
     const photoURL = user?.photoURL;
     const text = form.message.value;
     // const category = form.category.value;
-    console.log(name, photoURL, text, email);
+    // console.log(name, photoURL, text, email);
 
     const addreview = {
       name,
@@ -32,7 +32,7 @@ const AddReviews = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           alert("added review successfully");
           form.reset();

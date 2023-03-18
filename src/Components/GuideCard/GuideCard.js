@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./GuideCard.css";
 
 const GuideCard = ({ guide }) => {
-  console.log(guide);
+  // console.log(guide);
   const { name, image, location, quote, rate, ratings, _id } = guide;
   return (
     <div>

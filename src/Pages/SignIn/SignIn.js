@@ -47,7 +47,7 @@ const SignIn = () => {
     signInWithFacebook()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((error) => console.error(error));
     setError(error.message);
@@ -64,12 +64,12 @@ const SignIn = () => {
     const password = form.password.value;
     const confirmPassword = form.confirmPassword.value;
 
-    console.log(firstName, lastName, email, phone, password, confirmPassword);
+    // console.log(firstName, lastName, email, phone, password, confirmPassword);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((err) => {
         console.log(err);

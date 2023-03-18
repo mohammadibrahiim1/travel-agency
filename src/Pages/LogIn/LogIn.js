@@ -17,12 +17,12 @@ const LogIn = () => {
     //  const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     login(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         form.reset();
       })
       .catch((error) => {
@@ -36,7 +36,7 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         // navigate('/courses')
-        console.log(user);
+        // console.log(user);
         setError("");
       })
       .catch((error) => console.error(error));
@@ -47,7 +47,7 @@ const LogIn = () => {
     signInWithFacebook()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((error) => console.error(error));
     setError(error.message);
