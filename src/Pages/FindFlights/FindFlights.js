@@ -17,6 +17,14 @@ const FindFlights = () => {
 
 
       <section className="flight-header-section">
+     <div className="w-50 m-auto ">
+     <h2>
+          Make your travel whishlist, we’ll do the rest
+        </h2>
+        <p>
+          Special offers to suit your plan
+        </p>
+     </div>
 
       </section>
 
