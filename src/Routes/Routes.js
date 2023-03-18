@@ -11,7 +11,7 @@ import Facilities from "../Pages/Facilities/Facilities";
 import Favourites from "../Pages/Favourites/Favourites";
 import FindFlights from "../Pages/FindFlights/FindFlights";
 import FindStays from "../Pages/FindStays/FindStays";
-import FlightListing from "../Pages/FlightListing/FlightListing";
+// import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import GuideDetails from "../Pages/GuideDetails/GuideDetails";
 import Home from "../Pages/Home/Home";
@@ -21,7 +21,7 @@ import Packages from "../Pages/Packages/Packages";
 import SetPassword from "../Pages/SetPassword/SetPassword";
 import SignIn from "../Pages/SignIn/SignIn";
 import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
-import PrivateRoutes from './PrivateRoutes'
+// import PrivateRoutes from './PrivateRoutes'
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/findFlights",
         element: <FindFlights></FindFlights>,
+      },
+      {
+        path: "/allFlights",
+        element: <AllFlights></AllFlights>,
       },
       {
         path: "/findStays",
@@ -114,22 +118,22 @@ export const router = createBrowserRouter([
     ],
   },
 
-  {
-    path: "/flightListing",
-    element: <FlightListing></FlightListing>,
-    children: [
-      {
-        path: "/flightListing",
-        element: <AllFlights></AllFlights>,
-      },
-      {
-        path: "/flightListing/allFlights",
-        element: <AllFlights></AllFlights>,
-      },
-      {
-        path: "/flightListing/signin",
-        element: <SignIn></SignIn>,
-      },
-    ],
-  },
+  // {
+  //   path: "/flightListing",
+  //   element: <FlightListing></FlightListing>,
+  //   children: [
+  //     {
+  //       path: "/flightListing",
+  //       element: <AllFlights></AllFlights>,
+  //     },
+  //     {
+  //       path: "/flightListing/allFlights",
+  //       element: <AllFlights></AllFlights>,
+  //     },
+  //     {
+  //       path: "/flightListing/signin",
+  //       element: <SignIn></SignIn>,
+  //     },
+  //   ],
+  // },
 ]);

@@ -1,33 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import AddReviews from "../../Components/AddReviews/AddReviews";
+import UserReviews from "../Home/UserReviews/UserReviews";
 
 const AllFlights = () => {
+  const [visible, setVisible] = useState(6);
+
+  const showMore = () => {
+    setVisible((preValue) => preValue + 3);
+  };
   return (
-            <div>
-
-           <section>
-           <div class="card mb-3" style={{" ": "540px"}}>
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="img   " class="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">ratings and reviews</h5> <span>price</span>
-        <h5 class="card-title">departure time  <span>arrival time</span> </h5> <span>non stop</span> <span>approach time</span>
+    <div>
+      <section className="package-section">
         <div>
-          <h5>return time</h5>
+          <h2>Let's go places together</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
         </div>
-        {/* <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> */}
-        <p class="card-text"><small class="text-muted"> <span>favourite <span className="btn btn-in
-        ">view deals</span> </span> </small></p>
-      </div>
-    </div>
-  </div>
-</div>
-           </section>
+      </section>
+      <section className="row container m-auto mt-5 mb-5">
+        <div className="checkbox-container mt-5 mb-5  col-md-12 col-sm-12 col-lg-2">
+          <p className="package-filter">Filters</p>
+          <hr className="text-dark" />
 
-            </div>
+          <div>
+            <p className="filter-title"> package category</p>
+          </div>
+
+          <div>
+            <input
+              type="checkbox"
+              name="international"
+              id=""
+              className="checkbox"
+            // checked={IntFilter}
+            // onClick={() => setIntFilter(!IntFilter)}
+            />
+            <span className="input-filter-text ms-2">International</span> <br />
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              name="domestic"
+              className="checkbox"
+              id=""
+            // checked={dmsFilter}
+            // onClick={() => setdmsFilter(!dmsFilter)}
+            />
+            <span className="input-filter-text ms-2">Domestic</span> <br />
+          </div>
+        </div>
+
+        <div
+          class=" d-lg-flex justify-content-evenly align-items-center mt-5  d-md-none d-lg-block d-sm-none d-block col-lg-1"
+          style={{ height: "auto" }}
+        >
+          <div class="vr mt-5"></div>
+        </div>
+
+        <div className="col-lg-9 col-md-12 col-sm-12 col-12">
+          <div className=" mt-5">
+            <span className="package-container">
+              <span></span> Packages Here
+            </span>{" "}
+          </div>
+          <hr />
+
+          {/* <div>
+          {packages.slice(0, visible).map((pk) => (
+            <DisplayPackage pk={pk}></DisplayPackage>
+          ))}
+        </div> */}
+        </div>
+
+        <div className="text-center mt-4" onClick={showMore}>
+          <button className="btn btn-light ">show more</button>
+        </div>
+      </section>
+      <section>
+        <UserReviews></UserReviews>
+        <AddReviews></AddReviews>
+      </section>
+    </div>
   );
 };
 

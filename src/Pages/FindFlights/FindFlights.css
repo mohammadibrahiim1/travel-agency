@@ -79,7 +79,7 @@
 .fall-into-travel .card {
   width: 296px;
   height: 350px;
-  background: url(../../Assets/maldives-best-all-inclusive-resorts-kudadoo-maldives-private-island.jpg);
+  /* background: url(../../Assets/maldives-best-all-inclusive-resorts-kudadoo-maldives-private-island.jpg); */
   border-radius: 12px;
 }
 
@@ -102,7 +102,44 @@
   width: 200px;
   background: #8dd3bb;
   border-radius: 4px;
+  color: #000000;
 }
 .fall-into-travel .card-body {
   margin-top: 200px;
+}
+
+.extra-section .card {
+  background-color: #8dd3bb;
+  height: 350px;
+}
+.extra-section .card-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 35px;
+  color: #112211;
+  width: 40%;
+}
+.extra-section .card-text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 17px;
+  color: #112211;
+  margin-top: 8%;
+}
+.extra-section .btn {
+  gap: 4px;
+  width: 500px;
+  background: #ffffff;
+  border-radius: 4px;
+  margin-top: 10%;
+}
+.extra-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 19px;
+  column-gap: 17px;
+  margin-bottom: 80px;
 }
