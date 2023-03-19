@@ -20,3 +20,24 @@
     text-align: center;
     font-size: 15px;
   }
+
+  .flights-filter {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #112211;
+  }
+
+  .all-flights-container h6{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #112211;
+  }
+  .all-flights-container .length-color{
+  
+    color: salmon;
+  }
+ 

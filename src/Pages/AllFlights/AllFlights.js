@@ -1,16 +1,13 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaStar, FaSearch, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import AddReviews from "../../Components/AddReviews/AddReviews";
-// import { ApiContext } from "../../DataContext.js/DataContext";
 import UserReviews from "../Home/UserReviews/UserReviews";
 import './AllFlights.css'
-// import { linkClasses } from "@mui/material";
+
 
 const AllFlights = () => {
-
-  // const { flights } = useContext(ApiContext);
 
   const [startDate, setStartDate] = useState(new Date());
   const [visible, setVisible] = useState(6);
@@ -25,17 +22,24 @@ const AllFlights = () => {
   };
 
   const locationRef = useRef("");
+  const classRef = useRef("");
+  const tripRef = useRef("");
+
 
   // const roomRef = useRef(0);
 
   const searchHandler = async () => {
     const location = locationRef.current.value;
-    console.log(location);
+    const trip = tripRef.current.value;
+    const tClass = classRef.current.value;
+    const airlines = airlinesRef.current.value;
+
+    console.log(location, tClass, airlines);
     // if (location === "") {
     //   return alert('All fields are required!')
     // }
     const res = await fetch(
-      `http://localhost:5000/api/flights?location=${location}`
+      `http://localhost:5000/api/flights?location=${location}&class=${tClass}&trip=${trip}`
     );
 
     if (!res.ok) alert("Something went wrong");
@@ -44,6 +48,43 @@ const AllFlights = () => {
     console.log(result);
     setFilter(result.data);
   }
+
+
+
+
+  const airlinesRef = useRef("");
+
+  const checkboxHandler = async (data) => {
+  
+console.log(data)
+    // const airlines = e.target.value;
+
+    // console.log(true);
+    // if (location === "") {
+    //   return alert('All fields are required!')
+    // }
+    // const res = await fetch(
+    //   `http://localhost:5000/api/flights?airlines_name=${airlines}`
+    // );
+
+    // if (!res.ok) alert("Something went wrong");
+
+    // const result = await res.json();
+    // console.log(result);
+    // setFilter(result.data);
+  }
+
+
+
+  // useEffect(() => {
+
+  //   fetch(`http://localhost:5000/api/flights?airlines_name=${filter}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setFilter(data);
+  //       console.log(data);
+  //     });
+  // }, []);
 
 
 
@@ -78,6 +119,20 @@ const AllFlights = () => {
             placeholder="Enter Destination"
             ref={locationRef}
           />
+          <input
+            type="text"
+            id="form3Example1m"
+            className="enter__destination"
+            placeholder="trip"
+            ref={tripRef}
+          />
+          <input
+            type="text"
+            id="form3Example1m"
+            className="enter__destination"
+            placeholder="class"
+            ref={classRef}
+          />
 
 
 
@@ -100,11 +155,13 @@ const AllFlights = () => {
               minDate={new Date()}
             />
           </div>
-          <FaSearch
-            className="search"
-            type="submit"
-            onClick={searchHandler}
-          ></FaSearch>
+          <div className="btn btn-light">
+            <FaSearch
+              className="search"
+              type="submit"
+              onClick={searchHandler}
+            ></FaSearch>
+          </div>
 
           {/* <button className="btn btn-light" type="submit" onClick={searchHandler} >
             search
@@ -115,35 +172,129 @@ const AllFlights = () => {
 
       <section className="row container m-auto mt-5 mb-5">
         <div className="checkbox-container mt-5 mb-5  col-md-12 col-sm-12 col-lg-2">
-          <p className="package-filter">Filters</p>
+          <p className="flights-filter">Filters</p>
           <hr className="text-dark" />
 
-          <div>
-            <p className="filter-title"> package category</p>
+          <div className="airlines-filter">
+            <div>
+              <p className="filter-title"> Airlines</p>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                name="Flydubai"
+                id=""
+                value="Flydubai"
+                className="checkbox"
+                onChange={()=>checkboxHandler("Flydubai")}
+                // onChange={ (e) =>checkboxHandler(e.target.value)}
+                // ref={airlinesRef}
+              // checked={IntFilter}
+              // onClick={() => setIntFilter(!IntFilter)}
+              />
+              <span className="input-filter-text ms-2">Flydubai</span> <br />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="international" 
+                id=""
+                className="checkbox"
+              // checked={IntFilter}
+              // onClick={() => setIntFilter(!IntFilter)}
+              />
+              <span className="input-filter-text ms-2">Qantas</span> <br />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="international"
+                id=""
+                className="checkbox"
+              // checked={IntFilter}
+              // onClick={() => setIntFilter(!IntFilter)}
+              />
+              <span className="input-filter-text ms-2">Qatar airlines </span> <br />
+            </div>
+
+
+            <div>
+              <input
+                type="checkbox"
+                name="domestic"
+                className="checkbox"
+                id=""
+              // checked={dmsFilter}
+              // onClick={() => setdmsFilter(!dmsFilter)}
+              />
+              <span className="input-filter-text ms-2">Emirates</span> <br />
+            </div>
           </div>
 
-          <div>
-            <input
-              type="checkbox"
-              name="international"
-              id=""
-              className="checkbox"
-            // checked={IntFilter}
-            // onClick={() => setIntFilter(!IntFilter)}
-            />
-            <span className="input-filter-text ms-2">International</span> <br />
+
+          <hr />
+
+          <div className="trip-filter">
+            <div>
+              <p className="filter-title"> Airlines</p>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                name="international"
+                id=""
+                className="checkbox"
+              // checked={IntFilter}
+              // onClick={() => setIntFilter(!IntFilter)}
+              />
+              <span className="input-filter-text ms-2">FlyDubai</span> <br />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="international"
+                id=""
+                className="checkbox"
+              // checked={IntFilter}
+              // onClick={() => setIntFilter(!IntFilter)}
+              />
+              <span className="input-filter-text ms-2">Qantas</span> <br />
+            </div>
+
+
+            {/* <div>
+              <input
+                type="checkbox"
+                name="international"
+                id=""
+                className="checkbox"
+              // checked={IntFilter}
+              // onClick={() => setIntFilter(!IntFilter)}
+              />
+              <span className="input-filter-text ms-2">Qatar airlines </span> <br />
+            </div>
+
+
+            <div>
+              <input
+                type="checkbox"
+                name="domestic"
+                className="checkbox"
+                id=""
+              // checked={dmsFilter}
+              // onClick={() => setdmsFilter(!dmsFilter)}
+              />
+              <span className="input-filter-text ms-2">Emirates</span> <br />
+            </div> */}
           </div>
-          <div>
-            <input
-              type="checkbox"
-              name="domestic"
-              className="checkbox"
-              id=""
-            // checked={dmsFilter}
-            // onClick={() => setdmsFilter(!dmsFilter)}
-            />
-            <span className="input-filter-text ms-2">Domestic</span> <br />
-          </div>
+
+
+
+
+
+
         </div>
 
         <div
@@ -155,20 +306,20 @@ const AllFlights = () => {
 
         <div className="col-lg-9 col-md-12 col-sm-12 col-12">
           <div className=" mt-5">
-            <span className="package-container">
-              { filter &&  filter?.length} Packages Here
+            <span className="all-flights-container">
+              <h6>Showing <span className="length-color" >{filter && filter?.length}</span>  Flights</h6>
             </span>{" "}
           </div>
           <hr />
 
           <div>
-            {filter && filter?.slice(0, visible)?.map((filt) => (
+            {filter && filter?.slice(0, visible)?.map((filter) => (
               <div className="flight-card" >
                 <div class="card mb-3" style={{ "max-width": "840px" }}>
                   <div class="row g-0">
                     <div class="col-md-4">
                       <img
-                        src={filt.airlines_logo_URL}
+                        src={filter.airlines_logo_URL}
                         class="p-2"
                         alt="..."
                         style={{ "height": "110px", "width": "160px" }}
@@ -178,10 +329,10 @@ const AllFlights = () => {
                       <div class="card-body">
                         <div className="d-flex justify-content-between align-items-center">
                           {" "}
-                          <h5 class="card-title">{filt.airlines_name}</h5>
-                          <h5 class="card-title">${filt.price}</h5>
+                          <h5 class="card-title">{filter.airlines_name}</h5>
+                          <h5 class="card-title">${filter.price}</h5>
                         </div>
-                        <p class="card-text">{filt.location}</p>
+                        <p class="card-text">{filter.location}</p>
                         <div className="d-flex justify-content-start align-items-center ">
                           <div>
                             <span>
@@ -201,11 +352,13 @@ const AllFlights = () => {
                             </span>
                           </div>
                           <p class="card-text stay mt-2 ms-1">
-                            {filt.ratings} start reviews
+                            {filter.ratings} start reviews
                           </p>
                         </div>
                         <div className="d-flex align-content-center justify-content-between">
-                          <p className="mt-3">{filt.journey}</p>
+                          <p className="mt-3">{filter.journey}</p>
+                          <p className="mt-3">{filter.class}</p>
+                          {/* <p className="mt-3">{filter.class}</p> */}
                           {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
                         </div>
                         {/* <p class="card-text">
@@ -216,7 +369,7 @@ const AllFlights = () => {
                             <FaHeart />
                           </Link>{" "}
                           <Link
-                            to={`/packages/${filt._id}`}
+                            to={`/packages/${filter._id}`}
                             class=" btn btn-info package-details-button"
                             style={{ width: "428px", height: "38px" }}
                           >
