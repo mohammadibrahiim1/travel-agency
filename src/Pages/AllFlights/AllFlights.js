@@ -4,18 +4,27 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import UserReviews from "../Home/UserReviews/UserReviews";
-import './AllFlights.css'
-
+import "./AllFlights.css";
 
 const AllFlights = () => {
-
   const [startDate, setStartDate] = useState(new Date());
   const [visible, setVisible] = useState(6);
   const [filter, setFilter] = useState();
+  const [filterQueries, setFilterQueries] = useState("");
+  const [tripQueries, setTripQueries] = useState("");
+  // const [checked, setFlyduba] = useState(false);
+  const [flyDFilter, setFlyDFilter] = useState(false);
+  const [qantFilter, setQantFilter] = useState(false);
+  // const [emrFilter, setEmrFilter] = useState();
+  // const [qatarFilter, setQatarFilter] = useState();
+  const [onewayFilter, setOnewayFilter] = useState(false);
+  // const [returnFilter, setReturnFilter] = useState();
+
+  // if(!param.flyDFilter && !param.qantFilter && !param.emrFilter && !param.qatarFilter &&!param.onewayFilter && !param.returnFilter ){
+  //   const data = await flightsCollection.find({}).toArray();
+
   // const [flights, setFlights] = useState([]);
-  console.log(filter)
-
-
+  // console.log(filter);
 
   const showMore = () => {
     setVisible((preValue) => preValue + 3);
@@ -25,16 +34,15 @@ const AllFlights = () => {
   const classRef = useRef("");
   const tripRef = useRef("");
 
-
   // const roomRef = useRef(0);
 
   const searchHandler = async () => {
     const location = locationRef.current.value;
     const trip = tripRef.current.value;
     const tClass = classRef.current.value;
-    const airlines = airlinesRef.current.value;
+    // const airlines = airlinesRef.current.value;
 
-    console.log(location, tClass, airlines);
+    // console.log(location, tClass);
     // if (location === "") {
     //   return alert('All fields are required!')
     // }
@@ -45,58 +53,104 @@ const AllFlights = () => {
     if (!res.ok) alert("Something went wrong");
 
     const result = await res.json();
-    console.log(result);
-    setFilter(result.data);
-  }
-
-
-
-
-  const airlinesRef = useRef("");
-
-  const checkboxHandler = async (data) => {
-  
-console.log(data)
-    // const airlines = e.target.value;
-
-    // console.log(true);
-    // if (location === "") {
-    //   return alert('All fields are required!')
-    // }
-    // const res = await fetch(
-    //   `http://localhost:5000/api/flights?airlines_name=${airlines}`
-    // );
-
-    // if (!res.ok) alert("Something went wrong");
-
-    // const result = await res.json();
     // console.log(result);
-    // setFilter(result.data);
+    setFilter(result.data);
+  };
+
+  // const airlinesRef = useRef("");
+
+  // if(!param.flyDFilter && !param.qantFilter && !param.emrFilter && !param.qatarFilter &&!param.onewayFilter && !param.returnFilter ){
+  //   const data = await flightsCollection.find({}).toArray();
+  const checkboxHandler = (event, data) => {
+    console.log(event.target.value, data);
+
+    setFlyDFilter((prev) => {
+      if (!prev) {
+        setFilterQueries(data);
+      } else {
+        setFilterQueries("");
+      }
+      return !prev;
+    });
+  };
+
+  const qantasCheckbox = (event ,data )=> {
+    setQantFilter((prev) => {
+      if (!prev) {
+        setFilterQueries(data);
+      } else {
+        setFilterQueries("");
+      }
+      return !prev;
+    });
   }
 
+  const OnewayFilter = (event ,data )=> {
+    console.log(event.target.value,data);
+    setOnewayFilter((prev) => {
+      if (!prev) {
+        setTripQueries(data);
+      } else {
+        setTripQueries("");
+      }
+      return !prev;
+    });
+  }
 
-
-  // useEffect(() => {
-
-  //   fetch(`http://localhost:5000/api/flights?airlines_name=${filter}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setFilter(data);
-  //       console.log(data);
-  //     });
-  // }, []);
-
-
+  // const checkboxHandler =(event,data)=> {
+  //   setQantFilter((prev) => {
+  //     if (!prev) {
+  //       setFilterQueries(data);
+  //     } else {
+  //       setFilterQueries("");
+  //     }
+  //     return !prev;
+  //   });
+  // }
+  // console.log(filterQueries);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/flights?pageConfig={"content":40,"page":1}`)
-      .then(res => res.json())
-      .then(data => {
+    fetch(`http://localhost:5000/api/flights?airlines_name=${filterQueries}&trip=${tripQueries}`)
+      .then((res) => res.json())
+      .then((data) => {
         setFilter(data.data);
-      }
-      )
-  }, []);
+        console.log(data);
+      });
+  }, [filterQueries,tripQueries]);
 
+  // useEffect(() => {
+  //   fetch(
+  //     `http://localhost:5000/api/flights?flyDFilter=${
+  //       flyDFilter || ""
+  //     }&qantFilter=${qantFilter || ""}&emrFilter=${
+  //       emrFilter || ""
+  //     }&qatarFilter=${qatarFilter || ""}&onewayFilter=${
+  //       onewayFilter || ""
+  //     }&returnFilter=${returnFilter || ""}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setFilter(data.data);
+  //       console.log(data);
+  //     });
+  // }, [
+  //   flyDFilter,
+  //   qantFilter,
+  //   emrFilter,
+  //   qatarFilter,
+  //   returnFilter,
+  //   onewayFilter,
+  // ]);
+
+  useEffect(() => {
+    fetch(
+      `http://localhost:5000/api/flights?pageConfig={"content":40,"page":1}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setFilter(data.data);
+      });
+  }, []);
 
   return (
     <div>
@@ -110,8 +164,8 @@ console.log(data)
         </div>
       </section>
 
-      <section className="flight-search-section-container container" >
-        <form className="flight-search-section container m-auto "  >
+      <section className="flight-search-section-container container">
+        <form className="flight-search-section container m-auto ">
           <input
             type="text"
             id="form3Example1m"
@@ -134,9 +188,7 @@ console.log(data)
             ref={classRef}
           />
 
-
-
-          <div >
+          <div>
             <DatePicker
               className="datepicker "
               selected={startDate}
@@ -166,7 +218,6 @@ console.log(data)
           {/* <button className="btn btn-light" type="submit" onClick={searchHandler} >
             search
           </button> */}
-
         </form>
       </section>
 
@@ -184,25 +235,19 @@ console.log(data)
               <input
                 type="checkbox"
                 name="Flydubai"
-                id=""
-                value="Flydubai"
-                className="checkbox"
-                onChange={()=>checkboxHandler("Flydubai")}
-                // onChange={ (e) =>checkboxHandler(e.target.value)}
-                // ref={airlinesRef}
-              // checked={IntFilter}
-              // onClick={() => setIntFilter(!IntFilter)}
+                // value
+                checked={flyDFilter}
+                onChange={(event) => checkboxHandler(event, "Flydubai")}
               />
               <span className="input-filter-text ms-2">Flydubai</span> <br />
             </div>
+
             <div>
               <input
                 type="checkbox"
-                name="international" 
-                id=""
-                className="checkbox"
-              // checked={IntFilter}
-              // onClick={() => setIntFilter(!IntFilter)}
+                name="Qantas"
+                checked={qantFilter}
+                onChange={(event) => qantasCheckbox(event, "Qantas")}
               />
               <span className="input-filter-text ms-2">Qantas</span> <br />
             </div>
@@ -212,12 +257,11 @@ console.log(data)
                 name="international"
                 id=""
                 className="checkbox"
-              // checked={IntFilter}
-              // onClick={() => setIntFilter(!IntFilter)}
+                // checked={emrFilter}
+                onClick={() => checkboxHandler("Emirates")}
               />
-              <span className="input-filter-text ms-2">Qatar airlines </span> <br />
+              <span className="input-filter-text ms-2">Emirates</span> <br />
             </div>
-
 
             <div>
               <input
@@ -225,19 +269,18 @@ console.log(data)
                 name="domestic"
                 className="checkbox"
                 id=""
-              // checked={dmsFilter}
-              // onClick={() => setdmsFilter(!dmsFilter)}
+                // checked={qatarFilter}
+                onClick={() => checkboxHandler("Qatar Airways")}
               />
-              <span className="input-filter-text ms-2">Emirates</span> <br />
+              <span className="input-filter-text ms-2">Qatar</span> <br />
             </div>
           </div>
-
 
           <hr />
 
           <div className="trip-filter">
             <div>
-              <p className="filter-title"> Airlines</p>
+              <p className="filter-title"> Trip</p>
             </div>
 
             <div>
@@ -246,10 +289,10 @@ console.log(data)
                 name="international"
                 id=""
                 className="checkbox"
-              // checked={IntFilter}
-              // onClick={() => setIntFilter(!IntFilter)}
+                checked={onewayFilter}
+                onChange={(event) => OnewayFilter(event,"oneway")}
               />
-              <span className="input-filter-text ms-2">FlyDubai</span> <br />
+              <span className="input-filter-text ms-2">oneway</span> <br />
             </div>
             <div>
               <input
@@ -257,12 +300,11 @@ console.log(data)
                 name="international"
                 id=""
                 className="checkbox"
-              // checked={IntFilter}
-              // onClick={() => setIntFilter(!IntFilter)}
+                // checked={IntFilter}
+                // onClick={() => setIntFilter(!IntFilter)}
               />
-              <span className="input-filter-text ms-2">Qantas</span> <br />
+              <span className="input-filter-text ms-2">return</span> <br />
             </div>
-
 
             {/* <div>
               <input
@@ -289,12 +331,6 @@ console.log(data)
               <span className="input-filter-text ms-2">Emirates</span> <br />
             </div> */}
           </div>
-
-
-
-
-
-
         </div>
 
         <div
@@ -307,82 +343,87 @@ console.log(data)
         <div className="col-lg-9 col-md-12 col-sm-12 col-12">
           <div className=" mt-5">
             <span className="all-flights-container">
-              <h6>Showing <span className="length-color" >{filter && filter?.length}</span>  Flights</h6>
+              <h6>
+                Showing{" "}
+                <span className="length-color">{filter && filter?.length}</span>{" "}
+                Flights
+              </h6>
             </span>{" "}
           </div>
           <hr />
 
           <div>
-            {filter && filter?.slice(0, visible)?.map((filter) => (
-              <div className="flight-card" >
-                <div class="card mb-3" style={{ "max-width": "840px" }}>
-                  <div class="row g-0">
-                    <div class="col-md-4">
-                      <img
-                        src={filter.airlines_logo_URL}
-                        class="p-2"
-                        alt="..."
-                        style={{ "height": "110px", "width": "160px" }}
-                      />
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body">
-                        <div className="d-flex justify-content-between align-items-center">
-                          {" "}
-                          <h5 class="card-title">{filter.airlines_name}</h5>
-                          <h5 class="card-title">${filter.price}</h5>
-                        </div>
-                        <p class="card-text">{filter.location}</p>
-                        <div className="d-flex justify-content-start align-items-center ">
-                          <div>
-                            <span>
-                              <FaStar />
-                            </span>
-                            <span>
-                              <FaStar />
-                            </span>
-                            <span>
-                              <FaStar />
-                            </span>
-                            <span>
-                              <FaStar />
-                            </span>
-                            <span>
-                              <FaStar />
-                            </span>
+            {filter &&
+              filter?.slice(0, visible)?.map((filter) => (
+                <div className="flight-card">
+                  <div class="card mb-3" style={{ "max-width": "840px" }}>
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img
+                          src={filter.airlines_logo_URL}
+                          class="p-2"
+                          alt="..."
+                          style={{ height: "110px", width: "160px" }}
+                        />
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <div className="d-flex justify-content-between align-items-center">
+                            {" "}
+                            <h5 class="card-title">{filter.airlines_name}</h5>
+                            <h5 class="card-title">${filter.price}</h5>
                           </div>
-                          <p class="card-text stay mt-2 ms-1">
-                            {filter.ratings} start reviews
-                          </p>
-                        </div>
-                        <div className="d-flex align-content-center justify-content-between">
-                          <p className="mt-3">{filter.journey}</p>
-                          <p className="mt-3">{filter.class}</p>
-                          {/* <p className="mt-3">{filter.class}</p> */}
-                          {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
-                        </div>
-                        {/* <p class="card-text">
+                          <p class="card-text">{filter.location}</p>
+                          <p class="card-text">{filter.trip}</p>
+                          <div className="d-flex justify-content-start align-items-center ">
+                            <div>
+                              <span>
+                                <FaStar />
+                              </span>
+                              <span>
+                                <FaStar />
+                              </span>
+                              <span>
+                                <FaStar />
+                              </span>
+                              <span>
+                                <FaStar />
+                              </span>
+                              <span>
+                                <FaStar />
+                              </span>
+                            </div>
+                            <p class="card-text stay mt-2 ms-1">
+                              {filter.ratings} start reviews
+                            </p>
+                          </div>
+                          <div className="d-flex align-content-center justify-content-between">
+                            <p className="mt-3">{filter.journey}</p>
+                            <p className="mt-3">{filter.class}</p>
+                            {/* <p className="mt-3">{filter.class}</p> */}
+                            {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
+                          </div>
+                          {/* <p class="card-text">
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p> */}
-                        <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
-                          <Link to="/" className="border rounded-2 ps-2 pe-2">
-                            <FaHeart />
-                          </Link>{" "}
-                          <Link
-                            to={`/packages/${filter._id}`}
-                            class=" btn btn-info package-details-button"
-                            style={{ width: "428px", height: "38px" }}
-                          >
-                            View Details
-                          </Link>
-                        </p>
+                          <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
+                            <Link to="/" className="border rounded-2 ps-2 pe-2">
+                              <FaHeart />
+                            </Link>{" "}
+                            <Link
+                              to={`/packages/${filter._id}`}
+                              class=" btn btn-info package-details-button"
+                              style={{ width: "428px", height: "38px" }}
+                            >
+                              View Details
+                            </Link>
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-
-            ))}
+              ))}
           </div>
         </div>
 

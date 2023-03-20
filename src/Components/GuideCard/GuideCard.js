@@ -7,6 +7,7 @@ const GuideCard = ({ guide }) => {
   const { name, image, location, quote, rate, ratings, _id } = guide;
   return (
     <div>
+      
       <div class=" card mb-3" style={{ "max-width": "580px" }}>
         <div class="row g-0">
           <div class="col-md-4 ">
