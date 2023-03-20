@@ -454,11 +454,11 @@ const AllFlights = () => {
                               <span>{filter.time.arrival}</span>
                             </p>
                             <p>
-                              <span>return : {filter.return_time.departure}</span>
+                              <span>return : {filter.return_time.departure}</span>-
                               <span>{filter.return_time.arrival}</span>
                             </p>
                             {/* <p className="mt-3">{filter.class}</p> */}
-                            {/* <p className="mt-3">{filter.class}</p> */}
+                            <p className="mt-3">{filter.class}</p>
                             {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
                           </div>
                           {/* <p class="card-text">
