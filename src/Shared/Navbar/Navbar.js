@@ -37,7 +37,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link" to="/findStays">
+                <Link class="nav-link" to="/findHotels">
                   {" "}
                   <FaBed /> Find Stay{" "}
                 </Link>

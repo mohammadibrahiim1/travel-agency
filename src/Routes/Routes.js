@@ -10,7 +10,11 @@ import ContactUs from "../Pages/ContactUs/ContactUs";
 import Facilities from "../Pages/Facilities/Facilities";
 import Favourites from "../Pages/Favourites/Favourites";
 import FindFlights from "../Pages/FindFlights/FindFlights";
-import FindStays from "../Pages/FindStays/FindStays";
+import FindHotel from "../Pages/FindHotels/FindHotel";
+import HotelDetails from "../Pages/FindHotels/HotelDetails/HotelDetails";
+import HotelListing from "../Pages/FindHotels/HotelListing/HotelListing";
+import SearchResult from "../Pages/FindHotels/SearchResult/SearchResult";
+// import FindStays from "../Pages/FindHotels/FindStays";
 import FlightDetails from "../Pages/FlightDetails/FlightDetails";
 // import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
@@ -46,10 +50,23 @@ export const router = createBrowserRouter([
         element: <FlightDetails></FlightDetails>,
       },
       {
-        path: "/findStays",
-        element: <FindStays></FindStays>,
+        path: "/findHotels",
+        element: <FindHotel></FindHotel>,
       },
-
+      {
+        path: "/hotel-listing",
+        element: <HotelListing></HotelListing>,
+      },
+      {
+        path: "/category/:id",
+        element: <HotelDetails></HotelDetails>,
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
+      },
+      {
+        path: "/category/search",
+        element: <SearchResult></SearchResult>,
+      },
       {
         path: "/signin",
         element: <SignIn></SignIn>,
@@ -106,19 +123,19 @@ export const router = createBrowserRouter([
         path: "/packages/:id",
         element: <PackagesDetails></PackagesDetails>,
         loader: async ({ params }) =>
-        fetch(`http://localhost:5000/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/bookingdetails/:id",
         element: <BookingDetails></BookingDetails>,
         loader: async ({ params }) =>
-        fetch(`http://localhost:5000/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/paymentcard/:id",
         element: <PaymentCard></PaymentCard>,
         loader: async ({ params }) =>
-        fetch(`http://localhost:5000/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
     ],
   },

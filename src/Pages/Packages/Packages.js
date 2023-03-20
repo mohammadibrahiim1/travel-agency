@@ -8,8 +8,14 @@ import "./Packages.css";
 const Packages = () => {
   // const { packages } = useContext(ApiContext);
   // console.log(packages);
+  // !param.tpFilter  &&
+  // !param.twpFilter &&
+  // !param.thrFilter
   const [packages, setPackages] = useState([]);
   const [intFilter, setIntFilter] = useState(false);
+  const [tpFilter, setTpFilter] = useState(false);
+  const [twpFilter, setTwpFilter] = useState(false);
+  const [thrFilter, setThrFilter] = useState(false);
   const [dmsFilter, setdmsFilter] = useState(false);
   const [visible, setVisible] = useState(6);
 
@@ -19,29 +25,18 @@ const Packages = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/packages?intFilter=${intFilter || ""}&dmsFilter=${dmsFilter || ""}`
+      `http://localhost:5000/packages?intFilter=${intFilter || ""}&dmsFilter=${
+        dmsFilter || ""
+      }&tpFilter=${tpFilter || ""}&twpFilter=${twpFilter || ""}&thrFilter=${
+        thrFilter || ""
+      }`
     )
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
         console.log(data);
       });
-  }, [intFilter,dmsFilter]);
-
-  // useEffect(() => {
-  //   // let query = { IntFilter,dmsFilter};
-
-  //   fetch(
-  //     `http://localhost:5000/packages?intFilter=true`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setPackages(data);
-  //       console.log(data);
-  //     });
-  // }, [intFilter, dmsFilter]);
-
-  // console.log(IntFilter, dmsFilter);
+  }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
 
   return (
     <div>
@@ -60,30 +55,74 @@ const Packages = () => {
           <hr className="text-dark" />
 
           <div>
-            <p className="filter-title"> package category</p>
-          </div>
+            <div>
+              <p className="filter-title"> package category</p>
+            </div>
 
-          <div>
-            <input
-              type="checkbox"
-              name="international"
-              id=""
-              className="checkbox"
-              checked={intFilter}
-              onClick={(e) => setIntFilter(e.target.checked)}
-            />
-            <span className="input-filter-text ms-2">International</span> <br />
+            <div>
+              <input
+                type="checkbox"
+                name="international"
+                id=""
+                className="checkbox"
+                checked={intFilter}
+                onClick={(e) => setIntFilter(e.target.checked)}
+              />
+              <span className="input-filter-text ms-2">International</span>{" "}
+              <br />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="domestic"
+                className="checkbox"
+                id=""
+                checked={dmsFilter}
+                onClick={(e) => setdmsFilter(e.target.checked)}
+              />
+              <span className="input-filter-text ms-2">Domestic</span> <br />
+            </div>
           </div>
           <div>
-            <input
-              type="checkbox"
-              name="domestic"
-              className="checkbox"
-              id=""
-              checked={dmsFilter}
-              onClick={(e) => setdmsFilter(e.target.checked)}
-            />
-            <span className="input-filter-text ms-2">Domestic</span> <br />
+            <hr />
+            <div>
+              <p className="filter-title">Offers</p>
+            </div>
+
+            <div>
+              <input
+                type="checkbox"
+                name="international"
+                id=""
+                className="checkbox"
+                checked={tpFilter}
+                onClick={(e) => setTpFilter(e.target.checked)}
+              />
+              <span className="input-filter-text ms-2">10% discount</span>{" "}
+              <br />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="domestic"
+                className="checkbox"
+                id=""
+                checked={twpFilter}
+                onClick={(e) => setTwpFilter(e.target.checked)}
+              />
+              <span className="input-filter-text ms-2">20%discount</span> <br />
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="domestic"
+                className="checkbox"
+                id=""
+                checked={thrFilter}
+                onClick={(e) => setThrFilter(e.target.checked)}
+              />
+              <span className="input-filter-text ms-2">30%discount</span> <br />
+            </div>
           </div>
         </div>
 
@@ -97,7 +136,7 @@ const Packages = () => {
         <div className="col-lg-9 col-md-12 col-sm-12 col-12">
           <div className=" mt-5">
             <span className="package-container">
-              <span>{packages.length}</span> Packages Here
+              <span>{packages.length}</span> Packages and offers 
             </span>{" "}
           </div>
           <hr />

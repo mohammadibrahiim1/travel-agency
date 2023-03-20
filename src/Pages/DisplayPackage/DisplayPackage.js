@@ -48,6 +48,7 @@ const DisplayPackage = ({ pk }) => {
               </div>
               <div className="d-flex align-content-center justify-content-between">
                 <p className="mt-3">{pk.journey}</p>
+                {pk.offer && pk.offer ? <p className="mt-3">{pk.offer}</p> : ""}
                 {/* <h5 class="package-price">{pk.tourCategory}</h5> */}
               </div>
               {/* <p class="card-text">
