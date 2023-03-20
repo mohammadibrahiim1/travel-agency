@@ -74,7 +74,7 @@ const AllFlights = () => {
     });
   };
 
-  const emrCheckbox = (event,data)=> {
+  const emrCheckbox = (event, data) => {
     console.log(event.target.value);
     setEmrFilter((prev) => {
       if (!prev) {
@@ -84,9 +84,9 @@ const AllFlights = () => {
       }
       return !prev;
     });
-  }
+  };
 
-  const qtrCheckbox = (event,data)=> {
+  const qtrCheckbox = (event, data) => {
     console.log(event.target.value);
     setQatarFilter((prev) => {
       if (!prev) {
@@ -96,7 +96,7 @@ const AllFlights = () => {
       }
       return !prev;
     });
-  }
+  };
 
   const OnewayFilter = (event, data) => {
     console.log(event.target.value, data);
@@ -134,30 +134,29 @@ const AllFlights = () => {
       });
   }, [filterQueries, tripQueries]);
 
-  
   const minPriceRef = useRef(0);
   const maxPriceRef = useRef(0);
 
-  const searchPrice = async () =>{
+  const searchPrice = async () => {
     const minPrice = minPriceRef.current.value;
     const maxPrice = maxPriceRef.current.value;
 
-    console.log(minPrice,maxPrice)
+    console.log(minPrice, maxPrice);
 
-    if(minPrice=== "" || maxPrice === ''){
-        return alert('All fields are required!')
+    if (minPrice === "" || maxPrice === "") {
+      return alert("All fields are required!");
     }
 
-    const res = await fetch(`http://localhost:5000/api/flights?price={"min":${minPrice},"max":${maxPrice}}`);
+    const res = await fetch(
+      `http://localhost:5000/api/flights?price={"min":${minPrice},"max":${maxPrice}}`
+    );
 
-    if(!res.ok) alert('Something went wrong');
+    if (!res.ok) alert("Something went wrong");
 
     const result = await res.json();
-    console.log(result.data)
-    setFilter(result.data)
-
-};
-  
+    console.log(result.data);
+    setFilter(result.data);
+  };
 
   useEffect(() => {
     fetch(
@@ -275,7 +274,7 @@ const AllFlights = () => {
                 id=""
                 className="checkbox"
                 checked={emrFilter}
-                onClick={(event) => emrCheckbox(event,"Emirates")}
+                onClick={(event) => emrCheckbox(event, "Emirates")}
               />
               <span className="input-filter-text ms-2">Emirates</span> <br />
             </div>
@@ -287,7 +286,7 @@ const AllFlights = () => {
                 className="checkbox"
                 id=""
                 checked={qatarFilter}
-                onClick={(event) => qtrCheckbox(event,"Qatar Airways")}
+                onClick={(event) => qtrCheckbox(event, "Qatar Airways")}
               />
               <span className="input-filter-text ms-2">Qatar</span> <br />
             </div>
@@ -348,12 +347,32 @@ const AllFlights = () => {
               <span className="input-filter-text ms-2">Emirates</span> <br />
             </div> */}
           </div>
-          <hr/>
-          <form className='mt-2 mb-2'>
-             <input type="number" id="form3Example1m" className="price__box" placeholder="price" ref={minPriceRef}/>
-             <input type="number" id="form3Example1m" className="price__box" placeholder="price" ref={maxPriceRef}/>
-             <FaSearch className='price__search' type='submit' onClick={searchPrice} ></FaSearch>
-             </form>
+          <hr />
+          <div>
+            <form className="mt-2 mb-2">
+              <input
+                type="number"
+                id="form3Example1m"
+                className="price__box mb-1"
+                placeholder="minprice"
+                ref={minPriceRef}
+              />
+              <input
+                type="number"
+                id="form3Example1m"
+                className="price__box"
+                placeholder="maxprice"
+                ref={maxPriceRef}
+              />
+              <div className="btn btn-light mt-2">
+                <FaSearch
+                  className="price__search"
+                  type="submit"
+                  onClick={searchPrice}
+                ></FaSearch>
+              </div>
+            </form>
+          </div>
         </div>
 
         <div
@@ -386,43 +405,59 @@ const AllFlights = () => {
                           src={filter.airlines_logo_URL}
                           class="p-2"
                           alt="..."
-                          style={{ height: "110px", width: "160px" }}
+                          style={{ height: "120px", width: "160px" }}
                         />
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
                           <div className="d-flex justify-content-between align-items-center">
                             {" "}
-                            <h5 class="card-title">{filter.airlines_name}</h5>
+                            <h5 class="card-title">
+                              {filter.airlines_name}
+                              {/* <span>{filter.rating}</span> */}
+                            </h5>
                             <h5 class="card-title">${filter.price}</h5>
                           </div>
-                          <p class="card-text">{filter.location}</p>
-                          <p class="card-text">{filter.trip}</p>
-                          <div className="d-flex justify-content-start align-items-center ">
-                            <div>
-                              <span>
-                                <FaStar />
-                              </span>
-                              <span>
-                                <FaStar />
-                              </span>
-                              <span>
-                                <FaStar />
-                              </span>
-                              <span>
-                                <FaStar />
-                              </span>
-                              <span>
-                                <FaStar />
-                              </span>
-                            </div>
-                            <p class="card-text stay mt-2 ms-1">
-                              {filter.ratings} start reviews
+                          <p class="card-text d-flex justify-content-evenly align-items-center">
+                            <span> {filter.location} </span>
+                            <span class="card-text ms-2 text-warning">
+                              {filter.trip}
+                            </span>{" "}
+                            <span className="d-flex justify-content-start align-items-center ms-3">
+                              <div>
+                                <span>
+                                  <FaStar />
+                                </span>
+                                <span>
+                                  <FaStar />
+                                </span>
+                                <span>
+                                  <FaStar />
+                                </span>
+                                <span>
+                                  <FaStar />
+                                </span>
+                                <span>
+                                  <FaStar />
+                                </span>
+                              </div>
+                              <p class="card-text stay mt-2 ms-1">
+                                {filter.ratings} start reviews
+                              </p>
+                            </span>{" "}
+                          </p>
+
+                          <div className="">
+                            <p>
+                            
+                              <span>oneway : {filter.time.departure}</span>-
+                              <span>{filter.time.arrival}</span>
                             </p>
-                          </div>
-                          <div className="d-flex align-content-center justify-content-between">
-                            <p className="mt-3">{filter.journey}</p>
-                            <p className="mt-3">{filter.class}</p>
+                            <p>
+                              <span>return : {filter.return_time.departure}</span>
+                              <span>{filter.return_time.arrival}</span>
+                            </p>
+                            {/* <p className="mt-3">{filter.class}</p> */}
                             {/* <p className="mt-3">{filter.class}</p> */}
                             {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
                           </div>
@@ -434,7 +469,7 @@ const AllFlights = () => {
                               <FaHeart />
                             </Link>{" "}
                             <Link
-                              to={`/packages/${filter._id}`}
+                              to="/flightDetails"
                               class=" btn btn-info package-details-button"
                               style={{ width: "428px", height: "38px" }}
                             >

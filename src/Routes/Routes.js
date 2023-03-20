@@ -11,6 +11,7 @@ import Facilities from "../Pages/Facilities/Facilities";
 import Favourites from "../Pages/Favourites/Favourites";
 import FindFlights from "../Pages/FindFlights/FindFlights";
 import FindStays from "../Pages/FindStays/FindStays";
+import FlightDetails from "../Pages/FlightDetails/FlightDetails";
 // import FlightListing from "../Pages/FlightListing/FlightListing";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import GuideDetails from "../Pages/GuideDetails/GuideDetails";
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: "/allFlights",
         element: <AllFlights></AllFlights>,
+      },
+      {
+        path: "/flightDetails",
+        element: <FlightDetails></FlightDetails>,
       },
       {
         path: "/findStays",

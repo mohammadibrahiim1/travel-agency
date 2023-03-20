@@ -41,3 +41,21 @@
     color: salmon;
   }
  
+ .price__box{
+    padding: 12px;
+    width: 90%;
+    height: 25px;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    outline: none;
+    
+}
+
+/* .price__search{
+  font-size: 40px;
+  background: #8DD3BB;
+  border-radius: 4px;
+  padding: 10px;
+  margin-left: 20px;
+} */
