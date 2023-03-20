@@ -12,19 +12,12 @@ const AllFlights = () => {
   const [filter, setFilter] = useState();
   const [filterQueries, setFilterQueries] = useState("");
   const [tripQueries, setTripQueries] = useState("");
-  // const [checked, setFlyduba] = useState(false);
   const [flyDFilter, setFlyDFilter] = useState(false);
   const [qantFilter, setQantFilter] = useState(false);
-  // const [emrFilter, setEmrFilter] = useState();
-  // const [qatarFilter, setQatarFilter] = useState();
+  const [emrFilter, setEmrFilter] = useState();
+  const [qatarFilter, setQatarFilter] = useState();
   const [onewayFilter, setOnewayFilter] = useState(false);
-  // const [returnFilter, setReturnFilter] = useState();
-
-  // if(!param.flyDFilter && !param.qantFilter && !param.emrFilter && !param.qatarFilter &&!param.onewayFilter && !param.returnFilter ){
-  //   const data = await flightsCollection.find({}).toArray();
-
-  // const [flights, setFlights] = useState([]);
-  // console.log(filter);
+  const [returnFilter, setReturnFilter] = useState(false);
 
   const showMore = () => {
     setVisible((preValue) => preValue + 3);
@@ -57,10 +50,6 @@ const AllFlights = () => {
     setFilter(result.data);
   };
 
-  // const airlinesRef = useRef("");
-
-  // if(!param.flyDFilter && !param.qantFilter && !param.emrFilter && !param.qatarFilter &&!param.onewayFilter && !param.returnFilter ){
-  //   const data = await flightsCollection.find({}).toArray();
   const checkboxHandler = (event, data) => {
     console.log(event.target.value, data);
 
@@ -74,8 +63,20 @@ const AllFlights = () => {
     });
   };
 
-  const qantasCheckbox = (event ,data )=> {
+  const qantasCheckbox = (event, data) => {
     setQantFilter((prev) => {
+      if (!prev) {
+        setFilterQueries(data);
+      } else {
+        setFilterQueries("");
+      }
+      return !prev;
+    });
+  };
+
+  const emrCheckbox = (event,data)=> {
+    console.log(event.target.value);
+    setEmrFilter((prev) => {
       if (!prev) {
         setFilterQueries(data);
       } else {
@@ -85,8 +86,20 @@ const AllFlights = () => {
     });
   }
 
-  const OnewayFilter = (event ,data )=> {
-    console.log(event.target.value,data);
+  const qtrCheckbox = (event,data)=> {
+    console.log(event.target.value);
+    setQatarFilter((prev) => {
+      if (!prev) {
+        setFilterQueries(data);
+      } else {
+        setFilterQueries("");
+      }
+      return !prev;
+    });
+  }
+
+  const OnewayFilter = (event, data) => {
+    console.log(event.target.value, data);
     setOnewayFilter((prev) => {
       if (!prev) {
         setTripQueries(data);
@@ -95,52 +108,56 @@ const AllFlights = () => {
       }
       return !prev;
     });
-  }
+  };
 
-  // const checkboxHandler =(event,data)=> {
-  //   setQantFilter((prev) => {
-  //     if (!prev) {
-  //       setFilterQueries(data);
-  //     } else {
-  //       setFilterQueries("");
-  //     }
-  //     return !prev;
-  //   });
-  // }
+  const ReturnFilter = (event, data) => {
+    console.log(event);
+    setReturnFilter((prev) => {
+      if (!prev) {
+        setTripQueries(data);
+      } else {
+        setTripQueries("");
+      }
+      return !prev;
+    });
+  };
   // console.log(filterQueries);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/flights?airlines_name=${filterQueries}&trip=${tripQueries}`)
+    fetch(
+      `http://localhost:5000/api/flights?airlines_name=${filterQueries}&trip=${tripQueries}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setFilter(data.data);
         console.log(data);
       });
-  }, [filterQueries,tripQueries]);
+  }, [filterQueries, tripQueries]);
 
-  // useEffect(() => {
-  //   fetch(
-  //     `http://localhost:5000/api/flights?flyDFilter=${
-  //       flyDFilter || ""
-  //     }&qantFilter=${qantFilter || ""}&emrFilter=${
-  //       emrFilter || ""
-  //     }&qatarFilter=${qatarFilter || ""}&onewayFilter=${
-  //       onewayFilter || ""
-  //     }&returnFilter=${returnFilter || ""}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setFilter(data.data);
-  //       console.log(data);
-  //     });
-  // }, [
-  //   flyDFilter,
-  //   qantFilter,
-  //   emrFilter,
-  //   qatarFilter,
-  //   returnFilter,
-  //   onewayFilter,
-  // ]);
+  
+  const minPriceRef = useRef(0);
+  const maxPriceRef = useRef(0);
+
+  const searchPrice = async () =>{
+    const minPrice = minPriceRef.current.value;
+    const maxPrice = maxPriceRef.current.value;
+
+    console.log(minPrice,maxPrice)
+
+    if(minPrice=== "" || maxPrice === ''){
+        return alert('All fields are required!')
+    }
+
+    const res = await fetch(`http://localhost:5000/api/flights?price={"min":${minPrice},"max":${maxPrice}}`);
+
+    if(!res.ok) alert('Something went wrong');
+
+    const result = await res.json();
+    console.log(result.data)
+    setFilter(result.data)
+
+};
+  
 
   useEffect(() => {
     fetch(
@@ -257,8 +274,8 @@ const AllFlights = () => {
                 name="international"
                 id=""
                 className="checkbox"
-                // checked={emrFilter}
-                onClick={() => checkboxHandler("Emirates")}
+                checked={emrFilter}
+                onClick={(event) => emrCheckbox(event,"Emirates")}
               />
               <span className="input-filter-text ms-2">Emirates</span> <br />
             </div>
@@ -269,8 +286,8 @@ const AllFlights = () => {
                 name="domestic"
                 className="checkbox"
                 id=""
-                // checked={qatarFilter}
-                onClick={() => checkboxHandler("Qatar Airways")}
+                checked={qatarFilter}
+                onClick={(event) => qtrCheckbox(event,"Qatar Airways")}
               />
               <span className="input-filter-text ms-2">Qatar</span> <br />
             </div>
@@ -286,11 +303,11 @@ const AllFlights = () => {
             <div>
               <input
                 type="checkbox"
-                name="international"
+                name="oneway"
                 id=""
                 className="checkbox"
                 checked={onewayFilter}
-                onChange={(event) => OnewayFilter(event,"oneway")}
+                onChange={(event) => OnewayFilter(event, "oneway")}
               />
               <span className="input-filter-text ms-2">oneway</span> <br />
             </div>
@@ -300,8 +317,8 @@ const AllFlights = () => {
                 name="international"
                 id=""
                 className="checkbox"
-                // checked={IntFilter}
-                // onClick={() => setIntFilter(!IntFilter)}
+                checked={returnFilter}
+                onChange={(event) => ReturnFilter(event, "return")}
               />
               <span className="input-filter-text ms-2">return</span> <br />
             </div>
@@ -331,6 +348,12 @@ const AllFlights = () => {
               <span className="input-filter-text ms-2">Emirates</span> <br />
             </div> */}
           </div>
+          <hr/>
+          <form className='mt-2 mb-2'>
+             <input type="number" id="form3Example1m" className="price__box" placeholder="price" ref={minPriceRef}/>
+             <input type="number" id="form3Example1m" className="price__box" placeholder="price" ref={maxPriceRef}/>
+             <FaSearch className='price__search' type='submit' onClick={searchPrice} ></FaSearch>
+             </form>
         </div>
 
         <div
