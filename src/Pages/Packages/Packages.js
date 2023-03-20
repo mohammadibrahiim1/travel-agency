@@ -9,7 +9,7 @@ const Packages = () => {
   // const { packages } = useContext(ApiContext);
   // console.log(packages);
   const [packages, setPackages] = useState([]);
-  const [IntFilter, setIntFilter] = useState(false);
+  const [intFilter, setIntFilter] = useState(false);
   const [dmsFilter, setdmsFilter] = useState(false);
   const [visible, setVisible] = useState(6);
 
@@ -18,45 +18,30 @@ const Packages = () => {
   };
 
   useEffect(() => {
-    // let query = { IntFilter,dmsFilter};
-    let Inter, domes;
-
-    if (IntFilter) {
-      Inter = "true";
-    } else if (!IntFilter) {
-      Inter = "false";
-    }
-    if (dmsFilter) {
-      domes = "true";
-    } else if (!dmsFilter) {
-      domes = "false";
-    }
-
     fetch(
-      `http://localhost:5000/packages?IntFilter=${Inter}&dmsFilter=${domes}`
+      `http://localhost:5000/packages?intFilter=${intFilter || ""}&dmsFilter=${dmsFilter || ""}`
     )
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
         console.log(data);
       });
-  }, [IntFilter, dmsFilter]);
+  }, [intFilter,dmsFilter]);
 
-  // const filter = (event) => {
-  //   // event.preventDefault();
-  //   // console.log(object);
-  //   if (event.target.name === "international") {
-  //     setIntFilter(event.target.checked);
-  //   }
+  // useEffect(() => {
+  //   // let query = { IntFilter,dmsFilter};
 
-  //   if (event.target.name === "domestic") {
-  //     setdmsFilter(event.target.checked);
-  //   }
+  //   fetch(
+  //     `http://localhost:5000/packages?intFilter=true`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setPackages(data);
+  //       console.log(data);
+  //     });
+  // }, [intFilter, dmsFilter]);
 
-  //   // console.log(event.target.checked);
-  // };
-
-  console.log(IntFilter, dmsFilter);
+  // console.log(IntFilter, dmsFilter);
 
   return (
     <div>
@@ -84,8 +69,8 @@ const Packages = () => {
               name="international"
               id=""
               className="checkbox"
-              checked={IntFilter}
-              onClick={() => setIntFilter(!IntFilter)}
+              checked={intFilter}
+              onClick={(e) => setIntFilter(e.target.checked)}
             />
             <span className="input-filter-text ms-2">International</span> <br />
           </div>
@@ -96,7 +81,7 @@ const Packages = () => {
               className="checkbox"
               id=""
               checked={dmsFilter}
-              onClick={() => setdmsFilter(!dmsFilter)}
+              onClick={(e) => setdmsFilter(e.target.checked)}
             />
             <span className="input-filter-text ms-2">Domestic</span> <br />
           </div>
