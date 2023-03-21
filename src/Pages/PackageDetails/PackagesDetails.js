@@ -21,6 +21,7 @@ const PackagesDetails = () => {
     placeimg1,
     placeimg2,
     placeimg3,
+    offerPrice,
     ratings,
     journey,
     termsAndCondition,
@@ -68,12 +69,26 @@ const PackagesDetails = () => {
                 </div>
               </div>
               <div>
-                <h4 className="package-price">{price}</h4>
+                {offerPrice ? (
+                  <h4 className="package-price">
+                    ${offerPrice}{" "}
+                    <span className="package-price text-decoration-line-through">
+                      ${price}
+                    </span>{" "}
+                  </h4>
+                ) : (
+                  <h4 className="package-price">${price}</h4>
+                )}
                 <div className="">
                   <button className="btn btn-light  ">
                     <FaHeart />
                   </button>
-                  <Link to={`/bookingdetails/${_id}`} className="btn btn-info ms-2">Book Now</Link>
+                  <Link
+                    to={`/PackageBookingDetails/${_id}`}
+                    className="btn btn-info ms-2"
+                  >
+                    Book Now
+                  </Link>
                 </div>
               </div>
             </div>
@@ -189,7 +204,13 @@ const PackagesDetails = () => {
                 )}
               </div>
 
-              <div className="vr col-1 "></div>
+              <div
+                class=" d-lg-flex justify-content-evenly align-items-center   d-md-none d-lg-block d-sm-none d-block col-lg-1"
+                style={{ height: "auto" }}
+              >
+                <div class="vr"></div>
+              </div>
+
               <div className="col-5">
                 <h6 className="fw-bold">Excludes</h6>
                 {excludes ? (

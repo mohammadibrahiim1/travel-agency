@@ -136,14 +136,17 @@ const Packages = () => {
         <div className="col-lg-9 col-md-12 col-sm-12 col-12">
           <div className=" mt-5">
             <span className="package-container">
-              <span>{packages.length}</span> Packages and offers 
+              <span>{packages.length}</span> Packages and offers
             </span>{" "}
           </div>
           <hr />
 
           <div>
-            {packages.slice(0, visible).map((pk) => (
-              <DisplayPackage pk={pk}></DisplayPackage>
+            {packages.slice(0, visible).map((packageData) => (
+              <DisplayPackage
+                packageData={packageData}
+                key={packageData._id}
+              ></DisplayPackage>
             ))}
           </div>
         </div>

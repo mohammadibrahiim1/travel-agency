@@ -4,7 +4,8 @@ import Root from "../Layout/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
-import BookingDetails from "../Pages/BookingDetails/BookingDetails";
+// import BookingDetails from "../Pages/BookingDetails/BookingDetails";
+import PackageBookingDetails from "../Pages/BookingDetails/PackageBookingDetails/PackageBookingDetails";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 // import DisplayPackage from "../Pages/DisplayPackage/DisplayPackage";
 import Facilities from "../Pages/Facilities/Facilities";
@@ -126,8 +127,8 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
-        path: "/bookingdetails/:id",
-        element: <BookingDetails></BookingDetails>,
+        path: "/PackageBookingDetails/:id",
+        element: <PackageBookingDetails></PackageBookingDetails>,
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/packages/${params.id}`),
       },

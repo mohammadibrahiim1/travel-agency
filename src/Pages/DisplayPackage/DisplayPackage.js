@@ -3,14 +3,17 @@ import { FaStar, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./DisplayPackage.css";
 
-const DisplayPackage = ({ pk }) => {
+const DisplayPackage = ({ packageData }) => {
+  console.log(packageData);
+  const { img, name, price, offerPrice, stay, ratings, offer, journey, _id } =
+    packageData;
   return (
     <div>
-      <div class="card mb-3" style={{ "max-width": "840px"}}>
+      <div class="card mb-3" style={{ "max-width": "840px" }}>
         <div class="row g-0">
           <div class="col-md-5">
             <img
-              src={pk.img}
+              src={img}
               class="img-fluid "
               alt="..."
               style={{ height: "298.50px" }}
@@ -20,10 +23,19 @@ const DisplayPackage = ({ pk }) => {
             <div class="card-body">
               <div className="d-flex justify-content-between align-items-center">
                 {" "}
-                <h5 class="card-title">{pk.name}</h5>
-                <h5 class="card-title">${pk.price}</h5>
+                <h5 class="card-title">{name}</h5>
+                {offerPrice ? (
+                  <h5 class="card-title">
+                    ${offerPrice}{" "}
+                    <span class="card-title text-decoration-line-through">
+                      ${price}
+                    </span>{" "}
+                  </h5>
+                ) : (
+                  <h5 class="card-title">${price}</h5>
+                )}
               </div>
-              <p class="card-text">{pk.stay}</p>
+              <p class="card-text">{stay}</p>
               <div className="d-flex justify-content-start align-items-center ">
                 <div>
                   <span>
@@ -42,14 +54,12 @@ const DisplayPackage = ({ pk }) => {
                     <FaStar />
                   </span>
                 </div>
-                <p class="card-text stay mt-2 ms-1">
-                  {pk.ratings} start reviews
-                </p>
+                <p class="card-text stay mt-2 ms-1">{ratings} start reviews</p>
               </div>
               <div className="d-flex align-content-center justify-content-between">
-                <p className="mt-3">{pk.journey}</p>
-                {pk.offer && pk.offer ? <p className="mt-3">{pk.offer}</p> : ""}
-                {/* <h5 class="package-price">{pk.tourCategory}</h5> */}
+                <p className="mt-3">{journey}</p>
+                {offer && offer ? <p className="mt-3 text-warning">{offer}</p> : ""}
+                {/* <h5 class="package-price">{tourCategory}</h5> */}
               </div>
               {/* <p class="card-text">
                 <small class="text-muted">Last updated 3 mins ago</small>
@@ -59,7 +69,7 @@ const DisplayPackage = ({ pk }) => {
                   <FaHeart />
                 </Link>{" "}
                 <Link
-                  to={`/packages/${pk._id}`}
+                  to={`/packages/${_id}`}
                   class=" btn btn-info package-details-button"
                   style={{ width: "428px", height: "38px" }}
                 >
@@ -77,7 +87,7 @@ const DisplayPackage = ({ pk }) => {
         <div class="row g-0">
           <div class="col-md-4">
             <img
-              src={pk.img}
+              src={img}
               class=""
               style={{ width: "300px",height:"298.5px"}}
               alt="..."
@@ -86,11 +96,11 @@ const DisplayPackage = ({ pk }) => {
           <div class="col-md-8">
             <div class="card-body">
               <div className="d-flex justify-content-between align-content-center ">
-                <h5 class="card-title package-name">{pk.name}</h5>
-                <h5 class="card-title package-price">{pk.price}</h5>
+                <h5 class="card-title package-name">{name}</h5>
+                <h5 class="card-title package-price">{price}</h5>
               </div>
 
-              <p class="card-text stay">{pk.stay}</p>
+              <p class="card-text stay">{stay}</p>
               <div className="d-flex justify-content-start align-items-center ">
                 <div>
                   <span>
@@ -110,19 +120,19 @@ const DisplayPackage = ({ pk }) => {
                   </span>
                 </div>
                 <p class="card-text stay mt-2 ms-1">
-                  {pk.ratings} start reviews
+                  {ratings} start reviews
                 </p>
               </div>
               <div className="d-flex align-content-center justify-content-between">
-                <p className="mt-3">{pk.journey}</p>
-                <h5 class="package-price">{pk.tourCategory}</h5>
+                <p className="mt-3">{journey}</p>
+                <h5 class="package-price">{tourCategory}</h5>
               </div>
               <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
                 <Link to="/" className="border rounded-2 ps-2 pe-2">
                   <FaHeart />
                 </Link>{" "}
                 <Link
-                  to={`/packages/${pk._id}`}
+                  to={`/packages/${_id}`}
                   class=" btn btn-info package-details-button"
                   style={{ width: "428px", height: "38px" }}
                 >
