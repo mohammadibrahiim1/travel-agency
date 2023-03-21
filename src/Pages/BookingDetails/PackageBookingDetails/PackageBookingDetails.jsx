@@ -59,7 +59,7 @@ const PackageBookingDetails = () => {
               className=" col-xl-6 col-md-8  m-auto p-2"
             >
               <div className="mb-3 text-start ">
-                <div className="row">
+                <div className="row d-flex ">
                   <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                     <div className="input-container">
                       <input
