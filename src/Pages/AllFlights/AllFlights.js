@@ -33,12 +33,7 @@ const AllFlights = () => {
     const location = locationRef.current.value;
     const trip = tripRef.current.value;
     const tClass = classRef.current.value;
-    // const airlines = airlinesRef.current.value;
 
-    // console.log(location, tClass);
-    // if (location === "") {
-    //   return alert('All fields are required!')
-    // }
     const res = await fetch(
       `http://localhost:5000/api/flights?location=${location}&class=${tClass}&trip=${trip}`
     );
@@ -449,13 +444,14 @@ const AllFlights = () => {
 
                           <div className="">
                             <p>
-                            
                               <span>oneway : {filter.time.departure}</span>-
                               <span>{filter.time.arrival}</span>
                             </p>
                             <p>
-                              <span>return : {filter.return_time.departure}</span>-
-                              <span>{filter.return_time.arrival}</span>
+                              <span>
+                                return : {filter.return_time.departure}
+                              </span>
+                              -<span>{filter.return_time.arrival}</span>
                             </p>
                             {/* <p className="mt-3">{filter.class}</p> */}
                             <p className="mt-3">{filter.class}</p>

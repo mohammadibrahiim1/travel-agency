@@ -6,6 +6,7 @@ import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
 // import BookingDetails from "../Pages/BookingDetails/BookingDetails";
 import PackageBookingDetails from "../Pages/BookingDetails/PackageBookingDetails/PackageBookingDetails";
+import PackageBookingInfo from "../Pages/BookingDetails/PackageBookingInfo/PackageBookingInfo";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 // import DisplayPackage from "../Pages/DisplayPackage/DisplayPackage";
 import Facilities from "../Pages/Facilities/Facilities";
@@ -131,6 +132,12 @@ export const router = createBrowserRouter([
         element: <PackageBookingDetails></PackageBookingDetails>,
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/packages/${params.id}`),
+      },
+      {
+        path: "/bookinginfo",
+        element: <PackageBookingInfo></PackageBookingInfo>,
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/bookingInfo/${params.id}`),
       },
       {
         path: "/paymentcard/:id",

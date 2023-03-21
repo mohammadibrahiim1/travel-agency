@@ -1,21 +1,74 @@
 import React, { useContext } from "react";
-import { FaApple, FaFacebook } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-
+import toast, { Toaster } from "react-hot-toast";
+// import { FaApple, FaFacebook } from "react-icons/fa";
+// import { FcGoogle } from "react-icons/fc";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
+import { ApiContext } from "../../../DataContext.js/DataContext";
 import "./PackageBookingDetails.css";
 
 const PackageBookingDetails = () => {
+  // const { bookinfo } = useContext(ApiContext);
+  // console.log(bookinfo);
+  // const { _id } = bookinfo;
+
   const { user } = useContext(AuthContext);
   const details = useLoaderData();
+  const info = useLoaderData();
+  const {_id}= info
   // console.log(details);
 
-  const { _id, img, offerPrice, offer, name, price, journey, ratings } =
-    details;
-  const handleBooking = () => {
-    console.log("hello");
+  const { img, offerPrice, name, price, journey, ratings } = details;
+
+  const handleBooking = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const userName = form.name.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const date = form.date.value;
+    console.log(userName, email, phone, date);
+
+    const booking = {
+      userName: userName,
+      packageName: name,
+      bookingDate: date,
+      userEmail: email,
+      contact: phone,
+      packagePrice: price,
+      totalPrice: grandtotal,
+      journey: journey,
+    };
+    console.log(booking);
+
+    fetch("http://localhost:5000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Successfully added!");
+        } else {
+          toast.error(data.message);
+        }
+      });
   };
+
+  // let total = 0;
+  // let serviceCharge = 0;
+
+  const sCharge = parseFloat(
+    ((offerPrice ? offerPrice : price) * 0.01).toFixed(2)
+  );
+  const tax = parseFloat(((offerPrice ? offerPrice : price) * 0.01).toFixed(2));
+  const grandtotal = sCharge + tax + (offerPrice ? offerPrice : price);
+  console.log(grandtotal);
+
   return (
     <div>
       <section className="w-75 m-auto">
@@ -26,7 +79,7 @@ const PackageBookingDetails = () => {
                 <div className="d-flex justify-content-between book-detail align-content-center">
                   <h5 class="card-title">{name}</h5>
                   {offerPrice ? (
-                    <span class="card-subtitle mb-2">${price}</span>
+                    <span class="card-subtitle mb-2">${offerPrice}</span>
                   ) : (
                     <span class="card-subtitle mb-2">${price}</span>
                   )}
@@ -37,136 +90,83 @@ const PackageBookingDetails = () => {
               </div>
             </div>
 
-            {/* <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
-                        <input type="text" disabled value={date} className="input w-full input-bordered " />
-                        <select name="slot" className="select select-bordered w-full">
-                            {
-                                slots.map((slot, i) => <option
-                                    value={slot}
-                                    key={i}
-                                >{slot}</option>)
-                            }
-                        </select>
-                        <input name="name" type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="input w-full input-bordered" />
-                        <input name="email" type="email" defaultValue={user?.email} disabled placeholder="Email Address" className="input w-full input-bordered" />
-                        <input name="phone" type="text" placeholder="Phone Number" className="input w-full input-bordered" />
-                        <br />
-                        <input className='btn btn-accent w-full' type="submit" value="Submit" />
-                    </form> */}
-
-            <form
-              // onSubmit={handleSubmit}
-              className=" col-xl-6 col-md-8  m-auto p-2"
-            >
+            <form onSubmit={handleBooking} className=" m-auto p-2">
+              <Toaster />
               <div className="mb-3 text-start ">
-                <div className="row d-flex ">
-                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
-                    <div className="input-container">
-                      <input
-                        type="email"
-                        id="email"
-                        className="input"
-                        placeholder=" "
-                        name="email"
-                        required
-                      />
-                      <label className="label">Email</label>
+                <h2 className="booking-form-header-title">Your Information</h2>
+                <div className="row  ">
+                  <div className=" col-6 d-flex justify-content-between align-items-center gap-2">
+                    <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                      <div className="input-container">
+                        <input
+                          type="email"
+                          id="email"
+                          className="input"
+                          placeholder=" "
+                          name="email"
+                          required
+                        />
+                        <label className="label">Email</label>
+                      </div>
                     </div>
-                  </div>
-                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
-                    <div className="input-container">
-                      <input
-                        type="text"
-                        id="name"
-                        className="input"
-                        placeholder=" "
-                        name="email"
-                        required
-                      />
-                      <label className="label">Your Name</label>
+                    <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                      <div className="input-container">
+                        <input
+                          type="text"
+                          id="name"
+                          className="input"
+                          placeholder=" "
+                          name="name"
+                          required
+                        />
+                        <label className="label">Your Name</label>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="row">
-                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
-                    <div className="input-container">
-                      <input
-                        type="text"
-                        id="password"
-                        className="input"
-                        placeholder=" "
-                        name="password"
-                        required
-                      />
-                      <label className="label">number</label>
+                  <div className="col-6 d-flex justify-content-between align-items-center gap-2 ">
+                    <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                      <div className="input-container">
+                        <input
+                          type="text"
+                          id="phone"
+                          className="input"
+                          placeholder=" "
+                          name="phone"
+                          required
+                        />
+                        <label className="label">phone</label>
+                      </div>
                     </div>
-                
+                    <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
+                      <div className="input-container">
+                        <input
+                          type="date"
+                          id="date"
+                          className="input"
+                          placeholder=" "
+                          name="date"
+                          required
+                        />
+                        <label className="label">select date</label>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
-                    <div className="input-container">
-                      <input
-                        type="text"
-                        id="number"
-                        className="input"
-                        placeholder=" "
-                        name="number"
-                        required
-                      />
-                      <label className="label">number</label>
-                    </div>
-                
-                  </div>
-                </div>
-
-               
-
-                {/* <div className="signUp">
-                  <button
-                    // type="button"
-                    className="btn 
-                        create-account-button btn-light w-100"
-                  >
-                    Login
-                  </button>
-                </div> */}
-                {/* <div className="text-center mt-3">
-                  <span className="text-muted fw-bold">
-                    Don't Have an Account?
-                  </span>{" "}
-                  <Link
-                    to="/signin"
-                    className="login-text text-decoration-none"
-                  >
-                    Sign up
-                  </Link>
-                </div> */}
-                {/* <div className="mb-5">
-                  <hr className="mt-5" />
-                  <p className="text-center "> Or Login with</p>
-                </div> */}
-
-                {/* <div className="social-login mt-5">
-                  <button
-                    // onClick={handleFacebookSignIn}
-                    className="btn btn-light   text-primary p-2"
-                  >
-                    <FaFacebook style={{ width: "22px", height: "22px" }} />
-                  </button>
-                  <button
-                    // onClick={handleGoogleSignIn}
-                    className="btn btn-light     p-2"
-                  >
-                    <FcGoogle style={{ width: "22px", height: "22px" }} />
-                  </button>
-                  <button className="btn btn-light   w-100  p-2">
-                    <FaApple style={{ width: "22px", height: "22px" }} />
-                  </button>
-                </div> */}
+                <input
+                  type="submit"
+                  value="continue"
+                  className="btn btn-primary"
+                />
               </div>
-          
             </form>
+
+            <div>
+              {/* <Link to={`/bookinginfo/${_id}`} className="btn btn-success">
+                see booking details
+              </Link> */}
+            </div>
           </div>
 
           <div className="col-4">
@@ -184,25 +184,43 @@ const PackageBookingDetails = () => {
                   <div class="card-body">
                     <h6 class="card-title">{name}</h6>
                     <p class="card-text">{ratings}star</p>
-                    {/* <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> */}
                   </div>
                 </div>
               </div>
               <hr />
               <div className="price-container container">
-                <div className="d-flex align-content-center justify-content-between">
-                  <p>Basic fare</p>
-                  <p>${price}</p>
-                </div>
-                <div className="d-flex align-content-center justify-content-between">
-                  {" "}
-                  <p>Discount </p> <p> {offer ? <>{offer} </> : 0}</p>
-                </div>
+                {offerPrice ? (
+                  <div className="d-flex align-content-center justify-content-between">
+                    {" "}
+                    <p>Basic fare </p> <p> ${offerPrice}</p>
+                  </div>
+                ) : (
+                  <div className="d-flex align-content-center justify-content-between">
+                    <p>Basic fare</p>
+                    <p>${price}</p>
+                  </div>
+                )}
+
                 <div className="d-flex align-content-center justify-content-between">
                   <p> Service Charge </p>
                   <p>
                     {" "}
-                    $ <small>5</small>{" "}
+                    $ <small>{sCharge}</small>{" "}
+                  </p>
+                </div>
+                <div className="d-flex align-content-center justify-content-between">
+                  <p> Tax </p>
+                  <p>
+                    {" "}
+                    $ <small>{tax}</small>{" "}
+                  </p>
+                </div>
+                <hr />
+                <div className="d-flex align-content-center justify-content-between">
+                  <p> Total </p>
+                  <p>
+                    {" "}
+                    $ <small>{grandtotal.toFixed(2)}</small>{" "}
                   </p>
                 </div>
               </div>
