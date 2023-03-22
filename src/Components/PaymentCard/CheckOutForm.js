@@ -1,11 +1,13 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { AuthContext } from "../../Context/UserContext";
 
 const CheckOutForm = ({ data }) => {
   // const { user } = useContext(AuthContext);
   // console.log(user);
   // console.log(data);
+  const navigate = useNavigate();
   const { totalPrice, _id, userName, userEmail } = data;
   const [cardError, setCardError] = useState("");
   const [paymentSuccess, setPaymentSuccess] = useState("");
@@ -50,7 +52,7 @@ const CheckOutForm = ({ data }) => {
     } else {
       setCardError("");
     }
-   
+
     setProccesing(true);
     setPaymentSuccess("");
     const { paymentIntent, error: confirmError } =
@@ -97,6 +99,7 @@ const CheckOutForm = ({ data }) => {
           if (data.insertedId) {
             setPaymentSuccess("Congrats! your payment completed");
             setTransactionId(paymentIntent.id);
+            navigate("/bookingInfo");
           }
         });
     }
