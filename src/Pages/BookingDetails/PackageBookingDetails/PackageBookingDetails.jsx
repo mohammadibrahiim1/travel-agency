@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
 // import { FaApple, FaFacebook } from "react-icons/fa";
 // import { FcGoogle } from "react-icons/fc";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
-import { ApiContext } from "../../../DataContext.js/DataContext";
+// import { ApiContext } from "../../../DataContext.js/DataContext";
 import "./PackageBookingDetails.css";
 
 const PackageBookingDetails = () => {
@@ -14,11 +14,9 @@ const PackageBookingDetails = () => {
 
   const { user } = useContext(AuthContext);
   const details = useLoaderData();
-  const info = useLoaderData();
-  const {_id}= info
-  // console.log(details);
+  const navigate = useNavigate();
 
-  const { img, offerPrice, name, price, journey, ratings } = details;
+  const { _id, img, offerPrice, name, price, journey, ratings } = details;
 
   const handleBooking = (event) => {
     event.preventDefault();
@@ -53,6 +51,7 @@ const PackageBookingDetails = () => {
         console.log(data);
         if (data.acknowledged) {
           toast.success("Successfully added!");
+          navigate(`/bookingInfo`);
         } else {
           toast.error(data.message);
         }
@@ -90,7 +89,7 @@ const PackageBookingDetails = () => {
               </div>
             </div>
 
-            <form onSubmit={handleBooking} className=" m-auto p-2">
+            <form className=" m-auto p-2" onSubmit={handleBooking}>
               <Toaster />
               <div className="mb-3 text-start ">
                 <h2 className="booking-form-header-title">Your Information</h2>
@@ -104,6 +103,7 @@ const PackageBookingDetails = () => {
                           className="input"
                           placeholder=" "
                           name="email"
+                          defaultValue={user?.email}
                           required
                         />
                         <label className="label">Email</label>
@@ -117,6 +117,7 @@ const PackageBookingDetails = () => {
                           className="input"
                           placeholder=" "
                           name="name"
+                          defaultValue={user?.displayName}
                           required
                         />
                         <label className="label">Your Name</label>
@@ -161,12 +162,6 @@ const PackageBookingDetails = () => {
                 />
               </div>
             </form>
-
-            <div>
-              {/* <Link to={`/bookinginfo/${_id}`} className="btn btn-success">
-                see booking details
-              </Link> */}
-            </div>
           </div>
 
           <div className="col-4">

@@ -1,12 +1,12 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Context/UserContext";
+// import { AuthContext } from "../../Context/UserContext";
 
 const CheckOutForm = ({ data }) => {
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
   // console.log(user);
   // console.log(data);
-  const { price, _id } = data;
+  const { totalPrice, _id, userName, userEmail } = data;
   const [cardError, setCardError] = useState("");
   const [paymentSuccess, setPaymentSuccess] = useState("");
   const [processing, setProccesing] = useState(false);
@@ -21,11 +21,13 @@ const CheckOutForm = ({ data }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ price }),
+      body: JSON.stringify({
+        totalPrice,
+      }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
-  }, [price]);
+  }, [totalPrice]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -48,6 +50,7 @@ const CheckOutForm = ({ data }) => {
     } else {
       setCardError("");
     }
+   
     setProccesing(true);
     setPaymentSuccess("");
     const { paymentIntent, error: confirmError } =
@@ -58,8 +61,8 @@ const CheckOutForm = ({ data }) => {
           payment_method: {
             card: card,
             billing_details: {
-              name: user.displayName,
-              email: user.email,
+              name: userName,
+              email: userEmail,
             },
           },
         }
@@ -69,13 +72,17 @@ const CheckOutForm = ({ data }) => {
       return;
     }
     if (paymentIntent.status === "succeeded") {
-      // console.log("card info", card);
+      console.log("card info", card);
       // store payment info in the database
       const payment = {
-        price,
+        totalPrice,
+
         transactionId: paymentIntent.id,
-        email: user.email,
+        email: userEmail,
         bookingId: _id,
+        user: userName,
+        userEmail,
+        // name: name,
       };
       fetch("http://localhost:5000/payments", {
         method: "POST",
@@ -99,6 +106,9 @@ const CheckOutForm = ({ data }) => {
   return (
     <div>
       <section>
+        <h4 className="text-center text-primary mt-3 mb-5">
+          Please,make your payment here
+        </h4>
         <form className="payment-card" onSubmit={handleSubmit}>
           <CardElement
             options={{

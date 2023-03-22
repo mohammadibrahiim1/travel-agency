@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DownloadPdf from "../Components/DownloadPdf/DownloadPdf";
 import PaymentCard from "../Components/PaymentCard/PaymentCard";
 import Root from "../Layout/Root";
 import AboutUs from "../Pages/AboutUs/AboutUs";
@@ -6,7 +7,7 @@ import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
 // import BookingDetails from "../Pages/BookingDetails/BookingDetails";
 import PackageBookingDetails from "../Pages/BookingDetails/PackageBookingDetails/PackageBookingDetails";
-import PackageBookingInfo from "../Pages/BookingDetails/PackageBookingInfo/PackageBookingInfo";
+import PackageBookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 // import DisplayPackage from "../Pages/DisplayPackage/DisplayPackage";
 import Facilities from "../Pages/Facilities/Facilities";
@@ -28,6 +29,8 @@ import Packages from "../Pages/Packages/Packages";
 import SetPassword from "../Pages/SetPassword/SetPassword";
 import SignIn from "../Pages/SignIn/SignIn";
 import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
+import PrivateRoutes from "./PrivateRoutes";
+import BookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
 // import PrivateRoutes from './PrivateRoutes'
 
 export const router = createBrowserRouter([
@@ -129,19 +132,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/PackageBookingDetails/:id",
-        element: <PackageBookingDetails></PackageBookingDetails>,
+        element: (
+          <PrivateRoutes>
+            <PackageBookingDetails></PackageBookingDetails>
+          </PrivateRoutes>
+        ),
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
-        path: "/bookinginfo",
-        element: <PackageBookingInfo></PackageBookingInfo>,
-        loader: async ({ params }) =>
-          fetch(`http://localhost:5000/bookingInfo/${params.id}`),
+        path: "/bookingInfo",
+        element: <BookingInfo></BookingInfo>,
+        // loader: async ({ params }) =>
+        //   fetch(`http://localhost:5000/bookings/${params.id}`),
       },
       {
         path: "/paymentcard/:id",
         element: <PaymentCard></PaymentCard>,
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/bookings/${params.id}`),
+      },
+      {
+        path: "/downloadpdf",
+        element: <DownloadPdf></DownloadPdf>,
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/packages/${params.id}`),
       },
