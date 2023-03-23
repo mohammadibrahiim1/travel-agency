@@ -38,8 +38,8 @@ const Bookinfo = ({ book, handleDelete }) => {
             ) : (
               <>
                 {" "}
-                <Link  className="btn btn-warning disabled">
-                  payment complete
+                <Link to={`/downloadpdf/${_id}`} className="btn btn-warning ">
+                  download Pdf
                 </Link>
               </>
             )}

@@ -1,0 +1,48 @@
+.pdf-card-section {
+  width: 70%;
+  margin: 0 auto;
+}
+.pdf-card-section .row {
+  background-color: #ebf6f2;
+}
+
+.pdf-date {
+  background-color: #ebf6f2;
+  color: #112211;
+  font-weight: bold;
+  text-align: center;
+  height: 160px;
+  padding-top: 50px;
+}
+
+.pdf-middle-column-text {
+  color: #112211;
+  font-weight: bold;
+  padding-top: 10px;
+  height: 160px;
+  background-color: #ebf6f2;
+}
+.pdf-right-column-text {
+  color: #112211;
+  font-weight: bold;
+  padding-top: 10px;
+  height: 160px;
+  background-color: #ebf6f2;
+}
+
+.terms_conditions {
+  width: 95%;
+  margin: 0 auto;
+}
+.conditions-text li {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #112211;
+}
+.contact-info {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #112211;
+}

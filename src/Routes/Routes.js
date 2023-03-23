@@ -153,10 +153,10 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/bookings/${params.id}`),
       },
       {
-        path: "/downloadpdf",
+        path: "/downloadpdf/:id",
         element: <DownloadPdf></DownloadPdf>,
         loader: async ({ params }) =>
-          fetch(`http://localhost:5000/packages/${params.id}`),
+          fetch(`http://localhost:5000/bookings/${params.id}`),
       },
     ],
   },
