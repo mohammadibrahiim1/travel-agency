@@ -8,10 +8,12 @@ import "./FindHotel.css";
 // import { AuthContext } from "../../Context/UserContext";
 import Recent from "./Recent/Recent";
 import HotelInfo from "./HotelInfos/HotelInfo";
+import UserReviews from "../Home/UserReviews/UserReviews";
+import AddReviews from "../../Components/AddReviews/AddReviews";
 // import HotelInfo from "./HotelInfo/HotelInfo";
 
 const FindHotel = () => {
-//   const loading = useContext(AuthContext);
+  //   const loading = useContext(AuthContext);
   const { data: hotelNames = [] } = useQuery({
     queryKey: ["hotelPlace"],
     queryFn: async () => {
@@ -21,23 +23,29 @@ const FindHotel = () => {
     },
   });
 
-//   if (loading) {
-//     return (
-//       <div class="spinner-grow text-primary" role="status">
-//         <span class="visually-hidden">Loading...</span>
-//       </div>
-//     );
-//   }
+  //   if (loading) {
+  //     return (
+  //       <div class="spinner-grow text-primary" role="status">
+  //         <span class="visually-hidden">Loading...</span>
+  //       </div>
+  //     );
+  //   }
 
   return (
     <section className="">
-      <div className="banner">
-        <img src="" alt="" />
-      </div>
+      <section className="hotels-header-section">
+        <div>
+          <h2>Travel World To Gain Knowledge</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
+        </div>
+      </section>
 
       {/* =======================Your recent searches==================== */}
-      <div className="container">
-        <h3 className="fw-bold text-dark mb-4">Your recent searches</h3>
+      <div className="container ">
+        <h3 className="fw-bold text-dark mb-4 mt-5">Your recent searches</h3>
         <div className="home-card-container">
           {hotelNames?.map((hotelName) => (
             <Recent key={hotelName._id} hotelName={hotelName}></Recent>
@@ -128,6 +136,11 @@ const FindHotel = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      <section>
+        <UserReviews></UserReviews>
+        <AddReviews></AddReviews>
       </section>
     </section>
   );
