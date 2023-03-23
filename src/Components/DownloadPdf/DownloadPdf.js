@@ -1,5 +1,6 @@
 // import { Download } from "@mui/icons-material";
 import { Page, StyleSheet } from "@react-pdf/renderer";
+import { AiOutlineDownload } from "react-icons/ai";
 import Pdf from "react-to-pdf";
 
 import React, { useRef } from "react";
@@ -42,9 +43,15 @@ const DownloadPdf = () => {
   return (
     <div className="pdf-card-section">
       <div className="card  mt-5">
-        <Pdf targetRef={ref} fileName="booking_document.pdf">
-          {({ toPdf }) => <button onClick={toPdf}>Download Pdf</button>}
-        </Pdf>
+        <div className="text-end mb-2">
+          <Pdf targetRef={ref} fileName="booking_document.pdf">
+            {({ toPdf }) => (
+              <button className="w-25  btn btn-success" onClick={toPdf}>
+                <AiOutlineDownload style={{width:"20px", height:"20px"}}/> Download Pdf
+              </button>
+            )}
+          </Pdf>
+        </div>
         <Page ref={ref} style={styles.page}>
           <div>
             <p className="text-center fw-semibold mt-4 mb-3">Booking Details</p>
