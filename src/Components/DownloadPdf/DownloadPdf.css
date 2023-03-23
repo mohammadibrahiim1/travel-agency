@@ -1,9 +1,13 @@
 .pdf-card-section {
-  width: 70%;
-  margin: 0 auto;
+  width: 803px;
+  margin: auto;
+  /* padding-bottom: 50px; */
 }
 .pdf-card-section .row {
-  background-color: #ebf6f2;
+  /* text-align: center; */
+  width: 98%;
+  margin: 0 auto;
+  
 }
 
 .pdf-date {
@@ -13,21 +17,26 @@
   text-align: center;
   height: 160px;
   padding-top: 50px;
+  font-size: 12px;
 }
 
-.pdf-middle-column-text {
+.pdf-left-column-text {
   color: #112211;
   font-weight: bold;
   padding-top: 10px;
   height: 160px;
-  background-color: #ebf6f2;
+  font-size: 14px;
+
+  /* background-color: #ebf6f2; */
 }
 .pdf-right-column-text {
   color: #112211;
   font-weight: bold;
   padding-top: 10px;
   height: 160px;
-  background-color: #ebf6f2;
+  font-size: 14px;
+
+  /* background-color: #ebf6f2; */
 }
 
 .terms_conditions {
@@ -45,4 +54,5 @@
   font-size: 13px;
   line-height: 20px;
   color: #112211;
+  padding-bottom: 50px;
 }
