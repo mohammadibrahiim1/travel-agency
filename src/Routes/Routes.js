@@ -31,6 +31,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
 import PrivateRoutes from "./PrivateRoutes";
 import BookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
+import HotelBookingDetails from "../Pages/FindHotels/HotelBookingDetails/HotelBookingDetails";
 // import PrivateRoutes from './PrivateRoutes'
 
 export const router = createBrowserRouter([
@@ -139,6 +140,16 @@ export const router = createBrowserRouter([
         ),
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/packages/${params.id}`),
+      },
+      {
+        path: "/hotelBookingDetails/:id",
+        element: (
+          <PrivateRoutes>
+            <HotelBookingDetails></HotelBookingDetails>
+          </PrivateRoutes>
+        ),
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
       {
         path: "/bookingInfo",

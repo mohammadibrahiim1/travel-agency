@@ -4,10 +4,13 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { AiFillStar } from "react-icons/ai";
 import { ImLocation2 } from "react-icons/im";
 import "./HotelDetails.css";
+import UserReviews from "../../Home/UserReviews/UserReviews";
+import AddReviews from "../../../Components/AddReviews/AddReviews";
 
 const HotelDetails = () => {
   const hotelName = useLoaderData();
   const {
+    _id,
     title,
     photo,
     detailPhoto1,
@@ -22,6 +25,7 @@ const HotelDetails = () => {
     deluxeRoom,
     normalPrice,
     deluxePrice,
+    amenities,
   } = hotelName;
   return (
     <div>
@@ -56,7 +60,7 @@ const HotelDetails = () => {
             <p className="book__price">${price}</p>
 
             <Link
-              to=""
+              to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
               style={{ width: "120px", height: "38px" }}
             >
@@ -107,7 +111,7 @@ const HotelDetails = () => {
           <div className="d-flex">
             <h4 className="me-4">${normalPrice}</h4>
             <Link
-              to=""
+              to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
               style={{ width: "120px", height: "38px" }}
             >
@@ -119,19 +123,38 @@ const HotelDetails = () => {
         <div className="d-flex justify-content-between mb-4">
           <div className="d-flex">
             <img src={photo} alt="" style={{ width: "48px", height: "48px" }} />
-            <p className="mt-2 ms-2">Superior room - {deluxeRoom}</p>
+            <p className="mt-2 ms-2">Delux room - {deluxeRoom}</p>
           </div>
           <div className="d-flex">
             <h4 className="me-4">${deluxePrice}</h4>
-            <Link
+            {/* <Link
               to=""
               class=" btn btn-info book-button"
               style={{ width: "120px", height: "38px" }}
             >
               Book now
-            </Link>
+            </Link> */}
           </div>
         </div>
+
+        <hr />
+
+        <div>
+          <h5>Amenities</h5>
+          {amenities.map((amenity) => (
+            <>
+              <p className="amenity">
+                {" "}
+                {amenity} <br />{" "}
+              </p>
+            </>
+          ))}
+        </div>
+
+        <section>
+          <UserReviews></UserReviews>
+          <AddReviews></AddReviews>
+        </section>
       </section>
     </div>
   );
