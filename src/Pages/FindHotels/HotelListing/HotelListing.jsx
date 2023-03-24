@@ -147,37 +147,30 @@ const HotelListing = () => {
               />
             </div>
 
-            <DateRangePicker
-              ranges={[selectionRange]}
-              onChange={handleSelect}
-            />
-
-            {/* <div>
-              <DatePicker
-                className="input__box"
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                dateFormat="dd/MM/yyyy"
-                minDate={new Date()}
-                placeholder="Check Out "
-              />
-            </div> */}
-            {/* <div>
+            <div className="input-container">
               <input
-                type="text"
-                id="form3Example1m"
-                className="input__box"
-                placeholder="Check In"
+                type="date"
+                id="date"
+                className="input"
+                placeholder=" "
+                name="date"
+                required
               />
+              <label className="label">select date</label>
             </div>
-            <div>
+
+            <div className="input-container">
               <input
-                type="text"
-                id="form3Example1m"
-                className="input__box"
-                placeholder="Check Out "
+                type="date"
+                id="date"
+                className="input"
+                placeholder=" "
+                name="date"
+                required
               />
-            </div> */}
+              <label className="label">select date</label>
+            </div>
+            {/* </div> */}
             <div>
               <input
                 type="number"

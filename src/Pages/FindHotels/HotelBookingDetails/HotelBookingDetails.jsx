@@ -58,12 +58,14 @@ const HotelBookingDetails = () => {
         }
       });
   };
+  const newPrice = roomPrice * roomQuantity;
+  const newrPrice = roomQuantity * price;
 
   const serviceCharge = parseFloat(
-    ((roomPrice ? roomPrice : price) * 0.01).toFixed(2)
+    ((newPrice ? newPrice : newrPrice) * 0.01).toFixed(2)
   );
-  const tax = parseFloat(((roomPrice ? roomPrice : price) * 0.01).toFixed(2));
-  const grandtotal = serviceCharge + tax + (roomPrice ? roomPrice : price);
+  const tax = parseFloat(((newPrice ? newPrice : newrPrice) * 0.01).toFixed(2));
+  const grandtotal = serviceCharge + tax + (newPrice ? newPrice : newrPrice);
   console.log(grandtotal);
 
   const setPrice = (price) => {
@@ -80,7 +82,6 @@ const HotelBookingDetails = () => {
   const dQuantity = () => {
     setRoomQuantity(roomQuantity - 1);
   };
-  const newPrice = roomPrice * roomQuantity;
 
   return (
     <div>
@@ -97,7 +98,7 @@ const HotelBookingDetails = () => {
                     ) : (
                       <span class="card-subtitle mb-2">
                         {" "}
-                        normal room price ${price}
+                        normal room price ${newrPrice}
                       </span>
                     )}
                   </h5>
@@ -230,7 +231,7 @@ const HotelBookingDetails = () => {
                 {roomPrice ? (
                   <div className="d-flex align-content-center justify-content-between">
                     {" "}
-                    <p>Basic fare </p> <p> ${roomPrice}</p>
+                    <p>Basic fare </p> <p> ${newPrice}</p>
                   </div>
                 ) : (
                   <div className="d-flex align-content-center justify-content-between">
