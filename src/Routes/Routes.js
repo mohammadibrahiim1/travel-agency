@@ -32,6 +32,7 @@ import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
 import PrivateRoutes from "./PrivateRoutes";
 import BookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
 import HotelBookingDetails from "../Pages/FindHotels/HotelBookingDetails/HotelBookingDetails";
+import UserProfile from "../Pages/Profile/UserProfile";
 // import PrivateRoutes from './PrivateRoutes'
 
 export const router = createBrowserRouter([
@@ -67,7 +68,7 @@ export const router = createBrowserRouter([
         path: "/category/:id",
         element: <HotelDetails></HotelDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/category/${params.id}`),
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
       {
         path: "/category/search",
@@ -114,7 +115,7 @@ export const router = createBrowserRouter([
         path: "/tourGuide/:id",
         element: <GuideDetails></GuideDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/tourGuide/${params.id}`),
+          fetch(`http://localhost:5000/tourGuide/${params.id}`),
       },
       {
         path: "/aboutus",
@@ -124,12 +125,16 @@ export const router = createBrowserRouter([
         path: "/packages",
         element: <Packages></Packages>,
       },
+      {
+        path: "/profile",
+        element: <UserProfile></UserProfile>,
+      },
 
       {
         path: "/packages/:id",
         element: <PackagesDetails></PackagesDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/PackageBookingDetails/:id",
@@ -139,7 +144,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/hotelBookingDetails/:id",
@@ -149,25 +154,25 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/category/${params.id}`),
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
       {
         path: "/bookingInfo",
         element: <BookingInfo></BookingInfo>,
         // loader: async ({ params }) =>
-        //   fetch(`https://travel-zone-server-zeta.vercel.app/bookings/${params.id}`),
+        //   fetch(`http://localhost:5000/bookings/${params.id}`),
       },
       {
         path: "/paymentcard/:id",
         element: <PaymentCard></PaymentCard>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/bookings/${params.id}`),
+          fetch(`http://localhost:5000/bookings/${params.id}`),
       },
       {
         path: "/downloadpdf/:id",
         element: <DownloadPdf></DownloadPdf>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-zeta.vercel.app/bookings/${params.id}`),
+          fetch(`http://localhost:5000/bookings/${params.id}`),
       },
     ],
   },

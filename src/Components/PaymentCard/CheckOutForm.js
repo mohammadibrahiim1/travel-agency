@@ -18,7 +18,7 @@ const CheckOutForm = ({ data }) => {
   const elements = useElements();
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const CheckOutForm = ({ data }) => {
         userEmail,
         // name: name,
       };
-      fetch("https://travel-zone-server-zeta.vercel.app/payments", {
+      fetch("http://localhost:5000/payments", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -10,7 +10,7 @@ const Place = ({ place }) => {
         <div class="card shadow mb-3">
           <div class="row g-0">
             <div class="col-3 mt-3 text-center">
-              <img src={logo} class=" rounded" alt="..."  style={{ width: "90px", height: "90px" }}/>
+              <img src={logo} class=" rounded" alt="..."  style={{ width: "90px", height: "90px"}}/>
             </div>
             <div class="col-9">
               <div class="card-body">

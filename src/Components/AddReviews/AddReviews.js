@@ -23,7 +23,7 @@ const AddReviews = () => {
       // category
     };
 
-    fetch("https://travel-zone-server-zeta.vercel.app/reviews", {
+    fetch("http://localhost:5000/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

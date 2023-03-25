@@ -10,7 +10,7 @@ const DataContext = ({ children }) => {
   const [bookInfo, setBookInfo] = useState([]);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/places")
+    fetch("http://localhost:5000/places")
       .then((res) => res.json())
       .then((data) => {
         setPlaces(data);
@@ -19,7 +19,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/reviews")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -28,7 +28,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/tourGuide")
+    fetch("http://localhost:5000/tourGuide")
       .then((res) => res.json())
       .then((data) => {
         setTourGuide(data);
@@ -37,7 +37,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/packages")
+    fetch("http://localhost:5000/packages")
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
@@ -46,7 +46,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/bookings")
+    fetch("http://localhost:5000/bookings")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);

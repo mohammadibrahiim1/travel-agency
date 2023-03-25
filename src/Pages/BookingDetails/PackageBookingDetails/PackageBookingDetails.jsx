@@ -39,7 +39,7 @@ const PackageBookingDetails = () => {
     };
     console.log(booking);
 
-    fetch("https://travel-zone-server-zeta.vercel.app/bookings", {
+    fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",
