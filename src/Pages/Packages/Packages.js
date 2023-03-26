@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import DisplayPackage from "../DisplayPackage/DisplayPackage";
 import UserReviews from "../Home/UserReviews/UserReviews";
@@ -18,6 +20,7 @@ const Packages = () => {
   const [thrFilter, setThrFilter] = useState(false);
   const [dmsFilter, setdmsFilter] = useState(false);
   const [visible, setVisible] = useState(6);
+  // const [cart, setCart] = useState([]);
 
   const showMore = () => {
     setVisible((preValue) => preValue + 3);
@@ -37,6 +40,8 @@ const Packages = () => {
         console.log(data);
       });
   }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
+
+
 
   return (
     <div>
@@ -145,6 +150,7 @@ const Packages = () => {
             {packages.slice(0, visible).map((packageData) => (
               <DisplayPackage
                 packageData={packageData}
+                // handleAddToFavourite={handleAddToFavourite}
                 key={packageData._id}
               ></DisplayPackage>
             ))}

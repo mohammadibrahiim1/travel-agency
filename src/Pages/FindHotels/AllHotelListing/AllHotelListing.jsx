@@ -2,12 +2,32 @@ import React from "react";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { MdLocationPin } from "react-icons/md";
 import { BsFillCupFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./AllHotelListing.css";
+import { toast } from "react-hot-toast";
 
 const AllHotelListing = ({ hotelName }) => {
-
+  const navigate = useNavigate();
   const { title, city, price, avgRating, cafe, photo, createdAt } = hotelName;
+  const handleAddToFavourite = (hotelName) => {
+    fetch("http://localhost:5000/favouritesHotel", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(hotelName),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Successfully added!");
+          navigate(`/favourite`);
+        } else {
+          toast.error(data.message);
+        }
+      });
+  };
 
   return (
     <div className="hotel_listing_card">
@@ -67,9 +87,12 @@ const AllHotelListing = ({ hotelName }) => {
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p> */}
               <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
-                <Link to="/" className="border rounded-2 ps-2 pe-2">
+                <div
+                  className="border rounded-2 ps-3 pe-3 btn btn-light"
+                  onClick={() => handleAddToFavourite(hotelName)}
+                >
                   <FaHeart />
-                </Link>{" "}
+                </div>{" "}
                 <Link
                   to={`/category/${hotelName._id}`}
                   class=" btn btn-info package-details-button"
@@ -82,36 +105,6 @@ const AllHotelListing = ({ hotelName }) => {
           </div>
         </div>
       </div>
-
-      {/*              
-                    <div class="col-4">
-                      <img src={photo} class="img-fluid rounded-start" alt="..."/>
-                    </div>
-                    <div class="col-8">
-                      <div class="card-body hotel-list">
-                      
-                       <div>
-                       <div className='starting d-flex align-items-center justify-content-end'>
-                        <h5 class="card-title title">{title}</h5>
-                        <h6>starting from <br />${price}/night <br />excl.tax</h6>
-                        </div>
-                       </div>
-                      
-                        <p class="card-text text">{city}</p>
-                        <div className='d-flex justify-content-between mt-4'>
-                        <p>{avgRating} 5star Hotel </p>
-                        <h6>{cafe}+ Aminities</h6>
-                        </div>
-                        <h5>Very Good 371 reviews</h5> 
-                        <hr />
-                       <div className='d-flex justify-content-between'>
-                       <p>love icon </p>
-                       <Link to={`/category/${hotelName._id}`}>
-                       <button className=''>View please</button>
-                       </Link>
-                       </div>
-                      </div>
-                    </div> */}
     </div>
   );
 };

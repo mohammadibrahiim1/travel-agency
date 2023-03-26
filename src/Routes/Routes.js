@@ -7,11 +7,11 @@ import AddPaymentMethod from "../Pages/AddPaymentMethod/AddPaymentMethod";
 import AllFlights from "../Pages/AllFlights/AllFlights";
 // import BookingDetails from "../Pages/BookingDetails/BookingDetails";
 import PackageBookingDetails from "../Pages/BookingDetails/PackageBookingDetails/PackageBookingDetails";
-import PackageBookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
+// import PackageBookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 // import DisplayPackage from "../Pages/DisplayPackage/DisplayPackage";
 import Facilities from "../Pages/Facilities/Facilities";
-import Favourites from "../Pages/Favourites/Favourites";
+// import FavouritesLayout from "../Pages/Favourites/FavouritesLayout";
 import FindFlights from "../Pages/FindFlights/FindFlights";
 import FindHotel from "../Pages/FindHotels/FindHotel";
 import HotelDetails from "../Pages/FindHotels/HotelDetails/HotelDetails";
@@ -33,6 +33,13 @@ import PrivateRoutes from "./PrivateRoutes";
 import BookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
 import HotelBookingDetails from "../Pages/FindHotels/HotelBookingDetails/HotelBookingDetails";
 import UserProfile from "../Pages/Profile/UserProfile";
+import FavouriteLayout from "../Layout/FavouriteLayout/FavouriteLayout";
+import FavouritePackage from "../Pages/FavouritePackage/FavouritePackage";
+import FavouriteFlights from "../Pages/FavouriteFlights/FavouriteFlights";
+import FavouriteHotels from "../Pages/FavouriteHotels/FavouriteHotels";
+// import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
+// import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
+// import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
 // import PrivateRoutes from './PrivateRoutes'
 
 export const router = createBrowserRouter([
@@ -78,10 +85,7 @@ export const router = createBrowserRouter([
         path: "/signin",
         element: <SignIn></SignIn>,
       },
-      {
-        path: "/favourites",
-        element: <Favourites></Favourites>,
-      },
+
       {
         path: "/login",
         element: <LogIn></LogIn>,
@@ -176,23 +180,26 @@ export const router = createBrowserRouter([
       },
     ],
   },
-
-  // {
-  //   path: "/flightListing",
-  //   element: <FlightListing></FlightListing>,
-  //   children: [
-  //     {
-  //       path: "/flightListing",
-  //       element: <AllFlights></AllFlights>,
-  //     },
-  //     {
-  //       path: "/flightListing/allFlights",
-  //       element: <AllFlights></AllFlights>,
-  //     },
-  //     {
-  //       path: "/flightListing/signin",
-  //       element: <SignIn></SignIn>,
-  //     },
-  //   ],
-  // },
+  {
+    path: "/favourite",
+    element: <FavouriteLayout></FavouriteLayout>,
+    children: [
+      {
+        path: "/favourite",
+        element: <FavouritePackage></FavouritePackage>,
+      },
+      {
+        path: "/favourite/packages",
+        element: <FavouritePackage></FavouritePackage>,
+      },
+      {
+        path: "/favourite/hotels",
+        element: <FavouriteHotels></FavouriteHotels>,
+      },
+      {
+        path: "/favourite/flights",
+        element: <FavouriteFlights></FavouriteFlights>,
+      },
+    ],
+  },
 ]);

@@ -8,6 +8,9 @@ const DataContext = ({ children }) => {
   const [tourGuide, setTourGuide] = useState([]);
   const [packages, setPackages] = useState([]);
   const [bookInfo, setBookInfo] = useState([]);
+  const [favourites, setFavourites] = useState([]);
+  const [favouriteHotel, setFavouriteHotel] = useState([]);
+  const [favouriteFlight, setFavouriteFlight] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/places")
@@ -54,13 +57,42 @@ const DataContext = ({ children }) => {
       });
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:5000/favourites")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setFavourites(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/favouritesHotel")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setFavouriteHotel(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/favouritesFlight")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setFavouriteFlight(data);
+      });
+  }, []);
+
   const apiData = {
     places,
     reviews,
     tourGuide,
     packages,
     bookInfo,
-    // flights,
+    favourites,
+    favouriteHotel,
+    favouriteFlight
   };
 
   return (
