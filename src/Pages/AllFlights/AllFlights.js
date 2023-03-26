@@ -465,7 +465,7 @@ const AllFlights = () => {
                               <FaHeart />
                             </Link>{" "}
                             <Link
-                              to="/flightDetails"
+                              to={`/flightDetails/${filter._id}`}
                               class=" btn btn-info package-details-button"
                               style={{ width: "428px", height: "38px" }}
                             >

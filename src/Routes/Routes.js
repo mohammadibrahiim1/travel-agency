@@ -60,8 +60,11 @@ export const router = createBrowserRouter([
         element: <AllFlights></AllFlights>,
       },
       {
-        path: "/flightDetails",
+        path: "/flightDetails/:id",
         element: <FlightDetails></FlightDetails>,
+        // loader: http://localhost:5000/api/flights/6416b5e2b758fbc5342d890d
+        loader: async ({ params }) =>
+        fetch(`http://localhost:5000/api/flights/${params.id}`),
       },
       {
         path: "/findHotels",
