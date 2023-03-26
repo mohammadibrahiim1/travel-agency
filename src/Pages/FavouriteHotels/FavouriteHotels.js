@@ -11,15 +11,13 @@ import Fhotel from "../Fhotel/Fhotel";
 
 const FavouriteHotels = () => {
   const { favouriteHotel } = useContext(ApiContext);
+  console.log(favouriteHotel);
   const { loading } = useContext(AuthContext);
 
-  //   console.log(_id);
-
-  // const handleRemove = (hotelName)=> {
-  const handleRemove = (id) => {
+  const handleDelete = (_id) => {
     const agree = window.confirm("are you sure you want to delete?");
     if (agree) {
-      fetch(`http://localhost:5000/favouritesHotel/${id}`, {
+      fetch(`http://localhost:5000/favouritesHotel/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -34,16 +32,43 @@ const FavouriteHotels = () => {
   if (loading) {
     return <Loading></Loading>;
   }
+
+  // const handleRemove = (id) => {
+  //   const agree = window.confirm("are you sure you want to delete?");
+  //   if (agree) {
+  //     fetch(`http://localhost:5000/favouritesHotel/${id}`, {
+  //       method: "DELETE",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.deletedCount > 0) {
+  //           toast.success("deleted successfully");
+  //           window.location.reload();
+  //         }
+  //       });
+  //   }
+  // };
+  if (loading) {
+    return <Loading></Loading>;
+  }
   // }
   return (
     <div>
-      {favouriteHotel.map((FHotel) => (
-        <Fhotel
-         FHotel={FHotel}
-         handleRemove={handleRemove}
-        
-        ></Fhotel>
-      ))}
+      <section>
+        <div>
+          {favouriteHotel.length ? (
+            <div>
+              {favouriteHotel.map((FHotel) => (
+                <Fhotel FHotel={FHotel} handleDelete={handleDelete}></Fhotel>
+              ))}
+            </div>
+          ) : (
+            <p className="text-semibold text-danger-emphasis container m-auto">
+              No Favourites Hotel Found
+            </p>
+          )}
+        </div>
+      </section>
     </div>
   );
 };

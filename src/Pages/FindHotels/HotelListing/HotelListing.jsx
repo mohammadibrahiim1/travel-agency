@@ -7,7 +7,7 @@ import axios from "axios";
 import { FaSearch } from "react-icons/fa";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
-import { DateRangePicker } from "react-date-range";
+// import { DateRangePicker } from "react-date-range";
 import AllHotelListing from "../AllHotelListing/AllHotelListing";
 // import { Col } from 'react-bootstrap';
 const HotelListing = () => {
@@ -118,19 +118,19 @@ const HotelListing = () => {
     // navigate(`/hotel-listing/search?city=${city}&room=${room}`,{state: result.data} );
   };
 
-  const [startDate, setStarDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  // const [startDate, setStarDate] = useState(new Date());
+  // const [endDate, setEndDate] = useState(new Date());
 
-  const handleSelect = (date) => {
-    setStarDate(date.selection.startDate);
-    setEndDate(date.selection.endDate);
-  };
+  // const handleSelect = (date) => {
+  //   setStarDate(date.selection.startDate);
+  //   setEndDate(date.selection.endDate);
+  // };
 
-  const selectionRange = {
-    startDate: startDate,
-    endDate: endDate,
-    key: "selection",
-  };
+  // const selectionRange = {
+  //   startDate: startDate,
+  //   endDate: endDate,
+  //   key: "selection",
+  // };
 
   return (
     <>

@@ -34,7 +34,7 @@ const DisplayPackage = ({ packageData }) => {
         console.log(data);
         if (data.acknowledged) {
           toast.success("Successfully added!");
-          navigate(`/favourites`);
+          navigate(`/favourite`);
         } else {
           toast.error(data.message);
         }

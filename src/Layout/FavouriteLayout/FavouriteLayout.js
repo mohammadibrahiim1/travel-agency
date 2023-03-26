@@ -14,12 +14,14 @@ const FavouriteLayout = () => {
       <Navbar></Navbar>
       <Container>
         <Row>
-          <Col lg="12"><FHeader></FHeader></Col>
+          <Col lg="12">
+            <FHeader></FHeader>
+          </Col>
 
           {user?.uid ? (
             <div>
-              <div className=" text-center mt-5">
-                <Link className="btn btn-light me-4" to="/favourite/packages">
+              <div className=" mt-5">
+                <Link className="btn btn-light" to="/favourite/packages">
                   Packages
                 </Link>
                 <Link className="btn btn-light" to="/favourite/hotels">
@@ -29,7 +31,9 @@ const FavouriteLayout = () => {
                   Flights
                 </Link>
               </div>
-              <Outlet></Outlet>
+              <div className="mt-5 ">
+                <Outlet></Outlet>
+              </div>
             </div>
           ) : (
             <SignIn></SignIn>

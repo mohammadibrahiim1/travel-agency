@@ -4,7 +4,8 @@ import { FaStar } from "react-icons/fa";
 import { MdDelete, MdLocationPin } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Fhotel = ({ FHotel,handleRemove }) => {
+const Fhotel = ({ FHotel, handleDelete }) => {
+  // const { hotelName, destination, price, ratings, cafe, image, create, _id } = FHotel;
   const { title, city, price, avgRating, cafe, photo, createdAt, _id } = FHotel;
   return (
     <div>
@@ -66,13 +67,13 @@ const Fhotel = ({ FHotel,handleRemove }) => {
               </p> */}
                 <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
                   <div
-                    className="border rounded-2 ps-3 pe-3 btn btn-light"
-                    onClick={() => handleRemove(_id)}
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(_id)}
                   >
-                    <MdDelete />
+                    <MdDelete style={{ width: "20px", height: "20px" }} />
                   </div>{" "}
                   <Link
-                    to={`/category/${_id}`}
+                    to={`/category`}
                     class=" btn btn-info package-details-button"
                     style={{ width: "428px", height: "38px" }}
                   >

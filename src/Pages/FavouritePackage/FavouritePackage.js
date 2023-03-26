@@ -1,94 +1,59 @@
 import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
 import { FaHeart, FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Loading from "../../Components/Loading/Loading";
+import { AuthContext } from "../../Context/UserContext";
 import { ApiContext } from "../../DataContext.js/DataContext";
+import FPackage from "../../FPackage/FPackage";
 
 const FavouritePackage = () => {
   const { favourites } = useContext(ApiContext);
-  const [{ img, name, price, offerPrice, stay, ratings, offer, journey, _id }] =
-    favourites;
+  const { loading } = useContext(AuthContext);
+
+  const handleDelete = (_id) => {
+    const agree = window.confirm("are you sure you want to delete?");
+    if (agree) {
+      fetch(`http://localhost:5000/favourites/${_id}`, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast.success("deleted successfully");
+            window.location.reload();
+          }
+        });
+    }
+  };
+  if (loading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <section>
-        <div class="card mb-3" style={{ "max-width": "840px" }}>
-          <div class="row g-0">
-            <div class="col-md-5">
-              <img
-                src={img}
-                class="img-fluid "
-                alt="..."
-                style={{ height: "298.50px" }}
-              />
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <div className="d-flex justify-content-between align-items-center">
-                  {" "}
-                  <h5 class="card-title">{name}</h5>
-                  {offerPrice ? (
-                    <h5 class="card-title">
-                      ${offerPrice}{" "}
-                      <span class="card-title text-decoration-line-through">
-                        ${price}
-                      </span>{" "}
-                    </h5>
-                  ) : (
-                    <h5 class="card-title">${price}</h5>
-                  )}
-                </div>
-                <p class="card-text">{stay}</p>
-                <div className="d-flex justify-content-start align-items-center ">
-                  <div>
-                    <span>
-                      <FaStar />
-                    </span>
-                    <span>
-                      <FaStar />
-                    </span>
-                    <span>
-                      <FaStar />
-                    </span>
-                    <span>
-                      <FaStar />
-                    </span>
-                    <span>
-                      <FaStar />
-                    </span>
-                  </div>
-                  <p class="card-text stay mt-2 ms-1">
-                    {ratings} start reviews
-                  </p>
-                </div>
-                <div className="d-flex align-content-center justify-content-between">
-                  <p className="mt-3">{journey}</p>
-                  {offer && offer ? (
-                    <p className="mt-3 text-warning">{offer}</p>
-                  ) : (
-                    ""
-                  )}
-                  {/* <h5 class="package-price">{tourCategory}</h5> */}
-                </div>
-                {/* <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p> */}
-                <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
-                  <div className="border rounded-2 ps-3 pe-3 btn btn-light">
-                    <FaHeart
-                    //   onClick={() => handleAddToFavourite(packageData)}
-                    />
-                  </div>{" "}
-                  <Link
-                    to={`/packages/${_id}`}
-                    class=" btn btn-info package-details-button"
-                    style={{ width: "428px", height: "38px" }}
-                  >
-                    View Details
-                  </Link>
-                </p>
-              </div>
-            </div>
+        {favourites.length ? (
+          <div>
+            {favourites.map((favPackage) => (
+              <FPackage
+                favPackage={favPackage}
+                handleDelete={handleDelete}
+              ></FPackage>
+            ))}
           </div>
+        ) : (
+          <p className="text-semibold text-danger-emphasis container m-auto">
+            No Favourites Package Found
+          </p>
+        )}
+        {/* { favourites.length ? <div> 
+           favourites.map((favPackage) => (
+          <FPackage
+            favPackage={favPackage}
+            handleDelete={handleDelete}
+          ></FPackage> ))}
         </div>
+         : <div>no favourites packages found</div>} */}
       </section>
     </div>
   );
