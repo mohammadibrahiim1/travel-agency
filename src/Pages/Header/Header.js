@@ -41,6 +41,45 @@ const Header = () => {
             </div>
           </div>
         </div>
+
+        {/* <a href="https://ibb.co/mR10TbF"><img src="https://i.ibb.co/7S8QCjN/flight.png" alt="flight" border="0"></a>
+        <a href="https://ibb.co/NsFQtJ3"><img src="https://i.ibb.co/BtfdcQP/boxes.png" alt="boxes" border="0"></a>
+<a href="https://ibb.co/L63XHXn"><img src="https://i.ibb.co/TRsxdxm/hotel-bed.png" alt="hotel-bed" border="0"></a> */}
+
+        <div className="container home-icon-container">
+          <div>
+            <img
+              src="https://i.ibb.co/7S8QCjN/flight.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p className="icon-text">See Flights</p>
+          </div>
+          <div>
+            <img
+              src="https://i.ibb.co/TRsxdxm/hotel-bed.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p className="icon-text">See Hotels</p>
+          </div>
+          <div>
+            <img
+              src="https://i.ibb.co/BtfdcQP/boxes.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p className="icon-text">See Packages</p>
+          </div>
+          {/* <div>
+            <img
+              src="https://i.ibb.co/c6XBXZT/Vector.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p className="icon-text">TRAVEL</p>
+          </div> */}
+        </div>
       </section>
     </div>
   );

@@ -6,7 +6,7 @@ import {
   RiBookReadFill,
 } from "react-icons/ri";
 import MasonaryImageGallery from "../../Components/MasonaryImageGallery/MasonaryImageGallery";
-// import MasonaryImagesGallery from "../MasonaryImagesGallery/MasonaryImagesGallery";
+
 import "./AboutUs.css";
 
 const AboutUs = () => {

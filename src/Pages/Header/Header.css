@@ -29,6 +29,15 @@
   top: 35%;
   left: 35%;
 }
+.home-icon-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  margin-top: 70px;
+}
 
 .carousel-item img {
   background-image: linear-gradient(
