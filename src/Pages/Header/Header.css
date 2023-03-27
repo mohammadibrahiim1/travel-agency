@@ -25,9 +25,11 @@
 }
 .header-section .header-text {
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   z-index: 1;
-  top: 35%;
-  left: 35%;
+  padding-top: 200px;
 }
 .home-icon-container {
   display: grid;
@@ -37,6 +39,12 @@
   gap: 12px;
   text-align: center;
   margin-top: 70px;
+}
+
+.header-section .header-icon-text {
+  font-weight: 400;
+  font-size: 13px;
+  color: #a8a7ab;
 }
 
 .carousel-item img {

@@ -8,20 +8,20 @@ const Places = () => {
   const { places } = useContext(ApiContext);
   // console.log(places);
   return (
-    <div>
+    <div className="container">
       <section className="places-section">
-        <div className=" trip-container ">
-          <div className="ms-3 mb-4">
+        <div className="heading">
+          <div className=" mb-4">
             <h3 className="fw-bold text-dark ">Plan your perfect trip</h3>
             <p className="text-dark-emphasis ">
               Search Flights & Places Hire to our most popular destinations
             </p>
           </div>
-          <div className="me-3 mb-4">
+          <div className="mb-4">
             <button className="see-more-button">See more places</button>
           </div>
         </div>
-        <div className="home-card-container">
+        <div className="card-container">
           {places?.map((place) => (
             <Place key={place._id} place={place}>
               {" "}
@@ -31,12 +31,10 @@ const Places = () => {
       </section>
 
       <section>
-        {/* <a href="https://ibb.co/7JPmJmQ"><img src="https://i.ibb.co/xSWTSTY/hotels-img.png" alt="hotels-img" border="0"></a>
-<a href="https://ibb.co/0nvtS64"><img src="https://i.ibb.co/p15y8MV/flights-img.png" alt="flights-img" border="0"></a> */}
-        <div className="show-flights-hotels-container">
+        <div className="extra-card-container">
           <div>
             <div
-              className="flight-hotel-card "
+              className="show-flights"
               // style={{ width: "604px", height: "559px" }}
             >
               <div className="text-center">
@@ -55,7 +53,7 @@ const Places = () => {
           </div>
           <div>
             <div
-              className=" hotel-flight-card "
+              className="show-hotels"
               // style={{ width: "604px", height: "559px" }}
             >
               <div className="text-center">

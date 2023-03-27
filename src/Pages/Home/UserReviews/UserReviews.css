@@ -1,7 +1,9 @@
 .reviews-container {
-  gap: 22px;
-  width: 90%;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  align-self: center;
+  gap: 14px;
 }
 
 .review-header {
@@ -10,13 +12,13 @@
   width: 90%;
   margin: auto;
 }
-.user-name {
+.review .card-title {
   font-size: 14px;
   font-weight: 600;
   text-transform: capitalize;
   color: #112211;
 }
-.user-text {
+.review .card-text {
   font-size: 13px;
   font-weight: 600;
   text-transform: capitalize;

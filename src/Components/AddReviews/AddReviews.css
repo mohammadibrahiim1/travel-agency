@@ -55,13 +55,14 @@
   color: #112211;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 50px;
 }
 .add-reviews-container {
   width: 75%;
   margin: auto;
 }
 .text-area {
-  width: 30%;
+  width: 45%;
   margin: auto;
 }
 
@@ -258,11 +259,10 @@
     border-radius: 7px;
   }
 
-  .newsletter-section img{
-   position: relative;
-   left: 16px;
-   top: 22px;
-
+  .newsletter-section img {
+    position: relative;
+    left: 16px;
+    top: 22px;
   }
 
   .form-container {

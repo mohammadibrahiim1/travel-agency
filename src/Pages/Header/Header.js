@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import Navbar from "../../Shared/Navbar/Navbar";
 import "./Header.css";
@@ -44,7 +45,9 @@ const Header = () => {
 
         {/* <a href="https://ibb.co/mR10TbF"><img src="https://i.ibb.co/7S8QCjN/flight.png" alt="flight" border="0"></a>
         <a href="https://ibb.co/NsFQtJ3"><img src="https://i.ibb.co/BtfdcQP/boxes.png" alt="boxes" border="0"></a>
-<a href="https://ibb.co/L63XHXn"><img src="https://i.ibb.co/TRsxdxm/hotel-bed.png" alt="hotel-bed" border="0"></a> */}
+<a href="https://ibb.co/L63XHXn"><img src="https://i.ibb.co/TRsxdxm/hotel-bed.png" alt="hotel-bed" border="0"></a> 
+<a href="https://ibb.co/7WTHr4W"><img src="https://i.ibb.co/1qp3R6q/travel-bag.png" alt="travel-bag" border="0"></a>
+<a href="https://ibb.co/sVMpbQV"><img src="https://i.ibb.co/1mwY7Km/setting.png" alt="setting" border="0"></a>*/}
 
         <div className="container home-icon-container">
           <div>
@@ -53,7 +56,12 @@ const Header = () => {
               alt=""
               style={{ width: "100px", height: "100px" }}
             />
-            <p className="icon-text">See Flights</p>
+            <p>
+              {" "}
+              <Link to="/findFlights" className="header-icon-text">
+                See Flights
+              </Link>
+            </p>
           </div>
           <div>
             <img
@@ -61,23 +69,36 @@ const Header = () => {
               alt=""
               style={{ width: "100px", height: "100px" }}
             />
-            <p className="icon-text">See Hotels</p>
+            <p>
+              <Link to="/findHotels" className="header-icon-text">
+                See Hotels
+              </Link>
+            </p>
           </div>
           <div>
             <img
-              src="https://i.ibb.co/BtfdcQP/boxes.png"
+              src="https://i.ibb.co/1qp3R6q/travel-bag.png"
               alt=""
               style={{ width: "100px", height: "100px" }}
             />
-            <p className="icon-text">See Packages</p>
+            <p>
+              <Link to="/packages" className="header-icon-text">
+                {" "}
+                See Packages
+              </Link>
+            </p>
           </div>
           <div>
             <img
-              src="https://i.ibb.co/c6XBXZT/Vector.png"
+              src="https://i.ibb.co/1mwY7Km/setting.png"
               alt=""
               style={{ width: "100px", height: "100px" }}
             />
-            <p className="icon-text">TRAVEL</p>
+            <p>
+              <Link to="/facilities" className="header-icon-text">
+                Our Services
+              </Link>
+            </p>
           </div>
         </div>
       </section>

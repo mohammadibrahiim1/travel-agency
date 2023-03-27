@@ -9,30 +9,33 @@ const UserReviews = () => {
   return (
     <div>
       <hr />
-      <div className="review-header">
+      <div className="review-header container">
         <h2 className="fw-bold text-dark">Reviews</h2>
         <p className="text-secondary">what people says about us</p>
       </div>
-      <section className="reviews-container">
+      <section className="reviews-container container">
         {reviews.map((review) => (
           <>
-            <div class="  p-2 mb-4">
-              <div class="d-flex justify-content-start align-items-start gap-2 ">
-                <div class="">
-                  <img
-                    src={review?.photoURL}
-                    style={{ width: "40px", height: "40px" }}
-                    class="rounded rounded-circle mx-auto"
-                    alt="..."
-                  />
-                </div>
-                <div class="">
-                  <div class="">
-                    <h6 class="user-name">
-                      <span>5.0 amaizing | </span>
-                      {review.name}
-                    </h6>
-                    <p class="user-text">{review.text}</p>
+            <div class="row review">
+              <div class="col-sm-6 mb-3 mb-sm-0">
+                <div class="card shadow" style={{ width: "26rem" }}>
+                  <div class="card-body">
+                    <div className="d-flex justify-content-between  align-items-center">
+                      <img
+                        src={review?.photoURL}
+                        style={{ width: "40px", height: "40px" }}
+                        class="rounded rounded-circle"
+                        alt="..."
+                      />
+
+                      <img
+                        src="https://i.ibb.co/R07n40p/rating.png"
+                        alt=""
+                        style={{ width: "40px", height: "40px" }}
+                      />
+                    </div>
+                    <h5 class="card-title mt-3"> {review.name}</h5>
+                    <p class="card-text">{review?.text.slice(0,50)}</p>
                   </div>
                 </div>
               </div>

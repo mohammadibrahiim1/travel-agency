@@ -3,13 +3,12 @@
   margin-bottom: 180px;
 }
 
-.home-card-container {
+.places-section .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
   align-items: center;
   gap: 14px;
-  width: 50%;
   margin: auto;
 }
 
@@ -22,20 +21,18 @@
   background-color: #f8fcfb;
 }
 
-.trip-container {
+.places-section .heading {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
   margin: auto;
 }
 
-.show-flights-hotels-container {
+.extra-card-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
-  width: 85%;
   margin: auto;
   align-items: center;
   margin-bottom: 100px;
@@ -54,36 +51,43 @@
   line-height: 17px;
 }
 
-.flight-hotel-card {
-  width: 604px;
+.show-flights {
+  /* width: 604px; */
   height: 559px;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
       rgba(18, 18, 18, 0.75) 48.67%
     ),
-    url(https://i.ibb.co/p15y8MV/flights-img.png);
-  border-radius: 0px 0px 24px 24px;
-  /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+    url(https://i.ibb.co/ZmjYnDv/airline.jpg);
+  border-radius: 24px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* transform: matrix(-1, 0, 0, 1, 0, 0);
+  <a href="https://ibb.co/JQ1yfJ8"><img src="https://i.ibb.co/ZmjYnDv/airline.jpg" alt="airline" border="0"></a>
+<a href="https://ibb.co/n3YyfxV"><img src="https://i.ibb.co/8zfw21R/hotel.jpg" alt="hotel" border="0"></a> */
 }
-.hotel-flight-card {
-  width: 604px;
+.show-hotels {
+  /* width: 604px; */
   height: 559px;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 0%,
       rgba(18, 18, 18, 0.75) 48.67%
     ),
-    url(https://i.ibb.co/xSWTSTY/hotels-img.png);
-  border-radius: 0px 0px 24px 24px;
+    url(https://i.ibb.co/8zfw21R/hotel.jpg);
+
+  border-radius: 24px;
+  background-repeat: no-repeat;
+  background-size: cover;
   /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 }
-.hotel-flight-card .text-center {
+.show-flights .text-center {
   position: relative;
   top: 60%;
   /* background-image: url(https://i.ibb.co/p15y8MV/flights-img.png); */
 }
-.flight-hotel-card .text-center {
+.show-hotels .text-center {
   position: relative;
   top: 60%;
   /* background-image: url(https://i.ibb.co/p15y8MV/flights-img.png); */

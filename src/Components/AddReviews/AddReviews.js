@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import "./AddReviews.css";
 
 const AddReviews = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleAddReview = (event) => {
     event.preventDefault();
@@ -23,22 +25,27 @@ const AddReviews = () => {
       // category
     };
 
-    fetch("http://localhost:5000/reviews", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(addreview),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log(data);
-        if (data.acknowledged) {
-          alert("added review successfully");
-          form.reset();
-        }
+    if (user) {
+      fetch("http://localhost:5000/reviews", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(addreview),
       })
-      .catch((error) => console.error(error));
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data);
+          if (data.acknowledged) {
+            alert("added review successfully");
+            form.reset();
+            window.location.reload();
+          }
+        })
+        .catch((error) => console.error(error));
+    } else {
+      navigate("/login");
+    }
   };
   return (
     <div>
@@ -51,17 +58,9 @@ const AddReviews = () => {
               id=""
               cols="50"
               rows="2"
-              className="text-area"
+              className="text-area border rounded"
               placeholder="review for guide, service or packages"
-            ></textarea> 
-            {/* <textarea
-              name="category"
-              id=""
-              cols="50"
-              rows="2"
-              className="text-area"
-              placeholder="review category"
-            ></textarea> */}
+            ></textarea>
 
             <div>
               <input
@@ -103,7 +102,7 @@ const AddReviews = () => {
                   className="w-30 border rounded"
                   placeholder="write a review about my service"
                 ></textarea> */}
-                
+
             <div>
               <input
                 className="subscribe-button m-2 ps-3 pe-3 pt-1 pb-1  "
