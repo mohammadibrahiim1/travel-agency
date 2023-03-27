@@ -5,12 +5,13 @@ import "./LogIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import { Container } from "react-bootstrap";
+import { toast } from "react-hot-toast";
 
 const LogIn = () => {
   const [error, setError] = useState();
   const { login, signInWithGoogle, signInWithFacebook } =
     useContext(AuthContext);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,9 +24,9 @@ const LogIn = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        console.log(user);
         form.reset();
-        navigate("/")
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);
@@ -38,18 +39,69 @@ const LogIn = () => {
       .then((result) => {
         const user = result.user;
         // navigate('/courses')
-        // console.log(user);
+        console.log(user);
+        // setUser(user);
         setError("");
+        if (user) {
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ name: user.displayName, email: user.email }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.acknowledged) {
+                alert(" Login Successfully!");
+                navigate(`/`);
+              } else {
+                toast.error(data.message);
+              }
+            });
+        }
       })
       .catch((error) => console.error(error));
     setError(error.message);
   };
 
+  // const handleGoogleSignIn = () => {
+  //   signInWithGoogle()
+  //     .then((result) => {
+  //       const user = result.user;
+  //       // navigate('/courses')
+  //       // console.log(user);
+  //       setError("");
+  //     })
+  //     .catch((error) => console.error(error));
+  //   setError(error.message);
+  // };
+
   const handleFacebookSignIn = () => {
     signInWithFacebook()
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        console.log(user);
+        if (user) {
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ name: user.displayName, email: user.email }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.acknowledged) {
+                alert(" Login Successfully");
+                navigate(`/`);
+              } else {
+                toast.error(data.message);
+              }
+            });
+        }
       })
       .catch((error) => console.error(error));
     setError(error.message);

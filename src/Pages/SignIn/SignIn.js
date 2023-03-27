@@ -26,6 +26,25 @@ const SignIn = () => {
         console.log(user);
         // setUser(user);
         setError("");
+        if (user) {
+          fetch("http://localhost:5000/users", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({ name: user.displayName, email: user.email }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data);
+              if (data.acknowledged) {
+                alert("Successfully added!");
+                navigate(`/`);
+              } else {
+                toast.error(data.message);
+              }
+            });
+        }
       })
       .catch((error) => console.error(error));
     setError(error.message);
@@ -46,12 +65,6 @@ const SignIn = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        // const UserInfo = {
-        //   email: user.email,
-        //   firstName: user.displayName,
-        //   image: user.PhotoURL,
-        // };
-        // setUser(user);
       })
       .catch((error) => console.error(error));
     setError(error.message);
@@ -80,11 +93,9 @@ const SignIn = () => {
         setError(err.message);
       });
 
-    const saveUser = {
+    const userInfo = {
       email: email,
-      firstName: firstName,
-      lastName: lastName,
-      contact: phone,
+      name: firstName,
     };
 
     fetch("http://localhost:5000/users", {
@@ -92,7 +103,7 @@ const SignIn = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(saveUser),
+      body: JSON.stringify(userInfo),
     })
       .then((res) => res.json())
       .then((data) => {

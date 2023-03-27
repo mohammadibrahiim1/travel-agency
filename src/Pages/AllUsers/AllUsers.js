@@ -27,10 +27,9 @@ const AllUsers = () => {
           <thead>
             <tr>
               <th>Serial</th>
-              <th>First Name </th>
-              <th>Last Name</th>
+              <th>Name</th>
               <th>Email</th>
-              <th>Contact</th>
+              {/* <th>Contact</th> */}
               <th>User Role</th>
             </tr>
           </thead>
@@ -39,10 +38,9 @@ const AllUsers = () => {
               allUsers?.map((user, i) => (
                 <tr key={user._id}>
                   <th>{i + 1}</th>
-                  <td>{user.firstName}</td>
-                  <td>{user.lastName}</td>
+                  <td>{user.name}</td>
                   <td>{user.email}</td>
-                  <td>{user.contact}</td>
+                  {/* <td>{user.contact}</td> */}
                   <td>
                     {user?.role ? (
                       <button className="btn btn-primary disabled">
