@@ -39,7 +39,7 @@ const PackagesDetails = () => {
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <div className="d-flex justify-content-start align-items-center gap-2">
-                  <h4 className="package-name">{name}</h4>
+                  <h4 className="package-name">{name}</h4> 
                   <div className="rating-star">
                     <span className="text-warning">
                       <FaStar />
@@ -69,7 +69,7 @@ const PackagesDetails = () => {
                 </div>
               </div>
               <div>
-                {offerPrice ? (
+                {offerPrice ? ( 
                   <h4 className="package-price">
                     ${offerPrice}{" "}
                     <span className="package-price text-decoration-line-through">

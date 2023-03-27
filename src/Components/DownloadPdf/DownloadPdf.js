@@ -12,7 +12,7 @@ import "./DownloadPdf.css";
 const styles = StyleSheet.create({
   page: {
     flexDirection: "row",
-    backgroundColor: "#8DD3BB",
+    backgroundColor: "#FFFFFF",
   },
   // section: {
   //   margin: 10,
@@ -37,6 +37,7 @@ const DownloadPdf = () => {
     userEmail,
     totalPrice,
     transactionId,
+    contact,
   } = pdfData;
   const ref = useRef();
 
@@ -47,7 +48,8 @@ const DownloadPdf = () => {
           <Pdf targetRef={ref} fileName="booking_document.pdf">
             {({ toPdf }) => (
               <button className="w-25  btn btn-success" onClick={toPdf}>
-                <AiOutlineDownload style={{width:"20px", height:"20px"}}/> Download Pdf
+                <AiOutlineDownload style={{ width: "20px", height: "20px" }} />{" "}
+                Download Pdf
               </button>
             )}
           </Pdf>
@@ -60,18 +62,19 @@ const DownloadPdf = () => {
           <div className="row ">
             <div className="col-6 pdf-left-column-text ">
               <div>
-                <p>Name : {userName}</p>
+                <p>UserName : {userName}</p>
                 <p> Email : {userEmail}</p>
               </div>
               <div>
-                <p>Package : {packageName}</p>
+                <p> name : {packageName}</p>
                 <p>Price : ${totalPrice}</p>
               </div>
             </div>
             <div className="col-6 pdf-right-column-text">
               <p> Transaction_Id : {transactionId}</p>
-              <p> Destination : {journey}</p>
+              <p> Trip : {journey}</p>
               <p> Date : {bookingDate}</p>
+              <p> Contact : {contact}</p>
             </div>
           </div>
           <div className="terms_conditions ">

@@ -1,4 +1,10 @@
 .flight-detail-header {
   width: 95%;
-  
 }
+
+.airlines-policy .text-dark {
+  font-size: 15px;
+}
+/* .airlines-policy {
+  background-color: aquamarine;
+} */

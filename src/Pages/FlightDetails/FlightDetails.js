@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import { BsArrowRight } from "react-icons/bs";
 import { ImLocation2 } from "react-icons/im";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
@@ -18,12 +19,12 @@ const FlightDetails = () => {
     airlines_name,
     flight_name,
     location,
-    photo,
+    // photo,
     trip,
     destination,
     ratings,
     return_time,
-    city,
+    // city,
     time,
     economy_URL,
     airlines_logo_URL,
@@ -64,7 +65,7 @@ const FlightDetails = () => {
                 <p>${price}</p>
 
                 <Link
-                  to={`/hotelBookingDetails/${_id}`}
+                  to={`/flightBookingDetails/${_id}`}
                   class=" btn btn-info"
                   style={{ width: "120px", height: "38px" }}
                 >
@@ -82,18 +83,42 @@ const FlightDetails = () => {
                 // style={{ Width: "1232px", Height: "395px" }}
               />
             </div>
-            <div className="mt-3 gap-5">
+            <div className="mt-3 d-flex align-items-center gap-3">
               <img src={economy_URL[0]} alt="" />
               <img src={economy_URL[1]} alt="" />
               <img src={economy_URL[3]} alt="" />
               <img src={economy_URL[4]} alt="" />
               <img src={economy_URL[5]} alt="" />
               <img src={economy_URL[6]} alt="" />
+              <p className="text-secondary">see our airlines </p>
             </div>
           </div>
 
-          <h3 className="overview">Overview</h3>
+          <h3 className="overview mt-5">Overview</h3>
+          <hr />
           {/* <p className="description">{desc}</p> */}
+          <div className="airlines-policy">
+            <h4 className="fw-semibold text-dark-50 mt-4 mb-4">
+              {" "}
+              {airlines_name} Airlines Policies{" "}
+            </h4>
+            <div className="d-flex align-items-center justify-content-start gap-5">
+              <p className="text-dark fw-semibold  ">
+                <BsArrowRight
+                  className="me-2"
+                  style={{ height: "22px", width: "22px" }}
+                />
+                Pre-flight cleaning, installation of cabin HEPA filters.
+              </p>
+              <p className="text-dark fw-semibold  ">
+                <BsArrowRight
+                  style={{ height: "22px", width: "22px" }}
+                  className="me-2"
+                />
+                Pre-flight health screening questions.
+              </p>
+            </div>
+          </div>
 
           <hr />
 
@@ -102,9 +127,12 @@ const FlightDetails = () => {
               <img
                 src={airlines_logo_URL}
                 alt=""
-                style={{ width: "262px", height: "86px" }}
+                style={{ width: "162px", height: "86px" }}
               />
             </div>
+            <p className="text-dark-50 fw-semibold mt-4 text-transform-uppercase">
+              {trip}
+            </p>
             <div className="d-flex justify-content-between align-items-center">
               <p
                 className="mt-4 fs-5 fw-semibold"
@@ -120,7 +148,7 @@ const FlightDetails = () => {
                   className="mt-4 fs-5 fs-semibold"
                   style={{
                     width: "110px",
-                    height: "29px",
+                    height: "24px",
                   }}
                 />
               </p>
@@ -141,9 +169,10 @@ const FlightDetails = () => {
               <img
                 src={airlines_logo_URL}
                 alt=""
-                style={{ width: "262px", height: "86px" }}
+                style={{ width: "162px", height: "86px" }}
               />
             </div>
+            <p className="text-dark-50 fw-semibold mt-4 uppercase">{trip}</p>
             <div className="d-flex justify-content-between align-items-center">
               <p
                 className="mt-4 fs-5 fw-semibold"
@@ -159,7 +188,7 @@ const FlightDetails = () => {
                   className="mt-4 fs-5 fs-semibold"
                   style={{
                     width: "110px",
-                    height: "29px",
+                    height: "24px",
                   }}
                 />
               </p>
@@ -174,6 +203,9 @@ const FlightDetails = () => {
               </p>
             </div>
           </div>
+
+          {/* <img src={photo} alt="" />
+          <p>{city}</p> */}
 
           <section>
             <UserReviews></UserReviews>

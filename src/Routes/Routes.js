@@ -37,6 +37,7 @@ import FavouriteLayout from "../Layout/FavouriteLayout/FavouriteLayout";
 import FavouritePackage from "../Pages/FavouritePackage/FavouritePackage";
 import FavouriteFlights from "../Pages/FavouriteFlights/FavouriteFlights";
 import FavouriteHotels from "../Pages/FavouriteHotels/FavouriteHotels";
+import FlightBookingDetails from "../Pages/FlightDetails/FlightBookingDetails/FlightBookingDetails";
 // import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
 // import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
 // import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
@@ -162,6 +163,16 @@ export const router = createBrowserRouter([
         ),
         loader: async ({ params }) =>
           fetch(`http://localhost:5000/category/${params.id}`),
+      },
+      {
+        path: "/flightBookingDetails/:id",
+        element: (
+          <PrivateRoutes>
+            <FlightBookingDetails></FlightBookingDetails>
+          </PrivateRoutes>
+        ),
+        loader: async ({ params }) =>
+        fetch(`http://localhost:5000/api/flights/${params.id}`),
       },
       {
         path: "/bookingInfo",

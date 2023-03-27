@@ -1,13 +1,43 @@
-.header-section {
+.header-section h4 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 57px;
+  text-align: center;
+  color: #112211;
+}
+.header-section h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 101px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #112211;
+}
+.header-section p {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  color: #112211;
+}
+.header-section .header-text {
+  position: absolute;
+  z-index: 1;
+  top: 35%;
+  left: 35%;
+}
+
+.carousel-item img {
   background-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0) 100%
-    ),
-    url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
-  /* transform: rotate(180deg); */
-  width: 98%;
-  height: 599px;
+    180deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+
+  height: 800px;
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,7 +48,6 @@
 
 @media screen and (max-width: 576px) {
   .header-section {
-    background-image: url(https://i.ibb.co/6tNDGTH/travel-zone-header-img.jpg);
     width: 98%;
     height: 400px;
     margin: auto;
