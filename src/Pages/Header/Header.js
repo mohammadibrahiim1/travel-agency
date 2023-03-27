@@ -71,14 +71,14 @@ const Header = () => {
             />
             <p className="icon-text">See Packages</p>
           </div>
-          {/* <div>
+          <div>
             <img
               src="https://i.ibb.co/c6XBXZT/Vector.png"
               alt=""
               style={{ width: "100px", height: "100px" }}
             />
             <p className="icon-text">TRAVEL</p>
-          </div> */}
+          </div>
         </div>
       </section>
     </div>
