@@ -9,6 +9,49 @@ const Places = () => {
   // console.log(places);
   return (
     <div className="container">
+      <section>
+        <div className="offer-card-container">
+          <div>
+            <div
+              className="show-offer"
+              // style={{ width: "604px", height: "559px" }}
+            >
+              <div className="text-center">
+                <h1 className="fw-semibold text-white">Offers</h1>
+                <p className="subtitle pt-2">
+                  See Our   most popular Offers
+                </p>
+
+                <button className="show-flights-button">
+                  {" "}
+                  <MdFlight /> Show Offers
+                </button>
+              </div>
+              {/* <img src="https://i.ibb.co/p15y8MV/flights-img.png" alt="" /> */}
+            </div>
+          </div>
+          {/* <div>
+            <div
+              className="show-hotels"
+              style={{ width: "604px", height: "559px" }}
+            >
+              <div className="text-center">
+                <h1 className="fw-semibold text-white">Hotels</h1>
+                <p className="subtitle pt-2">
+                  Search Flights & Places Hire to our most popular destinations
+                </p>
+
+                <button className="show-flights-button">
+                  {" "}
+                  <MdHotel /> Show Hotels
+                </button>
+              </div>
+              <img src="https://i.ibb.co/p15y8MV/flights-img.png" alt="" />
+            </div>
+          </div> */}
+        </div>
+      </section>
+
       <section className="places-section">
         <div className="heading">
           <div className=" mb-4">
