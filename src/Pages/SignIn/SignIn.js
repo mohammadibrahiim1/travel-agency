@@ -3,8 +3,10 @@ import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import "./SignIn.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
+import { toast } from "react-hot-toast";
+
 // import { AuthContext } from "../../Context/UserContext";
 // import UseContext, { AuthContext } from "../../Context/UseContext";
 
@@ -13,13 +15,8 @@ const SignIn = () => {
   const { createUser, signInWithGoogle, signInWithFacebook } =
     useContext(AuthContext);
   const [error, setError] = useState("");
-
-  // <a href="https://ibb.co/NWDb9Rv"><img src="https://i.ibb.co/vLyR39F/Group-4.png" alt="Group-4" border="0"></a>
-  {
-    /* <a href="https://ibb.co/B4JbTdp"><img src="https://i.ibb.co/xmbWzPk/Group-5.png" alt="Group-5" border="0"></a> 
-<a href="https://ibb.co/LCS62m5"><img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="Logo" border="0"></a>
-*/
-  }
+  // const [user, setUser] = useState();
+  const navigate = useNavigate();
 
   const handleGoogleSignIn = () => {
     signInWithGoogle()
@@ -27,6 +24,7 @@ const SignIn = () => {
         const user = result.user;
         // navigate('/courses')
         console.log(user);
+        // setUser(user);
         setError("");
       })
       .catch((error) => console.error(error));
@@ -47,7 +45,13 @@ const SignIn = () => {
     signInWithFacebook()
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        console.log(user);
+        // const UserInfo = {
+        //   email: user.email,
+        //   firstName: user.displayName,
+        //   image: user.PhotoURL,
+        // };
+        // setUser(user);
       })
       .catch((error) => console.error(error));
     setError(error.message);
@@ -69,11 +73,36 @@ const SignIn = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        // console.log(user);
+        console.log(user);
       })
       .catch((err) => {
         console.log(err);
         setError(err.message);
+      });
+
+    const saveUser = {
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      contact: phone,
+    };
+
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(saveUser),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          alert("Successfully added!");
+          navigate(`/`);
+        } else {
+          toast.error(data.message);
+        }
       });
   };
 
@@ -87,9 +116,12 @@ const SignIn = () => {
             className="img-fluid"
           />
         </div>
-      
-     <form onSubmit={handleSubmit} className=" col-xl-6 col-sm-12 col-md-8  m-auto p-2">
-     <h2 className="mb-5 fw-bold">Sign Up Here!</h2>
+
+        <form
+          onSubmit={handleSubmit}
+          className=" col-xl-6 col-sm-12 col-md-8  m-auto p-2"
+        >
+          <h2 className="mb-5 fw-bold">Sign Up Here!</h2>
           <div className="mb-3 text-start ">
             <div className="row ">
               <div className="col-md-6 mb-4">
@@ -292,8 +324,7 @@ const SignIn = () => {
           </div>
         </div> */}
         </form>
-     </div>
-   
+      </div>
     </Container>
   );
 };

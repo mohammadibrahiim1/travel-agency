@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaApple } from "react-icons/fa";
 import "./LogIn.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import { Container } from "react-bootstrap";
 
@@ -10,6 +10,7 @@ const LogIn = () => {
   const [error, setError] = useState();
   const { login, signInWithGoogle, signInWithFacebook } =
     useContext(AuthContext);
+    const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +25,7 @@ const LogIn = () => {
         const user = result.user;
         // console.log(user);
         form.reset();
+        navigate("/")
       })
       .catch((error) => {
         console.error(error);

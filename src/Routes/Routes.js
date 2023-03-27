@@ -38,6 +38,9 @@ import FavouritePackage from "../Pages/FavouritePackage/FavouritePackage";
 import FavouriteFlights from "../Pages/FavouriteFlights/FavouriteFlights";
 import FavouriteHotels from "../Pages/FavouriteHotels/FavouriteHotels";
 import FlightBookingDetails from "../Pages/FlightDetails/FlightBookingDetails/FlightBookingDetails";
+import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
+import AllUsers from "../Pages/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
 // import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
 // import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
 // import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
@@ -213,6 +216,28 @@ export const router = createBrowserRouter([
       {
         path: "/favourite/flights",
         element: <FavouriteFlights></FavouriteFlights>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoutes>
+    ),
+    children: [
+      // {
+      //   path: "/dashboard",
+      //   element: <AllUsers></AllUsers>,
+      // },
+      {
+        path: "/dashboard/allusers",
+        element: (
+          <AdminRoute>
+            <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
       },
     ],
   },

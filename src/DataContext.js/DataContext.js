@@ -11,6 +11,7 @@ const DataContext = ({ children }) => {
   const [favourites, setFavourites] = useState([]);
   const [favouriteHotel, setFavouriteHotel] = useState([]);
   const [favouriteFlight, setFavouriteFlight] = useState([]);
+  const [allUsers,setAllUsers] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/places")
@@ -83,6 +84,14 @@ const DataContext = ({ children }) => {
         setFavouriteFlight(data);
       });
   }, []);
+  useEffect(() => {
+    fetch("http://localhost:5000/users")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setAllUsers(data);
+      });
+  }, []);
 
   const apiData = {
     places,
@@ -92,7 +101,8 @@ const DataContext = ({ children }) => {
     bookInfo,
     favourites,
     favouriteHotel,
-    favouriteFlight
+    favouriteFlight,
+    allUsers,
   };
 
   return (
