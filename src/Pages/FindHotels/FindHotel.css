@@ -130,14 +130,14 @@
   color: #112211;
   margin-top: 8%;
 }
-.extra-section .btn {
+/* .extra-section .btn {
   gap: 4px;
   width: 500px;
   background: #ffffff;
   border-radius: 4px;
   margin-top: 10%;
-}
-.extra-img {
+} */
+/* .extra-img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
@@ -145,4 +145,4 @@
   row-gap: 19px;
   column-gap: 17px;
   margin-bottom: 80px;
-}
+} */

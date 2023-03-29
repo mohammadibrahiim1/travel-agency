@@ -27,42 +27,42 @@ const FindFlights = () => {
         </div>
       </section>
 
-      <section className="flight-search-section-container container">
+      {/* <section className="flight-search-section-container container">
         <form className="flight-search-section container m-auto ">
           <div>
-            {/* <label htmlFor="destination">From</label> */}
+    
             <select name="" id="destination" className="select-option">
               <option value=" From">From</option>
               <option value="Cumilla">Cumilla</option>
               <option value="Chittagong">Chittagong</option>
               <option value="Cox's Bazar">Cox's Bazar</option>
             </select>
-            {/* <input type="submit" value="submit" /> */}
+      
           </div>
           <div>
-            {/* <label htmlFor="destination">From</label> */}
+
             <select name="" id="destination" className="select-option">
               <option value=" To">To</option>
               <option value="Cumilla">Cumilla</option>
               <option value="Chittagong">Chittagong</option>
               <option value="Cox's Bazar">Cox's Bazar</option>
             </select>
-            {/* <input type="submit" value="submit" /> */}
+ 
           </div>
           <div>
-            {/* <label htmlFor="destination">From</label> */}
+        
             <select
               name=""
               id="Trip"
               placeholder="Trip"
               className="select-option"
             >
-              {/* <option value=" Trip">Trip</option> */}
+      
               <option value="One Way">One Way</option>
               <option value="Return">Return</option>
-              {/* <option value="Cox's Bazar">Cox's Bazar</option> */}
+             
             </select>
-            {/* <input type="submit" value="submit" /> */}
+          
           </div>
           <div>
             <DatePicker
@@ -84,14 +84,14 @@ const FindFlights = () => {
             />
           </div>
           <div>
-            {/* <label htmlFor="destination">From</label> */}
+
             <select name="" id="bookingclass" className="select-option">
               <option value="BookingClass">Booking Class</option>
               <option value="First Class">First Class</option>
               <option value="Economy">Economy</option>
               <option value="Business">Business</option>
             </select>
-            {/* <input type="submit" value="submit" /> */}
+
           </div>
           <div>
             <Link className="btn btn-light " to="/flightListing/api/flights">
@@ -99,7 +99,7 @@ const FindFlights = () => {
             </Link>
           </div>
         </form>
-      </section>
+      </section> */}
 
       <section>
         <div className="container mt-5 pt-5 mb-4 fall-into-travel-header">
@@ -174,7 +174,7 @@ const FindFlights = () => {
         </div>
       </section>
 
-      <section className="extra-section container">
+      <section className="flight-extra-section container">
         <div className="container mt-5 pt-5 mb-4 fall-into-travel-header">
           <h3 className="fw-bold text-dark ">Fall into travel</h3>
           <p className="text-dark-emphasis ">
@@ -199,7 +199,7 @@ const FindFlights = () => {
                   explore new places, cultures, cuisines, traditions, and ways
                   of living.
                 </p>
-                <Link to="/allFlights" class="btn btn-light">
+                <Link to="/allFlights" class="btn btn-light book-flight-btn">
                   Book Flight
                 </Link>
               </div>
