@@ -18,7 +18,7 @@ const UserReviews = () => {
           <>
             <div class="row review">
               <div class="col-sm-6 mb-3 mb-sm-0">
-                <div class="card shadow" style={{ width: "26rem" }}>
+                <div class="card rounded-3 shadow" style={{ width: "24rem" }}>
                   <div class="card-body">
                     <div className="d-flex justify-content-between  align-items-center">
                       <img

@@ -43,12 +43,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* <a href="https://ibb.co/mR10TbF"><img src="https://i.ibb.co/7S8QCjN/flight.png" alt="flight" border="0"></a>
-        <a href="https://ibb.co/NsFQtJ3"><img src="https://i.ibb.co/BtfdcQP/boxes.png" alt="boxes" border="0"></a>
-<a href="https://ibb.co/L63XHXn"><img src="https://i.ibb.co/TRsxdxm/hotel-bed.png" alt="hotel-bed" border="0"></a> 
-<a href="https://ibb.co/7WTHr4W"><img src="https://i.ibb.co/1qp3R6q/travel-bag.png" alt="travel-bag" border="0"></a>
-<a href="https://ibb.co/sVMpbQV"><img src="https://i.ibb.co/1mwY7Km/setting.png" alt="setting" border="0"></a>*/}
-
         <div className="container home-icon-container">
           <div>
             <img

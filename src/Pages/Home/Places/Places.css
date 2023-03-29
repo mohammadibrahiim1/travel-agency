@@ -60,7 +60,6 @@
 }
 
 .show-offer {
-  /* width: 604px; */
   height: 359px;
   background: linear-gradient(
       180deg,
@@ -71,12 +70,9 @@
   border-radius: 24px;
   background-size: cover;
   background-repeat: no-repeat;
-  /* transform: matrix(-1, 0, 0, 1, 0, 0);
-  <a href="https://ibb.co/JQ1yfJ8"><img src="https://i.ibb.co/ZmjYnDv/airline.jpg" alt="airline" border="0"></a>
-<a href="https://ibb.co/n3YyfxV"><img src="https://i.ibb.co/8zfw21R/hotel.jpg" alt="hotel" border="0"></a> */
 }
+
 .show-flights {
-  /* width: 604px; */
   height: 559px;
   background: linear-gradient(
       180deg,
@@ -87,9 +83,6 @@
   border-radius: 24px;
   background-size: cover;
   background-repeat: no-repeat;
-  /* transform: matrix(-1, 0, 0, 1, 0, 0);
-  <a href="https://ibb.co/JQ1yfJ8"><img src="https://i.ibb.co/ZmjYnDv/airline.jpg" alt="airline" border="0"></a>
-<a href="https://ibb.co/n3YyfxV"><img src="https://i.ibb.co/8zfw21R/hotel.jpg" alt="hotel" border="0"></a> */
 }
 .show-hotels {
   /* width: 604px; */
@@ -131,72 +124,39 @@
 }
 
 @media screen and (max-width: 576px) {
-  .show-flights-hotels-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 73%;
-    margin: auto;
-    margin-bottom: 100px;
-  }
-
-  .trip-container .fw-bold {
-    text-align: center;
-  }
-  .trip-container .text-dark-emphasis {
-    text-align: center;
-  }
-  .flight-hotel-card .subtitle {
-    width: 300px;
-    margin: auto;
-    margin-bottom: 7px;
-  }
-  .hotel-flight-card .subtitle {
-    width: 300px;
-    margin: auto;
-    margin-bottom: 7px;
-  }
-
-  .flight-hotel-card {
-    width: 380px;
-    height: 559px;
-
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(18, 18, 18, 0.75) 48.67%
-      ),
-      url(https://i.ibb.co/p15y8MV/flights-img.png);
-    border-radius: 0px 24px 24px 24px;
-  }
-  .hotel-flight-card {
-    width: 380px;
-    height: 559px;
-    margin-top: 20px;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(18, 18, 18, 0.75) 48.67%
-      ),
-      url(https://i.ibb.co/p15y8MV/flights-img.png);
-    border-radius: 0px 24px 24px 24px;
-  }
-
-  .home-card-container {
+  .places-section .card-container {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     justify-content: space-evenly;
     align-items: center;
+    gap: 14px;
+    margin: auto;
+  }
+  .extra-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-evenly;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 100px;
+    gap: 14px;
   }
 
-  .trip-container {
+  .offer-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-content: space-evenly;
+    margin: auto;
+    align-items: center;
+    margin-top: 850px;
+  }
+
+  .places-section .heading {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    width: 100%;
+    align-items: start;
     margin: auto;
   }
 }
