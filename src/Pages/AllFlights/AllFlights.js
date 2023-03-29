@@ -198,58 +198,64 @@ const AllFlights = () => {
 
       <section className="flight-search-section-container container">
         <form className="flight-search-section container m-auto ">
-          <input
-            type="text"
-            id="form3Example1m"
-            className="enter__destination"
-            placeholder="Enter Destination"
-            ref={locationRef}
-          />
-          <input
-            type="text"
-            id="form3Example1m"
-            className="enter__destination"
-            placeholder="trip"
-            ref={tripRef}
-          />
-          <input
-            type="text"
-            id="form3Example1m"
-            className="enter__destination"
-            placeholder="class"
-            ref={classRef}
-          />
+          <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className="input"
+              placeholder="Enter Destination"
+              ref={locationRef}
+            />
+          </div>
+          <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className="input"
+              placeholder="trip"
+              ref={tripRef}
+            />
+          </div>
+          <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className=" input"
+              placeholder="class"
+              ref={classRef}
+            />
+          </div>
+
+          <div className="input-container">
+            <input
+              type="date"
+              id="date"
+              className="input"
+              placeholder=" "
+              name="date"
+              required
+            />
+            <label className="label">select date</label>
+          </div>
+          <div className="input-container">
+            <input
+              type="date"
+              id="date"
+              className="input"
+              placeholder=" "
+              name="date"
+              required
+            />
+            <label className="label">select date</label>
+          </div>
 
           <div>
-            <DatePicker
-              className="datepicker "
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-              placeholderText="departure time"
-            />
-          </div>
-          <div>
-            <DatePicker
-              className="datepicker"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-            />
-          </div>
-          <div className="btn btn-light">
             <FaSearch
               className="search"
               type="submit"
               onClick={searchHandler}
             ></FaSearch>
           </div>
-
-          {/* <button className="btn btn-light" type="submit" onClick={searchHandler} >
-            search
-          </button> */}
         </form>
       </section>
 
