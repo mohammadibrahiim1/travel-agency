@@ -8,3 +8,16 @@
 /* .airlines-policy {
   background-color: aquamarine;
 } */
+
+.flights-details-container {
+  margin-top: 130px;
+}
+
+@media screen and (max-width: 576px) {
+  .flight-detail-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+  }
+}

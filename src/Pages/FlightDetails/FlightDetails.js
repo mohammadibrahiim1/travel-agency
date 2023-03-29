@@ -6,9 +6,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { Link, useLoaderData } from "react-router-dom";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import UserReviews from "../Home/UserReviews/UserReviews";
-// import FlightDetailsInfo from "./FlightDetailsInfo/FlightDetailsInfo";
 import { IoAirplaneSharp } from "react-icons/io5";
-// import { IoAirplaneSharp } from "react-icons/io";
 import "./FlightDetails.css";
 
 const FlightDetails = () => {
@@ -19,12 +17,10 @@ const FlightDetails = () => {
     airlines_name,
     flight_name,
     location,
-    // photo,
     trip,
     destination,
     ratings,
     return_time,
-    // city,
     time,
     economy_URL,
     airlines_logo_URL,
@@ -34,7 +30,7 @@ const FlightDetails = () => {
   return (
     <div>
       <div>
-        <section className="container">
+        <section className="container flights-details-container">
           <div>
             <span className="d-flex align-items-center fs-6 text-danger ">
               <h6>{location}</h6>
