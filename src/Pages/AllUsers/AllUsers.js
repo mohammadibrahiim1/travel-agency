@@ -31,6 +31,7 @@ const AllUsers = () => {
               <th>Email</th>
               {/* <th>Contact</th> */}
               <th>User Role</th>
+              <th>Delete User</th>
             </tr>
           </thead>
           <tbody>
@@ -54,6 +55,9 @@ const AllUsers = () => {
                         Make Admin
                       </button>
                     )}
+                  </td>
+                  <td>
+                    <button className="btn btn-primary">Delete</button>
                   </td>
                 </tr>
               ))}

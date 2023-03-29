@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./AllHotelListing.css";
 import { toast } from "react-hot-toast";
 
-const AllHotelListing = ({ hotelName }) => {
+const AllHotelListing = ({ hotelName }) => { 
   const navigate = useNavigate();
   const { title, city, price, avgRating, cafe, photo, createdAt } = hotelName;
   const handleAddToFavourite = (hotelName) => {

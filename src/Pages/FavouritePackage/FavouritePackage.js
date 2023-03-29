@@ -46,14 +46,6 @@ const FavouritePackage = () => {
             No Favourites Package Found
           </p>
         )}
-        {/* { favourites.length ? <div> 
-           favourites.map((favPackage) => (
-          <FPackage
-            favPackage={favPackage}
-            handleDelete={handleDelete}
-          ></FPackage> ))}
-        </div>
-         : <div>no favourites packages found</div>} */}
       </section>
     </div>
   );

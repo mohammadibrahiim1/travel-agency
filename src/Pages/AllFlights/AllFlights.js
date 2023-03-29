@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaStar, FaSearch, FaHeart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import UserReviews from "../Home/UserReviews/UserReviews";
 import "./AllFlights.css";
+import { toast } from "react-hot-toast";
 
 const AllFlights = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -18,6 +19,7 @@ const AllFlights = () => {
   const [qatarFilter, setQatarFilter] = useState();
   const [onewayFilter, setOnewayFilter] = useState(false);
   const [returnFilter, setReturnFilter] = useState(false);
+  const navigate = useNavigate();
 
   const showMore = () => {
     setVisible((preValue) => preValue + 3);
@@ -162,6 +164,25 @@ const AllFlights = () => {
         setFilter(data.data);
       });
   }, []);
+  const handleAddToFavourite = (filter) => {
+    fetch("http://localhost:5000/favouritesFlight", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(filter),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Successfully added!");
+          navigate(`/favourite`);
+        } else {
+          toast.error(data.message);
+        }
+      });
+  };
 
   return (
     <div>
@@ -461,7 +482,11 @@ const AllFlights = () => {
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p> */}
                           <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
-                            <Link to="/" className="border rounded-2 ps-2 pe-2">
+                            <Link
+                              to="/"
+                              className="border rounded-2 ps-2 pe-2"
+                              onClick={() => handleAddToFavourite(filter)}
+                            >
                               <FaHeart />
                             </Link>{" "}
                             <Link

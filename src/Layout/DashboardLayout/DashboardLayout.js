@@ -36,10 +36,14 @@ const DashboardLayout = () => {
                     </Link>
                   </>
                 )}
-                {/* <Link className="btn btn-light" to="/favourite/hotels">
-                  Hotels
+                <Link
+                  className="btn btn-light fs-5"
+                  to="/dashboard/allbookings"
+                >
+                  UserBookings
                 </Link>
-                <Link className="btn btn-light" to="/favourite/flights">
+
+                {/* <Link className="btn btn-light" to="/favourite/flights">
                   Flights
                 </Link> */}
               </div>
