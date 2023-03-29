@@ -245,11 +245,9 @@
   }
 
   .newsletter-section {
-    width: 90%;
     height: 350px;
     position: relative;
-    /* top: 150px; */
-    left: 40px;
+    top: 150px;
     background-color: #f8fcfb;
     border-radius: 7px;
   }
