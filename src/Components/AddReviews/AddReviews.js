@@ -73,7 +73,7 @@ const AddReviews = () => {
         </div>
       </section>
 
-      <div className="newsletter-section p-3">
+      <div className="newsletter-section p-3 container">
         <div>
           <h2 className="newsletter-title">Subscribe NewsLetter</h2>
           <h6 className="newsletter-subtitle">The Travel</h6>

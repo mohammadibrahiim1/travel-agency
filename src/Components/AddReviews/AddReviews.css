@@ -83,15 +83,12 @@
 }
 
 .newsletter-section {
-  width: 72%;
   height: 305px;
   display: flex;
-  /* grid-template-columns: repeat(2,1fr); */
   justify-content: space-between;
   align-items: center;
   position: relative;
   top: 200px;
-  left: 190px;
   background-color: #f8fcfb;
   border-radius: 7px;
 }
