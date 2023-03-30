@@ -30,6 +30,9 @@ const FlightDetails = () => {
   return (
     <div>
       <div>
+        <h2 className="text-center text-primary-emphasis mt-5 fw-semibold heading-text">
+          See Your Flights Details Here
+        </h2>
         <section className="container flights-details-container">
           <div>
             <span className="d-flex align-items-center fs-6 text-danger ">
@@ -72,14 +75,14 @@ const FlightDetails = () => {
           </div>
 
           <div>
-            <div>
+            <div className="hero-img">
               <img
                 src={Hero_URL}
                 alt=""
                 // style={{ Width: "1232px", Height: "395px" }}
               />
             </div>
-            <div className="mt-3 d-flex align-items-center gap-3">
+            <div className="mt-3 other-img">
               <img src={economy_URL[0]} alt="" />
               <img src={economy_URL[1]} alt="" />
               <img src={economy_URL[3]} alt="" />
@@ -98,7 +101,7 @@ const FlightDetails = () => {
               {" "}
               {airlines_name} Airlines Policies{" "}
             </h4>
-            <div className="d-flex align-items-center justify-content-start gap-5">
+            <div className="">
               <p className="text-dark fw-semibold  ">
                 <BsArrowRight
                   className="me-2"
@@ -118,7 +121,7 @@ const FlightDetails = () => {
 
           <hr />
 
-          <div className="d-flex justify-content-between mb-4">
+          <div className="d-flex justify-content-between mb-4 airlines-logo-time-trip">
             <div className="">
               <img
                 src={airlines_logo_URL}
@@ -160,7 +163,7 @@ const FlightDetails = () => {
             </div>
           </div>
 
-          <div className="d-flex justify-content-between mb-4">
+          <div className="d-flex justify-content-between mb-4 airlines-logo-time-trip">
             <div className="">
               <img
                 src={airlines_logo_URL}

@@ -4,6 +4,7 @@ import Loading from "../../../Components/Loading/Loading";
 import { AuthContext } from "../../../Context/UserContext";
 import { ApiContext } from "../../../DataContext.js/DataContext";
 import Bookinfo from "../Bookinfo/Bookinfo";
+import './BookingInfo.css'
 // import { useLoaderData } from "react-router-dom";
 
 const BookingInfo = () => {
@@ -33,12 +34,12 @@ const BookingInfo = () => {
   // const { packageName,contact,userName,totalPrice, } = bookInfo;
   return (
     <div>
-      <div>
-        <h4 className="w-50 m-auto text-primary fw-semibold mt-5 mb-5">
+      <div className="booking-info">
+        <h4 className="container text-primary fw-semibold mt-5 mb-5">
           See Your Booking Details Here
         </h4>
       </div>
-      <section className="w-50  m-auto">
+      <section className="container ">
         {bookInfo.map((book) => (
           <Bookinfo
             book={book}

@@ -8,13 +8,13 @@
   padding-top: 7%;
 }
 
-.flight-search-section-container {
+/* .flight-search-section-container {
   height: 220px;
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
   border-radius: 16px;
   margin-top: -7%;
-}
+} */
 
 .flight-header-section {
   background-image: url(https://i.ibb.co/mNQ78R4/filght-img.jpg);
@@ -153,6 +153,8 @@
     align-items: center;
     gap: 14px;
   }
+
+ 
 
   .flight-extra-section .btn {
     gap: 4px;

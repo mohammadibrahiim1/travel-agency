@@ -5,3 +5,13 @@
   border-radius: 7px;
   padding: 35px 35px;
 }
+
+@media screen and (max-width: 576px) {
+  .payment-card {
+    width: 90%;
+    margin: auto;
+    border: 1px solid greenyellow;
+    border-radius: 7px;
+    padding: 35px 35px;
+  }
+}

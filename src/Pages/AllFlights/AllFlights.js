@@ -343,31 +343,6 @@ const AllFlights = () => {
               />
               <span className="input-filter-text ms-2">return</span> <br />
             </div>
-
-            {/* <div>
-              <input
-                type="checkbox"
-                name="international"
-                id=""
-                className="checkbox"
-              // checked={IntFilter}
-              // onClick={() => setIntFilter(!IntFilter)}
-              />
-              <span className="input-filter-text ms-2">Qatar airlines </span> <br />
-            </div>
-
-
-            <div>
-              <input
-                type="checkbox"
-                name="domestic"
-                className="checkbox"
-                id=""
-              // checked={dmsFilter}
-              // onClick={() => setdmsFilter(!dmsFilter)}
-              />
-              <span className="input-filter-text ms-2">Emirates</span> <br />
-            </div> */}
           </div>
           <hr />
           <div>
@@ -432,7 +407,7 @@ const AllFlights = () => {
                       </div>
                       <div class="col-md-8">
                         <div class="card-body">
-                          <div className="d-flex justify-content-between align-items-center">
+                          <div className="d-flex justify-content-between align-items-st">
                             {" "}
                             <h5 class="card-title">
                               {filter.airlines_name}
@@ -440,7 +415,7 @@ const AllFlights = () => {
                             </h5>
                             <h5 class="card-title">${filter.price}</h5>
                           </div>
-                          <p class="card-text d-flex justify-content-evenly align-items-center">
+                          <div class="card-text d-flex justify-content-between align-items-center mb-3">
                             <span> {filter.location} </span>
                             <span class="card-text ms-2 text-warning">
                               {filter.trip}
@@ -467,7 +442,7 @@ const AllFlights = () => {
                                 {filter.ratings} start reviews
                               </p>
                             </span>{" "}
-                          </p>
+                          </div>
 
                           <div className="">
                             <p>
@@ -480,14 +455,11 @@ const AllFlights = () => {
                               </span>
                               -<span>{filter.return_time.arrival}</span>
                             </p>
-                            {/* <p className="mt-3">{filter.class}</p> */}
+
                             <p className="mt-3">{filter.class}</p>
-                            {/* <h5 class="package-price">{filt.tourCategory}</h5> */}
                           </div>
-                          {/* <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p> */}
-                          <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
+
+                          <div class="mt-2 d-flex justify-content-start align-items-center gap-3 ">
                             <Link
                               to="/"
                               className="border rounded-2 ps-2 pe-2"
@@ -498,11 +470,11 @@ const AllFlights = () => {
                             <Link
                               to={`/flightDetails/${filter._id}`}
                               class=" btn btn-info package-details-button"
-                              style={{ width: "428px", height: "38px" }}
+                              // style={{ width: "428px", height: "38px" }}
                             >
                               View Details
                             </Link>
-                          </p>
+                          </div>
                         </div>
                       </div>
                     </div>

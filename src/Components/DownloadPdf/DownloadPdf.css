@@ -7,7 +7,6 @@
   /* text-align: center; */
   width: 98%;
   margin: 0 auto;
-  
 }
 
 .pdf-date {
@@ -55,4 +54,19 @@
   line-height: 20px;
   color: #112211;
   padding-bottom: 50px;
+}
+
+@media screen and (max-width: 576px) {
+  .pdf-card-section {
+    padding-top: 70px;
+    width: 90vw;
+    margin: auto;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .pdf-card-section {
+    padding-top: 70px;
+    width: 90vw;
+    margin: auto;
+  }
 }

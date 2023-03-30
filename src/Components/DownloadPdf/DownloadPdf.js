@@ -47,7 +47,10 @@ const DownloadPdf = () => {
         <div className="text-end mb-2">
           <Pdf targetRef={ref} fileName="booking_document.pdf">
             {({ toPdf }) => (
-              <button className="w-25  btn btn-success" onClick={toPdf}>
+              <button
+                className="w-50 w-lg-25 w-md-25  btn btn-success"
+                onClick={toPdf}
+              >
                 <AiOutlineDownload style={{ width: "20px", height: "20px" }} />{" "}
                 Download Pdf
               </button>
@@ -60,7 +63,7 @@ const DownloadPdf = () => {
           </div>
           {/* <view> */}{" "}
           <div className="row ">
-            <div className="col-6 pdf-left-column-text ">
+            <div className="col-12 col-md-6 col-lg-6 col-xl-6 pdf-left-column-text ">
               <div>
                 <p>UserName : {userName}</p>
                 <p> Email : {userEmail}</p>
@@ -70,7 +73,7 @@ const DownloadPdf = () => {
                 <p>Price : ${totalPrice}</p>
               </div>
             </div>
-            <div className="col-6 pdf-right-column-text">
+            <div className="col-12 col-md-6 col-lg-6 col-xl-6 pdf-right-column-text">
               <p> Transaction_Id : {transactionId}</p>
               <p> Trip : {journey}</p>
               <p> Date : {bookingDate}</p>

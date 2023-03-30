@@ -4,9 +4,9 @@ import "./Loading.css";
 const Loading = () => {
   return (
     <div>
-      <section className="d-flex justify-content-center">
+      <section className="d-flex justify-content-center align-content-center">
         <div
-          class="spinner-grow "
+          class="spinner-grow loader"
           style={{ width: "3rem", height: "3rem" }}
           role="status"
         >

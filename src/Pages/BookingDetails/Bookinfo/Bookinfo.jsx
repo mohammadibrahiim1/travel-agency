@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import './Bookinfo.css'
 
 const Bookinfo = ({ book, handleDelete }) => {
   const {
@@ -13,10 +14,10 @@ const Bookinfo = ({ book, handleDelete }) => {
   } = book;
   return (
     <div>
-      <section>
+      <section className="book-info">
         <div
           class="card text-bg-primary mb-3 pb-4 pt-2"
-          style={{ "max-width": "800px" }}
+          // style={{ "max-width": "800px" }}
         >
           <div class="card-header"> {packageName} </div>
           <div class="card-body">
