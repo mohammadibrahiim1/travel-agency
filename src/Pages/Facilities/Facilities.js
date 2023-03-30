@@ -24,7 +24,7 @@ const Facilities = () => {
   return (
     <div>
       <section className="facilities-header-section">
-      <div>
+        <div>
           <h2>Travel World To Gain Knowledge</h2>
           <p>
             Discover the latest offers and news and start planning your next
@@ -41,7 +41,7 @@ const Facilities = () => {
           </p>
         </div>
 
-        <div className="tour-guide-card-container">
+        <div className="tour-guide-card-container container">
           {tourGuide.slice(0, visible).map((guide) => (
             <GuideCard guide={guide} key={guide._id}></GuideCard>
           ))}
@@ -50,7 +50,7 @@ const Facilities = () => {
           <button className="btn btn-light ">show more</button>
         </div>
       </section>
-      <section className="services-section">
+      <section className="services-section container">
         <div className="service-section-heading">
           <h2> Our Services </h2>
           <p className="text-center">see our popular services.</p>
@@ -148,7 +148,7 @@ const Facilities = () => {
           </div>
         </div>
       </section>
-      <section className="accordion-section row">
+      <section className="accordion-section container row">
         <div className="col-lg-6 col-sm-12 col-md-6">
           <h6>What they say</h6>
           <h2>Frequently Asked Question</h2>
