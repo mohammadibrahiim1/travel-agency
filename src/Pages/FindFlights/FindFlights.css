@@ -1,4 +1,4 @@
-.flight-search-section {
+.search-section {
   display: flex;
   /* grid-template-columns: repeat(7, 1fr); */
   justify-content: space-between;
@@ -8,7 +8,7 @@
   padding-top: 7%;
 }
 
-/* .flight-search-section-container {
+/* .search-section-container {
   height: 220px;
   background: #ffffff;
   box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
@@ -108,18 +108,19 @@
   margin-top: 200px;
 }
 
-.flight-extra-section .card {
+.extra-section .card {
   background-color: #8dd3bb;
   height: 350px;
 }
-.flight-extra-section .card-title {
+.extra-section .card-title {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 35px;
   line-height: 35px;
   color: #112211;
-  width: 40%;
+  width: 80%;
 }
-.flight-extra-section .card-text {
+
+.extra-section .card-text {
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -128,9 +129,8 @@
   margin-top: 8%;
 }
 
-.flight-extra-section .btn {
+.extra-section .btn {
   gap: 4px;
-  /* width: 500px; */
   background: #ffffff;
   border-radius: 4px;
   margin-top: 10%;
@@ -153,12 +153,16 @@
     align-items: center;
     gap: 14px;
   }
+  .extra-section .card-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 35px;
+    color: #112211;
+    width: 100%;
+  }
 
- 
-
-  .flight-extra-section .btn {
+  .extra-section .btn {
     gap: 4px;
-    /* width: 500px; */
     background: #ffffff;
     border-radius: 4px;
     margin-top: 2%;
@@ -172,6 +176,24 @@
     row-gap: 19px;
     column-gap: 17px;
     margin-bottom: 80px;
+  }
+  .flight-header-section h2 {
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    padding-top: 180px;
+    width: 100%;
+  }
+  .flight-header-section .w-50 {
+    width: 75% !important;
+
+  }
+  .flight-header-section p {
+    color: white;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 15px;
   }
 }
 @media screen and (min-width: 577px) and (max-width: 991px) {
@@ -184,9 +206,8 @@
     /* gap: 14px; */
   }
 
-  .flight-extra-section .btn {
+  .extra-section .btn {
     gap: 4px;
-    /* width: 500px; */
     background: #ffffff;
     border-radius: 4px;
     margin-top: 2%;
@@ -200,5 +221,17 @@
     row-gap: 19px;
     column-gap: 17px;
     margin-bottom: 80px;
+  }
+  .flight-header-section .w-50 {
+    width: 75% !important;
+    margin-top: 25px;
+  }
+  .flight-header-section h2 {
+    color: white;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    padding-top: 180px;
+    width: 100%;
   }
 }

@@ -134,91 +134,93 @@ const HotelListing = () => {
 
   return (
     <>
-      <section className="container flying__input">
-        <form>
-          <div className="col-12 d-flex align-items-center justify-content-evenly">
-            <div className="input-container">
-              <input
-                type="text"
-                id="form3Example1m"
-                className="enter__destination"
-                placeholder="Enter Destination"
-                ref={cityRef}
-              />
-            </div>
+      <section className="allFlights-header-section ">
+        <div>
+          <h2>Let's go places together</h2>
+          <p>
+            Discover the latest offers and news and start planning your next
+            trip with us.
+          </p>
+        </div>
+      </section>
 
-            <div className="input-container">
-              <input
-                type="date"
-                id="date"
-                className="input"
-                placeholder=" "
-                name="date"
-                required
-              />
-              <label className="label">select date</label>
-            </div>
-
-            <div className="input-container">
-              <input
-                type="date"
-                id="date"
-                className="input"
-                placeholder=" "
-                name="date"
-                required
-              />
-              <label className="label">select date</label>
-            </div>
-            {/* </div> */}
-            <div>
-              <input
-                type="number"
-                id="form3Example1m"
-                className="input__box"
-                placeholder="Rooms"
-                ref={roomRef}
-              />
-            </div>
-            <FaSearch
-              className="search"
-              type="submit"
-              onClick={searchHandler}
-            ></FaSearch>
+      <section className="flight-search-section-container container pt-4">
+        <form className="flight-search-section container m-auto">
+          {/* <div className="col-12 d-flex align-items-center justify-content-evenly"> */}
+          <div className="input-container">
+            <input
+              type="text"
+              id="form3Example1m"
+              className="input"
+              placeholder="Enter Destination"
+              ref={cityRef}
+            />
           </div>
+
+          <div className="input-container">
+            <input
+              type="date"
+              id="date"
+              className="input"
+              placeholder=" "
+              name="date"
+              required
+            />
+            <label className="label">select date</label>
+          </div>
+
+          <div className="input-container">
+            <input
+              type="date"
+              id="date"
+              className="input"
+              placeholder=" "
+              name="date"
+              required
+            />
+            <label className="label">select date</label>
+          </div>
+
+          <div className="input-container">
+            <input
+              type="number"
+              id="form3Example1m"
+              className="input"
+              placeholder="Rooms"
+              ref={roomRef}
+            />
+          </div>
+          <FaSearch
+            className="search"
+            type="submit"
+            onClick={searchHandler}
+          ></FaSearch>
+          {/* </div> */}
         </form>
       </section>
-      {/* <SearchBar></SearchBar> */}
 
       <section className="container mt-4">
         <div className="row">
-          <div className="col-4">
+          <div className="col-12  col-md-12 col-sm-12 col-lg-2">
             <h5 className="filter">price</h5>
 
-            <form className="mt-2 mb-2">
+            <form className="mt-2 mb-2 d-flex justify-content-between align-content-center ">
               <input
                 type="number"
                 id="form3Example1m"
-                className="price__box"
+                className="price__box "
                 placeholder="price"
                 ref={priceRef}
-              />
-              <FaSearch
-                className="price__search"
+              />{" "}
+              <div
+                className="btn btn-light "
                 type="submit"
                 onClick={searchPrice}
-              ></FaSearch>
+              >
+                search
+              </div>
             </form>
 
-            <h5 className="filter">Rating</h5>
-            <div className="d-flex justify-content-between">
-              <p>0+</p>
-              <p>1+</p>
-              <p>2+</p>
-              <p>3+</p>
-              <p>4+</p>
-              <p>5+</p>
-            </div>
             <hr />
 
             <h5 className="filter">Freebies</h5>
@@ -301,22 +303,14 @@ const HotelListing = () => {
             </div>
           </div>
 
-          <div className="col-8">
-            {/* <div className="hotels d-flex justify-content-between">
-              <div>
-                <h6>Hotels</h6>
-                <p>257 places</p>
-              </div>
-              <div>
-                <h6>Hotels</h6>
-                <p>257 places</p>
-              </div>
-              <div>
-                <h6>Hotels</h6>
-                <p>257 places</p>
-              </div>
-            </div> */}
+          <div
+            class=" d-lg-flex justify-content-evenly align-items-center mt-5  d-md-none d-lg-block d-sm-none d-block col-lg-1"
+            style={{ height: "auto" }}
+          >
+            <div class="vr mt-5"></div>
+          </div>
 
+          <div className="col-lg-9 col-md-12 col-sm-12 col-12">
             <div className="d-flex mt-4">
               <p className="showing">
                 Showing {hotelNames.length} of{" "}
@@ -326,27 +320,6 @@ const HotelListing = () => {
 
             <div class="mb-3 mt-4">
               <div class="row g-0">
-                {/* {
-                          hotelNames && hotelNames?(
-                            {
-                            hotelNames ?  hotelNames.slice(0,visible).map(hotelName => <AllHotelListing
-                              key={hotelName._id}
-                              hotelName={hotelName}
-                              category={category}
-                              ></AllHotelListing>)
-                            }
-                          )
-                        } */}
-
-                {/* {
-                            hotelNames.slice(0,visible).map(hotelName => <AllHotelListing
-                            key={hotelName._id}
-                            hotelName={hotelName}
-                            category={category}
-                            ></AllHotelListing>)
-                          } */}
-                {/* <SearchResult></SearchResult> */}
-
                 <div class="mb-3 mt-4">
                   <div class="row g-0">
                     {hotelNames.length === 0 ? (
@@ -361,20 +334,14 @@ const HotelListing = () => {
                             category={category}
                           ></AllHotelListing>
                         ))
-                      // data?.map(hotelName => (
-                      //   <Col lg='3' className='mb-4' key={hotelName.id}>
-                      //   <AllHotelListing hotelName={hotelName}></AllHotelListing>
-                      //   </Col>
                     )}
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="text-center mt-4" onClick={showMore}>
-              <button className="btn btn-light show__more__results">
-                show more results
-              </button>
+            <div className="mt-4" onClick={showMore}>
+              <button className="btn btn-light">show more results</button>
             </div>
           </div>
         </div>

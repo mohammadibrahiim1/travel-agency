@@ -44,8 +44,10 @@ const FindHotel = () => {
       </section>
 
       {/* =======================Your recent searches==================== */}
-      <div className="container ">
-        <h3 className="fw-bold text-dark mb-4 mt-5">Your recent searches</h3>
+      <div className="container">
+        <h3 className="fw-bold text-md-center text-lg-start  text-dark mb-4 mt-5  ">
+          Your recent searches
+        </h3>
         <div className="home-card-container">
           {hotelNames?.map((hotelName) => (
             <Recent key={hotelName._id} hotelName={hotelName}></Recent>
@@ -55,14 +57,16 @@ const FindHotel = () => {
 
       {/* ====================Fall into travel======================= */}
 
-      <section className=" container">
-        <h3 className="fw-bold text-dark mt-5">Fall into travel</h3>
-        <p className="mb-4">
+      <section className="fall-into-travel-header mt-5 pt-5 mb-4 container">
+        <h3 className="fw-bold text-dark  mt-5 text-md-center text-lg-start ">
+          Fall into travel
+        </h3>
+        <p className="mb-4 text-sm-start text-md-center">
           Going somewhere to celebrate this season? Whether you’re going home or
           somewhere to roam, we’ve got <br /> the travel tools to get you to
           your destination.
         </p>
-        <div className="row row-cols-1 row-cols-md-4 g-4 travel__card">
+        <div className="fall-into-travel">
           {hotelNames?.map((hotelName) => (
             <HotelInfo key={hotelName._id} hotelName={hotelName}></HotelInfo>
           ))}
@@ -72,9 +76,11 @@ const FindHotel = () => {
       {/* ======================== extra-section =======================*/}
 
       <section className="extra-section container">
-        <div className="container mt-5 pt-5 mb-4 fall-into-travel-header">
-          <h3 className="fw-bold text-dark ">Fall into travel</h3>
-          <p className="text-dark-emphasis ">
+        <div className="mt-5 pt-5 mb-4 fall-into-travel-header">
+          <h3 className="fw-bold text-dark  mt-5 text-md-center text-lg-start ">
+            Fall into travel
+          </h3>
+          <p className="text-dark-emphasis text-md-center text-lg-start  ">
             Going somewhere to celebrate this season? Whether you’re going home
             or somewhere to roam, we’ve got the travel tools to get you to your
             destination.

@@ -196,8 +196,8 @@ const AllFlights = () => {
         </div>
       </section>
 
-      <section className="flight-search-section-container container">
-        <form className="flight-search-section container m-auto ">
+      <section className="flight-search-section-container container pt-4 ">
+        <form className="flight-search-section container m-auto  ">
           <div className="input-container ">
             <input
               type="text"
@@ -260,7 +260,7 @@ const AllFlights = () => {
       </section>
 
       <section className="row container m-auto mt-5 mb-5">
-        <div className="checkbox-container mt-5 mb-5  col-md-12 col-sm-12 col-lg-2">
+        <div className="checkbox-container mt-5 mb-5 col-12  col-md-12 col-sm-12 col-lg-2">
           <p className="flights-filter">Filters</p>
           <hr className="text-dark" />
 

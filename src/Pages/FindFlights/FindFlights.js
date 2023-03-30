@@ -174,7 +174,7 @@ const FindFlights = () => {
         </div>
       </section>
 
-      <section className="flight-extra-section container">
+      <section className="extra-section container">
         <div className="container mt-5 pt-5 mb-4 fall-into-travel-header">
           <h3 className="fw-bold text-dark ">Fall into travel</h3>
           <p className="text-dark-emphasis ">
@@ -187,7 +187,7 @@ const FindFlights = () => {
           <div class="col-sm-6 mb-3 mb-sm-0">
             <div class="card">
               <div class="card-body">
-                <div className="d-flex justify-content-between align-items-center">
+                <div className="d-lg-flex d-md-flex d-sm-flex  justify-content-between align-items-center">
                   <h5 class="card-title">Backpacking Sri Lanka</h5>
                   <h3 className="text-white text-end">$275</h3>
                 </div>
@@ -205,7 +205,7 @@ const FindFlights = () => {
               </div>
             </div>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-12 col-12 col-lg-6 col-md-6">
             <div className="extra-img">
               <div>
                 <img

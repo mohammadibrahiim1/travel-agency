@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./AllHotelListing.css";
 import { toast } from "react-hot-toast";
 
-const AllHotelListing = ({ hotelName }) => { 
+const AllHotelListing = ({ hotelName }) => {
   const navigate = useNavigate();
   const { title, city, price, avgRating, cafe, photo, createdAt } = hotelName;
   const handleAddToFavourite = (hotelName) => {
@@ -95,8 +95,9 @@ const AllHotelListing = ({ hotelName }) => {
                 </div>{" "}
                 <Link
                   to={`/category/${hotelName._id}`}
-                  class=" btn btn-info package-details-button"
-                  style={{ width: "428px", height: "38px" }}
+                  class=" btn btn-info package-details-button {
+                    "
+                  // style={{ width: "428px", height: "38px" }}
                 >
                   View Details
                 </Link>

@@ -63,6 +63,13 @@
   height: 2rem;
   border-radius: 7px;
 }
+.flight-search-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 14px;
+  padding-top: 45px;
+}
 
 @media screen and (max-width: 576px) {
   .flight-search-section {
@@ -105,7 +112,7 @@
   }
 
   .flight-search-section-container {
-    height: 400px;
+    height: 450px;
     background: #ffffff;
     box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
     border-radius: 16px;

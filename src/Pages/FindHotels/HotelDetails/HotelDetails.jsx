@@ -30,8 +30,12 @@ const HotelDetails = () => {
   return (
     <div>
       <section className="container">
-        <div className="gap-1">
-          <span className="d-flex ">
+        <h2 className="mt-5 pt-5 mb-4 text-primary fw-semibold">
+          See Hotel Details
+        </h2>
+        <hr />
+        <div className="">
+          <span className="d-flex">
             <h5>{city}</h5>
             <MdKeyboardArrowRight className="arrow" />
             <h6>{title}</h6>
@@ -50,10 +54,10 @@ const HotelDetails = () => {
           <h6 className="hotel__rating">{avgRating} Star Hotel</h6>
         </div>
 
-        <div className="d-flex justify-content-between">
-          <div className="d-flex location">
+        <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex justify-content-evenly align-items-center ">
             <ImLocation2 />
-            <h6>{city}</h6>
+            <h6 className="pt-2">{city}</h6>
           </div>
 
           <div className="book__details">
@@ -62,35 +66,23 @@ const HotelDetails = () => {
             <Link
               to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
-              style={{ width: "120px", height: "38px" }}
+              // style={{ width: "120px", height: "38px" }}
             >
               Book now
             </Link>
           </div>
         </div>
 
-        <div className="d-flex">
+        <div className="d-flex justify-content-between align-items-center row">
           <div className="col-6">
             <img className="detailPhoto" src={photo} alt="" />
           </div>
-          <div className="col-6">
-            <div className="d-flex">
-              <div className="col-6">
-                <img className="details" src={detailPhoto1} alt="" />
-              </div>
-              <div className="col-6">
-                <img className="details" src={detailPhoto2} alt="" />
-              </div>
-            </div>
 
-            <div className="d-flex mt-2">
-              <div className="col-6">
-                <img className="details" src={detailPhoto3} alt="" />
-              </div>
-              <div className="col-6">
-                <img className="details" src={detailPhoto4} alt="" />
-              </div>
-            </div>
+          <div className="details-photo col-6">
+            <img src={detailPhoto1} alt="" />
+            <img src={detailPhoto2} alt="" />
+            <img src={detailPhoto3} alt="" />
+            <img src={detailPhoto4} alt="" />
           </div>
         </div>
 
@@ -127,13 +119,13 @@ const HotelDetails = () => {
           </div>
           <div className="d-flex">
             <h4 className="me-4">${deluxePrice}</h4>
-            {/* <Link
-              to=""
+            <Link
+              to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
               style={{ width: "120px", height: "38px" }}
             >
               Book now
-            </Link> */}
+            </Link>
           </div>
         </div>
 

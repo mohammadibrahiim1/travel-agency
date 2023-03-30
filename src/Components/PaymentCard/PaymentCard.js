@@ -18,7 +18,7 @@ const PaymentCard = () => {
   // strip password: tEfGB3!ppE{ZYw2
   // pk: pk_test_51MlpzGLrYWLOOZ8UljA5X1ANJMi0EXPD3KZWZmLIjyuv5DQgLe3I2dZvA4TPFfa4n0opSlz0POZ3wbxzcy27Necr005pDnWQh8
   return <div>
-    <section className="mt-5 pt-5  "> 
+    <section className="mt-5 mb-5 pb-5 pt-5  "> 
       <div  >
       <Elements  stripe={stripePromise} >
             <CheckOutForm data={data} ></CheckOutForm>
