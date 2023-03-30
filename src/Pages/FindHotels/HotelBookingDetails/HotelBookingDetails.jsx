@@ -85,9 +85,15 @@ const HotelBookingDetails = () => {
 
   return (
     <div>
-      <section className="w-75 m-auto">
-        <div className="row">
-          <div className="col-8">
+      <section className="container booking-details-section">
+        <h2
+          className="text-primary fw-semibold text-center 
+        "
+        >
+          your booking Info
+        </h2>
+        <div className="row mt-5">
+          <div className="col-12 col-sm-12 col-lg-8 col-md-8">
             <div class="card book-detail-card">
               <div class="card-body">
                 <div className="d-flex justify-content-between book-detail align-content-center">
@@ -138,7 +144,7 @@ const HotelBookingDetails = () => {
               <div className="mb-3 text-start ">
                 <h2 className="booking-form-header-title">Your Information</h2>
                 <div className="row  ">
-                  <div className=" col-6 d-flex justify-content-between align-items-center gap-2">
+                  <div className=" col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-between align-items-center gap-2">
                     <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                       <div className="input-container">
                         <input
@@ -170,7 +176,7 @@ const HotelBookingDetails = () => {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-6 d-flex justify-content-between align-items-center gap-2 ">
+                  <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-between align-items-center gap-2">
                     <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                       <div className="input-container">
                         <input
@@ -208,7 +214,7 @@ const HotelBookingDetails = () => {
             </form>
           </div>
 
-          <div className="col-4">
+          <div className="col-12 col-sm-12 col-lg-4 col-md-4">
             <div class="card shadow mb-3">
               <div class="row g-0">
                 <div class="col-3 mt-3 text-center">

@@ -195,7 +195,7 @@ const FlightBookingDetails = () => {
               <Toaster />
               <div className="mb-3 text-start ">
                 <h2 className="booking-form-header-title">Your Information</h2>
-                <div className="row  ">
+                <div className="row">
                   <div className=" col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex justify-content-between align-items-center gap-2">
                     <div className="input-container col-md-12 col-sm-12 col-xl-6 col-lg-6 password mb-4">
                       <div className="input-container">

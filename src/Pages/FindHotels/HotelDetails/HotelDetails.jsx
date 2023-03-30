@@ -42,27 +42,27 @@ const HotelDetails = () => {
           </span>
         </div>
 
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center detail-header container">
           <h1 className="main__title">{title}</h1>
-          <div className="star">
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-          </div>
-          <h6 className="hotel__rating">{avgRating} Star Hotel</h6>
+
+          <p className="book__price">${price}</p>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center">
-          <div className="d-flex justify-content-evenly align-items-center ">
+        <div className="d-flex justify-content-between align-items-center ">
+          <div className="d-flex justify-content-between align-items-center ">
             <ImLocation2 />
             <h6 className="pt-2">{city}</h6>
+            <div className="star">
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+              <AiFillStar />
+            </div>
+            <h6 className="hotel__rating">{avgRating} Star Hotel</h6>
           </div>
 
-          <div className="book__details">
-            <p className="book__price">${price}</p>
-
+          <div className="book__details mt-4">
             <Link
               to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
@@ -73,12 +73,12 @@ const HotelDetails = () => {
           </div>
         </div>
 
-        <div className="d-flex justify-content-between align-items-center row">
-          <div className="col-6">
+        <div className="d-flex justify-content-evenly align-items-center detailPhoto-container">
+          <div className="">
             <img className="detailPhoto" src={photo} alt="" />
           </div>
 
-          <div className="details-photo col-6">
+          <div className="details-photo">
             <img src={detailPhoto1} alt="" />
             <img src={detailPhoto2} alt="" />
             <img src={detailPhoto3} alt="" />
@@ -95,13 +95,13 @@ const HotelDetails = () => {
 
         <h3 className="available__room">Available Rooms</h3>
 
-        <div className="d-flex justify-content-between mb-4">
+        <div className="d-flex justify-content-between align-items-center gap-3\ mb-4 available-room-container ">
           <div className="d-flex">
             <img src={photo} alt="" style={{ width: "48px", height: "48px" }} />
             <p className="mt-2 ms-2">Superior room - {normalRoom}</p>
+            <h4 className="me-4">${normalPrice}</h4>
           </div>
           <div className="d-flex">
-            <h4 className="me-4">${normalPrice}</h4>
             <Link
               to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
@@ -112,13 +112,13 @@ const HotelDetails = () => {
           </div>
         </div>
 
-        <div className="d-flex justify-content-between mb-4">
+        <div className="d-flex justify-content-between mb-4 available-room-container ">
           <div className="d-flex">
             <img src={photo} alt="" style={{ width: "48px", height: "48px" }} />
             <p className="mt-2 ms-2">Delux room - {deluxeRoom}</p>
+            <h4 className="me-4">${deluxePrice}</h4>
           </div>
           <div className="d-flex">
-            <h4 className="me-4">${deluxePrice}</h4>
             <Link
               to={`/hotelBookingDetails/${_id}`}
               class=" btn btn-info book-button"
