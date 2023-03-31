@@ -54,15 +54,15 @@ const UserProfile = () => {
         </div>
       </section>
       <hr />
-      <section className="profile-booking-info mt-5 mb-5">
+      <section className=" mt-5 mb-5 container">
         <h4 className="mt-5 mb-4 fw-semibold">Your Booking Info</h4>
 
-        <div>
+        <div className="">
           {bookInfo.map((book) => (
             <>
               <div
                 class="card text-bg-primary mb-3 pb-4 pt-2"
-                style={{ "max-width": "800px" }}
+                // style={{ "max-width": "800px" }}
               >
                 <div class="card-header"> {book.packageName} </div>
                 <div class="card-body">

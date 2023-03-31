@@ -29,7 +29,11 @@
   font-size: 15px;
 }
 
-.profile-booking-info {
+/* .profile-booking-info {
   width: 60%;
   margin: 0 auto;
+} */
+
+@media screen and (min-width: 576px) {
+
 }
