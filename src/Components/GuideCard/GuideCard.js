@@ -8,12 +8,14 @@ const GuideCard = ({ guide }) => {
   return (
     <div>
       
-      <div class=" card mb-3" style={{ "max-width": "580px" }}>
+      <div class=" card mb-3"
+      //  style={{ "max-width": "580px" }}
+       >
         <div class="row g-0">
           <div class="col-md-4 ">
             <img
               src={image}
-              class="img-fluid rounded "
+              class=" img-fluid rounded-2 p-2 "
               alt="..."
               style={{ height: "220px" }}
             />
