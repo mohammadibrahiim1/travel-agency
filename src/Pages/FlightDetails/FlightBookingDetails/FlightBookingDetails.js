@@ -269,7 +269,7 @@ const FlightBookingDetails = () => {
           <div className="col-12 col-sm-12 col-lg-4 col-md-4">
             <div class="card shadow mb-3">
               <div class="row g-0">
-                <div class="col-3 mt-3 text-center">
+                <div class="col-sm-12 col-md-12 col-lg-3 mt-3 text-center">
                   <img
                     src={airlines_logo_URL}
                     class="rounded ms-2"
@@ -284,7 +284,7 @@ const FlightBookingDetails = () => {
                   </div>
                 </div>
               </div>
-              <hr />
+              <hr className=" col-8 col-sm-8 col-md-12 col-lg-12" />
               <div className="price-container container">
                 {roomPrice ? (
                   <div className="d-flex align-content-center justify-content-between">
@@ -312,7 +312,7 @@ const FlightBookingDetails = () => {
                     $ <small>{tax}</small>{" "}
                   </p>
                 </div>
-                <hr />
+                <hr className="col-sm-10 col-md-12 col-lg-12" />
                 <div className="d-flex align-content-center justify-content-between">
                   <p> Total </p>
                   <p>
