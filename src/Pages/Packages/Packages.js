@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import DisplayPackage from "../DisplayPackage/DisplayPackage";
 import UserReviews from "../Home/UserReviews/UserReviews";
@@ -41,8 +41,6 @@ const Packages = () => {
       });
   }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
 
-
-
   return (
     <div>
       <section className="package-section">
@@ -54,8 +52,62 @@ const Packages = () => {
           </p>
         </div>
       </section>
-      <section className="row container m-auto mt-5 mb-5">
-        <div className="checkbox-container mt-5 mb-5  col-md-12 col-sm-12 col-lg-2">
+      <section>
+        <div className="container home-icon-container">
+          <div>
+            <img
+              src="https://i.ibb.co/7S8QCjN/flight.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p>
+              {" "}
+              <Link to="/findFlights" className="header-icon-text">
+                See Flights
+              </Link>
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://i.ibb.co/TRsxdxm/hotel-bed.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p>
+              <Link to="/findHotels" className="header-icon-text">
+                See Hotels
+              </Link>
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://i.ibb.co/1qp3R6q/travel-bag.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p>
+              <Link to="/packages" className="header-icon-text">
+                {" "}
+                See Packages
+              </Link>
+            </p>
+          </div>
+          <div>
+            <img
+              src="https://i.ibb.co/1mwY7Km/setting.png"
+              alt=""
+              style={{ width: "100px", height: "100px" }}
+            />
+            <p>
+              <Link to="/facilities" className="header-icon-text">
+                Our Services
+              </Link>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="row container m-auto ">
+        <div className="checkbox-container  col-md-12 col-sm-12 col-lg-2">
           <p className="package-filter">Filters</p>
           <hr className="text-dark" />
 

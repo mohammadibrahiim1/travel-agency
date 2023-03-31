@@ -96,7 +96,7 @@ const FlightBookingDetails = () => {
           your booking Info
         </h2>
         <div className="row mt-5">
-          <div className="col-12 col-sm-12 col-lg-8 col-md-8 ">
+          <div className="col-12 col-sm-12 col-lg-8 col-md-8">
             <div class="card book-detail-card">
               <div class="card-body">
                 <div className="d-flex justify-content-between book-detail align-content-center">

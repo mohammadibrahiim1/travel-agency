@@ -108,7 +108,7 @@ const DisplayPackage = ({ packageData }) => {
                 <Link
                   to={`/packages/${_id}`}
                   class=" btn btn-info package-details-button"
-                  style={{ width: "428px", height: "38px" }}
+                  // style={{ width: "428px", height: "38px" }}
                 >
                   View Details
                 </Link>

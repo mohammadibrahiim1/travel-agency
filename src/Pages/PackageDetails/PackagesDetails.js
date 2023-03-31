@@ -35,11 +35,15 @@ const PackagesDetails = () => {
     <div>
       <div>
         <section className="container packages-details-section mt-5 pt-5">
+          <h3 className="fw-semibold text-primary mb-5 text-decoration-underline">
+            {" "}
+            See Your Package Details{" "}
+          </h3>
           <div>
-            <div className="d-flex justify-content-between align-items-center">
-              <div>
-                <div className="d-flex justify-content-start align-items-center gap-2">
-                  <h4 className="package-name">{name}</h4> 
+            <div className="row mb-4">
+              <div className=" col-lg-8 col-sm-12 col-md-8 col-xs-12">
+                <div className="d-lg-flex d-md-flex justify-content-start align-items-center gap-2">
+                  <h4 className="package-name">{name}</h4>
                   <div className="rating-star">
                     <span className="text-warning">
                       <FaStar />
@@ -58,7 +62,7 @@ const PackagesDetails = () => {
                     </span>
 
                     <span className="mt-4 ms-2 text-warning">
-                      {ratings} start package
+                      {ratings} star package
                     </span>
                   </div>
                 </div>
@@ -68,19 +72,21 @@ const PackagesDetails = () => {
                   <span>{tourCategory}</span>
                 </div>
               </div>
-              <div>
-                {offerPrice ? ( 
-                  <h4 className="package-price">
-                    ${offerPrice}{" "}
-                    <span className="package-price text-decoration-line-through">
-                      ${price}
-                    </span>{" "}
-                  </h4>
-                ) : (
-                  <h4 className="package-price">${price}</h4>
-                )}
+              <div className=" col-lg-4 col-sm-12 col-md-4 col-xs-12 text-lg-end text-md-end">
+                <div className="mt-3">
+                  {offerPrice ? (
+                    <h4 className="">
+                      ${offerPrice}{" "}
+                      <span className=" text-decoration-line-through">
+                        ${price}
+                      </span>{" "}
+                    </h4>
+                  ) : (
+                    <h4 className="price">${price}</h4>
+                  )}
+                </div>
                 <div className="">
-                  <button className="btn btn-light  ">
+                  <button className="btn btn-light ">
                     <FaHeart />
                   </button>
                   <Link
@@ -92,37 +98,38 @@ const PackagesDetails = () => {
                 </div>
               </div>
             </div>
-            {/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/nw29CM1/biman-bangladesh-img.jpg" alt="biman-bangladesh-img" border="0"></a> */}
 
-            <div className="d-flex justify-content-center mt-4 align-items-center gap-3">
-              <div>
+            <div className="row ">
+              <div className="col-lg-8 col-sm-12 col-md-12 ">
                 <img
                   src={img}
-                  style={{ width: "600px", height: "350px" }}
+                  style={{ height: "350px" }}
                   alt=""
+                  className="image"
                 />
               </div>
-              <div className="">
-                <img
-                  className="me-2"
-                  src={placeimg1}
-                  style={{ width: "300px", height: "175px" }}
-                  alt=""
-                />
-                <img
-                  className="me-2 mt-1"
-                  src={placeimg2}
-                  style={{ width: "300px", height: "175px" }}
-                  alt=""
-                />
-                {/* <img
-                  className="me-2 mt-2"
-                  src={placeimg2}
-                  style={{ width: "300px", height: "175px" }}
-                  alt=""
-                /> */}
+              <div className="col-lg-4 col-sm-12 col-md-12 ">
+                <div className="small-img">
+                  <div className="">
+                    <img
+                      className="pb-2 image"
+                      src={placeimg1}
+                      style={{ width: "300px", height: "175px" }}
+                      alt=""
+                    />
+                  </div>
+                  <div className="">
+                    <img
+                      className="pb-2 image"
+                      src={placeimg2}
+                      style={{ width: "300px", height: "175px" }}
+                      alt=""
+                    />
+                  </div>
+                </div>
               </div>
             </div>
+
             <hr />
             <div className="overview">
               <h6 className="mt-4 fw-bold">packages overview :</h6>
@@ -169,7 +176,7 @@ const PackagesDetails = () => {
 
             <hr />
             <div className=" row">
-              <div className="col-6 ">
+              <div className="col-lg-6 col-sm-12 col-md-12  includes ">
                 <h6 className=" fw-bold">Includes</h6>
                 {includes ? (
                   <div className="">
@@ -211,7 +218,7 @@ const PackagesDetails = () => {
                 <div class="vr"></div>
               </div>
 
-              <div className="col-5">
+              <div className="col-lg-5 col-sm-12 col-md-12 excludes">
                 <h6 className="fw-bold">Excludes</h6>
                 {excludes ? (
                   <div className="itinerary-container">
