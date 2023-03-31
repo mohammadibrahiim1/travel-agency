@@ -203,7 +203,7 @@ export const router = createBrowserRouter([
     element: <FavouriteLayout></FavouriteLayout>,
     children: [
       {
-        path: "/favourite",
+        path: "/favourite/packages",
         element: <FavouritePackage></FavouritePackage>,
       },
       {

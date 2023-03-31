@@ -24,7 +24,7 @@ const DashboardLayout = () => {
             </Col>
 
             <div>
-              <div className=" mt-5">
+              <div className=" mt-5 pt-5">
                 {isAdmin && (
                   <>
                     {" "}

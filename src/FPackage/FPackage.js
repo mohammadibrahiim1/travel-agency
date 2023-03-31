@@ -71,14 +71,16 @@ const FPackage = ({ favPackage, handleDelete }) => {
                 <small class="text-muted">Last updated 3 mins ago</small>
               </p> */}
                 <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
-                <div className="btn btn-danger" onClick={()=>handleDelete(_id)}>
-                   <MdDelete style={{width: "20px",height:"20px"}} /> 
+                  <div
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(_id)}
+                  >
+                    <MdDelete style={{ width: "20px", height: "20px" }} />
                   </div>{" "}
-
                   <Link
                     to={`/packages/${_id}`}
                     class=" btn btn-info package-details-button"
-                    style={{ width: "428px", height: "38px" }}
+                    // style={{ width: "428px", height: "38px" }}
                   >
                     View Details
                   </Link>

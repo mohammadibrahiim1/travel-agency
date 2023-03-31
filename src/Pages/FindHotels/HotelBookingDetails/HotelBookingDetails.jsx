@@ -232,7 +232,7 @@ const HotelBookingDetails = () => {
                   </div>
                 </div>
               </div>
-              <hr />
+              <hr className=" col-8 col-sm-8 col-md-12 col-lg-12" />
               <div className="price-container container">
                 {roomPrice ? (
                   <div className="d-flex align-content-center justify-content-between">
@@ -260,7 +260,7 @@ const HotelBookingDetails = () => {
                     $ <small>{tax}</small>{" "}
                   </p>
                 </div>
-                <hr />
+                <hr className=" col-8 col-sm-8 col-md-12 col-lg-12" />
                 <div className="d-flex align-content-center justify-content-between">
                   <p> Total </p>
                   <p>

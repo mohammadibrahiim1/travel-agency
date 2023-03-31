@@ -57,7 +57,7 @@ const UserProfile = () => {
       <section className=" mt-5 mb-5 container">
         <h4 className="mt-5 mb-4 fw-semibold">Your Booking Info</h4>
 
-        <div className="">
+        <div className="container"> 
           {bookInfo.map((book) => (
             <>
               <div

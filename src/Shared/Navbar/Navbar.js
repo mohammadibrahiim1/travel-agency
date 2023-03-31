@@ -7,7 +7,7 @@ import useAdmin from "../../Components/useAdmin/useAdmin";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [ isAdmin]= useAdmin(user?.email)
+  const [isAdmin] = useAdmin(user?.email);
   // console.log(user);
 
   const handleLogOut = () => {
@@ -86,7 +86,7 @@ const Navbar = () => {
                   </Link>
                 </li> */}
                 <li class="nav-item">
-                  <Link class="nav-link" to="/favourite">
+                  <Link class="nav-link" to="/favourite/packages">
                     {" "}
                     <FaServicestack /> Favourites{" "}
                   </Link>
@@ -100,7 +100,7 @@ const Navbar = () => {
 
                 {user?.email && isAdmin ? (
                   <li class="nav-item">
-                    <Link class="nav-link" to="/dashboard">
+                    <Link class="nav-link" to="/dashboard/allusers">
                       {" "}
                       <FaServicestack /> Dashboard{" "}
                     </Link>
@@ -224,13 +224,35 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li class="nav-item">
+                  <Link class="nav-link" to="/packages">
+                    {" "}
+                    <FaServicestack /> Packages{" "}
+                  </Link>
+                </li>
+                <li class="nav-item">
                   <Link class="nav-link" to="/aboutus">
                     {" "}
                     <FaServicestack /> About Us{" "}
                   </Link>
                 </li>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/favourite/packages">
+                    {" "}
+                    <FaServicestack /> Favourites{" "}
+                  </Link>
+                </li>
+                {user?.email && isAdmin ? (
+                  <li class="nav-item">
+                    <Link class="nav-link" to="/dashboard/allusers">
+                      {" "}
+                      <FaServicestack /> Dashboard{" "}
+                    </Link>
+                  </li>
+                ) : (
+                  ""
+                )}
 
-                {user?.email ? (
+                {/* {user?.email ? (
                   <div>
                     <li class="nav-item">
                       <Link onClick={handleLogOut} to="/login" class="nav-link">
@@ -251,7 +273,55 @@ const Navbar = () => {
                       </Link>
                     </li>
                   </div>
+                )} */}
+
+                {user?.email ? (
+                  <>
+                    <li class="nav-item">
+                      <Link class="nav-link" to="/profile">
+                        {" "}
+                        <FaServicestack /> Profile{" "}
+                      </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link class="nav-link" to="/login" onClick={handleLogOut}>
+                        {" "}
+                        <FaServicestack /> Logout{" "}
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li class="nav-item">
+                    <Link class="nav-link" to="/signin">
+                      {" "}
+                      <FaServicestack /> Sign in{" "}
+                    </Link>
+                  </li>
                 )}
+
+                {/* {user?.email ? (
+                  <>
+                    <li class="nav-item">
+                      <Link class="nav-link" to="/profile">
+                        {" "}
+                        <FaServicestack /> Profile{" "}
+                      </Link>
+                    </li>
+                    <li class="nav-item">
+                      <Link class="nav-link" to="/login" onClick={handleLogOut}>
+                        {" "}
+                        <FaServicestack /> Logout{" "}
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li class="nav-item">
+                    <Link class="nav-link" to="/signin">
+                      {" "}
+                      <FaServicestack /> Sign in{" "}
+                    </Link>
+                  </li>
+                )} */}
               </ul>
             </div>
           </div>
