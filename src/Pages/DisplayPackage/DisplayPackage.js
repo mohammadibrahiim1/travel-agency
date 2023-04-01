@@ -22,7 +22,7 @@ const DisplayPackage = ({ packageData }) => {
     // }
     // setCart(newCart);
 
-    fetch("http://localhost:5000/favourites", {
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favourites", {
       method: "POST",
       headers: {
         "content-type": "application/json",

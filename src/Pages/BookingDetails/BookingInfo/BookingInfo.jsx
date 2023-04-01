@@ -16,7 +16,7 @@ const BookingInfo = () => {
   const handleDelete = (id) => {
     const agree = window.confirm("are you sure you want to delete?");
     if (agree) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
+      fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -40,7 +40,7 @@ const BookingInfo = () => {
         </h4>
       </div>
       <section className="container ">
-        {bookInfo.map((book) => (
+        {bookInfo?.map((book) => (
           <Bookinfo
             book={book}
             key={book._id}

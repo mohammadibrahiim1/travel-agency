@@ -16,7 +16,7 @@ const DataContext = ({ children }) => {
   const {user}= useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/places")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/places")
       .then((res) => res.json())
       .then((data) => {
         setPlaces(data);
@@ -25,7 +25,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -34,7 +34,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/tourGuide")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/tourGuide")
       .then((res) => res.json())
       .then((data) => {
         setTourGuide(data);
@@ -43,7 +43,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/packages")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/packages")
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
@@ -52,16 +52,16 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings/v2?email=${user?.email}`)
+    fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/v2?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setBookInfo(data);
       });
   }, [user]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/favourites")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favourites")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -70,7 +70,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/favouritesHotel")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesHotel")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -79,7 +79,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/favouritesFlight")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesFlight")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -87,7 +87,7 @@ const DataContext = ({ children }) => {
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

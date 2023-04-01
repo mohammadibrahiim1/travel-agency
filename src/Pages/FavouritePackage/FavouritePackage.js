@@ -14,7 +14,7 @@ const FavouritePackage = () => {
   const handleDelete = (_id) => {
     const agree = window.confirm("are you sure you want to delete?");
     if (agree) {
-      fetch(`http://localhost:5000/favourites/${_id}`, {
+      fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/favourites/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

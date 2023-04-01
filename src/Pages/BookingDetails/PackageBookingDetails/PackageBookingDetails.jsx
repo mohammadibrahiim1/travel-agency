@@ -39,7 +39,7 @@ const PackageBookingDetails = () => {
     };
     console.log(booking);
 
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

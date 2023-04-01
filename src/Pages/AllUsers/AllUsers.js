@@ -8,7 +8,7 @@ const AllUsers = () => {
   const { allUsers } = useContext(ApiContext);
   console.log(allUsers);
   const handleMakeAdmin = (_id) => {
-    fetch(`http://localhost:5000/users/admin/${_id}`, {
+    fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/users/admin/${_id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
