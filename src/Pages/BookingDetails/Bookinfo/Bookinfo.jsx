@@ -6,7 +6,7 @@ const Bookinfo = ({ book, handleDelete }) => {
   const {
     packageName,
     userName,
-    userEmail,
+    email,
     contact,
     totalPrice,
     bookingDate,
@@ -23,7 +23,7 @@ const Bookinfo = ({ book, handleDelete }) => {
           <div class="card-body">
             <div className="d-flex justify-content-between align-content-center ">
               <h5 class="card-title">Name :{userName}</h5>
-              <p class="card-text">Email :{userEmail}</p>
+              <p class="card-text">Email :{email}</p>
             </div>
             <div className="d-flex justify-content-between align-content-center">
               <p class="card-text">Contact :{contact}</p>

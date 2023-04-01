@@ -31,7 +31,7 @@ const PackageBookingDetails = () => {
       userName: userName,
       packageName: name,
       bookingDate: date,
-      userEmail: email,
+      email: email,
       contact: phone,
       packagePrice: price,
       totalPrice: grandtotal,
@@ -52,6 +52,7 @@ const PackageBookingDetails = () => {
         if (data.acknowledged) {
           toast.success("Successfully added!");
           navigate(`/bookingInfo`);
+          window.location.reload();
         } else {
           toast.error(data.message);
         }

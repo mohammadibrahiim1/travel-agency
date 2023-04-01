@@ -1,4 +1,5 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Context/UserContext";
 
 export const ApiContext = createContext();
 
@@ -12,6 +13,7 @@ const DataContext = ({ children }) => {
   const [favouriteHotel, setFavouriteHotel] = useState([]);
   const [favouriteFlight, setFavouriteFlight] = useState([]);
   const [allUsers,setAllUsers] = useState([]);
+  const {user}= useContext(AuthContext);
 
   useEffect(() => {
     fetch("http://localhost:5000/places")
@@ -50,13 +52,13 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings")
+    fetch(`http://localhost:5000/bookings/v2?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
         setBookInfo(data);
       });
-  }, []);
+  }, [user]);
 
   useEffect(() => {
     fetch("http://localhost:5000/favourites")

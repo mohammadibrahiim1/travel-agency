@@ -68,7 +68,7 @@ const UserProfile = () => {
                 <div class="card-body">
                   <div className="d-flex justify-content-between align-content-center ">
                     <h5 class="card-title">Name :{book.userName}</h5>
-                    <p class="card-text">Email :{book.userEmail}</p>
+                    <p class="card-text">Email :{book.email}</p>
                   </div>
                   <div className="d-flex justify-content-between align-content-center">
                     <p class="card-text">Contact :{book.contact}</p>

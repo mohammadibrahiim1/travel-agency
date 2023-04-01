@@ -33,7 +33,7 @@ const HotelBookingDetails = () => {
       userName: userName,
       packageName: title,
       bookingDate: date,
-      userEmail: email,
+      email: email,
       contact: phone,
       totalPrice: grandtotal,
       journey: city,
@@ -53,6 +53,7 @@ const HotelBookingDetails = () => {
         if (data.acknowledged) {
           toast.success("Successfully added!");
           navigate(`/bookingInfo`);
+          window.location.reload();
         } else {
           toast.error(data.message);
         }

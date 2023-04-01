@@ -34,7 +34,7 @@ const DownloadPdf = () => {
     journey,
     userName,
     packageName,
-    userEmail,
+    email,
     totalPrice,
     transactionId,
     contact,
@@ -66,7 +66,7 @@ const DownloadPdf = () => {
             <div className="col-12 col-md-6 col-lg-6 col-xl-6 pdf-left-column-text ">
               <div>
                 <p>UserName : {userName}</p>
-                <p> Email : {userEmail}</p>
+                <p> Email : {email}</p>
               </div>
               <div>
                 <p> name : {packageName}</p>

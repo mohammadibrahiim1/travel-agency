@@ -42,7 +42,7 @@ const HotelDetails = () => {
           </span>
         </div>
 
-        <div className="d-flex align-items-center detail-header container">
+        <div className="d-flex justify-content-between align-items-center detail-header container">
           <h1 className="main__title">{title}</h1>
 
           <p className="book__price">${price}</p>

@@ -234,7 +234,8 @@ const HotelListing = () => {
                 // value="International"
                 onClick={(e) => setBrfFilter(e.target.checked)}
               />
-              <span className="input-filter-text">Free breakfast</span> <br />
+              <span className="input-filter-text ms-2 ">Free breakfast</span>{" "}
+              <br />
             </div>
 
             <div>
@@ -246,7 +247,8 @@ const HotelListing = () => {
                 // value="International"
                 onClick={(e) => setFrIntFilter(e.target.checked)}
               />
-              <span className="input-filter-text">Free internet</span> <br />
+              <span className="input-filter-text ms-2">Free internet</span>{" "}
+              <br />
             </div>
 
             <div>
@@ -258,7 +260,9 @@ const HotelListing = () => {
                 // value="International"
                 onClick={(e) => setFreeAirFilter(e.target.checked)}
               />
-              <span className="input-filter-text">Free airport shuttle</span>{" "}
+              <span className="input-filter-text ms-2">
+                Free airport shuttle
+              </span>{" "}
               <br />
             </div>
 
@@ -275,7 +279,8 @@ const HotelListing = () => {
                 // value="International"
                 onClick={(e) => setAirConFilter(e.target.checked)}
               />
-              <span className="input-filter-text">Air-conditioned</span> <br />
+              <span className="input-filter-text ms-2">Air-conditioned</span>{" "}
+              <br />
             </div>
 
             <div>
@@ -287,7 +292,7 @@ const HotelListing = () => {
                 // value="International"
                 onClick={(e) => setFitness(e.target.checked)}
               />
-              <span className="input-filter-text">Fitness</span> <br />
+              <span className="input-filter-text ms-2">Fitness</span> <br />
             </div>
 
             <div>
@@ -299,7 +304,7 @@ const HotelListing = () => {
                 // value="International"
                 onClick={(e) => setPool(e.target.checked)}
               />
-              <span className="input-filter-text">Pool</span> <br />
+              <span className="input-filter-text ms-2">Pool</span> <br />
             </div>
           </div>
 

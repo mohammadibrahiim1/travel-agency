@@ -43,7 +43,7 @@ const UserBookings = () => {
                   <td>{booking.userName}</td>
                   <td>{booking.packageName}</td>
                   <td>{booking.bookingDate}</td>
-                  <td>{booking.userEmail}</td>
+                  <td>{booking.email}</td>
                   <td>
                     {booking.totalPrice && !booking.paid && (
                       <Link to={`/dashboard/payment/${booking._id}`}>

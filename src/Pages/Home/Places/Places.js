@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import Place from "../Place/Place";
-import { MdFlight, MdHotel } from "react-icons/md";
+import { MdHotel, MdOutlineLocalOffer } from "react-icons/md";
 import "./Places.css";
 import { ApiContext } from "../../../DataContext.js/DataContext";
+import { Link } from "react-router-dom";
 
 const Places = () => {
   const { places } = useContext(ApiContext);
@@ -17,10 +18,13 @@ const Places = () => {
                 <h1 className="fw-semibold text-white">Offers</h1>
                 <p className="subtitle pt-2">See Our most popular Offers</p>
 
-                <button className="show-flights-button">
+                <Link to="/packages">
                   {" "}
-                  <MdFlight /> Show Offers
-                </button>
+                  <button className="show-flights-button">
+                    {" "}
+                    <MdOutlineLocalOffer /> Show Offers
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -60,11 +64,13 @@ const Places = () => {
                 <p className="subtitle pt-2">
                   Search Flights & Places Hire to our most popular destinations
                 </p>
-
-                <button className="show-flights-button">
+                <Link to="/findFlights">
                   {" "}
-                  <MdFlight /> Show flights
-                </button>
+                  <button className="show-flights-button">
+                    {" "}
+                    <MdHotel /> Show Hotels
+                  </button>
+                </Link>
               </div>
               {/* <img src="https://i.ibb.co/p15y8MV/flights-img.png" alt="" /> */}
             </div>
@@ -80,10 +86,13 @@ const Places = () => {
                   Search Flights & Places Hire to our most popular destinations
                 </p>
 
-                <button className="show-flights-button">
+                <Link to="/findHotels">
                   {" "}
-                  <MdHotel /> Show Hotels
-                </button>
+                  <button className="show-flights-button">
+                    {" "}
+                    <MdHotel /> Show Hotels
+                  </button>
+                </Link>
               </div>
               {/* <img src="https://i.ibb.co/p15y8MV/flights-img.png" alt="" /> */}
             </div>

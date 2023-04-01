@@ -361,12 +361,19 @@ const AllFlights = () => {
                 placeholder="maxprice"
                 ref={maxPriceRef}
               />
-              <div className="btn btn-light mt-2">
+              {/* <div className="btn btn-light mt-2">
                 <FaSearch
                   className="price__search"
                   type="submit"
                   onClick={searchPrice}
                 ></FaSearch>
+              </div> */}
+              <div
+                className="btn btn-light "
+                type="submit"
+                onClick={searchPrice}
+              >
+                search
               </div>
             </form>
           </div>

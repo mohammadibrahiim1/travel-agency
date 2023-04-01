@@ -8,7 +8,7 @@ const CheckOutForm = ({ data }) => {
   // console.log(user);
   // console.log(data);
   const navigate = useNavigate();
-  const { totalPrice, _id, userName, userEmail } = data;
+  const { totalPrice, _id, userName, email } = data;
   const [cardError, setCardError] = useState("");
   const [paymentSuccess, setPaymentSuccess] = useState("");
   const [processing, setProccesing] = useState(false);
@@ -64,7 +64,7 @@ const CheckOutForm = ({ data }) => {
             card: card,
             billing_details: {
               name: userName,
-              email: userEmail,
+              email: email,
             },
           },
         }
@@ -80,10 +80,10 @@ const CheckOutForm = ({ data }) => {
         totalPrice,
 
         transactionId: paymentIntent.id,
-        email: userEmail,
+        email: email,
         bookingId: _id,
         user: userName,
-        userEmail,
+        email,
         // name: name,
       };
       fetch("http://localhost:5000/payments", {
@@ -100,6 +100,7 @@ const CheckOutForm = ({ data }) => {
             setPaymentSuccess("Congrats! your payment completed");
             setTransactionId(paymentIntent.id);
             navigate("/bookingInfo");
+            window.location.reload();
           }
         });
     }

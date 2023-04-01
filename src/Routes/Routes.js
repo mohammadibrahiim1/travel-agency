@@ -42,6 +42,7 @@ import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
 import AllUsers from "../Pages/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import UserBookings from "../Pages/UserBookings/UserBookings";
+import Errorpage from "../Pages/Errorpage/Errorpage";
 // import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
 // import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
 // import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
@@ -51,6 +52,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Errorpage></Errorpage>,
     children: [
       {
         path: "/",
