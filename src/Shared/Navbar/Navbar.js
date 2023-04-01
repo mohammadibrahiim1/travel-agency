@@ -1,9 +1,14 @@
 import React, { useContext } from "react";
-import { FaPlane, FaBed, FaServicestack } from "react-icons/fa";
+import { FaPlane, FaBed, FaServicestack, FaDashcube } from "react-icons/fa";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import useAdmin from "../../Components/useAdmin/useAdmin";
+import { GiSkills } from "react-icons/gi";
+import { FiPackage } from "react-icons/fi";
+import { MdFavoriteBorder, MdLogout } from "react-icons/md";
+import { AiFillDashboard } from "react-icons/ai";
+import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -47,13 +52,13 @@ const Navbar = () => {
               <li class="nav-item">
                 <Link class="nav-link" to="/facilities">
                   {" "}
-                  <FaServicestack /> Facilities{" "}
+                  <GiSkills /> Facilities{" "}
                 </Link>
               </li>
               <li class="nav-item">
                 <Link class="nav-link" to="/packages">
                   {" "}
-                  <FaServicestack /> Packages{" "}
+                  <FiPackage /> Packages{" "}
                 </Link>
               </li>
               {/* <li class="nav-item">
@@ -88,7 +93,7 @@ const Navbar = () => {
                 <li class="nav-item">
                   <Link class="nav-link" to="/favourite/packages">
                     {" "}
-                    <FaServicestack /> Favourites{" "}
+                    <MdFavoriteBorder /> Favourites{" "}
                   </Link>
                 </li>
                 <li class="nav-item">
@@ -102,7 +107,7 @@ const Navbar = () => {
                   <li class="nav-item">
                     <Link class="nav-link" to="/dashboard/allusers">
                       {" "}
-                      <FaServicestack /> Dashboard{" "}
+                      <AiFillDashboard /> Dashboard{" "}
                     </Link>
                   </li>
                 ) : (
@@ -113,13 +118,17 @@ const Navbar = () => {
                     <li class="nav-item">
                       <Link class="nav-link" to="/profile">
                         {" "}
-                        <FaServicestack /> Profile{" "}
+                        <CgProfile /> Profile{" "}
                       </Link>
                     </li>
                     <li class="nav-item">
-                      <Link class="nav-link" to="/login" onClick={handleLogOut}>
+                      <Link
+                        class="nav-link text-danger-emphasis"
+                        to="/login"
+                        onClick={handleLogOut}
+                      >
                         {" "}
-                        <FaServicestack /> Logout{" "}
+                        <MdLogout /> Logout{" "}
                       </Link>
                     </li>
                   </>
@@ -127,7 +136,7 @@ const Navbar = () => {
                   <li class="nav-item">
                     <Link class="nav-link" to="/signin">
                       {" "}
-                      <FaServicestack /> Sign in{" "}
+                      <MdLogout /> Sign in{" "}
                     </Link>
                   </li>
                 )}
