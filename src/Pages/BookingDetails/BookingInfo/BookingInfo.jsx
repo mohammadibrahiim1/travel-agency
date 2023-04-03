@@ -4,7 +4,7 @@ import Loading from "../../../Components/Loading/Loading";
 import { AuthContext } from "../../../Context/UserContext";
 import { ApiContext } from "../../../DataContext.js/DataContext";
 import Bookinfo from "../Bookinfo/Bookinfo";
-import './BookingInfo.css'
+import "./BookingInfo.css";
 // import { useLoaderData } from "react-router-dom";
 
 const BookingInfo = () => {
@@ -35,7 +35,7 @@ const BookingInfo = () => {
   return (
     <div>
       <div className="booking-info">
-        <h4 className="container text-primary fw-semibold mt-5 mb-5">
+        <h4 className="container text-white text-center fw-semibold  mb-5">
           See Your Booking Details Here
         </h4>
       </div>
