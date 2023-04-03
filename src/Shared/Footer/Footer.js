@@ -15,29 +15,29 @@ const Footer = () => {
           <div>
             <section className="footer-container">
               <div>
-                <div className="ms-3">
+                <Link className="ms-3">
                   <img src="https://i.ibb.co/0fqZdTt/Logo.png" alt="" />
-                </div>
+                </Link>
                 <div className="social-icon-container">
-                  <Link to="/">
+                  <Link to="">
                     <FaFacebook
                       className="social-icon mt-3 "
                       style={{ width: "28px", height: "28px" }}
                     />
                   </Link>
-                  <Link to="/">
+                  <Link to="https://www.instagram.com/">
                     <FaInstagram
                       className="social-icon mt-3"
                       style={{ width: "28px", height: "28px" }}
                     />
                   </Link>
-                  <Link to="/">
+                  <Link to="https://twitter.com/">
                     <FaTwitter
                       className="social-icon mt-3"
                       style={{ width: "28px", height: "28px" }}
                     />
                   </Link>
-                  <Link to="/">
+                  <Link to="https://www.youtube.com/">
                     <FaYoutube
                       className="social-icon mt-3"
                       style={{ width: "28px", height: "28px" }}
@@ -116,15 +116,15 @@ const Footer = () => {
                     {" "}
                     <li>Our Story</li>
                   </Link>
-                  <Link>
+                  <Link to="/packages">
                     {" "}
                     <li>Packages</li>
                   </Link>
-                  <Link>
+                  <Link to="/aboutus" >
                     {" "}
                     <li>Gallery</li>
                   </Link>
-                  <Link>
+                  <Link to="/facilities" >
                     {" "}
                     <li>Facilities</li>
                   </Link>
