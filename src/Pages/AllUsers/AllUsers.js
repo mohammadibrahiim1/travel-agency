@@ -8,7 +8,7 @@ const AllUsers = () => {
   const { allUsers } = useContext(ApiContext);
   console.log(allUsers);
   const handleMakeAdmin = (_id) => {
-    fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/users/admin/${_id}`, {
+    fetch(`http://localhost:5000/users/admin/${_id}`, {
       method: "PUT",
     })
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const AllUsers = () => {
               <th>Email</th>
               {/* <th>Contact</th> */}
               <th>User Role</th>
-              <th>Delete User</th>
+              {/* <th>Delete User</th> */}
             </tr>
           </thead>
           <tbody>
@@ -56,9 +56,9 @@ const AllUsers = () => {
                       </button>
                     )}
                   </td>
-                  <td>
+                  {/* <td>
                     <button className="btn btn-primary">Delete</button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
           </tbody>

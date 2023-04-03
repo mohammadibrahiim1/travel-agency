@@ -4,10 +4,15 @@ import { MdHotel, MdOutlineLocalOffer } from "react-icons/md";
 import "./Places.css";
 import { ApiContext } from "../../../DataContext.js/DataContext";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Places = () => {
   const { places } = useContext(ApiContext);
+  const [visible, setVisible] = useState(6);
   // console.log(places);
+  const showMore = () => {
+    setVisible((preValue) => preValue + 3);
+  };
   return (
     <div className="container">
       <section>
@@ -40,11 +45,13 @@ const Places = () => {
             </p>
           </div>
           <div className="mb-4">
-            <button className="see-more-button">See more places</button>
+            <button className="see-more-button" onClick={showMore}>
+              See more places
+            </button>
           </div>
         </div>
         <div className="card-container">
-          {places?.map((place) => (
+          {places?.slice(0, visible)?.map((place) => (
             <Place key={place._id} place={place}>
               {" "}
             </Place>

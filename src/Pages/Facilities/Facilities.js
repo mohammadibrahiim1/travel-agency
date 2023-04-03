@@ -66,8 +66,8 @@ const Facilities = () => {
             <div className="benefits-info">
               <h4>Food & Drink</h4>
               <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipisicing elit.
+                Fresh and best quality food in our
+                <br /> known resturent.
               </p>
             </div>
           </div>
@@ -81,8 +81,8 @@ const Facilities = () => {
             <div className="benefits-info">
               <h4>Transportation</h4>
               <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipisicing elit.
+                We provie you the best trasportation
+                <br /> facility in the city.
               </p>
             </div>
           </div>
@@ -96,8 +96,8 @@ const Facilities = () => {
             <div className="benefits-info">
               <h4>Accommodation</h4>
               <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipisicing elit.
+                You will find the best hotel
+                <br /> in our tour packages.
               </p>
             </div>
           </div>
@@ -111,8 +111,8 @@ const Facilities = () => {
             <div className="benefits-info">
               <h4>Medical</h4>
               <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipisicing elit.
+                we will take care when you fall into
+                <br /> trouble in your journey.
               </p>
             </div>
           </div>
@@ -126,8 +126,8 @@ const Facilities = () => {
             <div className="benefits-info">
               <h4>CampFire</h4>
               <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipisicing elit.
+                we can arrange best camping
+                <br /> as your favourites.
               </p>
             </div>
           </div>
@@ -141,8 +141,8 @@ const Facilities = () => {
             <div className="benefits-info">
               <h4>Tour Guide</h4>
               <p>
-                Lorem ipsum dolor sit amet,
-                <br /> consectetur adipisicing elit.
+                Choose your favourite tour guide
+                <br /> from our tour guide list.
               </p>
             </div>
           </div>
@@ -154,9 +154,12 @@ const Facilities = () => {
             <h6>What they say</h6>
             <h2>Frequently Asked Question</h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam,
-              eaque corporis. Cumque dicta delectus accusantium blanditiis
-              inventore at dolore vitae.
+              Travel is one of those things that naturally gives rise to
+              queries, concerns and doubts, so we’re here to put your mind at
+              ease. Which trip is right for me? What do I do about visas? How
+              does Intrepid manage COVID-19? How much do I tip? Should I have
+              banh mi or pho for lunch? For questions frequent and otherwise,
+              this is the spot.
             </p>
           </div>
           <div className=" col-sm-12 col-lg-6 col-md-6">
@@ -171,7 +174,7 @@ const Facilities = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseOne"
                   >
-                    How to book a trip?
+                    Do you book a group travel?
                   </button>
                 </h2>
                 <div
@@ -181,9 +184,10 @@ const Facilities = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Placeholder content for this accordion, which is intended to
-                    demonstrate the <code>.accordion-flush</code> class. This is
-                    the first item's accordion body.
+                    Yes, we book group travel all the time! We specialize in
+                    helping groups of all sizes plan their dream trips. From
+                    family reunions to corporate retreats, we can take care of
+                    all the details so you can relax and enjoy your time away.
                   </div>
                 </div>
               </div>
@@ -197,7 +201,7 @@ const Facilities = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseTwo"
                   >
-                    How to get in touch with you?
+                    Do i need travel insurance?
                   </button>
                 </h2>
                 <div
@@ -207,10 +211,9 @@ const Facilities = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Placeholder content for this accordion, which is intended to
-                    demonstrate the <code>.accordion-flush</code> class. This is
-                    the second item's accordion body. Let's imagine this being
-                    filled with some actual content.
+                    Yes. We highly recommend travel protection, it’s important
+                    to protect your trip investment and loved ones. We will
+                    offer you the best option for your vacation.
                   </div>
                 </div>
               </div>
@@ -224,7 +227,7 @@ const Facilities = () => {
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
                   >
-                    How to cancel a trip?
+                    When can I book my trip with guide my Away?
                   </button>
                 </h2>
                 <div
@@ -234,13 +237,12 @@ const Facilities = () => {
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    Placeholder content for this accordion, which is intended to
-                    demonstrate the <code>.accordion-flush</code> class. This is
-                    the third item's accordion body. Nothing more exciting
-                    happening here in terms of content, but just filling up the
-                    space to make it look, at least at first glance, a bit more
-                    representative of how this would look in a real-world
-                    application.
+                    You can book your trip with us at any time. We are available
+                    to help you plan your next adventure, and we offer a wide
+                    range of services, including flight and hotel bookings,
+                    tours and activities, and much more. So whether you are
+                    planning a last-minute getaway or a long-awaited vacation,
+                    we can help you make it happen.
                   </div>
                 </div>
               </div>

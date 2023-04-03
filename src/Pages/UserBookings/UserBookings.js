@@ -7,7 +7,7 @@ import "./UserBookings.css";
 
 const UserBookings = () => {
   const { user } = useContext(AuthContext);
-  const url = `https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings?email=${user?.email}`;
+  const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
   const { data: bookings = [] } = useQuery({
     queryKey: ["userookings", user?.email],
@@ -32,7 +32,7 @@ const UserBookings = () => {
               <th>Date</th>
               <th>Email</th>
               <th>Payment</th>
-              <th>Delete</th>
+              {/* <th>Delete</th> */}
             </tr>
           </thead>
           <tbody>
@@ -48,7 +48,7 @@ const UserBookings = () => {
                     {booking.totalPrice && !booking.paid && (
                       <Link to={`/dashboard/payment/${booking._id}`}>
                         <button className="btn btn-danger btn-small">
-                          unpaid
+                          pay
                         </button>
                       </Link>
                     )}
@@ -56,9 +56,9 @@ const UserBookings = () => {
                       <span className="btn btn-success disabled">Paid</span>
                     )}
                   </td>
-                  <td>
+                  {/* <td>
                     <button className="btn btn-danger">delete</button>
-                  </td>
+                  </td> */}
                 </tr>
               ))}
           </tbody>

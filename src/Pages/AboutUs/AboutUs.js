@@ -38,7 +38,7 @@ const AboutUs = () => {
               <div>
                 <h4 className="service-title">customer service 24h</h4>
                 <p className="sub-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                 We provide 24h costomer service.your are our first priority{" "}
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ const AboutUs = () => {
               <div>
                 <h4 className="service-title">Transport</h4>
                 <p className="sub-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                  We provide Transport facility to our Customer so they can enjoy their journey{" "}
                 </p>
               </div>
             </div>
@@ -60,7 +60,7 @@ const AboutUs = () => {
               <div>
                 <h4 className="service-title">Fullguide</h4>
                 <p className="sub-title">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                  You will take a tourist guide from our experience tour guide.{" "}
                 </p>
               </div>
             </div>
@@ -75,22 +75,34 @@ const AboutUs = () => {
           </div>
           <div className="about-info container">
             <p className="about">
-              <h4>About travel agency</h4>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-              dictum et in feugiat. Platea in diam, est congue. Posuere sapien
-              morbi augue ultrices. Et facilisi orci sollicitudin placerat lacus
-              lacus nibh. Egestas semper massa viverra massa proin in morbi
-              placerat. Pharetra nec, est non integer nisi, ut faucibus. Non, in
-              nam sollicitudin vitae volutpat ac molestie. Turpis pellentesque
-              sit pellentesque id cras lobortis tortor, blandit.
+              <h4>About our travel agency</h4>
+              Amazing Tours is leading tour operator of Bangladesh. Amazing
+              Tours established in 2009 with a view to develop sustainable tours
+              to various destinations in this beautiful Bangladesh and as such
+              you can meet the generous peoples of this country. Our team is
+              committed to give you a new light of tourism experiences which you
+              had never before. We are not only for tour operator, our
+              Established Software company, This company provide many product-is
+              travel related and others kinds of software. Amazing Tours
+              provides inbound and outbound tour operate. Inbound tours provide
+              experience guide, standard and any category’s hotel, best tours
+              spot selection and your security. Holidays are meant for
+              relaxation, to rejuvenate your energy moreover to spend your
+              quality time with your loved ones and it is imperative to have the
+              best Tour Operator to be your travel planner, who has got the
+              experience, Infrastructure, commitment and who is a real
+              professional to plan your valuable Tour.
               <br />
               <br />
-              Id ac non, semper turpis maecenas. Convallis tempor fringilla
-              quisque arcu, dictum. Vitae cursus vel netus tincidunt vitae.
-              Malesuada velit, at mattis adipiscing quisque tristique id magna.
-              Blandit porta sit nam magna sit. Turpis vestibulum facilisis
-              placerat habitant gravida eget. Lacus pretium, arcu non adipiscing
-              sed faucibus semper eget tempor.
+              There’s no need to get bogged down in each and every tour
+              operator’s website individually, because we can offer you Inbound
+              tours Dhaka, Shundarban, Cox’sbazar, St.Mertin, Teknaf, Rangamati,
+              Khagrachori, Bandarbon, Chittagong, Sylhet and Out bound tours
+              Thailand, Singapore, Malaysia, India, Nepal, Bhutan, Chine, Egypt,
+              Indonesia and cruises all in one place, and from just about every
+              holiday company you can think of. If you’d like to find out a
+              little more about some of the tour operators and holiday companies
+              featured on our company.
             </p>
             <div className="">
               <img

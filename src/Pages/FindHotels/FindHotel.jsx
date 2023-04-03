@@ -17,7 +17,7 @@ const FindHotel = () => {
   const { data: hotelNames = [] } = useQuery({
     queryKey: ["hotelPlace"],
     queryFn: async () => {
-      const res = await fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/hotelPlaces");
+      const res = await fetch("http://localhost:5000/hotelPlaces");
       const data = await res.json();
       return data;
     },
@@ -61,7 +61,7 @@ const FindHotel = () => {
         <h3 className="fw-bold text-dark  mt-5 text-md-center text-lg-start ">
           Fall into travel
         </h3>
-        <p className="mb-4 text-sm-start text-md-center">
+        <p className="mb-4 text-sm-start text-md-center text-lg-start">
           Going somewhere to celebrate this season? Whether you’re going home or
           somewhere to roam, we’ve got <br /> the travel tools to get you to
           your destination.
