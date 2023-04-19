@@ -103,7 +103,7 @@ const FindHotel = () => {
                   of living.
                 </p>
                 <Link to="/" class="btn btn-light">
-                  Book Flight
+                  Book Hotels
                 </Link>
               </div>
             </div>

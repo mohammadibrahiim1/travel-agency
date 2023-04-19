@@ -6,7 +6,7 @@ import { AuthContext } from "../../Context/UserContext";
 import useAdmin from "../../Components/useAdmin/useAdmin";
 import { GiSkills } from "react-icons/gi";
 import { FiPackage } from "react-icons/fi";
-import { FcAbout } from "react-icons/fc";
+// import { FcAbout } from "react-icons/fc";
 import { MdFavoriteBorder, MdLogout } from "react-icons/md";
 import { AiFillDashboard } from "react-icons/ai";
 import { CgProfile } from "react-icons/cg";
@@ -62,12 +62,12 @@ const Navbar = () => {
                   <FiPackage /> Packages{" "}
                 </Link>
               </li>
-              {/* <li class="nav-item">
-                <Link class="nav-link" to="/aboutus">
+              <li class="nav-item">
+                <Link class="nav-link" to="/rentCar">
                   {" "}
-                  <FaServicestack /> About Us{" "}
+                  <FaServicestack />Rent A car{" "}
                 </Link>
-              </li> */}
+              </li>
             </ul>
 
             <div className="navbar-nav me-auto mb-2 mb-lg-0">

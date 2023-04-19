@@ -43,6 +43,7 @@ import AllUsers from "../Pages/AllUsers/AllUsers";
 import AdminRoute from "./AdminRoute";
 import UserBookings from "../Pages/UserBookings/UserBookings";
 import Errorpage from "../Pages/Errorpage/Errorpage";
+import RentACar from "../Pages/RentACar/RentACar";
 // import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
 // import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
 // import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
@@ -134,6 +135,10 @@ export const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/rentCar",
+        element: <RentACar></RentACar>,
       },
       {
         path: "/packages",
