@@ -11,16 +11,16 @@ const FindCars = () => {
     visible,
     insideCityFilter,
     outSideCityFilter,
-    halfDayFilter,
-    allDayFilter,
-    oneWayFilter,
-    roundFilter,
+    // halfDayFilter,
+    // allDayFilter,
+    // oneWayFilter,
+    // roundFilter,
     setInsideCityFilter,
     setOutsideCityFilter,
-    setAlldayFilter,
-    setHalfDayFilter,
-    setOneWayFilter,
-    setRoundFilter,
+    // setAlldayFilter,
+    // setHalfDayFilter,
+    // setOneWayFilter,
+    // setRoundFilter,
   } = useContext(ApiContext);
 
   return (
@@ -33,7 +33,7 @@ const FindCars = () => {
 
           <div>
             <div>
-              <p className="filter-title"> Location</p>
+              <p className="filter-title">Location</p>
             </div>
 
             <div>
@@ -45,7 +45,7 @@ const FindCars = () => {
                 checked={insideCityFilter}
                 onClick={(e) => setInsideCityFilter(e.target.checked)}
               />
-              <span className="input-filter-text ms-2">inside-city</span> <br />
+              <span className="input-filter-text ms-2">Inside City</span> <br />
             </div>
             <div>
               <input
@@ -56,11 +56,11 @@ const FindCars = () => {
                 checked={outSideCityFilter}
                 onClick={(e) => setOutsideCityFilter(e.target.checked)}
               />
-              <span className="input-filter-text ms-2">outside-city</span>{" "}
+              <span className="input-filter-text ms-2">Outside City</span>{" "}
               <br />
             </div>
           </div>
-          <div>
+          {/* <div>
             <hr />
             <div>
               <p className="filter-title">Category</p>
@@ -75,7 +75,7 @@ const FindCars = () => {
                 checked={allDayFilter}
                 onClick={(e) => setAlldayFilter(e.target.checked)}
               />
-              <span className="input-filter-text ms-2">all-day</span> <br />
+              <span className="input-filter-text ms-2">All Day</span> <br />
             </div>
             <div>
               <input
@@ -110,7 +110,7 @@ const FindCars = () => {
               />
               <span className="input-filter-text ms-2">round</span> <br />
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div

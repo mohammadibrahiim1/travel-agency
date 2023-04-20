@@ -136,7 +136,7 @@ const DataContext = ({ children }) => {
   // }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carServices`)
+    fetch(`http://localhost:5000/carServices?insideCityFilter=${insideCityFilter || ""}&outSideCityFilter=${outSideCityFilter || ""}`)
       .then((res) => res.json())
       .then((data) => {
         setCarServices(data);
@@ -145,10 +145,7 @@ const DataContext = ({ children }) => {
   }, [
     insideCityFilter,
     outSideCityFilter,
-    halfDayFilter,
-    allDayFilter,
-    oneWayFilter,
-    roundFilter,
+
   ]);
 
   const apiData = {
@@ -166,16 +163,16 @@ const DataContext = ({ children }) => {
     visible,
     insideCityFilter,
     outSideCityFilter,
-    halfDayFilter,
-    allDayFilter,
-    oneWayFilter,
-    roundFilter,
+    // halfDayFilter,
+    // allDayFilter,
+    // oneWayFilter,
+    // roundFilter,
     setInsideCityFilter,
     setOutsideCityFilter,
-    setAlldayFilter,
-    setHalfDayFilter,
-    setOneWayFilter,
-    setRoundFilter,
+    // setAlldayFilter,
+    // setHalfDayFilter,
+    // setOneWayFilter,
+    // setRoundFilter,
   };
 
   return (
