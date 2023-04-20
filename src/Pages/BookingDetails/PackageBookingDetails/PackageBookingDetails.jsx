@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
 // import { FaApple, FaFacebook } from "react-icons/fa";
 // import { FcGoogle } from "react-icons/fc";
-import { Link, useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
 // import { ApiContext } from "../../../DataContext.js/DataContext";
 import "./PackageBookingDetails.css";
@@ -25,7 +25,7 @@ const PackageBookingDetails = () => {
     const email = form.email.value;
     const phone = form.phone.value;
     const date = form.date.value;
-    console.log(userName, email, phone, date);
+    // console.log(userName, email, phone, date);
 
     const booking = {
       userName: userName,
@@ -37,7 +37,7 @@ const PackageBookingDetails = () => {
       totalPrice: grandtotal,
       journey: journey,
     };
-    console.log(booking);
+    // console.log(booking);
 
     fetch("http://localhost:5000/bookings", {
       method: "POST",
@@ -48,7 +48,7 @@ const PackageBookingDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           toast.success("Successfully added!");
           navigate(`/bookingInfo`);
@@ -67,7 +67,7 @@ const PackageBookingDetails = () => {
   );
   const tax = parseFloat(((offerPrice ? offerPrice : price) * 0.01).toFixed(2));
   const grandtotal = sCharge + tax + (offerPrice ? offerPrice : price);
-  console.log(grandtotal);
+  // console.log(grandtotal);
 
   return (
     <div>

@@ -1,12 +1,12 @@
 import React from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { ApiContext } from "../../DataContext.js/DataContext";
 import "./AllUsers.css";
 
 const AllUsers = () => {
   const { allUsers } = useContext(ApiContext);
-  console.log(allUsers);
+  // console.log(allUsers);
   const handleMakeAdmin = (_id) => {
     fetch(`http://localhost:5000/users/admin/${_id}`, {
       method: "PUT",
@@ -17,7 +17,7 @@ const AllUsers = () => {
           alert("are you sure?");
         }
         window.location.reload();
-        console.log(data);
+        // console.log(data);
       });
   };
   return (

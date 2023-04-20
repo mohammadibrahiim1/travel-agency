@@ -11,7 +11,7 @@ const UserProfile = () => {
   const { bookInfo } = useContext(ApiContext);
   const { loading } = useContext(AuthContext);
   // const [remaining , setRemaining] = useState(bookInfo);
-  console.log(bookInfo);
+  // console.log(bookInfo);
 
   const handleDelete = (id) => {
     const agree = window.confirm("are you sure you want to delete?");
@@ -31,7 +31,7 @@ const UserProfile = () => {
   if (loading) {
     return <Loading></Loading>;
   }
-  console.log(user);
+  // console.log(user);
   return (
     <div>
       <section className="profile-header-section">

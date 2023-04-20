@@ -37,7 +37,7 @@ const Packages = () => {
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
-        console.log(data);
+        // console.log(data);
       });
   }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
 

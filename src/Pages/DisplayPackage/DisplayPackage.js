@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./DisplayPackage.css";
 
 const DisplayPackage = ({ packageData }) => {
-  console.log(packageData);
+  // console.log(packageData);
   const navigate = useNavigate();
   const { img, name, price, offerPrice, stay, ratings, offer, journey, _id } =
     packageData;
@@ -31,7 +31,7 @@ const DisplayPackage = ({ packageData }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           toast.success("Successfully added!");
           navigate(`/favourite`);

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Context/UserContext";
+import { all } from "axios";
 
 export const ApiContext = createContext();
 
@@ -15,6 +16,25 @@ const DataContext = ({ children }) => {
   const [allUsers, setAllUsers] = useState([]);
   const [carServices, setCarServices] = useState([]);
   const { user } = useContext(AuthContext);
+
+  // get all car service data from database and filter by checkbox value
+  const [visible, setVisible] = useState(6);
+  // const [carServices, setCarServices] = useState([]);
+  // console.log(packages);
+  const [insideCityFilter, setInsideCityFilter] = useState(false);
+  const [outSideCityFilter, setOutsideCityFilter] = useState(false);
+  const [allDayFilter, setAlldayFilter] = useState(false);
+  const [halfDayFilter, setHalfDayFilter] = useState(false);
+  const [oneWayFilter, setOneWayFilter] = useState(false);
+  const [roundFilter, setRoundFilter] = useState(false);
+  console.log(
+    allDayFilter,
+    halfDayFilter,
+    oneWayFilter,
+    roundFilter,
+    outSideCityFilter,
+    insideCityFilter
+  );
 
   useEffect(() => {
     fetch("http://localhost:5000/places")
@@ -56,7 +76,7 @@ const DataContext = ({ children }) => {
     fetch(`http://localhost:5000/bookings/v2?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setBookInfo(data);
       });
   }, [user]);
@@ -65,7 +85,7 @@ const DataContext = ({ children }) => {
     fetch("http://localhost:5000/favourites")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setFavourites(data);
       });
   }, []);
@@ -74,7 +94,7 @@ const DataContext = ({ children }) => {
     fetch("http://localhost:5000/favouritesHotel")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setFavouriteHotel(data);
       });
   }, []);
@@ -83,7 +103,7 @@ const DataContext = ({ children }) => {
     fetch("http://localhost:5000/favouritesFlight")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setFavouriteFlight(data);
       });
   }, []);
@@ -91,18 +111,45 @@ const DataContext = ({ children }) => {
     fetch("http://localhost:5000/users")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setAllUsers(data);
       });
   }, []);
+
+  const showMore = () => {
+    setVisible((preValue) => preValue + 3);
+  };
+
+  // useEffect(() => {
+  //   fetch(
+  //     `http://localhost:5000/packages?intFilter=${intFilter || ""}&dmsFilter=${
+  //       dmsFilter || ""
+  //     }&tpFilter=${tpFilter || ""}&twpFilter=${twpFilter || ""}&thrFilter=${
+  //       thrFilter || ""
+  //     }`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setPackages(data);
+  //       // console.log(data);
+  //     });
+  // }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
+
   useEffect(() => {
-    fetch("http://localhost:5000/rent-car-services")
+    fetch(`http://localhost:5000/carServices`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCarServices(data);
+        console.log(data);
       });
-  }, []);
+  }, [
+    insideCityFilter,
+    outSideCityFilter,
+    halfDayFilter,
+    allDayFilter,
+    oneWayFilter,
+    roundFilter,
+  ]);
 
   const apiData = {
     places,
@@ -115,6 +162,20 @@ const DataContext = ({ children }) => {
     favouriteFlight,
     allUsers,
     carServices,
+    showMore,
+    visible,
+    insideCityFilter,
+    outSideCityFilter,
+    halfDayFilter,
+    allDayFilter,
+    oneWayFilter,
+    roundFilter,
+    setInsideCityFilter,
+    setOutsideCityFilter,
+    setAlldayFilter,
+    setHalfDayFilter,
+    setOneWayFilter,
+    setRoundFilter,
   };
 
   return (

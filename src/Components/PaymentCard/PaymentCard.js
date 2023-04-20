@@ -13,7 +13,7 @@ const stripePromise = loadStripe(
 const PaymentCard = () => {
 
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
 
   // strip password: tEfGB3!ppE{ZYw2
   // pk: pk_test_51MlpzGLrYWLOOZ8UljA5X1ANJMi0EXPD3KZWZmLIjyuv5DQgLe3I2dZvA4TPFfa4n0opSlz0POZ3wbxzcy27Necr005pDnWQh8

@@ -18,7 +18,7 @@ const UserBookings = () => {
     },
   });
 
-  console.log(bookings);
+  // console.log(bookings);
 
   return (
     <div>

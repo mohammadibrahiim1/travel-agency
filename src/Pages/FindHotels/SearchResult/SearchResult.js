@@ -12,7 +12,7 @@ const SearchResult = () => {
 
   const [data] = useState(location.state);
 
-  console.log(data);
+  // console.log(data);
   return (
     <>
     {/* <SearchBar></SearchBar> */}

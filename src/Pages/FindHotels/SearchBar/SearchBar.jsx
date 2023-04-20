@@ -12,7 +12,7 @@ const SearchBar = () => {
     const city = cityRef.current.value;
     const room = roomRef.current.value;
 
-    console.log(city, room);
+    // console.log(city, room);
 
     if (city === "" || room === "") {
       // return alert('All fields are required!')
@@ -25,7 +25,7 @@ const SearchBar = () => {
     if (!res.ok) alert("Something went wrong");
 
     const result = await res.json();
-    console.log(result);
+    // console.log(result);
 
     // navigate(`/category/search?city=${city}&room=${room}`,{state: result.data} );
   };

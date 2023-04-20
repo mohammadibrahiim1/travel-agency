@@ -34,7 +34,7 @@ const HotelListing = () => {
   const searchPrice = async () => {
     const price = priceRef.current.value;
 
-    console.log(price);
+    // console.log(price);
 
     if (price === "") {
       return alert("All fields are required!");
@@ -47,7 +47,7 @@ const HotelListing = () => {
     if (!res.ok) alert("Something went wrong");
 
     const result = await res.json();
-    console.log(result.data);
+    // console.log(result.data);
     setHotelNames(result.data);
   };
 
@@ -70,7 +70,7 @@ const HotelListing = () => {
       .then((res) => res.json())
       .then((data) => {
         setHotelNames(data);
-        console.log(data);
+        // console.log(data);
       });
   }, [brfFilter, frIntFilter, freeAirFilter, airConFilter, fitness, pool]);
 
@@ -87,7 +87,7 @@ const HotelListing = () => {
           setCategory(res.data);
         })
         .catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
     }
   }, [location]);
@@ -99,7 +99,7 @@ const HotelListing = () => {
     const city = cityRef.current.value;
     const room = roomRef.current.value;
 
-    console.log(city, room);
+    // console.log(city, room);
 
     if (city === "" || room === "") {
       // return alert('All fields are required!')
@@ -112,7 +112,7 @@ const HotelListing = () => {
     if (!res.ok) alert("Something went wrong");
 
     const result = await res.json();
-    console.log(result);
+    // console.log(result);
     setHotelNames(result.data);
 
     // navigate(`/hotel-listing/search?city=${city}&room=${room}`,{state: result.data} );

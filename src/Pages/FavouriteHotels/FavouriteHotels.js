@@ -11,7 +11,7 @@ import Fhotel from "../Fhotel/Fhotel";
 
 const FavouriteHotels = () => {
   const { favouriteHotel } = useContext(ApiContext);
-  console.log(favouriteHotel);
+  // console.log(favouriteHotel);
   const { loading } = useContext(AuthContext);
 
   const handleDelete = (_id) => {

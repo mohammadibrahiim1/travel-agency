@@ -24,7 +24,7 @@ const LogIn = () => {
     login(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
         form.reset();
         navigate("/");
       })
@@ -93,7 +93,7 @@ const LogIn = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              // console.log(data);
               if (data.acknowledged) {
                 alert(" Login Successfully");
                 navigate(`/`);

@@ -11,7 +11,7 @@ import "./FlightDetails.css";
 
 const FlightDetails = () => {
   const FDetails = useLoaderData();
-  console.log(FDetails);
+  // console.log(FDetails);
   const {
     _id,
     airlines_name,

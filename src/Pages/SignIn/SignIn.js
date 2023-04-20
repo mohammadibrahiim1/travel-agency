@@ -23,7 +23,7 @@ const SignIn = () => {
       .then((result) => {
         const user = result.user;
         // navigate('/courses')
-        console.log(user);
+        // console.log(user);
         // setUser(user);
         setError("");
         if (user) {
@@ -36,7 +36,7 @@ const SignIn = () => {
           })
             .then((res) => res.json())
             .then((data) => {
-              console.log(data);
+              // console.log(data);
               if (data.acknowledged) {
                 alert("Successfully added!");
                 navigate(`/`);
@@ -64,7 +64,7 @@ const SignIn = () => {
     signInWithFacebook()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((error) => console.error(error));
     setError(error.message);
@@ -86,10 +86,10 @@ const SignIn = () => {
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        // console.log(user);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setError(err.message);
       });
 
@@ -107,7 +107,7 @@ const SignIn = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           alert("Successfully added!");
           navigate(`/`);

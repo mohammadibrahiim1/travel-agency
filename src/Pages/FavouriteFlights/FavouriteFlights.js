@@ -7,7 +7,7 @@ import { ApiContext } from "../../DataContext.js/DataContext";
 
 const FavouriteFlights = () => {
   const {favouriteFlight}  = useContext(ApiContext);
-  console.log(favouriteFlight);
+  // console.log(favouriteFlight);
 
   const handleDelete = (_id) => {
     const agree = window.confirm("are you sure you want to delete?");

@@ -86,8 +86,8 @@ const FindFlights = () => {
           <div>
 
             <select name="" id="bookingclass" className="select-option">
-              <option value="BookingClass">Booking Class</option>
-              <option value="First Class">First Class</option>
+              <option value="Bookingclass">Booking class</option>
+              <option value="First class">First class</option>
               <option value="Economy">Economy</option>
               <option value="Business">Business</option>
             </select>

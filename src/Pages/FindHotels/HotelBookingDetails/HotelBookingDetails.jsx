@@ -28,7 +28,7 @@ const HotelBookingDetails = () => {
     const email = form.email.value;
     const phone = form.phone.value;
     const date = form.date.value;
-    console.log(userName, email, phone, date);
+    // console.log(userName, email, phone, date);
     const booking = {
       userName: userName,
       packageName: title,
@@ -38,7 +38,7 @@ const HotelBookingDetails = () => {
       totalPrice: grandtotal,
       journey: city,
     };
-    console.log(booking);
+    // console.log(booking);
 
     fetch("http://localhost:5000/bookings", {
       method: "POST",
@@ -49,7 +49,7 @@ const HotelBookingDetails = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           toast.success("Successfully added!");
           navigate(`/bookingInfo`);
@@ -67,7 +67,7 @@ const HotelBookingDetails = () => {
   );
   const tax = parseFloat(((newPrice ? newPrice : newrPrice) * 0.01).toFixed(2));
   const grandtotal = serviceCharge + tax + (newPrice ? newPrice : newrPrice);
-  console.log(grandtotal);
+  // console.log(grandtotal);
 
   const setPrice = (price) => {
     const newPrice = price;

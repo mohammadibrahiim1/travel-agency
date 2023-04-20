@@ -34,10 +34,10 @@ const AllFlights = () => {
   const searchHandler = async () => {
     const location = locationRef.current.value;
     const trip = tripRef.current.value;
-    const tClass = classRef.current.value;
+    const tclass = classRef.current.value;
 
     const res = await fetch(
-      `http://localhost:5000/api/flights?location=${location}&class=${tClass}&trip=${trip}`
+      `http://localhost:5000/api/flights?location=${location}&class=${tclass}&trip=${trip}`
     );
 
     if (!res.ok) alert("Something went wrong");
@@ -48,7 +48,7 @@ const AllFlights = () => {
   };
 
   const checkboxHandler = (event, data) => {
-    console.log(event.target.value, data);
+    // console.log(event.target.value, data);
 
     setFlyDFilter((prev) => {
       if (!prev) {
@@ -72,7 +72,7 @@ const AllFlights = () => {
   };
 
   const emrCheckbox = (event, data) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setEmrFilter((prev) => {
       if (!prev) {
         setFilterQueries(data);
@@ -84,7 +84,7 @@ const AllFlights = () => {
   };
 
   const qtrCheckbox = (event, data) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setQatarFilter((prev) => {
       if (!prev) {
         setFilterQueries(data);
@@ -96,7 +96,7 @@ const AllFlights = () => {
   };
 
   const OnewayFilter = (event, data) => {
-    console.log(event.target.value, data);
+    // console.log(event.target.value, data);
     setOnewayFilter((prev) => {
       if (!prev) {
         setTripQueries(data);
@@ -108,7 +108,7 @@ const AllFlights = () => {
   };
 
   const ReturnFilter = (event, data) => {
-    console.log(event);
+    // console.log(event);
     setReturnFilter((prev) => {
       if (!prev) {
         setTripQueries(data);
@@ -127,7 +127,7 @@ const AllFlights = () => {
       .then((res) => res.json())
       .then((data) => {
         setFilter(data.data);
-        console.log(data);
+        // console.log(data);
       });
   }, [filterQueries, tripQueries]);
 
@@ -138,7 +138,7 @@ const AllFlights = () => {
     const minPrice = minPriceRef.current.value;
     const maxPrice = maxPriceRef.current.value;
 
-    console.log(minPrice, maxPrice);
+    // console.log(minPrice, maxPrice);
 
     if (minPrice === "" || maxPrice === "") {
       return alert("All fields are required!");
@@ -151,7 +151,7 @@ const AllFlights = () => {
     if (!res.ok) alert("Something went wrong");
 
     const result = await res.json();
-    console.log(result.data);
+    // console.log(result.data);
     setFilter(result.data);
   };
 
@@ -174,7 +174,7 @@ const AllFlights = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.acknowledged) {
           toast.success("Successfully added!");
           navigate(`/favourite`);
