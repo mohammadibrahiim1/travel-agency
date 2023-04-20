@@ -45,6 +45,7 @@ import UserBookings from "../Pages/UserBookings/UserBookings";
 import Errorpage from "../Pages/Errorpage/Errorpage";
 import RentACar from "../Pages/RentACar/RentACar";
 import FindCars from "../Pages/RentACar/FindCars/FindCars";
+import CarDetails from "../Pages/RentACar/CarDetials/CarDetails";
 // import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
 // import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
 // import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
@@ -144,6 +145,12 @@ export const router = createBrowserRouter([
       {
         path: "/rentCarServices",
         element: <FindCars> </FindCars>,
+      },
+      {
+        path: "/carDetails/:id",
+        element: <CarDetails></CarDetails>,
+        loader: async ({ params }) =>
+          fetch(`http://localhost:5000/carServices/${params.id}`),
       },
       {
         path: "/packages",

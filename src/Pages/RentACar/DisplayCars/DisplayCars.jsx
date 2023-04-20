@@ -1,7 +1,8 @@
 import React from "react";
 import "./DisplayCars.css";
+import { Link } from "react-router-dom";
 const DisplayCars = ({ carService }) => {
-  const { category, trip, image, duration, info, original_price } = carService;
+  const { category, trip, image, duration, info, original_price,_id } = carService;
   return (
     <div>
       <div class="card mb-3" style={{ "max-width": "540px" }}>
@@ -24,7 +25,7 @@ const DisplayCars = ({ carService }) => {
               </div>
               <p class="card-text d-flex justify-content-between">
                 <small class="text-body-secondary">${original_price}</small>
-                <button class=" btn btn-success ">view deal</button>
+                <Link to={`/carDetails/${_id}`} class=" btn btn-success ">view deal</Link>
               </p>
             </div>
           </div>
