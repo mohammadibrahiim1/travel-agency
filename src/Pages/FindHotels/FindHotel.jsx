@@ -17,7 +17,7 @@ const FindHotel = () => {
   const { data: hotelNames = [] } = useQuery({
     queryKey: ["hotelPlace"],
     queryFn: async () => {
-      const res = await fetch("https://travel-zone-server-zeta.vercel.app/hotelPlaces");
+      const res = await fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/hotelPlaces");
       const data = await res.json();
       return data;
     },

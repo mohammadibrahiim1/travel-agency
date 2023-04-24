@@ -16,7 +16,7 @@ const BookingInfo = () => {
   const handleDelete = (id) => {
     const agree = window.confirm("are you sure you want to delete?");
     if (agree) {
-      fetch(`https://travel-zone-server-zeta.vercel.app/bookings/${id}`, {
+      fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

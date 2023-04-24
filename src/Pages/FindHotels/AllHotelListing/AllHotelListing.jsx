@@ -10,7 +10,7 @@ const AllHotelListing = ({ hotelName }) => {
   const navigate = useNavigate();
   const { title, city, price, avgRating, cafe, photo, createdAt } = hotelName;
   const handleAddToFavourite = (hotelName) => {
-    fetch("https://travel-zone-server-zeta.vercel.app/favouritesHotel", {
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesHotel", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -26,7 +26,7 @@ const AddReviews = () => {
     };
 
     if (user) {
-      fetch("https://travel-zone-server-zeta.vercel.app/reviews", {
+      fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",

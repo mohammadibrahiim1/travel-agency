@@ -28,7 +28,7 @@ const Packages = () => {
 
   useEffect(() => {
     fetch(
-      `https://travel-zone-server-zeta.vercel.app/packages?intFilter=${intFilter || ""}&dmsFilter=${
+      `https://travel-zone-server-mohammadibrahiim1.vercel.app/packages?intFilter=${intFilter || ""}&dmsFilter=${
         dmsFilter || ""
       }&tpFilter=${tpFilter || ""}&twpFilter=${twpFilter || ""}&thrFilter=${
         thrFilter || ""

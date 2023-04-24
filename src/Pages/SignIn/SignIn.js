@@ -27,7 +27,7 @@ const SignIn = () => {
         // setUser(user);
         setError("");
         if (user) {
-          fetch("https://travel-zone-server-zeta.vercel.app/users", {
+          fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/users", {
             method: "POST",
             headers: {
               "content-type": "application/json",
@@ -98,7 +98,7 @@ const SignIn = () => {
       name: firstName,
     };
 
-    fetch("https://travel-zone-server-zeta.vercel.app/users", {
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

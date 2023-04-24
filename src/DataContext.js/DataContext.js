@@ -37,7 +37,7 @@ const DataContext = ({ children }) => {
   );
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/places")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/places")
       .then((res) => res.json())
       .then((data) => {
         setPlaces(data);
@@ -46,7 +46,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/reviews")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
@@ -55,7 +55,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/tourGuide")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/tourGuide")
       .then((res) => res.json())
       .then((data) => {
         setTourGuide(data);
@@ -64,7 +64,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/packages")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/packages")
       .then((res) => res.json())
       .then((data) => {
         setPackages(data);
@@ -73,7 +73,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://travel-zone-server-zeta.vercel.app/bookings/v2?email=${user?.email}`)
+    fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/v2?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -82,7 +82,7 @@ const DataContext = ({ children }) => {
   }, [user]);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/favourites")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favourites")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -91,7 +91,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/favouritesHotel")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesHotel")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -100,7 +100,7 @@ const DataContext = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/favouritesFlight")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesFlight")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -108,7 +108,7 @@ const DataContext = ({ children }) => {
       });
   }, []);
   useEffect(() => {
-    fetch("https://travel-zone-server-zeta.vercel.app/users")
+    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
@@ -122,7 +122,7 @@ const DataContext = ({ children }) => {
 
   // useEffect(() => {
   //   fetch(
-  //     `https://travel-zone-server-zeta.vercel.app/packages?intFilter=${intFilter || ""}&dmsFilter=${
+  //     `https://travel-zone-server-mohammadibrahiim1.vercel.app/packages?intFilter=${intFilter || ""}&dmsFilter=${
   //       dmsFilter || ""
   //     }&tpFilter=${tpFilter || ""}&twpFilter=${twpFilter || ""}&thrFilter=${
   //       thrFilter || ""
@@ -136,7 +136,7 @@ const DataContext = ({ children }) => {
   // }, [intFilter, dmsFilter, tpFilter, twpFilter, thrFilter]);
 
   useEffect(() => {
-    fetch(`https://travel-zone-server-zeta.vercel.app/carServices?insideCityFilter=${insideCityFilter || ""}&outSideCityFilter=${outSideCityFilter || ""}`)
+    fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/carServices?insideCityFilter=${insideCityFilter || ""}&outSideCityFilter=${outSideCityFilter || ""}`)
       .then((res) => res.json())
       .then((data) => {
         setCarServices(data);
