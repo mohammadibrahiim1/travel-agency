@@ -62,12 +62,12 @@ const Navbar = () => {
                   <FiPackage /> Packages{" "}
                 </Link>
               </li>
-              <li class="nav-item">
+              {/* <li class="nav-item">
                 <Link class="nav-link" to="/rentCar">
                   {" "}
                   <FaServicestack />Rent A car{" "}
                 </Link>
-              </li>
+              </li> */}
             </ul>
 
             <div className="navbar-nav me-auto mb-2 mb-lg-0">
