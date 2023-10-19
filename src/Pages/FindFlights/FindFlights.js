@@ -11,6 +11,33 @@ import UserReviews from "../Home/UserReviews/UserReviews";
 // import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import "./FindFlights.css";
 
+const cards = [
+  {
+    id: 1,
+    img: "https://i.ibb.co/D5H6hkf/fall-travel-img.png",
+    title: "Columbia",
+    sub_title: "Amazing streets",
+  },
+  {
+    id: 2,
+    img: "https://i.ibb.co/wJ8yvH4/fall-travel-img-2.png",
+    title: "London",
+    sub_title: "London eye adventure",
+  },
+  {
+    id: 3,
+    img: "https://i.ibb.co/19XNPzC/Rectangle-4.png",
+    title: "Paris",
+    sub_title: "An amazing journey",
+  },
+  {
+    id: 4,
+    img: "https://i.ibb.co/Gpk0TC2/Rectangle-3-4.png",
+    title: "Melbourne",
+    sub_title: "An amazing journey journey",
+  },
+];
+
 const FindFlights = () => {
   const { flights } = useContext(ApiContext);
   // const flightsData = flights.data;
@@ -32,7 +59,7 @@ const FindFlights = () => {
       </div>
 
       <section>
-        <div className="container mt-5 pt-5 mb-4 fall-into-travel-header">
+        <div className=" mt-5 pt-5 mb-4 fall-into-travel-header">
           <h3 className="fw-bold text-dark ">Fall into travel</h3>
           <p className="text-dark-emphasis ">
             Going somewhere to celebrate this season? Whether you’re going home
@@ -40,66 +67,48 @@ const FindFlights = () => {
             to your destination.
           </p>
         </div>
-        <div className="fall-into-travel container">
-          <div class="card">
-            <img
-              src="https://i.ibb.co/k0JjmGY/Rectangle-6.png"
-              class="card-img"
-              alt="..."
-              style={{ height: "350px" }}
-            />
-            <div class="card-body card-img-overlay">
-              <h5 class="card-title">Columbia</h5>
-              <p class="card-text">Amazing streets</p>
-              <Link to="/allFlights" class="btn btn-primary">
-                Book Flights
-              </Link>
-            </div>
+
+        <div className="fall_into_travel">
+          <div className="left_card_container">
+            {cards.slice(0, 2).map((card) => (
+              <>
+                <div class=" card left_card ">
+                  <img src={card.img} class="card-img" alt="..." />
+                  <div class="card-img-overlay">
+                    <h5 class="card-title text-white font-semibold fs-3">
+                      {card.title}
+                    </h5>
+                    <p class="card-text text-white font-semibold fs-6">
+                      {card.sub_title}
+                    </p>
+                    <Link to="/allFlights" class="card-text btn btn-primary">
+                      <small>Book Flight</small>
+                    </Link>
+                  </div>
+                </div>
+              </>
+            ))}
           </div>
-          <div class="card">
-            <img
-              src="https://i.ibb.co/F0Lnt7y/Rectangle-5.png"
-              class="card-img"
-              alt="..."
-              style={{ height: "350px" }}
-            />
-            <div class="card-body card-img-overlay">
-              <h5 class="card-title">London</h5>
-              <p class="card-text">London eye adventure</p>
-              <Link to="/allFlights" class="btn btn-primary">
-                Book Flights
-              </Link>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="https://i.ibb.co/19XNPzC/Rectangle-4.png"
-              class="card-img"
-              alt="..."
-              style={{ height: "350px" }}
-            />
-            <div class="card-body card-img-overlay">
-              <h5 class="card-title">Paris</h5>
-              <p class="card-text">An amazing journey</p>
-              <Link to="/allFlights" class="btn btn-primary">
-                Book Flights
-              </Link>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="https://i.ibb.co/Gpk0TC2/Rectangle-3-4.png"
-              class="card-img"
-              alt="..."
-              style={{ height: "350px" }}
-            />
-            <div class="card-body card-img-overlay">
-              <h5 class="card-title">Malbourne</h5>
-              <p class="card-text"> An amazing journey journey</p>
-              <Link to="/allFlights" class="btn btn-primary">
-                Book Flight
-              </Link>
-            </div>
+
+          <div className="right_card_container">
+            {cards.slice(2, 4).map((card) => (
+              <>
+                <div class=" card right_card ">
+                  <img src={card.img} class="card-img" alt="..." />
+                  <div class="card-img-overlay">
+                    <h5 class="card-title text-white font-semibold fs-3">
+                      {card.title}
+                    </h5>
+                    <p class="card-text text-white font-semibold fs-6">
+                      {card.sub_title}
+                    </p>
+                    <Link to="/allFlights" class="card-text btn btn-primary ">
+                      <small>Book Flight</small>
+                    </Link>
+                  </div>
+                </div>
+              </>
+            ))}
           </div>
         </div>
       </section>

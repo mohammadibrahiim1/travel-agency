@@ -94,52 +94,87 @@
 }
 
 /* fall into travel section */
-
 .fall-into-travel-header p {
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
   line-height: 20px;
   color: #000000;
+  width: 1232px;
+  margin: 0 auto;
+}
+.fall-into-travel-header {
+  width: 1232px;
+  margin: 0 auto;
 }
 
-.fall-into-travel {
-  display: flex;
+.fall_into_travel {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   justify-content: space-evenly;
-  align-items: center;
-  gap: 14px;
-}
-.fall-into-travel .card {
-  width: 296px;
-  height: 350px;
-  /* background: url(../../Assets/maldives-best-all-inclusive-resorts-kudadoo-maldives-private-island.jpg); */
-  border-radius: 12px;
+  align-items: start;
+  gap: 24px;
+  width: 1232px;
+  margin: 0 auto;
 }
 
-.fall-into-travel .card-title {
+.left_card_container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+
+.right_card_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.fall_into_travel .left_card {
+  width: 392px;
+  height: 152px;
+  border-radius: 8px;
+}
+
+/* .fall_into_travel .left_card {
+  background-color: #f8fcfb;
+} */
+.fall_into_travel .right_card {
+  width: 392px;
+  border-radius: 8px;
+}
+.fall_into_travel .right_card .card-img {
+  height: 328px;
+  border-radius: 8px;
+}
+
+/* .fall-into-travel .card-title {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 29px;
   color: #ffffff;
-}
-.fall-into-travel .card-text {
+} */
+/* .fall-into-travel .card-text {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
   color: #ffffff;
   opacity: 0.7;
-}
-.fall-into-travel .btn-primary {
-  width: 200px;
-  background: #8dd3bb;
+} */
+.fall_into_travel .btn-primary {
+  width: 150px;
+  background: #1d91cc;
   border-radius: 4px;
-  color: #000000;
+  color: #fff;
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 14px;
 }
-.fall-into-travel .card-body {
+/* .fall-into-travel .card-body {
   margin-top: 200px;
-}
+} */
 
 .extra-section .card {
   background-color: #8dd3bb;
