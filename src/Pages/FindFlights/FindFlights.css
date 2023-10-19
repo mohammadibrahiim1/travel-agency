@@ -17,12 +17,45 @@
 } */
 
 .flight-header-section {
-  background-image: url(https://i.ibb.co/mNQ78R4/filght-img.jpg);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 1440px;
+  height: 537px;
+  padding: 80px 174px 120px 126px;
+  gap: 10px;
+  background: linear-gradient(
+      90deg,
+      rgba(0, 35, 77, 0.63) 11.46%,
+      rgba(0, 35, 77, 0) 77.37%
+    ),
+    url(../../../public/images/flights/header-image.jpg),
+    lightgray -140.034px -31.907px / 123.761% 210.97% no-repeat;
+
   width: 100%;
   height: 537px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.flight-header-section .flight-heading {
+  color: var(--Neutrals, #fff);
+  /* font-family: TradeGothic LT Extended; */
+  font-size: 45px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.flight-header-section .flight-subheading {
+  color: var(--Neutrals, #ffffff);
+  /* Montserrat/Medium/20px */
+  /* font-family: Montserrat; */
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-align: center;
 }
 
 .select-option {
@@ -187,7 +220,6 @@
   }
   .flight-header-section .w-50 {
     width: 75% !important;
-
   }
   .flight-header-section p {
     color: white;

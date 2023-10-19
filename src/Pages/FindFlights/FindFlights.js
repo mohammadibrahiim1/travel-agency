@@ -20,86 +20,16 @@ const FindFlights = () => {
 
   return (
     <div>
-      <section className="flight-header-section">
-        <div className="w-50 m-auto ">
-          <h2>Make your travel whishlist, we’ll do the rest</h2>
-          <p>Special offers to suit your plan</p>
+      <div className="flight-header-section">
+        <div>
+          <h1 className="flight-heading ">
+            Make your travel whishlist, we’ll do the rest
+          </h1>
+          <h6 className="flight-subheading">
+            Special offers to suit your plan
+          </h6>
         </div>
-      </section>
-
-      {/* <section className="flight-search-section-container container">
-        <form className="flight-search-section container m-auto ">
-          <div>
-    
-            <select name="" id="destination" className="select-option">
-              <option value=" From">From</option>
-              <option value="Cumilla">Cumilla</option>
-              <option value="Chittagong">Chittagong</option>
-              <option value="Cox's Bazar">Cox's Bazar</option>
-            </select>
-      
-          </div>
-          <div>
-
-            <select name="" id="destination" className="select-option">
-              <option value=" To">To</option>
-              <option value="Cumilla">Cumilla</option>
-              <option value="Chittagong">Chittagong</option>
-              <option value="Cox's Bazar">Cox's Bazar</option>
-            </select>
- 
-          </div>
-          <div>
-        
-            <select
-              name=""
-              id="Trip"
-              placeholder="Trip"
-              className="select-option"
-            >
-      
-              <option value="One Way">One Way</option>
-              <option value="Return">Return</option>
-             
-            </select>
-          
-          </div>
-          <div>
-            <DatePicker
-              className="datepicker "
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-              placeholderText="departure time"
-            />
-          </div>
-          <div>
-            <DatePicker
-              className="datepicker"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-            />
-          </div>
-          <div>
-
-            <select name="" id="bookingclass" className="select-option">
-              <option value="Bookingclass">Booking class</option>
-              <option value="First class">First class</option>
-              <option value="Economy">Economy</option>
-              <option value="Business">Business</option>
-            </select>
-
-          </div>
-          <div>
-            <Link className="btn btn-light " to="/flightListing/api/flights">
-              search
-            </Link>
-          </div>
-        </form>
-      </section> */}
+      </div>
 
       <section>
         <div className="container mt-5 pt-5 mb-4 fall-into-travel-header">
