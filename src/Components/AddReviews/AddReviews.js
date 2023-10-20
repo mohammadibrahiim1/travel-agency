@@ -14,8 +14,8 @@ const AddReviews = () => {
     const email = user?.email || "unregistered";
     const photoURL = user?.photoURL;
     const text = form.message.value;
-    // const category = form.category.value;
-    // console.log(name, photoURL, text, email);
+    const category = form.category.value;
+    console.log(name, photoURL, text, email);
 
     const addreview = {
       name,

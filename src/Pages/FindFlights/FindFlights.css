@@ -79,6 +79,24 @@
   font-size: 14.5px;
 }
 
+.extra_section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  width: 1232px;
+  margin: 0 auto;
+  gap: 24px;
+}
+
+
+.extra-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
 .flight-header-section h2 {
   color: white;
   text-align: center;
@@ -147,22 +165,13 @@
   height: 328px;
   border-radius: 8px;
 }
+.fall_into_travel .right_card .card-img-overlay {
+  margin-top: 190px;
+}
+.fall_into_travel .left_card .card-img-overlay {
+  margin-top: 10px;
+}
 
-/* .fall-into-travel .card-title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-  color: #ffffff;
-} */
-/* .fall-into-travel .card-text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  color: #ffffff;
-  opacity: 0.7;
-} */
 .fall_into_travel .btn-primary {
   width: 150px;
   background: #1d91cc;
@@ -172,97 +181,7 @@
   text-transform: capitalize;
   font-size: 14px;
 }
-/* .fall-into-travel .card-body {
-  margin-top: 200px;
-} */
 
-.extra-section .card {
-  background-color: #8dd3bb;
-  height: 350px;
-}
-.extra-section .card-title {
-  font-weight: 700;
-  font-size: 35px;
-  line-height: 35px;
-  color: #112211;
-  width: 80%;
-}
-
-.extra-section .card-text {
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 17px;
-  color: #112211;
-  margin-top: 8%;
-}
-
-.extra-section .btn {
-  gap: 4px;
-  background: #ffffff;
-  border-radius: 4px;
-  margin-top: 10%;
-}
-.extra-img {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 19px;
-  column-gap: 17px;
-  margin-bottom: 80px;
-}
-
-@media screen and (max-width: 576px) {
-  .fall-into-travel {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 14px;
-  }
-  .extra-section .card-title {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 35px;
-    color: #112211;
-    width: 100%;
-  }
-
-  .extra-section .btn {
-    gap: 4px;
-    background: #ffffff;
-    border-radius: 4px;
-    margin-top: 2%;
-  }
-
-  .extra-img {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-content: space-evenly;
-    align-items: center;
-    row-gap: 19px;
-    column-gap: 17px;
-    margin-bottom: 80px;
-  }
-  .flight-header-section h2 {
-    color: white;
-    text-align: center;
-    font-size: 32px;
-    font-weight: 700;
-    padding-top: 180px;
-    width: 100%;
-  }
-  .flight-header-section .w-50 {
-    width: 75% !important;
-  }
-  .flight-header-section p {
-    color: white;
-    opacity: 0.8;
-    text-align: center;
-    font-size: 15px;
-  }
-}
 @media screen and (min-width: 577px) and (max-width: 991px) {
   .fall-into-travel {
     display: grid;
