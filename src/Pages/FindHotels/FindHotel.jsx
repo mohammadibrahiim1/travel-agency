@@ -17,7 +17,9 @@ const FindHotel = () => {
   const { data: hotelNames = [] } = useQuery({
     queryKey: ["hotelPlace"],
     queryFn: async () => {
-      const res = await fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/hotelPlaces");
+      const res = await fetch(
+        "https://travel-zone-server-mohammadibrahiim1.vercel.app/hotelPlaces"
+      );
       const data = await res.json();
       return data;
     },
@@ -35,10 +37,10 @@ const FindHotel = () => {
     <section className="">
       <section className="hotels-header-section">
         <div>
-          <h2>Travel World To Gain Knowledge</h2>
+          <h2>Enjoy Your Dream Vacation</h2>
           <p>
-            Discover the latest offers and news and start planning your next
-            trip with us.
+            Plan and book our perfect trip with expert advice, travel tips,
+            destination information and inspiration from us
           </p>
         </div>
       </section>

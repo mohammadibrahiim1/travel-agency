@@ -22,7 +22,7 @@ const AddReviews = () => {
       photoURL,
       text,
       email,
-      // category
+      category
     };
 
     if (user) {
