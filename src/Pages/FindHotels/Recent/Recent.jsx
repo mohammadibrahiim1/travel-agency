@@ -1,28 +1,16 @@
 import React from "react";
 import "./Recent.css";
 
-const Recent = ({ hotelName }) => {
-  const { photo, country, places } = hotelName;
+const Recent = ({ location }) => {
+  const { name, img, properties } = location;
   return (
     <div>
       <section className="place-section">
-        <div class="card shadow mb-3">
-          <div class="row g-0">
-            <div class="col-3 text-center">
-              <img
-                src={photo}
-                className=" rounded p-2"
-                alt="..."
-                style={{ width: "112px", height: "121px" }}
-              />
-            </div>
-            <div class="col-9">
-              <div class="card-body ms-4">
-                <h6 class="card-title1">{country}</h6>
-                <p class="card-text1">{places} places</p>
-                {/* <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> */}
-              </div>
-            </div>
+        <div class="location_card">
+          <img src={img} class="location_card_img" alt="..." />
+          <div class="card-body mt-2">
+            <div class="card-title">{name}</div>
+            <div class="card-text">{properties}</div>
           </div>
         </div>
       </section>

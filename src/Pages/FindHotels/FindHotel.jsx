@@ -12,6 +12,58 @@ import UserReviews from "../Home/UserReviews/UserReviews";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 // import HotelInfo from "./HotelInfo/HotelInfo";
 
+//
+//
+//
+//
+
+const locations = [
+  {
+    id: 1,
+    name: "Australia",
+    properties: "2246 properties",
+    img: "https://i.ibb.co/64SxnQV/australia.png",
+  },
+  {
+    id: 2,
+    name: "Japan",
+    properties: "1278 properties",
+    img: "https://i.ibb.co/sFqg3sd/japan.png",
+  },
+  {
+    id: 3,
+    name: "New Zealand",
+    properties: "480 properties",
+    img: "https://i.ibb.co/QkG3sTb/new-zealand.png",
+  },
+  {
+    id: 4,
+    name: "Greece",
+    properties: "320 properties",
+    img: "https://i.ibb.co/QN9PLmr/greece.png",
+  },
+];
+
+const inspirations = [
+  {
+    id: 1,
+    title: "World’s top destinations during and post covid timeline",
+    des: "Pandemic is still intact and will be here for a longer time. Here’s where your next destination...",
+    img: "https://i.ibb.co/7nSHYZ6/worlds-top-destination-during-and-post-covid-timeline.png",
+  },
+  {
+    id: 1,
+    title: "Top cities for Vegan Travellers",
+    des: "Top sites where you do not have to worry about being a vegan. Our tourist guide is here...",
+    img: "https://i.ibb.co/jgn5NKn/top-cities-for-vegan-travellers.png",
+  },
+  {
+    id: 1,
+    title: "Sydeny’s 10 most fashionable 5 star hotels",
+    des: "Browse the fastest growing tourism sector in the heart of Australia tourism capital ....",
+    img: " https://i.ibb.co/0241yc8/sydney-10-most-fashionable-5-star-hotel.png",
+  },
+];
 const FindHotel = () => {
   //   const loading = useContext(AuthContext);
   const { data: hotelNames = [] } = useQuery({
@@ -46,20 +98,44 @@ const FindHotel = () => {
       </section>
 
       {/* =======================Your recent searches==================== */}
-      <div className="container">
-        <h3 className="fw-bold text-md-center text-lg-start  text-dark mb-4 mt-5  ">
-          Your recent searches
-        </h3>
-        <div className="home-card-container">
-          {hotelNames?.map((hotelName) => (
-            <Recent key={hotelName._id} hotelName={hotelName}></Recent>
+      <div className="dream_section">
+        <div className="fw-bold text-md-center text-lg-start fs-3 text-dark heading mb-3">
+          Enjoy your dream vacation
+        </div>
+        <div className="sub_heading">
+          Plan and book our perfect trip with expert advice, travel tips,
+          destination information and inspiration from us
+        </div>
+        <div className="location_card_container mt-4">
+          {locations?.map((location) => (
+            <Recent key={location.id} location={location}></Recent>
+          ))}
+        </div>
+      </div>
+
+      <div className="inspiration_section">
+        <div className="fw-bold text-md-center text-lg-start fs-3 text-dark heading mb-3">
+          Get inspiration for your next trip
+        </div>
+
+        <div className="inspiration_card_container">
+          {inspirations.map((inspiration) => (
+            <div div className="inspiration_card">
+              <div class="card text-bg-dark">
+                <img src={inspiration.img} class="card-img" alt="..." />
+                <div class="card-img-overlay">
+                  <h5 class="card-title">{inspiration.title}</h5>
+                  <p class="card-text">{inspiration.des}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
 
       {/* ====================Fall into travel======================= */}
 
-      <section className="fall-into-travel-header mt-5 pt-5 mb-4 container">
+      {/* <section className="fall-into-travel-header mt-5 pt-5 mb-4 container">
         <h3 className="fw-bold text-dark  mt-5 text-md-center text-lg-start ">
           Fall into travel
         </h3>
@@ -73,11 +149,11 @@ const FindHotel = () => {
             <HotelInfo key={hotelName._id} hotelName={hotelName}></HotelInfo>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* ======================== extra-section =======================*/}
 
-      <section className="extra-section container">
+      {/* <section className="extra-section container">
         <div className="mt-5 pt-5 mb-4 fall-into-travel-header">
           <h3 className="fw-bold text-dark  mt-5 text-md-center text-lg-start ">
             Fall into travel
@@ -144,11 +220,11 @@ const FindHotel = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section>
-        <UserReviews></UserReviews>
-        <AddReviews></AddReviews>
+        {/* <UserReviews></UserReviews> */}
+        {/* <AddReviews></AddReviews> */}
       </section>
     </section>
   );

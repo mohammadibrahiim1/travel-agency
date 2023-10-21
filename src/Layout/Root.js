@@ -1,8 +1,8 @@
 import React from "react";
 // import { Col, Container, Navbar, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
-import Filters from "../Components/Filters/Filters";
-import Header from "../Pages/Header/Header";
+// import Filters from "../Components/Filters/Filters";
+// import Header from "../Pages/Header/Header";
 import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 // import Navbar from "../Shared/Navbar/Navbar";
@@ -14,17 +14,16 @@ const Root = () => {
       {/* <Container>
         <Row>
           <Col lg="2">
-           <Filters></Filters>
+            <Filters></Filters>
           </Col>
           <Col lg="10">
-         
-              <Outlet></Outlet>
-           
+            <Outlet></Outlet>
           </Col>
-        
         </Row>
       </Container> */}
+      {/* <div className="outlet"> */}
       <Outlet></Outlet>
+      {/* </div> */}
       <Footer></Footer>
     </div>
   );

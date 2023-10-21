@@ -87,15 +87,102 @@
   font-weight: 500;
 }
 /* ===================================== */
-.home-card-container {
+.location_card_container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: space-evenly;
   align-items: center;
   gap: 14px;
-  /* width: 50%; */
-  margin: auto;
 }
+
+.dream_section .heading {
+  color: #181818;
+  /* font-family: SF Pro Display; */
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 504px;
+  height: 32px;
+  flex-shrink: 0;
+}
+.dream_section .sub_heading {
+  color: var(--Gray-1, #333);
+  /* font-family: SF Pro Display; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.32px;
+  width: 610px;
+}
+
+.dream_section {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+/* inspiration section */
+
+.inspiration_section {
+  width: 1240px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.inspiration_section .inspiration_card_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.inspiration_section .heading {
+  width: 504px;
+  height: 32px;
+  flex-shrink: 0;
+  color: #181818;
+  /* font-family: SF Pro Display; */
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.inspiration_section .inspiration_card {
+  width: 400px;
+  height: 280px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    lightgray 50% / cover no-repeat;
+}
+.inspiration_section .inspiration_card .card-img-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.inspiration_section .inspiration_card .card-img-overlay .card-title {
+  color: #fff;
+  width: 360px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.inspiration_section .inspiration_card .card-img-overlay .card-text {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  width: 360px;
+}
+
 /* =========================== */
 /* .travel__card {
   border: none !important;
