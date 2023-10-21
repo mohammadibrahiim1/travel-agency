@@ -1,6 +1,8 @@
 .signIn-container {
   width: 520px;
   margin: 0 auto;
+  padding-top: 75px;
+  min-height: 100vh;
 }
 
 .signIn_button {
@@ -63,7 +65,7 @@
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
-  letter-spacing: 0.3px; 
+  letter-spacing: 0.3px;
 }
 .social-signUP button:hover {
   border: 1px solid #8dd3bb;

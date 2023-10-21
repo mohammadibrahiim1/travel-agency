@@ -199,7 +199,7 @@ const SignIn = () => {
               />
               <label className="label">Password</label>
             </div>
-            <div className="input-container password mb-4">
+            <div className="input-container password">
               <input
                 type="password"
                 id="confirmPassword"
@@ -209,9 +209,10 @@ const SignIn = () => {
               />
               <label className="label">Confirm Password</label>
             </div>
-            <div className="text-start">
+
+            <div className="d-flex align-items-center my-2">
               <input type="checkbox" required />
-              <label className="ms-1  agree ">
+              <label className="mx-1 mt-1">
                 I agree to all the Terms and Privacy Policies
               </label>
             </div>
@@ -228,20 +229,20 @@ const SignIn = () => {
                 Log in
               </Link>
             </div>
-            <div className="mb-5 d-flex justify-content-between align-items-center gap-1">
+            <div className="d-flex justify-content-between align-items-center gap-1">
               <div className="line"></div>
               <p className="mt-3"> Or Sign up with</p>
               <div className="line"></div>
             </div>
 
-            <div className="social-signUP mt-5">
-              <button onClick={handleFacebookSignIn} className="w-100 p-2">
+            <div className="social-signUP">
+              <button onClick={handleFacebookSignIn} className="w-100 p-2 mt-3">
                 <FaFacebook
                   style={{ width: "22px", height: "22px", color: "#2F80ED" }}
                 />
                 <span className="ms-3">Continue with Facebook</span>
               </button>
-              <button onClick={handleGoogleSignIn} className="w-100  p-2">
+              <button onClick={handleGoogleSignIn} className="w-100  p-2 mt-3">
                 <FcGoogle style={{ width: "22px", height: "22px" }} />
                 <span className="ms-4">Continue with Google</span>
               </button>
