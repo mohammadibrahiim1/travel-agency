@@ -27,13 +27,19 @@ const SignIn = () => {
         // setUser(user);
         setError("");
         if (user) {
-          fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/users", {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({ name: user.displayName, email: user.email }),
-          })
+          fetch(
+            "https://travel-zone-server-mohammadibrahiim1.vercel.app/users",
+            {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify({
+                name: user.displayName,
+                email: user.email,
+              }),
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               // console.log(data);
@@ -118,20 +124,9 @@ const SignIn = () => {
   };
 
   return (
-    <Container className="signIn-container">
-      <div className="row g-0">
-        <div className="col-xl-6 d-none d-xl-block">
-          <img
-            src="https://i.ibb.co/xmbWzPk/Group-5.png"
-            alt="SamplePhoto"
-            className="img-fluid"
-          />
-        </div>
-
-        <form
-          onSubmit={handleSubmit}
-          className=" col-xl-6 col-sm-12 col-md-8  m-auto p-2"
-        >
+    <section className="signIn-container">
+      <div className="">
+        <form onSubmit={handleSubmit} className="">
           <h2 className="mb-5 fw-bold">Sign Up Here!</h2>
           <div className="mb-3 text-start ">
             <div className="row ">
@@ -220,123 +215,41 @@ const SignIn = () => {
                 I agree to all the Terms and Privacy Policies
               </label>
             </div>
-            <div className="signUp">
-              <button
-                // type="button"
-                className="btn 
-                        create-account-button btn-light w-100"
-              >
-                create account
-              </button>
-            </div>
+
+            <button className=" btn btn-primary signIn_button">
+              create account
+            </button>
+
             <div className="text-center mt-3">
               <span className="text-muted fw-bold">
                 Already Have an Account?
               </span>{" "}
-              <Link to="/login" className="login-text text-decoration-none">
+              <Link to="/login" className=" text-primary fw-semibold">
                 Log in
               </Link>
             </div>
-            <div className="mb-5">
-              <hr className="mt-5" />
-              <p className="text-center "> Or Sign up with</p>
+            <div className="mb-5 d-flex justify-content-between align-items-center gap-1">
+              <div className="line"></div>
+              <p className="mt-3"> Or Sign up with</p>
+              <div className="line"></div>
             </div>
 
             <div className="social-signUP mt-5">
-              <button
-                onClick={handleFacebookSignIn}
-                className="btn btn-light  w-100 
-              
-              text-primary p-2"
-              >
-                <FaFacebook style={{ width: "22px", height: "22px" }} />
+              <button onClick={handleFacebookSignIn} className="w-100 p-2">
+                <FaFacebook
+                  style={{ width: "22px", height: "22px", color: "#2F80ED" }}
+                />
+                <span className="ms-3">Continue with Facebook</span>
               </button>
-              <button
-                onClick={handleGoogleSignIn}
-                className="btn btn-light   w-100  p-2"
-              >
+              <button onClick={handleGoogleSignIn} className="w-100  p-2">
                 <FcGoogle style={{ width: "22px", height: "22px" }} />
-              </button>
-              <button className="btn btn-light   w-100  p-2">
-                <FaApple style={{ width: "22px", height: "22px" }} />
+                <span className="ms-4">Continue with Google</span>
               </button>
             </div>
           </div>
-          {/* <div className="mb-3 text-start ">
-          <label className="form-label " for="photoURL">
-            photoURL
-          </label>
-          <input
-            type="photoURL"
-            className="form-control"
-            id="photoURL"
-            name="photoURL"
-            placeholder=""
-            required
-          />
-        </div> */}
-          {/* <div className="mb-3 text-start ">
-          <label className="form-label " for="email">
-            Email address
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            placeholder="Your email address"
-            required
-          />
-        </div> */}
-          {/* <div className="mb-3 text-start">
-          <label className="form-label" for="password">
-            Password
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            name="password"
-            placeholder="Password"
-            autocomplete="current-password"
-            required
-          />
-        </div> */}
-          {/* <p className="text-danger">{passwordError}</p> */}
-          {/* <div className="mb-3 text-center">
-          <div>
-            {" "}
-            Already have an account? please,click here to{" "}
-            <span>
-              {" "}
-              <Link to="/login" className="text-decoration-none fw-bold ">
-                Log in
-              </Link>
-            </span>
-          </div>
-        </div> */}
-          {/* <div className="text-danger">{}</div> */}
-          {/* <div>
-          
-          <div>
-            <button
-              onClick={handleGoogleSignIn}
-              className="btn btn-primary w-full  ps-2 me-2 "
-            >
-              sign in with google
-            </button>
-           
-            <button
-              onClick={handleGithubSignIN}
-              className="btn btn-primary w-full ps-2 ms-2"
-            >
-              sign in with github
-            </button>
-          </div>
-        </div> */}
         </form>
       </div>
-    </Container>
+    </section>
   );
 };
 
