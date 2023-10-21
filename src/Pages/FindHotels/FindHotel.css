@@ -86,6 +86,39 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+/* ========== danger_container========= */
+
+.danger_container {
+  width: 1240px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background: #fcefca;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+.danger_container .danger-text {
+  color: var(--Gray-1, #333);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
+  letter-spacing: 0.32px;
+}
+.danger_container .danger-text .learn_more {
+  color: var(--Blue-1, #2f80ed);
+  font-family: SF Pro Display;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.32px;
+}
+
 /* ===================================== */
 .location_card_container {
   display: grid;
@@ -120,6 +153,7 @@
 .dream_section {
   width: 1240px;
   margin: 0 auto;
+  margin-top: 75px;
 }
 
 /* inspiration section */
@@ -127,7 +161,7 @@
 .inspiration_section {
   width: 1240px;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: 75px;
 }
 .inspiration_section .inspiration_card_container {
   display: grid;
@@ -181,6 +215,99 @@
   font-weight: 400;
   line-height: 140%;
   width: 360px;
+}
+
+/* ========================== */
+
+.popular_hotel_section {
+  width: 1240px;
+  margin: 0 auto;
+  margin-top: 75px;
+}
+.popular_hotel_section .popular_hotel_section_card_container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/*========== download-out-app ========== */
+
+.download-our-app {
+  width: 1240px;
+  height: 280px;
+  margin: 0 auto;
+  border-radius: 8px;
+  margin-top: 75px;
+}
+.download-our-app .card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url(https://i.ibb.co/4Zy285X/download-our-app-img.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.download-our-app .fs-3 {
+  width: 550px;
+  color: #fff;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 39.2px */
+}
+.download-our-app .card_text_container {
+  padding: 65px 70px;
+}
+.download-our-app .card img {
+  height: 285px;
+  display: flex;
+}
+.download-our-app .card .btn-primary {
+  padding: 12px 18px;
+  border-radius: 6px;
+  background: #2f80ed;
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 133.333% */
+  letter-spacing: 0.3px;
+  margin-top: 30px;
+}
+
+/* ========== download our app =========== */
+
+/* explore world wide dream place */
+.explore_world_container {
+  width: 1240px;
+  margin: 0 auto;
+  margin-top: 90px;
+  margin-bottom: 90px;
+  text-align: center;
+}
+.explore_world_container .explore_world_heading {
+  color: #181818;
+  text-align: center;
+  font-size: 38px;
+  font-weight: 600;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 39.2px */
+}
+
+.explore_world_container .link {
+  color: var(--Blue-1, #2f80ed);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0.32px;
 }
 
 /* =========================== */

@@ -1,41 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "./HotelInfo.css";
 
-const HotelInfo = ({ hotelName }) => {
-  const { photo, country } = hotelName;
+const HotelInfo = ({ hotel }) => {
+  const { img, place, name } = hotel;
   return (
     <div>
-      <div className="fall-into-travel">
-        {/* <div className="card">
-          <img src={photo} class="card-img-top" alt="..." />
-          <div className="card-body book">
-            <h5 className="card-title">{country}</h5>
-            <p className="card-text">An amazing journey</p>
-            <Link to={`/hotel-listing?country=${country}`}>
-              <button>Book a Hotel</button>
-            </Link>
-          </div>
-        </div> */}
-
-        <div class="card">
-          <img
-            src={photo}
-            class="card-img"
-            alt="..."
-            style={{ height: "350px" }}
-          />
-          <div class="card-body card-img-overlay">
-            <h5 class="card-title">{country}</h5>
-            <p class="card-text">Amazing streets</p>
-            <Link
-              to={`/hotel-listing?country=${country}`}
-              class="btn btn-primary"
-            >
-              Book Hotels
-            </Link>
+      <section className="popular-hotel-card-section">
+        <div class="popular-hotel-card">
+          <img src={img} class="location_card_img" alt="..." />
+          <div class="card-body mt-2">
+            <div class="card-title">{name}</div>
+            <div class="card-text">{place}</div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

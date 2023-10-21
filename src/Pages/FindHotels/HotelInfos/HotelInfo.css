@@ -1,0 +1,20 @@
+.popular-hotel-card-section .popular-hotel-card {
+  width: 18.438rem;
+}
+.popular-hotel-card-section .popular-hotel-card  .card-title {
+  width: 18.438rem;
+  color: #181818;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.popular-hotel-card-section .popular-hotel-card  .card-text {
+  width: 18.438rem;
+  color: #181818;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.28px;
+}
