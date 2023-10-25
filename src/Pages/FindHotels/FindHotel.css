@@ -310,6 +310,69 @@
   letter-spacing: 0.32px;
 }
 
+/* ============= input css */
+
+.hotel-search-section-container {
+  width: 1200px;
+  background: #ffffff;
+  padding: 25px;
+  box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+  border-radius: 16px;
+  margin: 0 auto;
+  margin-top: -3%;
+}
+
+.hotel-search-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 14px;
+  /* padding-top: 45px; */
+}
+
+.hotel-search-section .input-container .input {
+  display: flex;
+  width: 240px;
+  padding: 12px 18px;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 4px;
+  background: var(--Gray-6, #f2f2f2);
+  padding-left: 40px;
+}
+
+.hotel-search-section .input-container {
+  position: relative;
+  width: 300px;
+}
+
+.hotel-search-section .svg {
+  position: absolute;
+  left: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+}
+.hotel-search-section .search-btn {
+  display: flex;
+  width: 148px;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 5px;
+  background: var(--Blue-1, #2f80ed);
+  color: #fff;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ============= input css */
+
 /* =========================== */
 /* .travel__card {
   border: none !important;

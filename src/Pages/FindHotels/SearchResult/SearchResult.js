@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Col } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
-import AllHotelListing from '../AllHotelListing/AllHotelListing';
+import React, { useState } from "react";
+import { Col } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
+import AllHotelListing from "../AllHotelListing/AllHotelListing";
 // import AllHotelListing from '../Home/AllHotelListing';
 // import SearchBar from './SearchBar';
 // import '../../Styles/HotelListing.css';
-import '../HotelListing/HotelListing.css'
+import "../HotelListing/HotelListing.css";
 
 const SearchResult = () => {
   const location = useLocation();
@@ -15,10 +15,9 @@ const SearchResult = () => {
   // console.log(data);
   return (
     <>
-    {/* <SearchBar></SearchBar> */}
-    <section  className='container mt-4'>
-
-    {/* <div className="row">
+      {/* <SearchBar></SearchBar> */}
+      <section className="container mt-4">
+        {/* <div className="row">
 
 
     <div className="col-4">
@@ -149,28 +148,22 @@ const SearchResult = () => {
 
     </div> */}
 
-
-
-
-
-
-    <div class="card mb-3 mt-4" >
-                  <div class="row g-0">
-    { data.length === 0 ? ( 
-                <h4 className='text-center'>No tour found</h4>
-                ) : (
-                  data?.map(hotelName => (
-                    <Col lg='3' className='mb-4' key={hotelName.id}>
-                    <AllHotelListing hotelName={hotelName}></AllHotelListing>
-                    </Col>
-                  ))
-                )}
-                </div>
-      </div>
-      
-    </section>
+        <div class="card mb-3 mt-4">
+          <div class="row g-0">
+            {data.length === 0 ? (
+              <h4 className="text-center">No tour found</h4>
+            ) : (
+              data?.map((hotelName) => (
+                <Col lg="3" className="mb-4" key={hotelName.id}>
+                  <AllHotelListing hotelName={hotelName}></AllHotelListing>
+                </Col>
+              ))
+            )}
+          </div>
+        </div>
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default SearchResult
+export default SearchResult;
