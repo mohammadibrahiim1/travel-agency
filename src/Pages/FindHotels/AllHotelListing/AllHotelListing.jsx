@@ -83,7 +83,9 @@ const AllHotelListing = ({ hotelName }) => {
                 </div>
 
                 <div>
-                  <h5 class="price-dollar">${price}</h5>
+                  <div class="price-dollar">${price}</div>
+                  <div className="room_quantity">1 room 2 days</div>
+                  <div className="includes_text">Includes taxes and fees</div>
                 </div>
               </div>
 
