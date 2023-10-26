@@ -134,7 +134,7 @@ const HotelListing = () => {
 
   return (
     <>
-      <section className="allFlights-header-section ">
+      <section className="allHotels-header-section ">
         <div>
           <h2>Let's go places together</h2>
           <p>
@@ -432,7 +432,7 @@ const HotelListing = () => {
 
       <section className="all-hotels mt-4">
         <div className="row">
-          <div className="col-12  col-md-12 col-sm-12 col-lg-2">
+          <div className="col-12  col-md-12 col-sm-12 col-lg-3">
             <h5 className="filter">price</h5>
 
             <form className="mt-2 mb-2 d-flex justify-content-between align-content-center ">
@@ -454,47 +454,55 @@ const HotelListing = () => {
 
             <hr />
 
-            <h5 className="filter">Freebies</h5>
+            <div className="filter_container">
+              <h5 className="filter">Freebies</h5>
 
-            <div>
-              <input
-                type="checkbox"
-                name="breakFast"
-                id=""
-                checked={brfFilter}
-                // value="International"
-                onClick={(e) => setBrfFilter(e.target.checked)}
-              />
-              <span className="input-filter-text ms-2 ">Free breakfast</span>{" "}
-              <br />
-            </div>
+              <div className="checkbox_container" >
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    checked={brfFilter}
+                    // value="International"
+                    onClick={(e) => setBrfFilter(e.target.checked)}
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Free breakfast
+                  </label>
+                </div>
 
-            <div>
-              <input
-                type="checkbox"
-                name="internet"
-                id=""
-                checked={frIntFilter}
-                // value="International"
-                onClick={(e) => setFrIntFilter(e.target.checked)}
-              />
-              <span className="input-filter-text ms-2">Free internet</span>{" "}
-              <br />
-            </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    checked={frIntFilter}
+                    // value="International"
+                    onClick={(e) => setFrIntFilter(e.target.checked)}
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Free internet
+                  </label>
+                </div>
 
-            <div>
-              <input
-                type="checkbox"
-                name="freeAirportShuttle"
-                id=""
-                checked={freeAirFilter}
-                // value="International"
-                onClick={(e) => setFreeAirFilter(e.target.checked)}
-              />
-              <span className="input-filter-text ms-2">
-                Free airport shuttle
-              </span>{" "}
-              <br />
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    checked={freeAirFilter}
+                    // value="International"
+                    onClick={(e) => setFreeAirFilter(e.target.checked)}
+                    id="flexCheckDefault"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Free airport shuttle
+                  </label>
+                </div>
+              </div>
             </div>
 
             <hr />
@@ -505,6 +513,7 @@ const HotelListing = () => {
               <input
                 type="checkbox"
                 name="airConditioned"
+                className="form-check-input"
                 id=""
                 checked={airConFilter}
                 // value="International"
@@ -518,6 +527,7 @@ const HotelListing = () => {
               <input
                 type="checkbox"
                 name="fitness"
+                className="form-check-input"
                 id=""
                 checked={fitness}
                 // value="International"
@@ -530,6 +540,7 @@ const HotelListing = () => {
               <input
                 type="checkbox"
                 name="pool"
+                className="form-check-input"
                 id=""
                 checked={pool}
                 // value="International"
@@ -539,12 +550,12 @@ const HotelListing = () => {
             </div>
           </div>
 
-          <div
+          {/* <div
             class=" d-lg-flex justify-content-evenly align-items-center mt-5  d-md-none d-lg-block d-sm-none d-block col-lg-1"
             style={{ height: "auto" }}
           >
             <div class="vr mt-5"></div>
-          </div>
+          </div> */}
 
           <div className="col-lg-9 col-md-12 col-sm-12 col-12">
             <div className="d-flex mt-4">

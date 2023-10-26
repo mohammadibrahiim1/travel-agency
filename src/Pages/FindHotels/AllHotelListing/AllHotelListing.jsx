@@ -7,18 +7,15 @@ import "./AllHotelListing.css";
 
 const AllHotelListing = ({ hotelName }) => {
   const navigate = useNavigate();
-  const { HotelName, city, price, avgRating, cafe, cover, createdAt } = hotelName;
+  const { HotelName, price, avgRating, cafe, cover, createdAt } = hotelName;
   const handleAddToFavorite = (hotelName) => {
-    fetch(
-      "http://localhost:5000/favouritesHotel",
-      {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(hotelName),
-      }
-    )
+    fetch("http://localhost:5000/favouritesHotel", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(hotelName),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
