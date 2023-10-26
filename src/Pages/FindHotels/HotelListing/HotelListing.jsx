@@ -452,62 +452,297 @@ const HotelListing = () => {
               </div>
             </form>
 
-            <hr />
-
             <div className="filter_container">
               <h5 className="filter">Freebies</h5>
 
-              <div className="checkbox_container" >
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    checked={brfFilter}
-                    // value="International"
-                    onClick={(e) => setBrfFilter(e.target.checked)}
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Free breakfast
-                  </label>
+              <div className="checkbox_container">
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Free breakfast
+                    </label>
+                  </div>
+                  <div>200</div>
                 </div>
 
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    checked={frIntFilter}
-                    // value="International"
-                    onClick={(e) => setFrIntFilter(e.target.checked)}
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Free internet
-                  </label>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={frIntFilter}
+                      // value="International"
+                      onClick={(e) => setFrIntFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Free internet
+                    </label>
+                  </div>
+                  <div>12</div>
                 </div>
 
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    checked={freeAirFilter}
-                    // value="International"
-                    onClick={(e) => setFreeAirFilter(e.target.checked)}
-                    id="flexCheckDefault"
-                  />
-                  <label class="form-check-label" for="flexCheckDefault">
-                    Free airport shuttle
-                  </label>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={freeAirFilter}
+                      // value="International"
+                      onClick={(e) => setFreeAirFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Free airport shuttle
+                    </label>
+                  </div>
+                  <div>17</div>
                 </div>
               </div>
             </div>
 
-            <hr />
+            <div className="filter_container mt-4">
+              <h5 className="filter">Popular Filters</h5>
 
-            <h5 className="filter">Amenities</h5>
+              <div className="checkbox_container">
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Free Cancellaion
+                    </label>
+                  </div>
+
+                  <div>26</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Spa
+                    </label>
+                  </div>
+
+                  <div>57</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Beach front
+                    </label>
+                  </div>
+
+                  <div>76</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Hot tub/jacuzzi
+                    </label>
+                  </div>
+
+                  <div>66</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Book without credit card
+                    </label>
+                  </div>
+
+                  <div>46</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      No prepayment
+                    </label>
+                  </div>
+
+                  <div>21</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="filter_container mt-4">
+              <h5 className="filter">Activities</h5>
+
+              <div className="checkbox_container">
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Fishing
+                    </label>
+                  </div>
+
+                  <div>36</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Hiking
+                    </label>
+                  </div>
+
+                  <div>33</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Beach
+                    </label>
+                  </div>
+
+                  <div>44</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Cycling
+                    </label>
+                  </div>
+
+                  <div>66</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Sauna
+                    </label>
+                  </div>
+
+                  <div>09</div>
+                </div>
+                <div class="form-check d-flex justify-content-between align-content-center">
+                  <div>
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      checked={brfFilter}
+                      // value="International"
+                      onClick={(e) => setBrfFilter(e.target.checked)}
+                      id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Night lights
+                    </label>
+                  </div>
+
+                  <div>26</div>
+                </div>
+              </div>
+            </div>
+
+            {/* <h5 className="filter">Amenities</h5>
 
             <div>
               <input
@@ -547,7 +782,7 @@ const HotelListing = () => {
                 onClick={(e) => setPool(e.target.checked)}
               />
               <span className="input-filter-text ms-2">Pool</span> <br />
-            </div>
+            </div> */}
           </div>
 
           {/* <div
