@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { toast } from "react-hot-toast";
+import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { FaFacebook, FaApple } from "react-icons/fa";
-import "./SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
-import { toast } from "react-hot-toast";
+import "./SignIn.css";
 
 // import { AuthContext } from "../../Context/UserContext";
 // import UseContext, { AuthContext } from "../../Context/UseContext";
@@ -28,7 +27,7 @@ const SignIn = () => {
         setError("");
         if (user) {
           fetch(
-            "https://travel-zone-server-mohammadibrahiim1.vercel.app/users",
+            "http://localhost:5000/users",
             {
               method: "POST",
               headers: {
@@ -104,7 +103,7 @@ const SignIn = () => {
       name: firstName,
     };
 
-    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/users", {
+    fetch("http://localhost:5000/users", {
       method: "POST",
       headers: {
         "content-type": "application/json",

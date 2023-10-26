@@ -98,7 +98,7 @@ const FindHotel = () => {
     queryKey: ["hotelPlace"],
     queryFn: async () => {
       const res = await fetch(
-        "https://travel-zone-server-mohammadibrahiim1.vercel.app/hotelPlaces"
+        "http://localhost:5000/hotelPlaces"
       );
       const data = await res.json();
       return data;

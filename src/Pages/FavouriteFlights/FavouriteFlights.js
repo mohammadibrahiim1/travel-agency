@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import FFlights from "../../Components/FFlights/FFlights";
 
@@ -12,7 +11,7 @@ const FavouriteFlights = () => {
   const handleDelete = (_id) => {
     const agree = window.confirm("are you sure you want to delete?");
     if (agree) {
-      fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesFlight/${_id}`, {
+      fetch(`http://localhost:5000/favouritesFlight/${_id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

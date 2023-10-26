@@ -1,17 +1,16 @@
 import React from "react";
-import { FaHeart, FaStar, FaStarHalf } from "react-icons/fa";
-import { MdLocationPin } from "react-icons/md";
+import { toast } from "react-hot-toast";
 import { BsFillCupFill } from "react-icons/bs";
+import { FaHeart, FaStar, FaStarHalf } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import "./AllHotelListing.css";
-import { toast } from "react-hot-toast";
 
 const AllHotelListing = ({ hotelName }) => {
   const navigate = useNavigate();
-  const { title, city, price, avgRating, cafe, photo, createdAt } = hotelName;
-  const handleAddToFavourite = (hotelName) => {
+  const { HotelName, city, price, avgRating, cafe, cover, createdAt } = hotelName;
+  const handleAddToFavorite = (hotelName) => {
     fetch(
-      "https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesHotel",
+      "http://localhost:5000/favouritesHotel",
       {
         method: "POST",
         headers: {
@@ -38,7 +37,7 @@ const AllHotelListing = ({ hotelName }) => {
         <div class="card_container">
           <div class="">
             <img
-              src={photo}
+              src={cover}
               class="img-fluid"
               alt="..."
               style={{ height: "200px", width: "285px" }}
@@ -47,7 +46,7 @@ const AllHotelListing = ({ hotelName }) => {
           <div class="">
             <div class="">
               <div className="">
-                <h5 class="title">{title}</h5>
+                <h5 class="title">{HotelName}</h5>
               </div>
               <div className="ratings">
                 <div className="star">
@@ -91,8 +90,8 @@ const AllHotelListing = ({ hotelName }) => {
 
               <p class="mt-2 d-flex justify-content-start align-items-center gap-3">
                 <div
-                  className="border rounded-2 ps-3 pe-3 btn btn-light"
-                  onClick={() => handleAddToFavourite(hotelName)}
+                  className="border rounded-2 ps-5 pe-5 btn btn-light"
+                  onClick={() => handleAddToFavorite(hotelName)}
                 >
                   <FaHeart />
                 </div>{" "}

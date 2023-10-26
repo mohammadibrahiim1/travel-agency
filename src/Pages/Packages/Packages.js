@@ -28,7 +28,7 @@ const Packages = () => {
 
   useEffect(() => {
     fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/packages?intFilter=${intFilter || ""}&dmsFilter=${
+      `http://localhost:5000/packages?intFilter=${intFilter || ""}&dmsFilter=${
         dmsFilter || ""
       }&tpFilter=${tpFilter || ""}&twpFilter=${twpFilter || ""}&thrFilter=${
         thrFilter || ""

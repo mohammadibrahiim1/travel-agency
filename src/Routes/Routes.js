@@ -20,32 +20,32 @@ import SearchResult from "../Pages/FindHotels/SearchResult/SearchResult";
 // import FindStays from "../Pages/FindHotels/FindStays";
 import FlightDetails from "../Pages/FlightDetails/FlightDetails";
 // import FlightListing from "../Pages/FlightListing/FlightListing";
+import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
+import FavouriteLayout from "../Layout/FavouriteLayout/FavouriteLayout";
+import AllUsers from "../Pages/AllUsers/AllUsers";
+import BookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
+import Errorpage from "../Pages/Errorpage/Errorpage";
+import FavouriteFlights from "../Pages/FavouriteFlights/FavouriteFlights";
+import FavouriteHotels from "../Pages/FavouriteHotels/FavouriteHotels";
+import FavouritePackage from "../Pages/FavouritePackage/FavouritePackage";
+import HotelBookingDetails from "../Pages/FindHotels/HotelBookingDetails/HotelBookingDetails";
+import FlightBookingDetails from "../Pages/FlightDetails/FlightBookingDetails/FlightBookingDetails";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import GuideDetails from "../Pages/GuideDetails/GuideDetails";
 import Home from "../Pages/Home/Home";
 import LogIn from "../Pages/LogIn/LogIn";
 import PackagesDetails from "../Pages/PackageDetails/PackagesDetails";
 import Packages from "../Pages/Packages/Packages";
+import UserProfile from "../Pages/Profile/UserProfile";
+import CarDetails from "../Pages/RentACar/CarDetials/CarDetails";
+import FindCars from "../Pages/RentACar/FindCars/FindCars";
+import RentACar from "../Pages/RentACar/RentACar";
 import SetPassword from "../Pages/SetPassword/SetPassword";
 import SignIn from "../Pages/SignIn/SignIn";
-import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
-import PrivateRoutes from "./PrivateRoutes";
-import BookingInfo from "../Pages/BookingDetails/BookingInfo/BookingInfo";
-import HotelBookingDetails from "../Pages/FindHotels/HotelBookingDetails/HotelBookingDetails";
-import UserProfile from "../Pages/Profile/UserProfile";
-import FavouriteLayout from "../Layout/FavouriteLayout/FavouriteLayout";
-import FavouritePackage from "../Pages/FavouritePackage/FavouritePackage";
-import FavouriteFlights from "../Pages/FavouriteFlights/FavouriteFlights";
-import FavouriteHotels from "../Pages/FavouriteHotels/FavouriteHotels";
-import FlightBookingDetails from "../Pages/FlightDetails/FlightBookingDetails/FlightBookingDetails";
-import DashboardLayout from "../Layout/DashboardLayout/DashboardLayout";
-import AllUsers from "../Pages/AllUsers/AllUsers";
-import AdminRoute from "./AdminRoute";
 import UserBookings from "../Pages/UserBookings/UserBookings";
-import Errorpage from "../Pages/Errorpage/Errorpage";
-import RentACar from "../Pages/RentACar/RentACar";
-import FindCars from "../Pages/RentACar/FindCars/FindCars";
-import CarDetails from "../Pages/RentACar/CarDetials/CarDetails";
+import VerifyAccount from "../Pages/VerifyAccount/VerifyAccount";
+import AdminRoute from "./AdminRoute";
+import PrivateRoutes from "./PrivateRoutes";
 // import FavouritesPackages from "../Pages/Favourites/FavouritesPackages/FavouritesPackages";
 // import FavouritesHotels from "../Pages/Favourites/FavouritesHotels/FavouritesHotels";
 // import FavouritesFlights from "../Pages/Favourites/FavouritesFlights/FavouritesFlights";
@@ -72,9 +72,9 @@ export const router = createBrowserRouter([
       {
         path: "/flightDetails/:id",
         element: <FlightDetails></FlightDetails>,
-        // loader: https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights/6416b5e2b758fbc5342d890d
+        // loader: http://localhost:5000/api/flights/6416b5e2b758fbc5342d890d
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights/${params.id}`),
+          fetch(`http://localhost:5000/api/flights/${params.id}`),
       },
       {
         path: "/findHotels",
@@ -88,7 +88,7 @@ export const router = createBrowserRouter([
         path: "/category/:id",
         element: <HotelDetails></HotelDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/category/${params.id}`),
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
       {
         path: "/category/search",
@@ -132,7 +132,7 @@ export const router = createBrowserRouter([
         path: "/tourGuide/:id",
         element: <GuideDetails></GuideDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/tourGuide/${params.id}`),
+          fetch(`http://localhost:5000/tourGuide/${params.id}`),
       },
       {
         path: "/aboutus",
@@ -150,7 +150,7 @@ export const router = createBrowserRouter([
         path: "/carDetails/:id",
         element: <CarDetails></CarDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/carServices/${params.id}`),
+          fetch(`http://localhost:5000/carServices/${params.id}`),
       },
       {
         path: "/packages",
@@ -165,7 +165,7 @@ export const router = createBrowserRouter([
         path: "/packages/:id",
         element: <PackagesDetails></PackagesDetails>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/PackageBookingDetails/:id",
@@ -175,7 +175,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/packages/${params.id}`),
+          fetch(`http://localhost:5000/packages/${params.id}`),
       },
       {
         path: "/hotelBookingDetails/:id",
@@ -185,7 +185,7 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/category/${params.id}`),
+          fetch(`http://localhost:5000/category/${params.id}`),
       },
       {
         path: "/flightBookingDetails/:id",
@@ -195,25 +195,25 @@ export const router = createBrowserRouter([
           </PrivateRoutes>
         ),
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights/${params.id}`),
+          fetch(`http://localhost:5000/api/flights/${params.id}`),
       },
       {
         path: "/bookingInfo",
         element: <BookingInfo></BookingInfo>,
         // loader: async ({ params }) =>
-        //   fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/${params.id}`),
+        //   fetch(`http://localhost:5000/bookings/${params.id}`),
       },
       {
         path: "/paymentcard/:id",
         element: <PaymentCard></PaymentCard>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/${params.id}`),
+          fetch(`http://localhost:5000/bookings/${params.id}`),
       },
       {
         path: "/downloadpdf/:id",
         element: <DownloadPdf></DownloadPdf>,
         loader: async ({ params }) =>
-          fetch(`https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings/${params.id}`),
+          fetch(`http://localhost:5000/bookings/${params.id}`),
       },
     ],
   },

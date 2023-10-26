@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaStar, FaSearch, FaHeart } from "react-icons/fa";
+import { toast } from "react-hot-toast";
+import { FaHeart, FaSearch, FaStar } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import DatePicker from "react-datepicker";
 import AddReviews from "../../Components/AddReviews/AddReviews";
 import UserReviews from "../Home/UserReviews/UserReviews";
 import "./AllFlights.css";
-import { toast } from "react-hot-toast";
 
 const AllFlights = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -37,7 +36,7 @@ const AllFlights = () => {
     const tclass = classRef.current.value;
 
     const res = await fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights?location=${location}&class=${tclass}&trip=${trip}`
+      `http://localhost:5000/api/flights?location=${location}&class=${tclass}&trip=${trip}`
     );
 
     if (!res.ok) alert("Something went wrong");
@@ -122,7 +121,7 @@ const AllFlights = () => {
 
   useEffect(() => {
     fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights?airlines_name=${filterQueries}&trip=${tripQueries}`
+      `http://localhost:5000/api/flights?airlines_name=${filterQueries}&trip=${tripQueries}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -145,7 +144,7 @@ const AllFlights = () => {
     }
 
     const res = await fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights?price={"min":${minPrice},"max":${maxPrice}}`
+      `http://localhost:5000/api/flights?price={"min":${minPrice},"max":${maxPrice}}`
     );
 
     if (!res.ok) alert("Something went wrong");
@@ -157,7 +156,7 @@ const AllFlights = () => {
 
   useEffect(() => {
     fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/api/flights?pageConfig={"content":40,"page":1}`
+      `http://localhost:5000/api/flights?pageConfig={"content":40,"page":1}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -165,7 +164,7 @@ const AllFlights = () => {
       });
   }, []);
   const handleAddToFavourite = (filter) => {
-    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/favouritesFlight", {
+    fetch("http://localhost:5000/favouritesFlight", {
       method: "POST",
       headers: {
         "content-type": "application/json",

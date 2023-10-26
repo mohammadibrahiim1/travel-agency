@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { toast, Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/UserContext";
 
@@ -40,7 +40,7 @@ const HotelBookingDetails = () => {
     };
     // console.log(booking);
 
-    fetch("https://travel-zone-server-mohammadibrahiim1.vercel.app/bookings", {
+    fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

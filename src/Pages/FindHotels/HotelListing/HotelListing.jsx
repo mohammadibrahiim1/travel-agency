@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./HotelListing.css";
-import { useLocation } from "react-router-dom";
 import axios from "axios";
+import React, { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
+import "./HotelListing.css";
 // import AllHotelListing from "./AllHotelListing";
 // import SearchBar from '../SearchBar/SearchBar';
-import { FaSearch } from "react-icons/fa";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css"; // theme css file
 // import { DateRangePicker } from "react-date-range";
@@ -13,6 +12,7 @@ import AllHotelListing from "../AllHotelListing/AllHotelListing";
 const HotelListing = () => {
   const location = useLocation();
   const [hotelNames, setHotelNames] = useState([]);
+  console.log(hotelNames);
   const [category, setCategory] = useState([]);
   const [brfFilter, setBrfFilter] = useState(false);
   const [frIntFilter, setFrIntFilter] = useState(false);
@@ -41,7 +41,7 @@ const HotelListing = () => {
     }
 
     const res = await fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/category/search/getHotelBySearch?price=${price}`
+      `http://localhost:5000/category/search/getHotelBySearch?price=${price}`
     );
 
     if (!res.ok) alert("Something went wrong");
@@ -59,7 +59,7 @@ const HotelListing = () => {
 
   useEffect(() => {
     fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/category/filter/v2?brfFilter=${
+      `http://localhost:5000/category/filter/v2?brfFilter=${
         brfFilter || ""
       }&frIntFilter=${frIntFilter || ""}&freeAirFilter=${
         freeAirFilter || ""
@@ -79,9 +79,7 @@ const HotelListing = () => {
   useEffect(() => {
     if (location?.search) {
       axios
-        .get(
-          `https://travel-zone-server-mohammadibrahiim1.vercel.app/category${location?.search}`
-        )
+        .get(`http://localhost:5000/category${location?.search}`)
         .then((res) => {
           if (res.data) {
             setHotelNames(res.data);
@@ -108,7 +106,7 @@ const HotelListing = () => {
     }
 
     const res = await fetch(
-      `https://travel-zone-server-mohammadibrahiim1.vercel.app/category/search/getHotelBySearch?city=${city}&room=${room}`
+      `http://localhost:5000/category/search/getHotelBySearch?city=${city}&room=${room}`
     );
 
     if (!res.ok) alert("Something went wrong");
@@ -552,7 +550,7 @@ const HotelListing = () => {
             <div className="d-flex mt-4">
               <p className="showing">
                 Showing {hotelNames.length} of{" "}
-                <span className="all__places">16 places</span>{" "}
+                <span className="all__places">50 places</span>{" "}
               </p>
             </div>
 
