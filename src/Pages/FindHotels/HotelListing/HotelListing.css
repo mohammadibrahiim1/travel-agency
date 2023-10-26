@@ -155,3 +155,14 @@
 .filter_container .checkbox_container {
   padding: 16px;
 }
+
+.all-hotels .filter_search {
+  width: 295px;
+  height: 119px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--Gray-6, #f2f2f2);
+}
+
+/* filter search  */
+

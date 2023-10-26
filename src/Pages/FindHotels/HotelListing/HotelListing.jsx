@@ -433,24 +433,26 @@ const HotelListing = () => {
       <section className="all-hotels mt-4">
         <div className="row">
           <div className="col-12  col-md-12 col-sm-12 col-lg-3">
-            <h5 className="filter">price</h5>
+            <div className="filter_search">
+              <h5 className="filter">Search by property name</h5>
 
-            <form className="mt-2 mb-2 d-flex justify-content-between align-content-center ">
-              <input
-                type="number"
-                id="form3Example1m"
-                className="price__box "
-                placeholder="price"
-                ref={priceRef}
-              />{" "}
-              <div
-                className="btn btn-light "
-                type="submit"
-                onClick={searchPrice}
-              >
-                search
-              </div>
-            </form>
+              <form className="mt-2 mb-2 d-flex justify-content-between align-content-center">
+                <input
+                  type="number"
+                  id="form3Example1m"
+                  className="price__box "
+                  placeholder="price"
+                  ref={priceRef}
+                />{" "}
+                <div
+                  className="btn btn-light "
+                  type="submit"
+                  onClick={searchPrice}
+                >
+                  search
+                </div>
+              </form>
+            </div>
 
             <div className="filter_container">
               <h5 className="filter">Freebies</h5>
