@@ -182,7 +182,7 @@ const AllFlights = () => {
         }
       });
   };
-
+  const [tripType, setTripType] = useState("roundTrip");
   return (
     <div>
       <section className="allFlights-header-section ">
@@ -196,6 +196,123 @@ const AllFlights = () => {
       </section>
 
       <section className="flight-search-section-container container pt-4 ">
+        <form className="flight-search-section container m-auto">
+          <select
+            class="form-select form-select-lg"
+            aria-label="Default select example"
+            onChange={(e) => setTripType(e.target.value)}
+          >
+            <option selected value="roundTrip">
+              Round-trip
+            </option>
+            <option value="oneWay">One-way</option>
+            <option value="multiCity">Multi-city</option>
+          </select>
+          <select
+            class="form-select form-select-lg"
+            aria-label="Default select example"
+          >
+            <option selected value={"1"}>
+              Economy
+            </option>
+            <option value="2">Business</option>
+            <option value="3">Premium Economy</option>
+            <option value="4">First Class</option>
+          </select>
+
+          <select
+            class="form-select form-select-lg"
+            aria-label="Default select example"
+          >
+            <option selected value={"1"}>
+              Travelers
+            </option>
+            <option value="2">Adults</option>
+            <option value="3">Children</option>
+            <option value="4">Students</option>
+          </select>
+
+          <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className="form-control form-control-lg"
+              placeholder="From?"
+              // ref={locationRef}
+            />
+          </div>
+          <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className="form-control form-control-lg"
+              placeholder="To?"
+              // ref={locationRef}
+            />
+          </div>
+          {/* <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className="input"
+              placeholder="trip"
+              // ref={tripRef}
+            />
+          </div> */}
+          {/* <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
+              className=" input"
+              placeholder="class"
+              // ref={classRef}
+            />
+          </div> */}
+
+          {tripType === "roundTrip" ? (
+            <>
+              <div className="input-container">
+                <input
+                  type="date"
+                  id="date"
+                  className="form-control form-control-lg input"
+                  placeholder=" "
+                  name="date"
+                  required
+                />
+                <label className="label">Departure</label>
+              </div>
+              <div className="input-container">
+                <input
+                  type="date"
+                  id="date"
+                  className="input"
+                  placeholder=" "
+                  name="date"
+                  required
+                />
+                <label className="label">Arrival</label>
+              </div>
+            </>
+          ) : (
+            <div className="input-container">
+              <input
+                type="date"
+                id="date"
+                className="form-control form-control-lg input"
+                placeholder=" "
+                name="date"
+                required
+              />
+              <label className="label">Departure</label>
+            </div>
+          )}
+
+          <button className="btn btn-primary">Search</button>
+        </form>
+      </section>
+
+      {/* <section className="flight-search-section-container container pt-4 ">
         <form className="flight-search-section container m-auto  ">
           <div className="input-container ">
             <input
@@ -256,7 +373,7 @@ const AllFlights = () => {
             Search
           </button>
         </form>
-      </section>
+      </section> */}
 
       <section className="row container m-auto mt-5 mb-5">
         <div className="checkbox-container mt-5 mb-5 col-12  col-md-12 col-sm-12 col-lg-2">
