@@ -506,38 +506,42 @@ const AllFlights = () => {
           <div className=" mt-5">
             <span className="all-flights-container">
               <h6>
-                Showing{" "}
-                <span className="length-color">{filter && filter?.length}</span>{" "}
+                Showing
+                <span className="length-color">{filter && filter?.length}</span>
                 Flights
               </h6>
-            </span>{" "}
+            </span>
           </div>
           <hr />
 
           <div>
             {filter &&
               filter?.slice(0, visible)?.map((filter) => (
-                <div className="flight-card">
-                  <div class="card mb-3" style={{ "max-width": "840px" }}>
+                <div className="">
+                  <div
+                    class="card mb-3 p-4"
+                    style={{ "max-width": "840px" }}
+                  >
                     <div class="row g-0">
                       <div class="col-md-4">
                         <img
                           src={filter.airlines_logo_URL}
-                          class="p-2"
                           alt="..."
-                          style={{ height: "120px", width: "160px" }}
+                          style={{ height: "110px", width: "160px" }}
                         />
                       </div>
                       <div class="col-md-8">
-                        <div class="card-body">
-                          <div className="d-flex justify-content-between align-items-st">
-                            {" "}
-                            <h5 class="card-title">
-                              {filter.airlines_name}
-                              {/* <span>{filter.rating}</span> */}
+                        <div class="">
+                          <div className="d-flex justify-content-between align-items-start">
+                            <h6 className="fs-6">
+                              {filter.ratings}
+                              <span className="ps-1">star reviews</span>
+                            </h6>
+                            <h5 class="card-title text-danger fw-bold">
+                              ${filter.price}
                             </h5>
-                            <h5 class="card-title">${filter.price}</h5>
                           </div>
+                          {/* 
                           <div class="card-text d-flex justify-content-between align-items-center mb-3">
                             <span> {filter.location} </span>
                             <span class="card-text ms-2 text-warning">
@@ -565,9 +569,44 @@ const AllFlights = () => {
                                 {filter.ratings} start reviews
                               </p>
                             </span>{" "}
+                          </div> */}
+
+                          <div class="form-check my-4">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckDefault"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexCheckDefault"
+                            >
+                              <span>{filter.time.departure}</span> -
+                              <span>{filter.time.arrival}</span>
+                              <span className="ps-5">non-stop</span>
+                              <span className="ps-5">{filter.class}</span>
+                            </label>
+                          </div>
+                          <div class="form-check my-4">
+                            <input
+                              class="form-check-input"
+                              type="checkbox"
+                              value=""
+                              id="flexCheckChecked"
+                            />
+                            <label
+                              class="form-check-label"
+                              for="flexCheckChecked"
+                            >
+                              <span>{filter.return_time.departure}</span> -
+                              <span>{filter.return_time.arrival}</span>
+                              <span className="ps-5">non-stop</span>
+                              <span className="ps-5">{filter.class}</span>
+                            </label>
                           </div>
 
-                          <div className="">
+                          {/* <div className="">
                             <p>
                               <span>oneway : {filter.time.departure}</span>-
                               <span>{filter.time.arrival}</span>
@@ -576,23 +615,28 @@ const AllFlights = () => {
                               <span>
                                 return : {filter.return_time.departure}
                               </span>
-                              -<span>{filter.return_time.arrival}</span>
+                              - <span>{filter.return_time.arrival}</span>
                             </p>
 
                             <p className="mt-3">{filter.class}</p>
-                          </div>
+                          </div> */}
 
-                          <div class="mt-2 d-flex justify-content-start align-items-center gap-3 ">
+                          <div
+                            className="bg-danger"
+                            style={{ height: "1px" }}
+                          ></div>
+
+                          <div class="mt-4 d-flex justify-content-start align-items-center gap-3">
                             <Link
                               to="/"
-                              className="border rounded-2 ps-2 pe-2"
+                              className="border rounded-2 btn text-danger"
                               onClick={() => handleAddToFavourite(filter)}
                             >
                               <FaHeart />
                             </Link>{" "}
                             <Link
                               to={`/flightDetails/${filter._id}`}
-                              class=" btn btn-info package-details-button"
+                              class=" btn btn-info package-details-button w-100"
                               // style={{ width: "428px", height: "38px" }}
                             >
                               View Details
@@ -608,7 +652,7 @@ const AllFlights = () => {
         </div>
 
         <div className="text-center mt-4" onClick={showMore}>
-          <button className="btn btn-light ">show more</button>
+          <button className="btn btn-danger ">show more</button>
         </div>
       </section>
       <section>
