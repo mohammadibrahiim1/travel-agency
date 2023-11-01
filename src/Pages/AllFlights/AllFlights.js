@@ -378,12 +378,29 @@ const AllFlights = () => {
       <section className="row container m-auto mt-5 mb-5">
         <div className="checkbox-container mt-5 mb-5 col-12  col-md-12 col-sm-12 col-lg-2">
           <p className="flights-filter">Filters</p>
-          <hr className="text-dark" />
+          <div className="bg-dark-subtle my-3" style={{ height: "1px" }}></div>
 
-          <div className="airlines-filter">
-            <div>
-              <p className="filter-title"> Airlines</p>
-            </div>
+          <div>
+            <label
+              for="customRange1"
+              class="form-label d-flex justify-content-between mb-0"
+            >
+              <span>Price</span>
+              <span>$50-1200</span>
+            </label>
+            <input
+              type="range"
+              class="form-range"
+              id="customRange1"
+              min={50}
+              max={1200}
+            />
+          </div>
+
+          <div className="bg-dark-subtle my-3" style={{ height: "1px" }}></div>
+
+          <div className="">
+            <span> Airlines</span>
 
             <div>
               <input
@@ -430,13 +447,14 @@ const AllFlights = () => {
             </div>
           </div>
 
-          <hr />
+          <div
+            className="bg-dark-subtle my-3
+          "
+            style={{ height: "1px" }}
+          ></div>
 
           <div className="trip-filter">
-            <div>
-              <p className="filter-title"> Trip</p>
-            </div>
-
+            <span> Trip</span>
             <div>
               <input
                 type="checkbox"
@@ -460,8 +478,8 @@ const AllFlights = () => {
               <span className="input-filter-text ms-2">return</span> <br />
             </div>
           </div>
-          <hr />
-          <div>
+          {/* <div className="bg-dark-subtle" style={{ height: "1px" }}></div> */}
+          {/* <div>
             <form className="mt-2 mb-2">
               <input
                 type="number"
@@ -477,13 +495,6 @@ const AllFlights = () => {
                 placeholder="maxprice"
                 ref={maxPriceRef}
               />
-              {/* <div className="btn btn-light mt-2">
-                <FaSearch
-                  className="price__search"
-                  type="submit"
-                  onClick={searchPrice}
-                ></FaSearch>
-              </div> */}
               <div
                 className="btn btn-light "
                 type="submit"
@@ -492,7 +503,7 @@ const AllFlights = () => {
                 search
               </div>
             </form>
-          </div>
+          </div> */}
         </div>
 
         <div
@@ -512,16 +523,13 @@ const AllFlights = () => {
               </h6>
             </span>
           </div>
-          <hr />
+          <div className="bg-dark-subtle" style={{ height: "1px" }}></div>
 
           <div>
             {filter &&
               filter?.slice(0, visible)?.map((filter) => (
                 <div className="">
-                  <div
-                    class="card mb-3 p-4"
-                    style={{ "max-width": "840px" }}
-                  >
+                  <div class="card mb-3 p-4" style={{ "max-width": "840px" }}>
                     <div class="row g-0">
                       <div class="col-md-4">
                         <img
