@@ -376,7 +376,7 @@ const AllFlights = () => {
       </section> */}
 
       <section className="row container m-auto mt-5 mb-5">
-        <div className="checkbox-container mt-5 mb-5 col-12  col-md-12 col-sm-12 col-lg-2">
+        <div className="checkbox-container mt-5 mb-5 col-12  col-md-12 col-sm-12 col-lg-3">
           <p className="flights-filter">Filters</p>
           <div className="bg-dark-subtle my-3" style={{ height: "1px" }}></div>
 
@@ -402,48 +402,57 @@ const AllFlights = () => {
           <div className="">
             <span> Airlines</span>
 
-            <div>
+            <div class="form-check">
               <input
+                class="form-check-input"
                 type="checkbox"
-                name="Flydubai"
-                // value
-                checked={flyDFilter}
-                onChange={(event) => checkboxHandler(event, "Flydubai")}
-              />
-              <span className="input-filter-text ms-2">Flydubai</span> <br />
-            </div>
-
-            <div>
-              <input
-                type="checkbox"
-                name="Qantas"
+                value=""
+                id="flexCheckDefault"
                 checked={qantFilter}
                 onChange={(event) => qantasCheckbox(event, "Qantas")}
               />
-              <span className="input-filter-text ms-2">Qantas</span> <br />
+              <label class="form-check-label" for="flexCheckDefault">
+                Qantas
+              </label>
             </div>
-            <div>
+            <div class="form-check">
               <input
+                class="form-check-input"
                 type="checkbox"
-                name="international"
-                id=""
-                className="checkbox"
+                value=""
+                id="flexCheckChecked"
+                checked={flyDFilter}
+                onChange={(event) => checkboxHandler(event, "Flydubai")}
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Fly Dubai
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
                 checked={emrFilter}
                 onClick={(event) => emrCheckbox(event, "Emirates")}
               />
-              <span className="input-filter-text ms-2">Emirates</span> <br />
+              <label class="form-check-label" for="flexCheckChecked">
+                Emirates
+              </label>
             </div>
-
-            <div>
+            <div class="form-check">
               <input
+                class="form-check-input"
                 type="checkbox"
-                name="domestic"
-                className="checkbox"
-                id=""
+                value=""
+                id="flexCheckChecked"
                 checked={qatarFilter}
                 onClick={(event) => qtrCheckbox(event, "Qatar Airways")}
               />
-              <span className="input-filter-text ms-2">Qatar</span> <br />
+              <label class="form-check-label" for="flexCheckChecked">
+                Qatar
+              </label>
             </div>
           </div>
 
@@ -455,27 +464,32 @@ const AllFlights = () => {
 
           <div className="trip-filter">
             <span> Trip</span>
-            <div>
+
+            <div class="form-check">
               <input
+                class="form-check-input"
                 type="checkbox"
-                name="oneway"
-                id=""
-                className="checkbox"
+                value=""
+                id="flexCheckChecked"
                 checked={onewayFilter}
                 onChange={(event) => OnewayFilter(event, "oneway")}
               />
-              <span className="input-filter-text ms-2">oneway</span> <br />
+              <label class="form-check-label" for="flexCheckChecked">
+                Oneway
+              </label>
             </div>
-            <div>
+            <div class="form-check">
               <input
+                class="form-check-input"
                 type="checkbox"
-                name="international"
-                id=""
-                className="checkbox"
+                value=""
+                id="flexCheckChecked"
                 checked={returnFilter}
                 onChange={(event) => ReturnFilter(event, "return")}
               />
-              <span className="input-filter-text ms-2">return</span> <br />
+              <label class="form-check-label" for="flexCheckChecked">
+                Return
+              </label>
             </div>
           </div>
           {/* <div className="bg-dark-subtle" style={{ height: "1px" }}></div> */}
@@ -506,24 +520,19 @@ const AllFlights = () => {
           </div> */}
         </div>
 
-        <div
-          class=" d-lg-flex justify-content-evenly align-items-center mt-5  d-md-none d-lg-block d-sm-none d-block col-lg-1"
-          style={{ height: "auto" }}
-        >
-          <div class="vr mt-5"></div>
-        </div>
-
         <div className="col-lg-9 col-md-12 col-sm-12 col-12">
-          <div className=" mt-5">
+          <div className="mt-5">
             <span className="all-flights-container">
               <h6>
                 Showing
-                <span className="length-color">{filter && filter?.length}</span>
+                <span className="length-color px-1">
+                  {filter && filter?.length}
+                </span>
                 Flights
               </h6>
             </span>
           </div>
-          <div className="bg-dark-subtle" style={{ height: "1px" }}></div>
+          <div className="bg-dark-subtle my-3" style={{ height: "1px" }}></div>
 
           <div>
             {filter &&
