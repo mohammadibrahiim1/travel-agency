@@ -89,7 +89,6 @@
   gap: 24px;
 }
 
-
 .extra-img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -182,6 +181,79 @@
   font-size: 14px;
 }
 
+/* top-destinations-section start */
+.top-destinations-section {
+  width: 1232px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+.top-destinations-section .info {
+  width: 444px;
+}
+.top-destinations-section h1 {
+  width: 444px;
+  color: #141e38;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+.top-destinations-section h4 {
+  width: 444px;
+  color: #141e38;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  margin-top: 22px;
+  margin-bottom: 22px;
+  text-align: justify;
+}
+.top-destinations-section button {
+  display: flex;
+  padding: 16px 40px;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 24px;
+  border: 1px solid #e0b100;
+  background: #e0b100;
+  color: #f5f5f5;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.destination-card-container .card-title {
+  color: #e0b100;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+}
+.destination-card-container .card-text {
+  color: #141e38;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}
+
+.destination-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+/* top-destinations-section end */
+
 @media screen and (min-width: 577px) and (max-width: 991px) {
   .fall-into-travel {
     display: grid;
@@ -221,3 +293,90 @@
     width: 100%;
   }
 }
+
+/* flight search form start */
+
+.get-in-touch {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+}
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 2.9em;
+  line-height: 48px;
+  padding-bottom: 48px;
+  color: #5543ca;
+  background: #5543ca;
+  background: -moz-linear-gradient(left, #f4524d 0%, #5543ca 100%) !important;
+  background: -webkit-linear-gradient(
+    left,
+    #f4524d 0%,
+    #5543ca 100%
+  ) !important;
+  background: linear-gradient(to right, #f4524d 0%, #5543ca 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+.get-in-touch h4 {
+  width: 700px;
+  margin: auto;
+  color: #141e38;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #5543ca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-24px);
+  transform: translateY(-24px);
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5543ca;
+  cursor: text;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+  background-image: linear-gradient(125deg, #a72879, #064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width: 200px;
+  cursor: pointer;
+}
+
+/* flight search form end */
