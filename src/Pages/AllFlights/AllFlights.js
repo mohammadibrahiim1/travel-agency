@@ -505,6 +505,57 @@ const AllFlights = () => {
               </label>
             </div>
           </div>
+
+          <div
+            className="bg-dark-subtle my-3
+          "
+            style={{ height: "1px" }}
+          ></div>
+
+          <div className="trip-filter">
+            <span> Ratings</span>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                // checked={onewayFilter}
+                // onChange={(event) => OnewayFilter(event, "oneway")}
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                1+ star
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                // checked={returnFilter}
+                // onChange={(event) => ReturnFilter(event, "return")}
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                3+ star
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                // checked={returnFilter}
+                // onChange={(event) => ReturnFilter(event, "return")}
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                4+ star
+              </label>
+            </div>
+          </div>
+
           {/* <div className="bg-dark-subtle" style={{ height: "1px" }}></div> */}
           {/* <div>
             <form className="mt-2 mb-2">
