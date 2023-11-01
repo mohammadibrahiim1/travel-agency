@@ -538,7 +538,7 @@ const AllFlights = () => {
             {filter &&
               filter?.slice(0, visible)?.map((filter) => (
                 <div className="">
-                  <div class="card mb-3 p-4" style={{ "max-width": "840px" }}>
+                  <div class="card mb-3 p-4">
                     <div class="row g-0">
                       <div class="col-md-4">
                         <img
@@ -653,7 +653,7 @@ const AllFlights = () => {
                             </Link>{" "}
                             <Link
                               to={`/flightDetails/${filter._id}`}
-                              class=" btn btn-info package-details-button w-100"
+                              class=" btn btn-danger  w-100 fw-bold"
                               // style={{ width: "428px", height: "38px" }}
                             >
                               View Details
@@ -665,11 +665,13 @@ const AllFlights = () => {
                   </div>
                 </div>
               ))}
-          </div>
-        </div>
 
-        <div className="text-center mt-4" onClick={showMore}>
-          <button className="btn btn-danger ">show more</button>
+            <div className="text-center mt-4" onClick={showMore}>
+              <button className="btn btn-danger w-100 fw-bold ">
+                show more result
+              </button>
+            </div>
+          </div>
         </div>
       </section>
       <section>
