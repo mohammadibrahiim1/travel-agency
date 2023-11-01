@@ -308,7 +308,7 @@ const AllFlights = () => {
             </div>
           )}
 
-          <button className="btn btn-primary">Search</button>
+          <button className="btn btn-danger  fw-bold">Search</button>
         </form>
       </section>
 
@@ -488,7 +488,20 @@ const AllFlights = () => {
                 onChange={(event) => ReturnFilter(event, "return")}
               />
               <label class="form-check-label" for="flexCheckChecked">
-                Return
+                Round-trip
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckChecked"
+                // checked={returnFilter}
+                // onChange={(event) => ReturnFilter(event, "return")}
+              />
+              <label class="form-check-label" for="flexCheckChecked">
+                Multi-city
               </label>
             </div>
           </div>
@@ -646,7 +659,7 @@ const AllFlights = () => {
                           <div class="mt-4 d-flex justify-content-start align-items-center gap-3">
                             <Link
                               to="/"
-                              className="border rounded-2 btn text-danger"
+                              className="border rounded-2 btn btn-danger"
                               onClick={() => handleAddToFavourite(filter)}
                             >
                               <FaHeart />
