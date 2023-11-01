@@ -1,5 +1,5 @@
 // import React, { useContext, useEffect } from "react";
-import React from "react";
+import React, { useState } from "react";
 // import { useState } from "react";
 // import Calendar from "react-calendar";
 // import React, { useState } from "react";
@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 // import { ApiContext } from "../../DataContext.js/DataContext";
 // import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import "./FindFlights.css";
-import { FaSearch } from "react-icons/fa";
 
 const cards = [
   {
@@ -84,6 +83,8 @@ const FindFlights = () => {
 
   // const [startDate, setStartDate] = useState(new Date());
 
+  const [tripType, setTripType] = useState("roundTrip");
+
   return (
     <div>
       {/* flight header section start */}
@@ -101,13 +102,48 @@ const FindFlights = () => {
 
       {/* flight search section start */}
       <section className="flight-search-section-container container pt-4 ">
-        <form className="flight-search-section container m-auto  ">
+        <form className="flight-search-section container m-auto">
+          <select
+            class="form-select form-select-lg"
+            aria-label="Default select example"
+            onChange={(e) => setTripType(e.target.value)}
+          >
+            <option selected value="roundTrip">
+              Round-trip
+            </option>
+            <option value="oneWay">One-way</option>
+            <option value="multiCity">Multi-city</option>
+          </select>
+          <select
+            class="form-select form-select-lg"
+            aria-label="Default select example"
+          >
+            <option selected value={"1"}>
+              Economy
+            </option>
+            <option value="2">Business</option>
+            <option value="3">Premium Economy</option>
+            <option value="4">First Class</option>
+          </select>
+
+          <select
+            class="form-select form-select-lg"
+            aria-label="Default select example"
+          >
+            <option selected value={"1"}>
+              Travelers
+            </option>
+            <option value="2">Adults</option>
+            <option value="3">Children</option>
+            <option value="4">Students</option>
+          </select>
+
           <div className="input-container ">
             <input
               type="text"
               id="form3Example1m"
-              className="input"
-              placeholder="Enter Destination"
+              className="form-control form-control-lg"
+              placeholder="From?"
               // ref={locationRef}
             />
           </div>
@@ -115,12 +151,21 @@ const FindFlights = () => {
             <input
               type="text"
               id="form3Example1m"
+              className="form-control form-control-lg"
+              placeholder="To?"
+              // ref={locationRef}
+            />
+          </div>
+          {/* <div className="input-container ">
+            <input
+              type="text"
+              id="form3Example1m"
               className="input"
               placeholder="trip"
               // ref={tripRef}
             />
-          </div>
-          <div className="input-container ">
+          </div> */}
+          {/* <div className="input-container ">
             <input
               type="text"
               id="form3Example1m"
@@ -128,30 +173,46 @@ const FindFlights = () => {
               placeholder="class"
               // ref={classRef}
             />
-          </div>
+          </div> */}
 
-          <div className="input-container">
-            <input
-              type="date"
-              id="date"
-              className="input"
-              placeholder=" "
-              name="date"
-              required
-            />
-            <label className="label">select date</label>
-          </div>
-          <div className="input-container">
-            <input
-              type="date"
-              id="date"
-              className="input"
-              placeholder=" "
-              name="date"
-              required
-            />
-            <label className="label">select date</label>
-          </div>
+          {tripType === "roundTrip" ? (
+            <>
+              <div className="input-container">
+                <input
+                  type="date"
+                  id="date"
+                  className="form-control form-control-lg input"
+                  placeholder=" "
+                  name="date"
+                  required
+                />
+                <label className="label">Departure</label>
+              </div>
+              <div className="input-container">
+                <input
+                  type="date"
+                  id="date"
+                  className="input"
+                  placeholder=" "
+                  name="date"
+                  required
+                />
+                <label className="label">Arrival</label>
+              </div>
+            </>
+          ) : (
+            <div className="input-container">
+              <input
+                type="date"
+                id="date"
+                className="form-control form-control-lg input"
+                placeholder=" "
+                name="date"
+                required
+              />
+              <label className="label">Departure</label>
+            </div>
+          )}
 
           <button className="btn btn-primary">Search</button>
         </form>
