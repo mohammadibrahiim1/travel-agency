@@ -248,13 +248,13 @@ const AllFlights = () => {
             <label className="label">select date</label>
           </div>
 
-          <div>
-            <FaSearch
-              className="search"
-              type="submit"
-              onClick={searchHandler}
-            ></FaSearch>
-          </div>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={searchHandler}
+          >
+            Search
+          </button>
         </form>
       </section>
 

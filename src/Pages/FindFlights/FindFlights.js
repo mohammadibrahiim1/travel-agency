@@ -6,9 +6,7 @@ import React from "react";
 // import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
-import AddReviews from "../../Components/AddReviews/AddReviews";
 // import { ApiContext } from "../../DataContext.js/DataContext";
-import UserReviews from "../Home/UserReviews/UserReviews";
 // import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import "./FindFlights.css";
 import { FaSearch } from "react-icons/fa";
@@ -155,13 +153,7 @@ const FindFlights = () => {
             <label className="label">select date</label>
           </div>
 
-          <div>
-            <FaSearch
-              className="search"
-              type="submit"
-              // onClick={searchHandler}
-            ></FaSearch>
-          </div>
+          <button className="btn btn-primary">Search</button>
         </form>
       </section>
       {/* flight search section end */}
