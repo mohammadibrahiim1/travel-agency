@@ -30,33 +30,28 @@ const FlightDetails = () => {
   return (
     <div>
       <div>
-        <h2 className="text-center text-primary-emphasis mt-5 fw-semibold heading-text">
-          See Your Flights Details Here
-        </h2>
-        <section className="container flights-details-container">
+        <section className="mt-5 mx-auto" style={{ width: "1232px" }}>
           <div>
-            <span className="d-flex align-items-center fs-6 text-danger ">
-              <h6>{location}</h6>
+            <span className="text-danger d-flex align-content-center ">
+              <span>{location}</span>
               <MdKeyboardArrowRight className="arrow" />
-              <h6>{airlines_name}</h6>
+              <span>{airlines_name}</span>
+              <MdKeyboardArrowRight className="arrow" />
+              <span>{flight_name}</span>
             </span>
           </div>
 
-          <div className="flight-detail-header pb-4 d-flex justify-content-between align-items-center ">
+          <div className="flight-detail-header d-flex justify-content-between align-items-center ">
             <div>
-              <h1 className="main__title">{flight_name}</h1>
-              <h6>
-                {" "}
+              <h1 className="flight-details-title pt-3">{flight_name}</h1>
+              <div className="lh-1 d-flex align-content-center">
                 <ImLocation2 />
-                {destination}
-              </h6>
-              <div className="star">
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />{" "}
-                <span className="hotel__rating text-dark">{ratings} Star </span>
+                <span className="px-1">{destination}</span>
+              </div>
+
+              <div className="my-3 px-1 d-flex align-items-center">
+                <span className="">{ratings}</span>{" "}
+                <strong className="px-2">Very Good 54 reviews</strong>
               </div>
             </div>
             <div>

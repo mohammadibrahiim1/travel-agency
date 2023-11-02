@@ -294,3 +294,40 @@
   }
 }
 
+.flight-detail-header .flight-details-title {
+  color: var(--Blackish-Green, #121);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.flight-detail-header .my-3 span {
+  height: 32px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--Mint-Green, #8dd3bb);
+  color: var(--Blackish-Green, #121);
+  /* Montserrat/Medium/12px */
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.flight-detail-header .my-3 strong {
+  color: var(--Blackish-Green, #121);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.flight-detail-header .my-3 .review-text {
+  color: var(--Blackish-Green, #121);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
